@@ -2,6 +2,8 @@ import { Fragment } from 'react'
 import Hero from './Hero'
 import Mission from './Mission'
 import NMB from './NMB'
+import Focus from './Focus'
+import IconGrid from './IconGrid'
 import Image from 'next/image'
 
 
@@ -11,6 +13,8 @@ export default function Home() {
       <Hero />
       <Mission />
       <NMB />
+      <Focus />
+
     </Fragment>
   )
 }
