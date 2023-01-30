@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 
 import { Inter, Prompt } from "@next/font/google";
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <head />
       <body>
         <Navbar />
+
         {children}
       </body>
     </html>

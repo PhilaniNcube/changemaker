@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 import Details from "./Details";
+import Focus from "./Focus";
 import Hero from "./Hero";
-import Team from "./Team";
 
 const page = () => {
   return <Fragment>
     <Hero />
     <Details />
-    <Team />
+    <Focus />
   </Fragment>;
 };
 export default page;
