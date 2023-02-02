@@ -25,19 +25,10 @@ const links = [
   },
   {
     title: "Partner Area",
-    href: "/partners",
+    href: "/partner-area",
 
   },
-  {
-    title: "Learner Area",
-    href: "/learners",
 
-  },
-  {
-    title: "Contact Us",
-    href: "/contact",
-
-  },
 ]
 
 const Navbar = () => {
