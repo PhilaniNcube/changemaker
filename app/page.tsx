@@ -15,7 +15,7 @@ export default function Home() {
           Want to become a partner?
         </p>
         <Link
-          href="/partners"
+          href="/partner-area"
           className="border-2 border-black rounded-full px-12 py-2 text-base font-bold"
         >
           Learn More
