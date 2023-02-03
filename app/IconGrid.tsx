@@ -26,9 +26,9 @@ const items = [
 
 const IconGrid = () => {
 
-  return <div className="max-w-7xl mx-auto px-4 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  return <div className="max-w-7xl mx-auto px-4 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {items.map((item) => (
-      <div key={item.id} className="w-full h-full aspect-square p-8 bg-accent group relative isolate">
+      <div key={item.id} className="w-full  aspect-square p-8 bg-accent group relative isolate">
         <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
           <Image src={item.icon} width={50} height={50} className="w-20 h-20 object-contain" alt={item.title} />
           <p className="font-bold text-lg md:text-2xl mt-2 text-center">
@@ -36,7 +36,7 @@ const IconGrid = () => {
           </p>
         </div>
         <div className="absolute inset-0 px-2 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
-          <p className="text-white text-xs md:text-sm font-medium">{item.text}</p>
+          <p className="text-white text-xs md:text-sm font-medium text-justify">{item.text}</p>
         </div>
       </div>
     ))}

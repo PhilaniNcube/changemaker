@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return <section className="relative">
-    <Image src="/images/child.jpg" width={1500} height={1000} alt="About" className="w-full aspect-[3/1] object-cover" />
+    <Image src="/images/school.jpeg" width={6000} height={4000} alt="About" priority className="w-full aspect-[3/1] object-cover" />
     <div className="absolute inset-0 bg-slate-600/80">
       <div className="max-w-7xl mx-auto py-20 flex flex-col justify-center items-center text-white h-full">
          <h1 className="font-extrabold text-4xl md:text-6xl lg:text-7xl">About Us</h1>

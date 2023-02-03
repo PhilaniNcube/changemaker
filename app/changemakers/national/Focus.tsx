@@ -5,9 +5,9 @@ const Focus = () => {
   return (
     <section className="bg-white py-10 text-slate-800">
       <div className="max-w-7xl mx-auto border-t-2 border-slate-700 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <p className="text-lg font-medium leading-7">
+            <p className="text-slate-700 text-justify text-md">
               The Changemaker Network model is a whole-of-school community
               intervention that activates, provides capacity and supports the
               role of local Department of Education and school communities at
@@ -17,7 +17,7 @@ const Focus = () => {
               further aims to be replicated within 4 provinces in South Africa.
               Specifically; Eastern Cape, KwaZulu-Natal, North West and Limpopo.
             </p>
-            <p className="text-lg font-medium mt-6 leading-7">
+            <p className="text-slate-700 text-justify text-md">
               Within these 4 provinces, Civil Society Organisations (CSO) have
               applied and 5 will be selected from each province to become
               implementation partners of the MCN. Each CSO will work within 5
@@ -28,31 +28,31 @@ const Focus = () => {
           <div className="flex gap-6">
             <h3 className="font-extrabold text-4xl uppercase">Focus</h3>
             <div>
-              <p className="text-lg font-bold leading-7">
+              <p className="text-lg font-bold underline text-slate-800 leading-7">
                 The Changemaker Network will, among others, focus on the
                 following topics:
               </p>
               <ul className="list-disc pl-6">
-                <li className="font-medium text-black">
+                <li className="text-slate-700">
                   School Safety: Understanding violence
                 </li>
-                <li className="font-medium text-black">
+                <li className="text-slate-700">
                   Prevention of Gender based violence
                 </li>
-                <li className="font-medium text-black">Leadership</li>
-                <li className="font-medium text-black">
+                <li className="text-slate-700">Leadership</li>
+                <li className="text-slate-700">
                   Inclusion of persons with disabilities
                 </li>
-                <li className="font-medium text-black">
+                <li className="text-slate-700">
                   Environment and climate change
                 </li>
-                <li className="font-medium text-black">
+                <li className="text-slate-700">
                   Healthy relationships & Bullying
                 </li>
-                <li className="font-medium text-black">
+                <li className="text-slate-700">
                   Wellness and Mental Health
                 </li>
-                <li className="font-medium text-black">LGBT awareness</li>
+                <li className="text-slate-700">LGBT awareness</li>
               </ul>
             </div>
           </div>

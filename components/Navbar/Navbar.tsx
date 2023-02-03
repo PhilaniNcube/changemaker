@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline"
 import Image from "next/image";
 
-const links = [
+ const links = [
   {
     title: "Home",
     href: "/",

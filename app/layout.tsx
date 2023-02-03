@@ -1,12 +1,13 @@
 import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 
-import { Inter, Prompt } from "@next/font/google";
+import { Inter, Roboto} from "@next/font/google";
 import Link from 'next/link';
+import Footer from '@/components/Footer/Footer';
 
 const inter = Inter({ subsets: ["latin"] });
 
-const prompt = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"], display: "swap" });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"], display: "swap" });
 
 
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${prompt.className} bg-black`}>
+    <html lang="en" className={`${roboto.className} bg-black`}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navbar />
 
         {children}
+        <Footer />
       </body>
     </html>
   );
