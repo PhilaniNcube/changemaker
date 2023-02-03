@@ -23,7 +23,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-accent py-20">
+    <footer className="bg-black py-20">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           <Image
