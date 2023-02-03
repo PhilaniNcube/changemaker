@@ -59,14 +59,15 @@ const Team = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {partners.map((partner) => (
+            <div className="flex w-full items-center justify-center" key={partner.id}>
             <Image
               key={partner.id}
               src={partner.image}
               width={partner.width}
               height={partner.height}
               alt={partner.title}
-              className="w-full flex items-center justify-center object-contain aspect-video"
-            />
+              className="w-2/3 flex items-center justify-center object-contain aspect-video grayscale hover:grayscale-0 cursor-pointer"
+            /></div>
           ))}
         </div>
 
