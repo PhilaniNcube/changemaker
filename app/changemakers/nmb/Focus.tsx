@@ -16,7 +16,7 @@ const Focus = () => {
               and over socio-economic disadvantages.
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-6">
             <h3 className="font-extrabold text-4xl uppercase text-slate-800">Focus</h3>
             <div>
               <p className="text-slate-800 underline text-lg font-bold leading-7">

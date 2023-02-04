@@ -25,7 +25,7 @@ const Focus = () => {
               25 schools per province and ultimately 100 schools nationwide.
             </p>
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-col md:flex-row gap-6">
             <h3 className="font-extrabold text-4xl uppercase">Focus</h3>
             <div>
               <p className="text-lg font-bold underline text-slate-800 leading-7">
