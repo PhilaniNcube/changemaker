@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { isTemplateSpan } from "typescript";
+
 
 const items = [
   {
@@ -26,7 +26,7 @@ const items = [
 
 const IconGrid = () => {
 
-  return <div className="max-w-7xl mx-auto px-4 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {items.map((item) => (
       <div key={item.id} className="w-full  aspect-square p-8 bg-accent group relative isolate">
         <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
@@ -35,7 +35,7 @@ const IconGrid = () => {
             {item.title}
           </p>
         </div>
-        <div className="absolute inset-0 px-2 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
+        <div className="absolute inset-0 px-6 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
           <p className="text-white text-xs md:text-sm font-medium text-justify">{item.text}</p>
         </div>
       </div>

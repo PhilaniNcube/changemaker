@@ -15,7 +15,7 @@ export default function Hero() {
         className="object-cover h-screen lg:max-h-[65vh] w-full md:w-1/2"
       />
       <div className="absolute inset-0 flex justify-start items-center py-12 bg-slate-600/60 lg:bg-transparent">
-        <div className="max-w-7xl mx-auto flex flex-col items-start w-full px-4 lg:px-0">
+        <div className="max-w-7xl mx-auto flex flex-col items-start w-full px-8 lg:px-0">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white">
             Why Not <span className="font-extrabold italic">You?</span>
           </h1>
@@ -31,17 +31,17 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start w-fit gap-3 mt-6 text-black">
-            <Link
-              href="/changemakers/nmb"
+            <a
+              href="/#nmb"
               className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 lg:w-1/2"
             >
               <span className="uppercase font-bold text-xl flex items-center">
                 NMB <ChevronDoubleRightIcon className="h-8 w-8 text-bold" />{" "}
               </span>
               <span className="uppercase text-xs">Changemakers </span>
-            </Link>
-            <Link
-              href="/changemakers/national"
+            </a>
+            <a
+              href="/#national"
               className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 lg:w-1/2"
             >
               <span className="uppercase font-bold text-xl flex items-center">
@@ -49,7 +49,7 @@ export default function Hero() {
                 <ChevronDoubleRightIcon className="h-8 w-8 text-bold" />{" "}
               </span>
               <span className="uppercase text-xs">Changemakers </span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

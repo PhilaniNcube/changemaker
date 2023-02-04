@@ -1,13 +1,13 @@
-import Grid from "./Grid";
+import NationalGrid from "./NationalGrid";
 
 
 const Focus = () => {
   return (
     <section className="bg-white py-10 text-slate-800">
-      <div className="max-w-7xl mx-auto border-t-2 border-slate-700 py-10 px-4 lg:px-0">
+      <div className="max-w-7xl mx-auto  py-10 px-8 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <p className="text-slate-700 text-justify text-md">
+            <p className="text-slate-700 text-justify text-md leading-7 max-w-[60ch]">
               The Changemaker Network model is a whole-of-school community
               intervention that activates, provides capacity and supports the
               role of local Department of Education and school communities at
@@ -17,7 +17,7 @@ const Focus = () => {
               further aims to be replicated within 4 provinces in South Africa.
               Specifically; Eastern Cape, KwaZulu-Natal, North West and Limpopo.
             </p>
-            <p className="text-slate-700 text-justify text-md">
+            <p className="text-slate-700 text-justify text-md leading-7 max-w-[60ch]">
               Within these 4 provinces, Civil Society Organisations (CSO) have
               applied and 5 will be selected from each province to become
               implementation partners of the MCN. Each CSO will work within 5
@@ -32,7 +32,7 @@ const Focus = () => {
                 The Changemaker Network will, among others, focus on the
                 following topics:
               </p>
-              <ul className="list-disc pl-6">
+              <ul className="list-disc pl-6 leading-7">
                 <li className="text-slate-700">
                   School Safety: Understanding violence
                 </li>
@@ -49,16 +49,14 @@ const Focus = () => {
                 <li className="text-slate-700">
                   Healthy relationships & Bullying
                 </li>
-                <li className="text-slate-700">
-                  Wellness and Mental Health
-                </li>
+                <li className="text-slate-700">Wellness and Mental Health</li>
                 <li className="text-slate-700">LGBT awareness</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <Grid />
+      <NationalGrid />
     </section>
   );
 };

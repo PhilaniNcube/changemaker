@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const Hero = () => {
+const NationalHero = () => {
   return (
-    <section className="bg-accent relative flex justify-end">
+    <section id="national" className="bg-accent relative flex justify-end">
       <Image
         src="/images/changemakers.png"
         width={1500}
@@ -31,4 +31,4 @@ const Hero = () => {
     </section>
   );
 };
-export default Hero;
+export default NationalHero;

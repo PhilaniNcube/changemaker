@@ -24,9 +24,9 @@ const items = [
   },
 ];
 
-const Grid = () => {
+const NationalGrid = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {items.map((item) => (
         <div
           key={item.id}
@@ -54,4 +54,4 @@ const Grid = () => {
     </div>
   );
 };
-export default Grid;
+export default NationalGrid;

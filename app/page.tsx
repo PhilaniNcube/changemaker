@@ -2,9 +2,12 @@ import { Fragment } from 'react'
 import Hero from './Hero'
 import Mission from './Mission'
 import Link from 'next/link'
-import Focus from './changemakers/nmb/Focus'
-import IconGrid from './IconGrid'
-import Image from 'next/image'
+import NMBDetails from './NMBDetails'
+import NMBFocus from './NMBFocus'
+import NationalHero from "./NationalHero";
+import NationalDetails from "./NationalDetails";
+import NationalFocus from "./NationalFocus";
+
 
 
 export default function Home() {
@@ -23,6 +26,11 @@ export default function Home() {
       </div>
       <Hero />
       <Mission />
+      <NMBDetails />
+      <NMBFocus />
+      <NationalHero />
+      <NationalDetails />
+      <NationalFocus />
     </Fragment>
   );
 }
