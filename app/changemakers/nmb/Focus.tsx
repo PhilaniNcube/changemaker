@@ -3,7 +3,7 @@ import IconGrid from "../../IconGrid";
 const Focus = () => {
   return (
     <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <p className="text-slate-700 text-sm md:text-md leading-7">

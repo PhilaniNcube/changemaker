@@ -4,7 +4,7 @@ import Grid from "./Grid";
 const Focus = () => {
   return (
     <section className="bg-white py-10 text-slate-800">
-      <div className="max-w-7xl mx-auto border-t-2 border-slate-700 py-10">
+      <div className="max-w-7xl mx-auto border-t-2 border-slate-700 py-10 px-4 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <p className="text-slate-700 text-justify text-md">

@@ -1,15 +1,15 @@
 const Mission = () => {
   return (
     <section className="py-10">
-      <div className="max-w-7xl mx-auto text-white">
-        <p className="text-md lg:text-md text-center leading-6">
+      <div className="max-w-7xl mx-auto text-white px-4">
+        <p className="text-md lg:text-md text-justify md:text-center leading-6">
           Changemaker Network aims to capacitate learners&apos; high schools in
           with practical knowledge on relevant social topics. Through activation
           workshops for all Grade 9 learners and intensive changemaker trainings
           for selected learners they can spark positive change in their schools
           and communities.
         </p>
-        <p className="text-md lg:text-md mt-4 text-center leading-6">
+        <p className="text-md lg:text-md mt-4 text-justify md:text-center leading-6">
           The network&apos;s objective is to encourage young people to take
           responsible positive actions, to find constructive solutions and to
           understand that they have the power to impact and influence their

@@ -3,7 +3,7 @@ import Link from "next/link";
 const Implementation = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <p className="text-slate-700 text-sm md:text-md">
             To support the roll-out of the Changemaker Network in the four

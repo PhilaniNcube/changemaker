@@ -66,7 +66,7 @@ const Team = () => {
               width={partner.width}
               height={partner.height}
               alt={partner.title}
-              className="w-2/3 flex items-center justify-center object-contain aspect-video grayscale hover:grayscale-0 cursor-pointer"
+              className="w-2/3 flex items-center justify-center object-contain aspect-video grayscale-0 md:grayscale hover:grayscale-0 cursor-pointer"
             /></div>
           ))}
         </div>

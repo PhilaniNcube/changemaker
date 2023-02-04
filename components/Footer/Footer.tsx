@@ -24,21 +24,21 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className="bg-black py-20">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0">
+        <div className="flex items-center justify-between gap-3">
           <Image
             src="/images/logo_2.svg"
             width={297}
             height={167}
             alt="Logo"
-            className="w-44 object-cover"
+            className="w-36 md:w-44 object-cover"
           />
 
           <div>
-            <p className="text-white text-md">Masifunde Changemaker Network &copy;</p>
+            <p className="text-white text-md lg:text-lg font-bold">Masifunde Changemaker Network &copy;</p>
             <div className="flex flex-col items-start">
               {links.map((link) => (
-                <Link key={link.title} href={link.href} className="text-sm text-white space-y-2 font-medium">{link.title}</Link>
+                <Link key={link.title} href={link.href} className="text-xs lg:text-sm text-white space-y-2 font-medium">{link.title}</Link>
               ))}
             </div>
           </div>
