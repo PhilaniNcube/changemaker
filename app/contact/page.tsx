@@ -1,4 +1,9 @@
+import { Fragment } from "react";
+import Contact from "./Contact";
+
 const page = () => {
-  return <div>Contact</div>;
+  return <Fragment>
+    <Contact />
+  </Fragment>;
 };
 export default page;

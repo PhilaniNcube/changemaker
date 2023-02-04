@@ -8,28 +8,27 @@ import { Bars3Icon, XMarkIcon} from "@heroicons/react/24/outline"
 import Image from "next/image";
 
  const links = [
-  {
-    title: "Home",
-    href: "/",
-
-  },
-  {
-    title: "About Us",
-    href: "/about",
-
-  },
-  {
-    title: "MCN In Action",
-    href: "/in-action",
-
-  },
-  {
-    title: "Partner Area",
-    href: "/partner-area",
-
-  },
-
-]
+   {
+     title: "Home",
+     href: "/",
+   },
+   {
+     title: "About Us",
+     href: "/about",
+   },
+   {
+     title: "MCN In Action",
+     href: "/in-action",
+   },
+   {
+     title: "Partner Area",
+     href: "/partner-area",
+   },
+   {
+     title: "Contact Us",
+     href: "/contact",
+   },
+ ];
 
 const Navbar = () => {
   const path = usePathname()

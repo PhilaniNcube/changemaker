@@ -19,6 +19,10 @@ import React from 'react'
      title: "Partner Area",
      href: "/partner-area",
    },
+   {
+     title: "Contact Us",
+     href: "/contact",
+   },
  ];
 
 const Footer = () => {
