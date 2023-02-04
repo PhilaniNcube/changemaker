@@ -1,4 +1,8 @@
+"use client"
+
 import Image from "next/image";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 
 const Team = () => {
@@ -57,18 +61,24 @@ const Team = () => {
         <p className="text-slate-700 text-xl lg:text-3xl font-medium text-center">
           Partners involved in making the Changemaker Network a reality
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {partners.map((partner) => (
-            <div className="flex w-full items-center justify-center" key={partner.id}>
-            <Image
-              key={partner.id}
-              src={partner.image}
-              width={partner.width}
-              height={partner.height}
-              alt={partner.title}
-              className="w-2/3 flex items-center justify-center object-contain aspect-video grayscale-0 md:grayscale hover:grayscale-0 cursor-pointer"
-            /></div>
-          ))}
+        <div className="">
+          <Carousel autoPlay={true} infiniteLoop={true} showArrows stopOnHover={true} showThumbs={true}  >
+            {partners.map((partner) => (
+              <div
+                className="flex w-full items-center justify-center mt-10"
+                key={partner.id}
+              >
+                <Image
+                  key={partner.id}
+                  src={partner.image}
+                  width={partner.width}
+                  height={partner.height}
+                  alt={partner.title}
+                  className="h-[200px] flex items-center justify-center object-contain cursor-pointer"
+                />
+              </div>
+            ))}
+          </Carousel>
         </div>
 
         <h2 className="text-slate-800 font-extrabold text-4xl lg:text-5xl text-center mt-12 mb-5">
