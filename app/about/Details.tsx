@@ -3,7 +3,7 @@ import Grid from "./Grid";
 const Details = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="max-w-7xl mx-auto px-8 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="w-full">
           <h2 className="font-extrabold text-slate-800 text-4xl lg:text-6xl">
             NISSP
@@ -15,7 +15,7 @@ const Details = () => {
         </div>
 
         <div className="w-full">
-          <p className="text-md lg:text-lg text-slate-800 mb-4 text-justify">
+          <p className="text-md lg:text-lg text-slate-800 mb-4 text-justify ">
             Local cooperation on the National Inclusive and Safer Schools
             Partnership (NISSP) The National Inclusive and Safer Schools
             Partnership (NISSP) of the Department of Basic Education is a joint

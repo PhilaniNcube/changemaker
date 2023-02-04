@@ -97,14 +97,14 @@ const Navbar = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="absolute top-0 left-0 w-screen bg-white h-screen flex z-50"
+                  className="absolute top-0 left-0 w-screen translate-y-4 h-fit flex z-50"
                 >
                   <XMarkIcon
                     className="h-8 w-8 text-black absolute top-4 right-6"
                     onClick={closeMenu}
                   />
 
-                  <nav className="flex flex-col px-6 space-y-4 justify-between max-w-[95%] mx-auto items-center py-8 w-full">
+                  <nav className="flex flex-col px-6 space-y-4 justify-between max-w-[90%] mx-auto bg-slate-200 rounded-lg shadow-md items-start py-8 w-full">
                     {links.map((link, i) => (
                       <Link
                         className="text-black font-medium text-xl"
