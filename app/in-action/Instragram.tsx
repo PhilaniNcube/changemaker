@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import Image from "next/image";
@@ -25,7 +26,7 @@ const Instragram =  ({feed}:ComponentProps) => {
                 key={item.id}
                 className="w-full cursor-pointer aspect-square rounded-md group relative isolate"
               >
-                <Image
+                <img
                   src={item.media_url}
                   width={500}
                   height={500}
