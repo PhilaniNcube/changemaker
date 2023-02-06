@@ -29,7 +29,7 @@ const Instragram =  ({feed}:ComponentProps) => {
             {/* <h1 className="text-2xl md:text-4xl font-bold text-slate-800">
               MCN In Action
             </h1> */}
-            <div className="min-w-[500px] mt-4 text-slate-700">
+            <div className="max-w-[500px] mt-4 text-slate-700">
               <div
                 className="fb-page "
                 data-href="https://www.facebook.com/profile.php?id=100083194785525"
