@@ -18,9 +18,18 @@ const NMBDetails = () => {
           <p className="font-medium text-md leading-7 text-justify max-w-[55ch]">
             Masifunde&apos;s Changemaker Network aims to capacitate learners
             from 45 high schools in the NMBM with practical knowledge on
-            relevant social topics. Through activation workshops for all Grade 9
-            learners and intensive changemaker trainings for selected learnaers
-            they can spark positive change in their schools and communities.
+            relevant social topics.
+          </p>
+          <p className="font-medium text-md leading-7 text-justify max-w-[55ch]">
+            The programmes can help guide learners that may be exposed to or
+            experiencing violence to find coping skills, positive behavioural
+            support, or peer-to-peer education. Such programmes can represent
+            safe spaces for children to disclose experiences of violence,
+            develop leadership skills, change at-risk behaviours and overall
+            improve their resilience. Furthermore, this programme makes use of a
+            peer-to-peer intervention strategy as it has been proven to work and
+            encourage positive influence within schools and communities in
+            general.
           </p>
         </div>
       </div>

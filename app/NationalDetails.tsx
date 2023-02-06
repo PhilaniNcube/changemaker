@@ -2,7 +2,7 @@
 const Details = () => {
   return (
     <section className="bg-white pt-10">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0 columns-sm lg:columns-3 gap-10">
+      <div className="max-w-7xl mx-auto px-8 lg:px-0 gap-10">
         <p className="text-slate-700 text-justify text-md leading-7">
           The Changemaker Network model is a whole-of-school community
           intervention that activates, provides capacity and supports the role
