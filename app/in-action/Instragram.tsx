@@ -2,6 +2,7 @@
 "use client"
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Feed } from "./page";
 
@@ -16,11 +17,32 @@ const Instragram =  ({feed}:ComponentProps) => {
   return (
     <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-8 lg:px-0">
-
-
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="w-full">
-            <h1 className="text-2xl md:text-4xl font-bold text-slate-800">MCN In Action</h1>
+            <h1 className="text-2xl md:text-4xl font-bold text-slate-800">
+              MCN In Action
+            </h1>
+            <div id="fb-root"></div>
+            <div
+              className="fb-page"
+              data-href="https://www.facebook.com/profile.php?id=100083194785525"
+              data-tabs="timeline"
+              data-width=""
+              data-height=""
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote
+                cite="https://www.facebook.com/profile.php?id=100083194785525"
+                className="fb-xfbml-parse-ignore"
+              >
+                <Link href="https://www.facebook.com/profile.php?id=100083194785525">
+                  Changemaker Network
+                </Link>
+              </blockquote>
+            </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {feed.data.map((item) => (
