@@ -49,14 +49,14 @@ const Grid = () => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="w-full h-full aspect-square p-8 bg-accent group relative isolate"
+          className="w-full aspect-square p-8 bg-accent group relative isolate"
         >
           <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
             <Image
               src={item.icon}
               width={50}
               height={50}
-              className="w-32 h-32 object-contain"
+              className="w-16 object-cover"
               alt={item.title}
             />
             {/* <p className="font-bold text-lg md:text-2xl mt-2 text-center">

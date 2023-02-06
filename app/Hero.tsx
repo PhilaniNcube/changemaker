@@ -23,31 +23,30 @@ export default function Hero() {
             Why Not <span className="font-extrabold italic">Now?</span>
           </h1>
           <p className="text-white text-sm md:text-md lg:text-lg text-justify leading-7 mt-6 max-w-[65ch]">
-            Changemaker Network aims to capacitate learners&apos; high schools with
-            practical knowledge on relevant social topics, such as school
+            Changemaker Network aims to capacitate learners&apos; high schools
+            with practical knowledge on relevant social topics, such as school
             safety, violence, and bullying. Through activation workshops for all
             Grade 9 learners and intensive changemaker trainings for selected
             learners they can spark positive change in their schools and
             communities.
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start w-fit gap-3 mt-6 text-black">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start gap-3 mt-6 text-black">
             <a
               href="/#nmb"
-              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 lg:w-1/2"
+              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[200px]"
             >
               <span className="uppercase font-bold text-xl flex items-center">
-                NMB <ChevronDoubleRightIcon className="h-8 w-8 text-bold" />{" "}
+                NMB &rarr;
               </span>
               <span className="uppercase text-xs">Changemakers </span>
             </a>
             <a
               href="/#national"
-              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 lg:w-1/2"
+              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[200px]"
             >
               <span className="uppercase font-bold text-xl flex items-center">
-                National
-                <ChevronDoubleRightIcon className="h-8 w-8 text-bold" />{" "}
+                National &rarr;
               </span>
               <span className="uppercase text-xs">Changemakers </span>
             </a>

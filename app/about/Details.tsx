@@ -8,23 +8,21 @@ const Details = () => {
         <div className="w-full">
           <h2 className="font-extrabold text-slate-800 text-4xl lg:text-6xl">
             NISSP
-          </h2>
-
-          <Image
+          </h2>{" "}
+          <h4 className="font-bold text-slate-800 text-2xl lg:text-3xl">
+            National Inclusive and Safer Schools Partnership
+          </h4>
+          {/* <Image
             src="/images/books.jpg"
             width={640}
             height={960}
             alt="Books"
             className="w-full object-cover aspect-video rounded-lg mt-5"
-          />
+          /> */}
         </div>
 
         <div className="w-full">
           {" "}
-          <h4 className="font-bold text-slate-800 text-2xl lg:text-3xl">
-            National Inclusive and Safer
-            Schools Partnership
-          </h4>
           <p className="text-md lg:text-lg text-slate-800 mb-4 text-justify ">
             The National Inclusive and Safer Schools Partnership (NISSP) of the
             Department of Basic Education is a joint national partnership to

@@ -16,8 +16,8 @@ import React from 'react'
      href: "/in-action",
    },
    {
-     title: "Partner Area",
-     href: "/partner-area",
+     title: "Learner Area",
+     href: "/learner-area",
    },
    {
      title: "Contact Us",

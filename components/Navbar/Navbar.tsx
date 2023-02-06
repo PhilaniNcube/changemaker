@@ -21,8 +21,8 @@ import Image from "next/image";
      href: "/in-action",
    },
    {
-     title: "Partner Area",
-     href: "/partner-area",
+     title: "Learner Area",
+     href: "/learner-area",
    },
    {
      title: "Contact Us",
@@ -65,7 +65,7 @@ const Navbar = () => {
                   path === link.href
                     ? " border-accent text-accent"
                     : "border-black text-white"
-                } border-b-4  text-md`}
+                } border-b-4 hover:text-accent text-md`}
               >
                 {link.title}
               </Link>
