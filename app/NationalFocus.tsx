@@ -28,11 +28,11 @@ const Focus = () => {
           <div className="flex flex-col md:flex-row gap-6">
             <h3 className="font-extrabold text-4xl uppercase">Focus</h3>
             <div>
-              <p className="text-lg font-bold underline text-slate-800 leading-7">
+              <p className="text-lg font-bold  text-slate-800 leading-7">
                 The Changemaker Network will, among others, focus on the
                 following topics:
               </p>
-              <ul className="list-disc pl-6 leading-7">
+              <ul className="list-disc pl-6 text-sm md:text-md leading-7">
                 <li className="text-slate-700">
                   School Safety: Understanding violence
                 </li>

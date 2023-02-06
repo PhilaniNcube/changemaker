@@ -23,11 +23,12 @@ export default function Hero() {
             Why Not <span className="font-extrabold italic">Now?</span>
           </h1>
           <p className="text-white text-sm md:text-md lg:text-lg text-justify leading-7 mt-6 max-w-[65ch]">
-            Changemaker Network aims to capacitate learners&apos; high schools
-            in with practical knowledge on relevant social topics. Through
-            activation workshops for all Grade 9 learners and intensive
-            changemaker trainings for selected learners they can spark positive
-            change in their schools and communities.
+            Changemaker Network aims to capacitate learners&apos; high schools with
+            practical knowledge on relevant social topics, such as school
+            safety, violence, and bullying. Through activation workshops for all
+            Grade 9 learners and intensive changemaker trainings for selected
+            learners they can spark positive change in their schools and
+            communities.
           </p>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start w-fit gap-3 mt-6 text-black">

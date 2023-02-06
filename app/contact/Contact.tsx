@@ -15,7 +15,7 @@ function Contact() {
                 If you have any questions or enquiries, please don’t hesitate to
                 call or email
               </p>
-              <h2 className="text-lg underline text-white font-medium">
+              <h2 className="text-lg  text-white font-medium">
                 Masifunde Changemaker Network NMB coordinator
               </h2>
               <p className="text-white pt-4">Andisiwe Mbelekane</p>
@@ -41,7 +41,7 @@ function Contact() {
                 </div>
                 <p className="pl-4 text-white text-base">076 740 6241</p>
               </div>
-              <h2 className="text-lg underline text-white mt-8 font-medium">
+              <h2 className="text-lg  text-white mt-8 font-medium">
                 Masifunde Changemaker Network Nationwide coordinator
               </h2>
               <p className="text-white pt-4">Debaneigh Jordaan</p>

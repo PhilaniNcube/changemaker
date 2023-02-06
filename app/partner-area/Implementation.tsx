@@ -12,7 +12,7 @@ const Implementation = () => {
             Changemaker network in five high schools.
           </p>
           <div className="w-full text-slate-800">
-            <h3 className="text-md md:text-lg font-bold underline mb-3">
+            <h3 className="text-md md:text-lg font-bold  mb-3">
               Please note: Applications only from the following provinces and
               districts permitted:
             </h3>

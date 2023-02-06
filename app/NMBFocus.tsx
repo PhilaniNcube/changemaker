@@ -7,14 +7,24 @@ const NMBFocus = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p className="text-slate-700 text-sm md:text-md leading-7 max-w-[68ch]">
-              The network&apos;s objective is to encourage young people to take
-              responsible positive actions, to find constructive solutions and
-              to understand that they have the power to impact and influence
-              their peers and consequently their communities – and advocate for
-              vulnerable groups. By doing that, they create an environment that
-              enthuses them to be resilient and reimagine possibilities above
-              and over socio-economic disadvantages.
+            <p className="text-slate-700 text-justify text-md leading-7 max-w-[60ch]">
+              Masifunde&apos;s Changemaker Network aims to capacitate learners
+              from 45 high schools in the NMBM with practical knowledge on
+              relevant social topics. Through activation workshops for all Grade
+              9 learners and intensive changemaker trainings for selected
+              learners they can spark positive change in their schools and
+              communities.
+            </p>
+            <p className="text-slate-700 text-justify text-md leading-7 max-w-[60ch] mt-3">
+              The programmes can help guide learners that may be exposed to or
+              experiencing violence to find coping skills, positive behavioural
+              support, or peer-to-peer education. Such programmes can represent
+              safe spaces for children to disclose experiences of violence,
+              develop leadership skills, change at-risk behaviours and overall
+              improve their resilience. Furthermore, this programme makes use of
+              a peer-to-peer intervention strategy as it has been proven to work
+              and encourage positive influence within schools and communities in
+              general.
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-6">
@@ -22,7 +32,7 @@ const NMBFocus = () => {
               Focus
             </h3>
             <div>
-              <p className="text-slate-800 underline text-lg font-bold leading-7">
+              <p className="text-slate-800  text-lg font-bold leading-7">
                 The Changemaker Network will, among others, focus on the
                 following topics:
               </p>
