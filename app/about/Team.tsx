@@ -88,7 +88,7 @@ const Team = () => {
         <h2 className="text-slate-800 font-extrabold text-4xl lg:text-5xl text-center mb-5">
           The Team
         </h2>
-        <p className="text-slate-700 text-xl mb-6 lg:text-3xl font-medium text-center">
+        <p className="text-slate-700 text-md mb-6 lg:text-lg mt-6 font-medium text-center">
           Partners involved in making the Changemaker Network a reality
         </p>
         <div className="flex items-center relative isolate">
@@ -127,7 +127,7 @@ const Team = () => {
                   width={partner.width}
                   height={partner.height}
                   alt={partner.title}
-                  className="h-[200px] flex items-center justify-center object-contain cursor-pointer"
+                  className="h-[180px] flex items-center justify-center object-contain cursor-pointer"
                 />
               </Link>
             ))}
@@ -137,7 +137,7 @@ const Team = () => {
         <h2 className="text-slate-800 font-extrabold text-4xl lg:text-5xl text-center mt-12 mb-5">
           Civil Society Organisations
         </h2>
-        <p className="text-slate-700 text-xl lg:text-3xl font-medium text-center">
+        <p className="text-slate-700 text-md lg:text-lg font-medium text-center">
           Let us introduce you to our implementation partners
         </p>
       </div>

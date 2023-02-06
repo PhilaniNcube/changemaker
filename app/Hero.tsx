@@ -22,7 +22,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white">
             Why Not <span className="font-extrabold italic">Now?</span>
           </h1>
-          <p className="text-white text-sm md:text-md lg:text-lg text-justify leading-7 mt-6 max-w-[65ch]">
+          <p className="text-white text-sm md:text-md lg:text-base text-left leading-7 mt-6 max-w-[65ch]">
             Masifunde&apos;s Changemaker Network aims to capacitate high school
             learners&apos; with practical knowledge on relevant social topics such as
             school safety, violence and bullying. Through activation workshops

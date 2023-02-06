@@ -30,7 +30,7 @@ const NationalGrid = () => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="w-full aspect-square p-8 bg-accent group relative isolate"
+          className="w-full aspect-square p-8 bg-[#2a2d2e] group relative isolate"
         >
           <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
             <Image

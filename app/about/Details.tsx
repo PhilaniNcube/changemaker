@@ -23,14 +23,14 @@ const Details = () => {
 
         <div className="w-full">
           {" "}
-          <p className="text-md lg:text-lg text-slate-800 mb-4 text-justify ">
+          <p className="text-md lg:text-base text-slate-800 mb-4 text-justify ">
             The National Inclusive and Safer Schools Partnership (NISSP) of the
             Department of Basic Education is a joint national partnership to
             promote the collective action of the whole-of-school community to
             prevent violence and gender-based violence (GBV) occurring in South
             African schools.
           </p>
-          <p className="text-md lg:text-lg text-slate-800 mb-4 text-justify">
+          <p className="text-md lg:text-base text-slate-800 mb-4 text-justify">
             The NISSP aims to do this by coordinating, co-resourcing and jointly
             implementing school-based gender-based violence prevention
             programmes that will empower the role of District Officials, Civil
