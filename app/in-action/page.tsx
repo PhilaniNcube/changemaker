@@ -45,7 +45,8 @@ const page = async () => {
         crossOrigin="anonymous"
         src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0"
         nonce="i0LiW14P"
-      />
+      />{" "}
+      <div id="fb-root"></div>
       <Instragram feed={instgramFeed} />
     </Fragment>
   );
