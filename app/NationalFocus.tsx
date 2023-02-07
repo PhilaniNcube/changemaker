@@ -7,22 +7,9 @@ const Focus = () => {
       <div className="max-w-7xl mx-auto  py-10 px-8 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
+
             <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
-              The Changemaker Network model is a whole-of-school community
-              intervention that activates, provides capacity and supports the
-              role of local Department of Education and school communities at
-              large: learners, educators, community, volunteers, stake-holders.
-              This project has been implemented within the Nelson Mandela Bay
-              and aims to work within 45 high schools within this region. It
-              further aims to be replicated within 4 provinces in South Africa.
-              Specifically; Eastern Cape, KwaZulu-Natal, North West and Limpopo.
-            </p>
-            <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
-              Within these 4 provinces, Civil Society Organisations (CSO) have
-              applied and 5 will be selected from each province to become
-              implementation partners of the MCN. Each CSO will work within 5
-              schools within their district. Thus, resulting in 20 districts and
-              25 schools per province and ultimately 100 schools nationwide.
+           School-based interventions can positively influence communities that experience high levels of violence. Such school-based programmes offer resources and support structures that promote change in attitudes and behaviours of learners to influence their peers and community. The Masifunde Changemaker Network (MCN) is one example of such a school based programme.
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-6">
