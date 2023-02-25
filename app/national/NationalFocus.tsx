@@ -177,7 +177,7 @@ const Focus = () => {
               </div>
             </div>{" "}
             <p className="text-lg text-slate-800 leading-7 mt-6 font-medium">
-              The ChangeMakers' Network aims to be replicated within 4 provinces
+              The ChangeMakers&apos; Network aims to be replicated within 4 provinces
               in South Africa. Specifically:
               <span className="font-extrabold">
                 {" "}
