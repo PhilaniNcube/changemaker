@@ -36,7 +36,7 @@ const items = [
   },
   {
     id: 6,
-    icon: "/images/team.svg",
+    icon: "/images/speaker.svg",
     title: "Activation Workshops",
     text: "A digitized tool to monitor and evaluate the coordinated and co-resourced work across South Africa.",
   },
@@ -49,7 +49,7 @@ const Grid = () => {
       <p className="text-2xl md:text-3xl font-bold text-center text-slate-800 mt-10 mb-6">
         The six gaps identified in the research conducted to formulate NISSP
       </p>
-      <div className=" mt-4 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className=" mt-4 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-16 lg:gap-28">
         {items.map((item) => (
           <div
             key={item.id}

@@ -217,7 +217,7 @@ function Contact() {
                       name="title"
                       className="focus:outline-none focus:border focus:border-accent font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
                     >
-                      <option className="text-xs">I a funder</option>
+                      <option className="text-xs">I am a funder</option>
                       <option className="text-xs">
                         I am an implementation partner from MCN NMB
                       </option>

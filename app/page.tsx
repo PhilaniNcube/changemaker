@@ -2,12 +2,7 @@ import { Fragment } from 'react'
 import Hero from './Hero'
 import Mission from './Mission'
 import Link from 'next/link'
-import NMBDetails from './NMBDetails'
-import NMBFocus from './NMBFocus'
-import NMBSchools from "./NMBSchools";
-import NationalHero from "./NationalHero";
-import NationalDetails from "./NationalDetails";
-import NationalFocus from "./NationalFocus";
+import Story from './Story';
 
 
 
@@ -27,12 +22,7 @@ export default function Home() {
       </div>
       <Hero />
       <Mission />
-      <NMBDetails />
-      <NMBFocus />
-      <NMBSchools />
-      <NationalHero />
-      <NationalDetails />
-      <NationalFocus />
+      <Story />
     </Fragment>
   );
 }

@@ -1,11 +1,11 @@
 import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 
-import { Inter, Roboto} from "@next/font/google";
+import {  Roboto} from "next/font/google";
 import Link from 'next/link';
 import Footer from '@/components/Footer/Footer';
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"], display: "swap" });
 

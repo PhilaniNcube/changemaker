@@ -50,9 +50,17 @@ const NMBFocus = () => {
                 <li className="text-slate-700 leading-7">
                   Healthy relationships & Bullying
                 </li>
-                <li className="text-slate-700 leading-7">Wellness and Mental Health</li>
+                <li className="text-slate-700 leading-7">
+                  Wellness and Mental Health
+                </li>
                 <li className="text-slate-700 leading-7">LGBT awareness</li>
-              </ul>
+              </ul>{" "}
+              <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch] mt-3">
+                Spark magazines contain more information on these focus topics,
+                compiled by researchers and learners. Content allows readers to
+                learn more about the topics as well as engage in practical tools
+                and activities that one can put into practice and do with peers.
+              </p>
             </div>
           </div>
         </div>

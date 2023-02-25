@@ -20,6 +20,10 @@ import React from 'react'
      href: "/learner-area",
    },
    {
+     title: "Partner Area",
+     href: "/partner-area",
+   },
+   {
      title: "Contact Us",
      href: "/contact",
    },

@@ -34,24 +34,24 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start gap-3 mt-6 text-black">
-            <a
-              href="/#nmb"
-              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[200px]"
+            <Link
+              href="/nmb"
+              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
               <span className="uppercase font-bold text-xl flex items-center">
                 NMB &rarr;
               </span>
               <span className="uppercase text-xs">Changemakers </span>
-            </a>
-            <a
-              href="/#national"
-              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[200px]"
+            </Link>
+            <Link
+              href="/national"
+              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
               <span className="uppercase font-bold text-xl flex items-center">
-                National &rarr;
+               MCN National &rarr;
               </span>
               <span className="uppercase text-xs">Changemakers </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
