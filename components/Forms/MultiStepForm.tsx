@@ -57,8 +57,19 @@ console.log({
 
 if(high_school_work !== 'yes' || gender_based_violence_work !== 'yes' || child_protection_protocols !== 'yes' || audited_financial_statements !== 'yes' || registered !== 'yes' || bank_account !== 'yes' || tax_clearance !== 'yes' || active_social_media !== 'yes') {
   alert('You currently do not meet the requirements to be part of the Changemaker Network. Your organisation needs to be able to answer yes to all the questions')
+} else if (
+  high_school_work === "yes" &&
+  gender_based_violence_work === "yes" &&
+  child_protection_protocols === "yes" &&
+  audited_financial_statements === "yes" &&
+  registered === "yes" &&
+  bank_account === "yes" &&
+  tax_clearance === "yes" &&
+  active_social_media === "yes"
+) {
+  router.push("/apply");
 } else {
-  router.push('/')
+    router.push("/");
 }
 
   }

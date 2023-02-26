@@ -1,4 +1,10 @@
+import Hero from "./Hero";
+import Requirements from "./Requirements";
+
 const page = () => {
-  return <div>Apply</div>;
+  return <main className="">
+     <Hero />
+     <Requirements />
+  </main>;
 };
 export default page;

@@ -3,12 +3,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import {
@@ -17,6 +12,10 @@ import {
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import { User, useUser } from "@supabase/auth-helpers-react";
+import { useSupabase } from "../Auth/SupabaseProvider";
+import { useRouter } from "next/navigation";
+
 
 const about = [
   {
@@ -41,11 +40,27 @@ function classNames(...classes:string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+type Props = {
+  user: User | null
+}
+
+export default function Navbar({user}:Props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const router = useRouter()
+
+  const {supabase} = useSupabase()
+
+    const handleLogout = async () => {
+      await supabase.auth.signOut();
+      router.push('/')
+    };
+
+
+  console.log({user})
+
   return (
-    <header className="bg-black">
+    <header className="bg-black z-50 ">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -150,9 +165,21 @@ export default function Example() {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-md font-semibold leading-6 text-accent">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          {!user ? (
+            <Link
+              href="/login"
+              className="text-md font-semibold leading-6 text-accent"
+            >
+              Log in <span aria-hidden="true">&rarr;</span>
+            </Link>
+          ) : (
+            <span
+              onClick={handleLogout}
+              className="text-md font-semibold leading-6 px-3 py-1 rounded-md bg-red-600 text-white cursor-pointer"
+            >
+              Log Out <span aria-hidden="true">&rarr;</span>
+            </span>
+          )}
         </div>
       </nav>
       <Dialog
@@ -238,12 +265,12 @@ export default function Example() {
                 </Link>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
+                <Link
+                  href="/login"
                   className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
