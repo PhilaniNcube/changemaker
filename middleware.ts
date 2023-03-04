@@ -2,7 +2,7 @@ import { createMiddlewareSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 
 import type { NextRequest } from 'next/server'
-import { Database } from './schema'
+import {Database} from './schema'
 
 
 export async function middleware(req: NextRequest) {
@@ -14,6 +14,7 @@ export async function middleware(req: NextRequest) {
     data: { session },
   } = await supabase.auth.getSession()
 
+  console.log(session)
 
   return res
 }
