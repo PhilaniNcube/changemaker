@@ -9,26 +9,43 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      admins: {
+        Row: {
+          id: string
+          created_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          id?: string
+          created_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          id?: string
+          created_at?: string | null
+          user_id?: string | null
+        }
+      }
       districts: {
         Row: {
           id: string
           created_at: string | null
-          name: string | null
-          slug: string | null
+          name: string
+          slug: string
           province_id: string | null
         }
         Insert: {
           id?: string
           created_at?: string | null
-          name?: string | null
-          slug?: string | null
+          name?: string
+          slug?: string
           province_id?: string | null
         }
         Update: {
           id?: string
           created_at?: string | null
-          name?: string | null
-          slug?: string | null
+          name?: string
+          slug?: string
           province_id?: string | null
         }
       }
@@ -36,52 +53,58 @@ export interface Database {
         Row: {
           id: string
           created_at: string | null
-          name: string | null
+          name: string
           facebook: string | null
           twitter: string | null
           website: string | null
           description: string | null
           district_id: string | null
           province_id: string | null
+          email: string | null
+          tel: string | null
         }
         Insert: {
           id?: string
           created_at?: string | null
-          name?: string | null
+          name?: string
           facebook?: string | null
           twitter?: string | null
           website?: string | null
           description?: string | null
           district_id?: string | null
           province_id?: string | null
+          email?: string | null
+          tel?: string | null
         }
         Update: {
           id?: string
           created_at?: string | null
-          name?: string | null
+          name?: string
           facebook?: string | null
           twitter?: string | null
           website?: string | null
           description?: string | null
           district_id?: string | null
           province_id?: string | null
+          email?: string | null
+          tel?: string | null
         }
       }
       profiles: {
         Row: {
           id: string
-          first_name: string | null
-          last_name: string | null
+          first_name: string
+          last_name: string
         }
         Insert: {
           id: string
-          first_name?: string | null
-          last_name?: string | null
+          first_name?: string
+          last_name?: string
         }
         Update: {
           id?: string
-          first_name?: string | null
-          last_name?: string | null
+          first_name?: string
+          last_name?: string
         }
       }
       provinces: {
@@ -144,7 +167,10 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

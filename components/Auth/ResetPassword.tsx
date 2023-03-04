@@ -1,40 +1,42 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useRef, useState } from "react";
 import { useSupabase } from "./SupabaseProvider";
 
-const Login = () => {
+const ResetPassword = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-const {supabase} = useSupabase()
+  const { supabase } = useSupabase();
 
   let form = useRef(null);
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(event)
+    console.log(event);
 
-    if(typeof email !== 'string' || typeof password !== 'string') {
-        throw new Error('Please provide valid details')
+    if (typeof email !== "string" || typeof password !== "string") {
+      throw new Error("Please provide valid details");
     }
 
-    const {data, error} = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
+ const { data, error } = await supabase.auth.updateUser({
+   email,
+   password,
+ });
 
-    if(error) {
-     alert(error.message)
-     console.log({error})
+    if (error) {
+      alert(error.message);
+      console.log({ error });
     }
 
-    console.log({data, error})
 
+    if(data) {
+      console.log({ data, error });
+      alert('Your password has been reset successfully')
+    }
 
 
     // Place your API call here to submit your payload.
@@ -110,16 +112,14 @@ const {supabase} = useSupabase()
                   Remember Me
                 </label>
               </div>
-              <Link href="forgot-password" className="text-xs text-accent">
-                Forgot Password?
-              </Link>
+
             </div>
             <div className="px-2 sm:mb-16 sm:px-6">
               <button
                 type="submit"
                 className="focus:outline-none w-full sm:w-auto bg-accent transition duration-150 ease-in-out hover:bg-accent/80 rounded text-white px-8 py-3 text-sm mt-6"
               >
-                Login to Your Account
+               Reset Password
               </button>
             </div>
           </div>
@@ -139,4 +139,4 @@ const {supabase} = useSupabase()
     </section>
   );
 };
-export default Login;
+export default ResetPassword;
