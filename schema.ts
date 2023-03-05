@@ -188,7 +188,7 @@ export interface Database {
           created_at: string | null
           name: string | null
           slug: string | null
-          organisation_id: string | null
+          organisation_id: Database['public']['Tables']['workshops']['Row']
           date: string | null
           time: string | null
           description: string | null

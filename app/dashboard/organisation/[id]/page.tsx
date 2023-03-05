@@ -40,7 +40,7 @@ console.log({documents})
       <div className="col-span-1">
         <h2 className="font-bold text-slate-700 text-2xl mb-3">Upload a document for this organisation</h2>
         <DocumentsUpload organisation={organisation} />
-        <div className="w-full grid grid-cols-2 gap-2 mt-4 py-4 border-t-2 border-gray-600">
+        <div className="w-full grid grid-cols-2 gap-6 mt-4 py-4 border-t-2 border-gray-600">
           {documents.map((doc) => (
            <span key={doc.id} className="flex items-center space-x-2">
             <div className="w-full aspect-square bg-slate-300 flex flex-col items-center justify-center space-y-3 rounded">
