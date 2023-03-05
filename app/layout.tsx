@@ -30,7 +30,7 @@ export default async function RootLayout({
 
     const {data: {user}} = await supabase.auth.getUser()
 
-    console.log({user})
+
 
   return (
     <html lang="en" className={`${roboto.className} bg-black`}>

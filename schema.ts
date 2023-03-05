@@ -59,9 +59,9 @@ export interface Database {
           website: string | null
           description: string | null
           district_id: string | null
-          province_id: string | null
           email: string | null
           tel: string | null
+          slug: string | null
         }
         Insert: {
           id?: string
@@ -72,9 +72,9 @@ export interface Database {
           website?: string | null
           description?: string | null
           district_id?: string | null
-          province_id?: string | null
           email?: string | null
           tel?: string | null
+          slug?: string | null
         }
         Update: {
           id?: string
@@ -85,9 +85,9 @@ export interface Database {
           website?: string | null
           description?: string | null
           district_id?: string | null
-          province_id?: string | null
           email?: string | null
           tel?: string | null
+          slug?: string | null
         }
       }
       profiles: {
