@@ -26,7 +26,7 @@ const workshopSchema = z.object({
   organisation_id: z.string().uuid(),
   date: z.string(),
   time: z.string(),
-  image: z.string()
+
 });
 
 type Workshop = z.infer<typeof workshopSchema>;
