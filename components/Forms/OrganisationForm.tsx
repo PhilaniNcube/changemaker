@@ -4,7 +4,7 @@ import { Database } from "@/schema";
 import slugify from 'slugify'
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from "Zod";
+import {z} from 'zod'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useSupabase } from "../Auth/SupabaseProvider";
