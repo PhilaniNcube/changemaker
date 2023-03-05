@@ -5,7 +5,7 @@ type Props = {
 };
 
 const OrganisationCard = ({ organisation }: Props) => {
-  console.log(organisation);
+
   return (
     <div className="container mx-auto px-6 flex items-start justify-center">
       <div className="w-full">

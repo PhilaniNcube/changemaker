@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { Fragment, useState } from "react";
@@ -56,8 +57,6 @@ export default function Navbar({user}:Props) {
       router.push('/')
     };
 
-
-  console.log({user})
 
   return (
     <header className="bg-black z-50 ">

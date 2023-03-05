@@ -2,9 +2,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 import  createClient  from "../lib/supabase-server";
 import {  Roboto} from "next/font/google";
-import Link from 'next/link';
 import Footer from '@/components/Footer/Footer';
-import { Database } from '@/schema';
 import SupabaseListener from '@/components/Auth/SupabaseListener';
 import SupabaseProvider from '@/components/Auth/SupabaseProvider';
 

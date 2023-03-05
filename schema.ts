@@ -49,6 +49,61 @@ export interface Database {
           province_id?: string | null
         }
       }
+      documents: {
+        Row: {
+          id: string
+          created_at: string | null
+          src: string | null
+          organisation_id: Database['public']['Tables']['organisations']['Row']
+          title: string | null
+        }
+        Insert: {
+          id?: string
+          created_at?: string | null
+          src?: string | null
+          organisation_id: string
+          title?: string | null
+        }
+        Update: {
+          id?: string
+          created_at?: string | null
+          src?: string | null
+          organisation_id?: string
+          title?: string | null
+        }
+      }
+      media: {
+        Row: {
+          id: string
+          created_at: string | null
+          src: string
+          height: number | null
+          width: number | null
+          type: string | null
+          filename: string | null
+          organisation_id: string
+        }
+        Insert: {
+          id?: string
+          created_at?: string | null
+          src?: string
+          height?: number | null
+          width?: number | null
+          type?: string | null
+          filename?: string | null
+          organisation_id: string
+        }
+        Update: {
+          id?: string
+          created_at?: string | null
+          src?: string
+          height?: number | null
+          width?: number | null
+          type?: string | null
+          filename?: string | null
+          organisation_id?: string
+        }
+      }
       organisations: {
         Row: {
           id: string

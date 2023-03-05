@@ -29,7 +29,7 @@ const SideBar = () => {
         >
           <BuildingStorefrontIcon className="text-slate-900 h-8 w-8" />
           <span className="text-lg font-medium text-slate-700">
-            Organisation
+            Organisations
           </span>
         </Link>
         <Link

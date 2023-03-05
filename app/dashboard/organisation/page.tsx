@@ -14,7 +14,6 @@ const page = async () => {
 
 const organisations = await getOrganisations()
 
-console.log({organisations})
 
   return (
     <div className="w-full">
