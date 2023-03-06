@@ -4,9 +4,9 @@ const Hero = () => {
   return (
     <section className="relative bg-white">
       <Image
-        src="/images/school.jpeg"
-        width={6000}
-        height={4000}
+        src="/images/about.jpg"
+        width={3563}
+        height={2008}
         alt="About"
         priority
         className="w-full bg-white aspect-[3/1] object-cover"
