@@ -32,7 +32,7 @@ const SignUp = () => {
     }
 
     console.log({ data, error });
-
+     alert('Please check your email address for a confirmation link')
     // Place your API call here to submit your payload.
   };
   return (
@@ -115,7 +115,7 @@ const SignUp = () => {
                 type="submit"
                 className="focus:outline-none w-full sm:w-auto bg-accent transition duration-150 ease-in-out hover:bg-accent/80 rounded text-white px-8 py-3 text-sm mt-6"
               >
-                Login to Your Account
+              Sign Up
               </button>
             </div>
           </div>
