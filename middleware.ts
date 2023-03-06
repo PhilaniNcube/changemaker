@@ -15,6 +15,14 @@ export async function middleware(req: NextRequest) {
   } = await supabase.auth.getSession()
 
 
+  const {error, data, status} = await supabase.rpc("is_admin")
 
-  return res
+  if (data !== true) {
+    return NextResponse.redirect(new URL('/', req.url))
+  }
+
+
+}
+export const config = {
+  matcher: '/dashboard/:path*',
 }

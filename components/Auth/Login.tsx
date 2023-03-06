@@ -3,13 +3,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FormEvent, useRef, useState } from "react";
 import { useSupabase } from "./SupabaseProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const router = useRouter()
 
 const {supabase} = useSupabase()
 
@@ -33,7 +38,19 @@ const {supabase} = useSupabase()
      console.log({error})
     }
 
-    console.log({data, error})
+    toast('Login successful, please wait while you are being redirected',
+    {
+      type: 'success'
+    })
+
+    const {data: admin, error:adminError} = await supabase.rpc("is_admin")
+
+    if(admin === true) {
+      router.push('/dashboard/profile')
+    } else {
+      router.push('/')
+    }
+
 
 
 
@@ -41,6 +58,7 @@ const {supabase} = useSupabase()
   };
   return (
     <section className="bg-white {-- h-screen --}">
+      <ToastContainer position="top-right" autoClose={2500} />
       <div className="mx-auto flex justify-center flex-col lg:flex-row h-full">
         <form
           onSubmit={handleSubmit}
