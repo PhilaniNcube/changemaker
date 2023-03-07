@@ -4,19 +4,19 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative flex justify-end bg-dark">
+    <div className="relative flex justify-end bg-black">
       {" "}
 
       <Image
-        src="/images/sparkle.jpg"
-        width={1469}
-        height={980}
+        src="/images/home_banner.jpeg"
+        width={1280}
+        height={960}
         priority
         quality={100}
         alt="Background"
         className="object-cover h-screen lg:max-h-[65vh] w-full md:w-1/2"
       />
-      <div className="absolute inset-0 flex justify-start items-center py-12 bg-slate-600/60 lg:bg-transparent">
+      <div className="absolute inset-0 flex justify-start items-center py-12 bg-black lg:bg-transparent">
         <div className="max-w-7xl mx-auto flex flex-col items-start w-full px-8 lg:px-0">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white">
             Why Not <span className="font-extrabold italic">You?</span>

@@ -161,7 +161,7 @@ const NMBSchools = () => {
   return <section className="py-10 bg-white">
     <div className="max-w-7xl mx-auto px-8 lg:px-0">
        <h2 className="font-bold mb-8 text-3xl text-slate-800 text-center">Schools currently in the programme are:</h2>
-       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-x-4 gap-y-2" >
+       <div className="columns-1 sm:columns-2 md:columns-3 gap-x-4 gap-y-2" >
         {schools.map((school) => (
           <p className="font-medium text-slate-700 text-sm md:text-md" key={school.id}>{school.title}</p>
         ))}
