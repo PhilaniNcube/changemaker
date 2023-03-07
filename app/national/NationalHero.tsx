@@ -15,7 +15,7 @@ const NationalHero = () => {
           <div className="px-4">
             <h1 className="text-white text-3xl lg:text-5xl  font-extrabold">
               MCN <br />
-              Nationwide
+              National
             </h1>
             <p className="max-w-[65ch] mt-8 leading-6 md:leading-7 text-white text-xs md:text-base font-medium ">
               The Changemaker Network model is a whole-of-school community

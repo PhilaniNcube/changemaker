@@ -35,6 +35,8 @@ const page = async () => {
 
    const instgramFeed = await instagramFeedService();
 
+   console.log(instgramFeed)
+
 
   return (
     <Fragment>

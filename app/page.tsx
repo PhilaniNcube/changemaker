@@ -17,7 +17,7 @@ export default function Home() {
           href="/in-action"
           className="border-2 border-black rounded-full px-2 lg:px-12 py-2 lg:py-2 text-base font-bold"
         >
-          See More
+     Learn More
         </Link>
       </div>
       <Hero />

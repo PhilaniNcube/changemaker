@@ -4,7 +4,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-0">
         <div className="h-full w-full flex flex-col items-start justify-center">
           <h1 className="text-white text-4xl lg:text-5xl">
-            <span className="font-bold italic">Join the nationwide</span> <br />
+            <span className="font-bold italic">Join the national</span> <br />
             <span className="lg:text-6xl uppercase font-extrabold">
               Changemaker
             </span>{" "}

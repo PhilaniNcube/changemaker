@@ -42,7 +42,7 @@ function Contact() {
                 <p className="pl-4 text-white text-base">076 740 6241</p>
               </div>
               <h2 className="text-lg  text-white mt-8 font-medium">
-                Masifunde Changemaker Network Nationwide coordinator
+                Masifunde Changemaker Network National coordinator
               </h2>
               <p className="text-white pt-4">Debaneigh Jordaan</p>
               <div className="flex items-center">
@@ -222,7 +222,7 @@ function Contact() {
                         I am an implementation partner from MCN NMB
                       </option>
                       <option className="text-xs">
-                        I am an implementation partner in MCN Nationwide
+                        I am an implementation partner in MCN National
                       </option>
                       <option className="text-xs">
                         I am a teacher/principal
