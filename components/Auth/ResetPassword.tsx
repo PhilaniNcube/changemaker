@@ -3,12 +3,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+
 import { FormEvent, useRef, useState } from "react";
 import { useSupabase } from "./SupabaseProvider";
+import { useRouter } from "next/navigation";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const router = useRouter()
 
   const { supabase } = useSupabase();
 
@@ -36,6 +40,7 @@ const ResetPassword = () => {
     if(data) {
       console.log({ data, error });
       alert('Your password has been reset successfully')
+      router.push('/dashboard/profile')
     }
 
 
@@ -61,7 +66,7 @@ const ResetPassword = () => {
             </div>
             <div className="pt-10 px-2 flex flex-col items-center justify-center">
               <h3 className="text-2xl md:text-3xl sm:text-4xl font-bold leading-tight">
-                Login To Your Account
+                Reset Password
               </h3>
             </div>
             <div className="mt-12 w-full px-2 sm:px-6">
