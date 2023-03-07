@@ -4,6 +4,8 @@ import { useSupabase } from "@/components/Auth/SupabaseProvider";
 import { Database } from "@/schema";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
   profile: Database['public']['Tables']['profiles']['Row']
@@ -35,12 +37,14 @@ const { data, error } = await supabase
     alert(error.message);
     return
   } else {
-    console.log({data})
+    toast('Profile updated', {type: "info"})
+    router.refresh()
   }
 }
 
   return (
     <div className="w-full">
+      <ToastContainer position="top-right" autoClose={2500} />
       <h1 className="text-3xl font-bold text-slate-700">Profile Details</h1>
       <form onSubmit={handleSubmit} className="mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
@@ -89,7 +93,7 @@ const { data, error } = await supabase
             type="submit"
             className="block w-full rounded-md bg-accent px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
-          Save
+            Save
           </button>
         </div>
       </form>
