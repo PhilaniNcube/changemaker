@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { BuildingStorefrontIcon, Cog8ToothIcon, DocumentArrowDownIcon, PlayIcon, UserIcon } from "@heroicons/react/24/outline";
+import { BuildingStorefrontIcon, Cog8ToothIcon, DocumentArrowDownIcon, PlayIcon, UserIcon, UsersIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const SideBar = () => {
@@ -40,11 +40,11 @@ const SideBar = () => {
           <span className="text-lg font-medium text-slate-700">Documents</span>
         </Link>
         <Link
-          href="/dashboard/media"
+          href="/dashboard/users"
           className="flex items-center mt-2 space-x-2 w-full hover:bg-zinc-300 rounded-lg py-2 px-3"
         >
-          <PlayIcon className="text-slate-900 h-8 w-8" />
-          <span className="text-lg font-medium text-slate-700">Media</span>
+          <UsersIcon className="text-slate-900 h-8 w-8" />
+          <span className="text-lg font-medium text-slate-700">Users</span>
         </Link>
         <Link
           href="/dashboard/workshops"

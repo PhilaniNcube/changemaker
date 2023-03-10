@@ -169,12 +169,20 @@ export default function Navbar({user}:Props) {
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {!user ? (
-            <Link
-              href="/login"
-              className="text-md font-semibold leading-6 text-accent"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </Link>
+            <div className="flex space-x-3 items-center">
+              <Link
+                href="/login"
+                className="text-md font-semibold leading-6 text-accent"
+              >
+                Log in <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link
+                href="/sign-up"
+                className="text-md border-l border-accent pl-3 font-semibold leading-6 text-accent"
+              >
+                Sign Up <span aria-hidden="true">&uarr;</span>
+              </Link>
+            </div>
           ) : (
             <span
               onClick={handleLogout}
