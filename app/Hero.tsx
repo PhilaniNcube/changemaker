@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative flex justify-end bg-black">
+    <div className="relative flex justify-end bg-dark">
       {" "}
       <Image
         src="/images/sparkle.jpg"
