@@ -33,7 +33,7 @@ const about = [
   },
 ];
 const callsToAction = [
-  { name: "Watch our video", href: "/video", icon: PlayCircleIcon },
+  { name: "Watch our video", href: "/nmb#video", icon: PlayCircleIcon },
   { name: "Contact us", href: "/contact", icon: PhoneIcon },
 ];
 

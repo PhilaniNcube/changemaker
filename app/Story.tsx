@@ -14,17 +14,17 @@ const Story = () => {
           </div>
           <div>
             <img
-              className="rounded-md lg:block hidden w-full object-cover"
+              className="rounded-md lg:block hidden w-full object-cover aspect-video"
               src="/images/home_banner.jpeg"
               alt="A person Coding"
             />
             <img
-              className="rounded-md lg:hidden sm:block hidden w-full object-cover"
+              className="rounded-md lg:hidden sm:block hidden w-full object-cover aspect-video"
               src="/images/home_banner.jpeg"
               alt="A person Coding"
             />
             <img
-              className="rounded-md sm:hidden block w-full object-cover"
+              className="rounded-md sm:hidden block w-full object-cover aspect-video"
               src="/images/home_banner.jpeg"
               alt="A person Coding"
             />
