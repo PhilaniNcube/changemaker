@@ -10,23 +10,22 @@ const Story = () => {
               <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7">
                 Learn more about us
               </h2>
-
             </div>
           </div>
           <div>
             <img
-              className="rounded-md lg:block hidden w-full"
-              src="https://i.ibb.co/17q26WL/qw.png"
+              className="rounded-md lg:block hidden w-full object-cover"
+              src="/images/home_banner.jpeg"
               alt="A person Coding"
             />
             <img
-              className="rounded-md lg:hidden sm:block hidden w-full"
-              src="https://i.ibb.co/pZX8cKM/Rectangle-122-1.png"
+              className="rounded-md lg:hidden sm:block hidden w-full object-cover"
+              src="/images/home_banner.jpeg"
               alt="A person Coding"
             />
             <img
-              className="rounded-md sm:hidden block w-full"
-              src="https://i.ibb.co/b3YLqxC/Rectangle-122.png"
+              className="rounded-md sm:hidden block w-full object-cover"
+              src="/images/home_banner.jpeg"
               alt="A person Coding"
             />
           </div>
