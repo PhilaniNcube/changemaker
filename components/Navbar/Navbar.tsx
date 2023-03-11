@@ -16,6 +16,7 @@ import Link from "next/link";
 import { User, useUser } from "@supabase/auth-helpers-react";
 import { useSupabase } from "../Auth/SupabaseProvider";
 import { useRouter } from "next/navigation";
+import AccountMenu from "./AccountMenu";
 
 
 const about = [
@@ -184,12 +185,15 @@ export default function Navbar({user}:Props) {
               </Link>
             </div>
           ) : (
+             <div className="flex space-x-3 items-center">
+              <AccountMenu user={user} />
             <span
               onClick={handleLogout}
               className="text-md font-semibold leading-6 px-3 py-1 rounded-md bg-red-600 text-white cursor-pointer"
             >
               Log Out <span aria-hidden="true">&rarr;</span>
             </span>
+            </div>
           )}
         </div>
       </nav>
