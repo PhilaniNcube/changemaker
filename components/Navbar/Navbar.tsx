@@ -48,14 +48,17 @@ function classNames(...classes:string[]) {
 
 type Props = {
   user: User | null
+  admin: boolean
 }
 
-export default function Navbar({user}:Props) {
+export default function Navbar({user, admin}:Props) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const router = useRouter()
 
   const {supabase} = useSupabase()
+
+
 
     const handleLogout = async () => {
       await supabase.auth.signOut();
@@ -186,7 +189,7 @@ export default function Navbar({user}:Props) {
             </div>
           ) : (
              <div className="flex space-x-3 items-center">
-              <AccountMenu user={user} />
+              <AccountMenu user={user} admin={admin!} />
             <span
               onClick={handleLogout}
               className="text-md font-semibold leading-6 px-3 py-1 rounded-md bg-red-600 text-white cursor-pointer"

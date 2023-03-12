@@ -80,8 +80,10 @@ export interface Database {
           height: number | null
           width: number | null
           type: string | null
+          public_id: string | null
+          thumbnail_url: string | null
           filename: string | null
-          organisation_id: string
+          organisation_id: Database['public']['Tables']['workshops']['Row']
         }
         Insert: {
           id?: string
@@ -90,6 +92,8 @@ export interface Database {
           height?: number | null
           width?: number | null
           type?: string | null
+           public_id: string | null
+          thumbnail_url: string | null
           filename?: string | null
           organisation_id: string
         }
@@ -100,6 +104,8 @@ export interface Database {
           height?: number | null
           width?: number | null
           type?: string | null
+           public_id: string | null
+          thumbnail_url: string | null
           filename?: string | null
           organisation_id?: string
         }

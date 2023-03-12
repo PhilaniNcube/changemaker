@@ -7,10 +7,11 @@ import {AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 type Props = {
   user: User;
+  admin: boolean
 }
 
 
-const AccountMenu = ({user}:Props) => {
+const AccountMenu = ({user, admin}:Props) => {
 
 const [open, setOpen] = useState(false)
 
@@ -35,7 +36,10 @@ const [open, setOpen] = useState(false)
                     exit={{ opacity: 0 }}
                   >
                     <DropdownMenu.Item className="hover:bg-slate-800 hover:text-white border-none rounded-md">
-                      <Link href="/account" className="flex flex-col p-3">
+                      <Link
+                        href={`/account/${user.id}`}
+                        className="flex flex-col p-3"
+                      >
                         <span>My Account</span>
                         <span className="text-xs">{user.email}</span>
                       </Link>
@@ -45,6 +49,13 @@ const [open, setOpen] = useState(false)
                         <span>Gallery</span>
                       </Link>
                     </DropdownMenu.Item>
+                    {admin && (
+                      <DropdownMenu.Item className="hover:bg-slate-800 hover:text-white border-none rounded-md">
+                        <Link href="/dashboard/profile" className="flex flex-col p-3">
+                          <span>Dashboard</span>
+                        </Link>
+                      </DropdownMenu.Item>
+                    )}
                   </motion.div>
                 </DropdownMenu.Content>
               </DropdownMenu.Portal>

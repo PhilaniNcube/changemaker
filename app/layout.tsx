@@ -28,6 +28,9 @@ export default async function RootLayout({
 
     const {data: {user}} = await supabase.auth.getUser()
 
+let { data:admin, error } = await supabase.rpc("is_admin");
+
+
 
 
   return (
@@ -40,7 +43,7 @@ export default async function RootLayout({
       <body>
         <SupabaseProvider>
           <SupabaseListener serverAccessToken={session?.access_token} />
-              <Navbar user={user} />
+              <Navbar user={user} admin={admin!} />
               {children}
           <Footer />{" "}
         </SupabaseProvider>
