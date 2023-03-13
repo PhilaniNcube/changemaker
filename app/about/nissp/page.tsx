@@ -1,9 +1,11 @@
 import Details from "../Details";
-import Team from "../Team";
+import Hero from "./Hero";
+
 
 const page = () => {
   return (
     <main className="">
+      <Hero />
       <Details />
     </main>
   );
