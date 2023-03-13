@@ -1,5 +1,6 @@
 import ProfileDetails from "./ProfileDetails";
 import createClient from "../../../lib/supabase-server";
+import { getOrganisations } from "@/fetchers/organisations";
 
 
 const getProfile = async () => {
@@ -11,7 +12,7 @@ const getProfile = async () => {
      data: { user },
    } = await supabase.auth.getUser();
 
-   const {data:profile, error} = await supabase.from('profiles').select('*').eq('id', user?.id).single()
+   const {data:profile, error} = await supabase.from('profiles').select('*, organisation_id(*)').eq('id', user?.id).single()
 
    if(error) {
     throw new Error(error.message)
@@ -23,10 +24,16 @@ const getProfile = async () => {
 
 const page = async () => {
 
-  const profile = await getProfile()
+  const profileData =  getProfile()
+  const organisationsData =  getOrganisations()
+
+  const [profile, organisations] = await Promise.all([
+    profileData,
+    organisationsData,
+  ]);
 
   return <main>
-    <ProfileDetails profile={profile} />
+    <ProfileDetails profile={profile!} organisations={organisations} />
   </main>;
 };
 export default page;

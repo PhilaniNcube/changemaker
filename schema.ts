@@ -156,16 +156,22 @@ export interface Database {
           id: string
           first_name: string
           last_name: string
+          email: string
+          organisation_id: Database['public']['Tables']['organisations']['Row']
         }
         Insert: {
           id: string
           first_name?: string
           last_name?: string
+          email?: string
+          organisation_id?: string
         }
         Update: {
           id?: string
           first_name?: string
           last_name?: string
+          email?: string
+          organisation_id?: string
         }
       }
       provinces: {

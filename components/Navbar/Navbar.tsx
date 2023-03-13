@@ -180,12 +180,12 @@ export default function Navbar({user, admin}:Props) {
               >
                 Log in <span aria-hidden="true">&rarr;</span>
               </Link>
-              <Link
+              {/* <Link
                 href="/sign-up"
                 className="text-md border-l border-accent pl-3 font-semibold leading-6 text-accent"
               >
                 Sign Up <span aria-hidden="true">&uarr;</span>
-              </Link>
+              </Link> */}
             </div>
           ) : (
              <div className="flex space-x-3 items-center">

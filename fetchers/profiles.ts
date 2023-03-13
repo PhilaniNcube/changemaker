@@ -3,7 +3,7 @@ import supabaseServer from "@/lib/supabase-server";
 async function getProfiles(){
   const supabase = supabaseServer();
 
-const {data: profiles, error} = await supabase.from('profiles').select('*')
+const {data: profiles, error} = await supabase.from('profiles').select('*, organisation_id(*)')
 
 if(error) {
   throw new Error(error.message)
@@ -19,7 +19,7 @@ async function getMyProfile(id:string) {
 
   const supabase = supabaseServer();
 
-  const {data: profile, error} = await supabase.from('profiles').select('*').eq('id', id).single()
+  const {data: profile, error} = await supabase.from('profiles').select('*, organisation_id(*)').eq('id', id).single()
 
 
 if(error) {
