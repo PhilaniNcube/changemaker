@@ -19,10 +19,12 @@ const NationalHero = () => {
             </h1>
             <p className="max-w-[65ch] mt-8 leading-6 md:leading-7 text-white text-xs md:text-base font-medium ">
               The Changemaker Network model is a whole-of-school community
-              intervention that activates, provides capacity and supports the
-              role of local Department of Education and school communities at
-              large: learners, educators, community, volunteers, stakeholders.
-              This project has been implemented within the Eastern Cape,
+              intervention supporting the National Inclusive and Safer
+              Partnership of the National Department of Basic Education. The
+              intervention activates, provides capacity and supports the role of
+              local Department of Education and school communities at large:
+              learners, educators, community, volunteers, stakeholders. This
+              project has been implemented within the Eastern Cape,
               KwaZulu-Natal, North West and Limpopo.
             </p>
           </div>

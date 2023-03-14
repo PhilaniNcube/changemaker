@@ -45,6 +45,11 @@ const [open, setOpen] = useState(false)
                       </Link>
                     </DropdownMenu.Item>
                     <DropdownMenu.Item className="hover:bg-slate-800 hover:text-white border-none rounded-md">
+                      <Link href="/account/documents" className="flex flex-col p-3">
+                        <span>Documents</span>
+                      </Link>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item className="hover:bg-slate-800 hover:text-white border-none rounded-md">
                       <Link href="/gallery" className="flex flex-col p-3">
                         <span>Gallery</span>
                       </Link>

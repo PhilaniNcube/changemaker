@@ -24,23 +24,13 @@ const Details = () => {
         <div className="w-full">
           {" "}
           <p className="text-md lg:text-base text-slate-800 mb-4 text-justify ">
-            The National Inclusive and Safer Schools Partnership (NISSP) of the
-            Department of Basic Education is a joint national partnership to
-            promote the collective action of the whole-of-school community to
-            prevent violence and gender-based violence (GBV) occurring in South
-            African schools.
-          </p>
-          <p className="text-md lg:text-base text-slate-800 mb-4 text-justify">
-            The NISSP aims to do this by coordinating, co-resourcing and jointly
-            implementing school-based gender-based violence prevention
-            programmes that will empower the role of District Officials, Civil
-            Society Organizations, educators and learner-leaders across four
-            provinces. The intervention is led by the Department of Basic
-            Education (DBE) supported by the German Development Cooperation and
-            Global Affairs Canada through the GIZ Inclusive Violence and Crime
-            Prevention (VCP) Programme, Masifunde Learner Development, Agape
-            Youth Movement (AYM), various stakeholders from academia, civil
-            society, and government departments.
+            A joint national partnership to strengthen collective action for the
+            institutionalization and multistakeholder-resourcing of school-based
+            violence prevention programmes, by consolidating, co-resourcing, and
+            implementing preventative approaches, led by the Department of Basic
+            Education (DBE) supported by German Development Cooperation (GIZ)
+            and various stakeholders from civil society, academia and other
+            government departments.
           </p>
         </div>
       </div>

@@ -188,14 +188,14 @@ export default function Navbar({user, admin}:Props) {
               </Link> */}
             </div>
           ) : (
-             <div className="flex space-x-3 items-center">
+            <div className="flex space-x-3 items-center">
               <AccountMenu user={user} admin={admin!} />
-            <span
-              onClick={handleLogout}
-              className="text-md font-semibold leading-6 px-3 py-1 rounded-md bg-red-600 text-white cursor-pointer"
-            >
-              Log Out <span aria-hidden="true">&rarr;</span>
-            </span>
+              <span
+                onClick={handleLogout}
+                className="text-md font-semibold leading-6 px-3 py-1 rounded-md bg-red-600 text-white cursor-pointer"
+              >
+                Log Out <span aria-hidden="true">&rarr;</span>
+              </span>
             </div>
           )}
         </div>
@@ -283,12 +283,38 @@ export default function Navbar({user, admin}:Props) {
                 </Link>
               </div>
               <div className="py-6">
-                <Link
-                  href="/login"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
-                >
-                  Log in
-                </Link>
+                {!user ? (
+                  <Link
+                    href="/login"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                  >
+                    Log in
+                  </Link>
+                ) : (
+                  <Fragment>
+                    <Link
+                      href={`/account/${user.id}`}
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                    >
+                      My Account
+                    </Link>
+                    <Link
+                      href={`/account/documents`}
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                    >
+                      Documents
+                    </Link>
+                    <Link
+                      href={`/gallery`}
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                    >
+                      Gallery
+                    </Link>
+                    <button className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-red-500 hover:bg-gray-50">
+                      Log Out <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  </Fragment>
+                )}
               </div>
             </div>
           </div>

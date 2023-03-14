@@ -53,13 +53,13 @@ const SideBar = () => {
           <UsersIcon className="text-slate-900 h-8 w-8" />
           <span className="text-lg font-medium text-slate-700">Users</span>
         </Link>
-        <Link
+        {/* <Link
           href="/dashboard/workshops"
           className="flex items-center mt-2 space-x-2 w-full hover:bg-zinc-300 rounded-lg py-2 px-3"
         >
           <Cog8ToothIcon className="text-slate-900 h-8 w-8" />
           <span className="text-lg font-medium text-slate-700">Workshops</span>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
