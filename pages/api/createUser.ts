@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import supabaseService from '@/lib/service-role';
 import type { NextApiRequest, NextApiResponse } from 'next'
+import {MailtrapClient} from 'mailtrap'
 
 import { z } from "zod";
 
@@ -16,6 +17,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+
+  const client = new MailtrapClient({token: process.env.MAILTRAP_TOKEN!})
 
 if(req.method !== 'POST') {
   res.send({message: 'Invalid Method'})
@@ -36,6 +39,13 @@ if(error) {
     res.status(400).json({ message: error.message })
 } else {
   res.status(200).json({ message: `User created: ${data.user.email}` })
+
+  await client.send({
+    from: {email: 'info@changemaker-network.org'},
+    to: [{email: `${data?.user?.email}`}],
+    subject: 'A user for you has been created on ChangeMaker Network',
+    text: `Hello, a user has been created for you on the ChangeMaker Network, you can log in with the email address: ${data.user.email},  and you can use the temporary password "password". Please change it as soon as possible. Please visit https://changemaker.vercel.app/login to log into your account.`
+  })
 }
 
   } catch (err) {
