@@ -29,24 +29,22 @@ const UserDetails = ({profile}:Props) => {
 
   const deleteUser = async () => {
     // Delete this user
+  await fetch("/api/deleteUser", {
+   method: "DELETE",
+   referrerPolicy: "origin",
+   headers: {
+     Accept: "application.json",
+     "Content-Type": "application/json",
+   },
+   body: JSON.stringify({
+     id: profile.id,
+   }),
+ });
 
-const { data, error } = await supabase
-  .from("profiles")
-  .delete()
-  .eq("id", profile.id).select('*');
 
-  if(error) {
-    alert("Could not delete this user")
-    closeModal();
-  } else if (data){
-    closeModal();
-    router.push('/dashboard/users')
-  } else {
-    console.log({data, error})
-    alert('There was an error, please reach out to the developers')
-    closeModal();
-       router.push("/dashboard/users");
-  }
+router.push('/dashboard/users')
+
+
 
   }
 
