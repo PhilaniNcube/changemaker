@@ -33,7 +33,7 @@ const UserDetails = ({profile}:Props) => {
 const { data, error } = await supabase
   .from("profiles")
   .delete()
-  .eq("id", profile.id);
+  .eq("id", profile.id).select('*');
 
   if(error) {
     alert("Could not delete this user")
@@ -42,6 +42,7 @@ const { data, error } = await supabase
     closeModal();
     router.push('/dashboard/users')
   } else {
+    console.log({data, error})
     alert('There was an error, please reach out to the developers')
     closeModal();
        router.push("/dashboard/users");
@@ -95,11 +96,12 @@ const { data, error } = await supabase
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                   Delete this user!
+                    Delete this user!
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                    This operation is not reversable. The user will have to create a new account!
+                      This operation is not reversable. The user will have to
+                      create a new account!
                     </p>
                   </div>
 
@@ -109,14 +111,14 @@ const { data, error } = await supabase
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                     Cancel
+                      Cancel
                     </button>
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
+                      onClick={deleteUser}
                     >
-                     Confirm
+                      Confirm
                     </button>
                   </div>
                 </Dialog.Panel>
