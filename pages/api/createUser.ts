@@ -44,7 +44,7 @@ if(error) {
     from: {email: 'info@changemaker-network.org'},
     to: [{email: `${data?.user?.email}`}],
     subject: 'A user for you has been created on ChangeMaker Network',
-    text: `Hello, a user has been created for you on the ChangeMaker Network, you can log in with the email address: ${data.user.email},  and you can use the temporary password "password". Please change it as soon as possible. Please visit https://changemaker.vercel.app/login to log into your account.`
+    text: `Hello, a user has been created for you on the ChangeMaker Network, you can log in with the email address: ${data.user.email},  and you can use the temporary password "password". Please change it as soon as possible. Please visit https://changemaker.vercel.app/update-password to set your own password.`
   })
 }
 
