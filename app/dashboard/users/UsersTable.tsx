@@ -15,11 +15,11 @@ const UsersTable = async ({promise}:Props) => {
     <div className="w-full mt-8">
       <table className="max-w-4xl w-full rounded-md overflow-hidden">
         <thead className="bg-slate-300 border-b border-slate-500 py-3 text-slate-900 text-lg font-medium">
-          <td className="px-3">First Name</td>
-          <td>Last Name</td>
-          <td className="px-4">
+          <th className="px-3">First Name</th>
+          <th>Last Name</th>
+          <th className="px-4">
            View User
-          </td>
+          </th>
         </thead>
         <tbody className="text-slate-700">
           {profiles.map((profile) => (
