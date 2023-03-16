@@ -3,7 +3,7 @@
 import { Database } from '@/schema';
 import {CldUploadButton} from 'next-cloudinary'
 import { useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { useSupabase } from '../Auth/SupabaseProvider';
 
 type Props = {
@@ -50,11 +50,10 @@ return
 
   return (
     <div className="w-full">
-
-<div className="bg-accent w-fit rounded-md text-white px-4 py-1">
-      <CldUploadButton onUpload={handleOnUpload} uploadPreset="kfo3j4ot" />
-</div>
-
+      <div className="bg-accent w-fit rounded-md text-white px-4 py-1">
+        <ToastContainer position="top-right" autoClose={4000} />
+        <CldUploadButton onUpload={handleOnUpload} uploadPreset="kfo3j4ot" />
+      </div>
     </div>
   );
 };

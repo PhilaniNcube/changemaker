@@ -44,6 +44,7 @@ const ProfileDetails = ({profile, organisations}: Props) => {
          id: profile.id,
          first_name: profile.first_name!,
          last_name: profile.last_name!,
+         email: profile.email!,
          organisation_id: profile.organisation_id.id!,
        },
      });

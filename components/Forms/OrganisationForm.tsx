@@ -6,19 +6,31 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import {z} from 'zod'
 import { zodResolver } from "@hookform/resolvers/zod";
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import { EnvelopeIcon, GlobeAltIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { useSupabase } from "../Auth/SupabaseProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaFacebook, FaTwitter } from "react-icons/fa";
 
 const organisationSchema = z.object({
   id: z.string().uuid(),
   name: z
     .string()
     .min(3, { message: "Name must be at least 3 characters long" }),
-  facebook: z.string().url(),
-  website: z.string().url(),
-  twitter: z.string().url(),
+  facebook: z.string().url({
+    message:
+      "Please make sure you provide a valid URL: it must start with http://",
+  }),
+  website: z.string().url({
+    message:
+      "Please make sure you provide a valid URL: it must start with http://",
+  }).optional(),
+  twitter: z
+    .string()
+    .url({
+      message:
+        "Please make sure you provide a valid URL: it must start with http://",
+    }).optional(),
   description: z
     .string()
     .max(200, { message: "Description must be less than 200 characters long" })
@@ -57,7 +69,7 @@ const OrganisationForm = ({organisation, districts}:Props) => {
       twitter: organisation.twitter!
      }
    });
-  const [organisationData, setOrganisationData] = useState(organisation)
+
 
   const onSubmit:SubmitHandler<Organisation> = async (data) => {
 
@@ -85,7 +97,7 @@ const { data: org, error } = await supabase
     description: data.description,
     district_id: data.district_id,
   })
-  .eq("id", data.id)
+  .eq("id", data.id).select('*')
 
 
   if(error) {
@@ -94,13 +106,13 @@ const { data: org, error } = await supabase
     });
     console.log({error})
     return
-  } else if(data) {
+  } else if (org) {
     toast("Organisation succesfully updated", {
-      type: 'success'
+      type: "success",
     });
-    console.log({org})
-    return
-   }
+    console.log({ org });
+    return;
+  }
 
    return
 
@@ -125,7 +137,6 @@ const { data: org, error } = await supabase
               className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
             />
           </div>
-
         </div>
         <div className="col-span-3 ">
           <label
@@ -205,7 +216,7 @@ const { data: org, error } = await supabase
           </label>
           <div className="mt-2 flex rounded-md shadow-sm">
             <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              http://
+              <GlobeAltIcon className="h-4 w-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -229,7 +240,7 @@ const { data: org, error } = await supabase
           </label>
           <div className="mt-2 flex rounded-md shadow-sm">
             <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              http://
+              <FaFacebook className="h-4 w-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -253,7 +264,7 @@ const { data: org, error } = await supabase
           </label>
           <div className="mt-2 flex rounded-md shadow-sm">
             <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              http://
+              <FaTwitter className="h-4 w-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -287,6 +298,11 @@ const { data: org, error } = await supabase
         <p className="mt-2 text-sm text-gray-500">
           Brief description for the organisation.
         </p>
+        {errors.description && (
+          <p className="text-xs italic text-red-500 mt-2">
+            {errors.description?.message}
+          </p>
+        )}
       </div>
       <fieldset className="mt-6">
         <legend className="contents text-md font-medium leading-6 text-gray-700">

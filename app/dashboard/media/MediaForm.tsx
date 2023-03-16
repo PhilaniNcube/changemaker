@@ -165,15 +165,15 @@ const { data: mediaData, error } = await supabase
           </div>
 
           <div className="col-span-3 sm:col-span-2">
-            <p className="block text-sm font-medium leading-6 text-gray-900">
-              Upload Image
-            </p>
+            <label className="sr-only block text-sm font-medium leading-6 text-gray-900">
+              Select Image
+            </label>
             <div className="mt-2 flex rounded-md shadow-sm">
-              <div className="bg-accent text-white text-lg font-medium w-fit px-6 py-2 rounded-md">
+              <div className="bg-blue-400 text-white text-sm font-medium w-fit px-4 py-2 rounded-md">
                 <CldUploadButton
                   onUpload={handleOnUpload}
                   uploadPreset="kfo3j4ot"
-                />
+                >Select Image</CldUploadButton>
               </div>
             </div>
           </div>
@@ -206,7 +206,7 @@ const { data: mediaData, error } = await supabase
         <div className="bg-gray-100 px-4 py-3 text-right sm:px-6 mt-6">
           <button
             type="submit"
-            className="inline-flex justify-center rounded-md bg-accent py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="inline-flex justify-center rounded-md bg-accent py-2 px-10 text-xl font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Save
           </button>
