@@ -17,20 +17,10 @@ const organisationSchema = z.object({
   name: z
     .string()
     .min(3, { message: "Name must be at least 3 characters long" }),
-  facebook: z.string().url({
-    message:
-      "Please make sure you provide a valid URL: it must start with http://",
-  }),
-  website: z.string().url({
-    message:
-      "Please make sure you provide a valid URL: it must start with http://",
-  }).optional(),
-  twitter: z
-    .string()
-    .url({
-      message:
-        "Please make sure you provide a valid URL: it must start with http://",
-    }).optional(),
+  facebook: z.string(),
+  website: z.string(),
+  twitter: z.string(),
+  other: z.string(),
   description: z
     .string()
     .max(200, { message: "Description must be less than 200 characters long" })
@@ -66,7 +56,8 @@ const OrganisationForm = ({organisation, districts}:Props) => {
       facebook: organisation.facebook!,
       website: organisation.website!,
       district_id: organisation.district_id!,
-      twitter: organisation.twitter!
+      twitter: organisation.twitter!,
+      other: organisation.other!
      }
    });
 
@@ -94,6 +85,7 @@ const { data: org, error } = await supabase
     facebook: data.facebook,
     twitter: data.twitter,
     tel: data.tel,
+    other: data.other,
     description: data.description,
     district_id: data.district_id,
   })
@@ -276,6 +268,30 @@ const { data: org, error } = await supabase
           {errors.twitter && (
             <p className="text-xs italic text-red-500 mt-2">
               {errors.twitter?.message}
+            </p>
+          )}
+        </div>
+        <div className="col-span-3 sm:col-span-2">
+          <label
+            htmlFor="other"
+            className="block text-sm font-medium leading-6 text-gray-900"
+          >
+            Other Social Media
+          </label>
+          <div className="mt-2 flex rounded-md shadow-sm">
+            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
+              <GlobeAltIcon className="h-4 w-4 text-gray-500" />
+            </span>
+            <input
+              type="text"
+              {...register("other")}
+              id="other"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+            />
+          </div>{" "}
+          {errors.other && (
+            <p className="text-xs italic text-red-500 mt-2">
+              {errors.other?.message}
             </p>
           )}
         </div>

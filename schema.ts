@@ -123,6 +123,7 @@ export interface Database {
           email: string | null
           tel: string | null
           slug: string | null
+          other: string | null
         }
         Insert: {
           id?: string
@@ -136,6 +137,7 @@ export interface Database {
           email?: string | null
           tel?: string | null
           slug?: string | null
+            other?: string | null
         }
         Update: {
           id?: string
@@ -149,6 +151,7 @@ export interface Database {
           email?: string | null
           tel?: string | null
           slug?: string | null
+          other?: string | null
         }
       }
       profiles: {
