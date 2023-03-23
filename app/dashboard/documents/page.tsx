@@ -1,6 +1,6 @@
 import { getDocuments } from "@/fetchers/documents";
 import { DocumentIcon } from "@heroicons/react/24/outline";
-import Upload from './Upload';
+
 
 const page = async () => {
 
@@ -12,7 +12,7 @@ const page = async () => {
     <div className="w-full">
       <div className="w-full flex items-center justify-between mb-2">
         <h1 className="text-2xl font-bold text-slate-700">Documents</h1>
-        <Upload />
+
       </div>
       <table className="w-full max-w-4xl shadow text-left bg-white dark:bg-gray-800 mt-3">
         <thead>
