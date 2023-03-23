@@ -1,6 +1,7 @@
 "use client"
 import { Database } from "@/schema";
 import Image from "next/image";
+import Link from "next/link";
 
 
 type Props = {
@@ -22,13 +23,15 @@ const MediaGrid = ({media}:Props) => {
             <section>
               <article>
                 <div>
-                  <Image
-                    src={image.src}
-                    width={image.width!}
-                    height={image.height!}
-                    alt={image.filename!}
-                    className="w-full aspect-video rounded-md object-cover"
-                  />
+                  <Link href={image.src} >
+                    <Image
+                      src={image.src}
+                      width={image.width!}
+                      height={image.height!}
+                      alt={image.filename!}
+                      className="w-full aspect-video rounded-md object-cover"
+                    />
+                  </Link>
                   <div className="bg-gradient-to-t from-slate-600/50 to-transparent absolute inset-0 flex items-end justify-start p-5">
                     <div>
                       <p className="text-md text-white">{image.filename}</p>
@@ -39,7 +42,6 @@ const MediaGrid = ({media}:Props) => {
                   </div>
                 </div>
               </article>
-
             </section>
           </div>
         ))}

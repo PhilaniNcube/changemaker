@@ -29,7 +29,7 @@ const OrganisationTable = ({ organisations }:Props) => {
             Contact
           </th>
           <th className="py-5 w-1/5 text-base text-gray-800  pr-2 sm:pr-10 text-right">
-            ...
+          
           </th>
         </tr>
       </thead>
