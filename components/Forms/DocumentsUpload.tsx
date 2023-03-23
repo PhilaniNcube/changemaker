@@ -40,7 +40,9 @@ async function handleOnUpload(result:any, widget:any) {
       });
       console.log({data})
     }
-
+      toast("Document succesfully uploaded", {
+        type: "success",
+      });
   widget.close();
 
   }
