@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
 import SideBar from "./SideBar";
 
+export const revalidate = 0;
+
 const layout = ({children}:{children:ReactNode}) => {
   return (
     <div className="flex bg-white h-[calc(100vh-48px)] overflow-x-hidden overflow-y-scroll scrollbar-hide">

@@ -5,6 +5,7 @@ import {CldUploadButton} from 'next-cloudinary'
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { useSupabase } from '../Auth/SupabaseProvider';
+import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
   organisation: Database['public']['Tables']['organisations']['Row']

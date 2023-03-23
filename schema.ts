@@ -61,7 +61,7 @@ export interface Database {
           id?: string
           created_at?: string | null
           src?: string | null
-          organisation_id: string
+          organisation_id?: string
           title?: string | null
         }
         Update: {
