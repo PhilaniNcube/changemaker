@@ -4,14 +4,22 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Database } from "@/schema";
 
 const newUserSchema = z.object({
-  email: z.string().email()
+  email: z.string().email(),
+  first_name: z.string(),
+  last_name: z.string(),
+  organisation_id: z.string().uuid(),
 });
 
 type NewUser = z.infer<typeof newUserSchema>;
 
-const NewUserForm = () => {
+type PropTypes = {
+  organisations: Database["public"]["Tables"]["organisations"]["Row"][]
+}
+
+const NewUserForm = ({organisations}:PropTypes) => {
 
      const {
        register,
@@ -19,6 +27,12 @@ const NewUserForm = () => {
        formState: { errors },
      } = useForm<NewUser>({
        resolver: zodResolver(newUserSchema),
+       defaultValues: {
+          email: "",
+          first_name: "",
+          last_name: "",
+          organisation_id: "",
+       }
      });
 
      const onSubmit: SubmitHandler<NewUser> = async (data) => {
@@ -30,7 +44,10 @@ const NewUserForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            email: data.email
+            email: data.email,
+            first_name: data.first_name,
+            last_name: data.last_name,
+            organisation_id: data.organisation_id,
           })
         });
 
@@ -71,7 +88,70 @@ const NewUserForm = () => {
               </p>
             )}
           </div>
-        </div>{" "}
+          <div className="flex flex-col rounded-md">
+            <label
+              htmlFor="first_name"
+              className="block text-md font-medium leading-6 text-gray-700"
+            >
+              First Name
+            </label>
+            <input
+              type="text"
+              id="first_name"
+              {...register("first_name")}
+              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+            />{" "}
+            {errors.first_name && (
+              <p className="text-xs italic text-red-500 mt-2">
+                {errors.first_name?.message}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col rounded-md">
+            <label
+              htmlFor="last_name"
+              className="block text-md font-medium leading-6 text-gray-700"
+            >
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="last_name"
+              {...register("last_name")}
+              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+            />{" "}
+            {errors.last_name && (
+              <p className="text-xs italic text-red-500 mt-2">
+                {errors.last_name?.message}
+              </p>
+            )}
+          </div>
+        </div>
+        <fieldset className="mt-6">
+          <legend className="contents text-md font-medium leading-6 text-gray-700">
+            Select Organisation
+          </legend>
+
+          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+            {organisations.map((organisation) => (
+              <div key={organisation.id} className="flex items-center">
+                <input
+                  id="organisation_id"
+                  {...register("organisation_id")}
+                  value={organisation.id}
+                  type="radio"
+                  className="h-4 w-4 border-gray-300 text-accent focus:ring-accent"
+                />
+                <label
+                  htmlFor="organisation_id"
+                  className="ml-3 block text-sm font-medium leading-6 text-gray-900"
+                >
+                  {organisation.name}
+                </label>
+              </div>
+            ))}
+          </div>
+        </fieldset>
         <div className="py-3 text-left mt-6">
           <button
             type="submit"

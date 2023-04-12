@@ -1,8 +1,12 @@
+import { getOrganisations } from "@/fetchers/organisations";
 import NewUserForm from "./NewUserForm";
 
-const page = () => {
+const page = async () => {
+
+  const organisations = await getOrganisations()
+
   return <div>
-    <NewUserForm />
+    <NewUserForm organisations={organisations} />
   </div>;
 };
 export default page;
