@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Step from "./Step";
+import { toast } from "react-toastify";
 
 const MultiStepForm = () => {
 
@@ -16,7 +17,7 @@ const MultiStepForm = () => {
     child_protection_protocols:'',
     audited_financial_statements:'',
     registered:'',
-    bank_account:'',
+    organisation_name:'',
     tax_clearance:'',
     annual_report:'',
     website:'',
@@ -33,12 +34,37 @@ const MultiStepForm = () => {
        child_protection_protocols,
        audited_financial_statements,
        registered,
-       bank_account,
+       organisation_name,
        tax_clearance,
        annual_report,
        website,
        active_social_media,
      } = formState
+
+
+   const answerArr = Object.values(formState)
+
+   const answerSet = new Set(answerArr)
+
+   let count = 0;
+
+
+   for (let i = 0; i < answerArr.length; i++) {
+     if (answerArr[i] === "yes") {
+       count++;
+     }
+   }
+
+   console.log({count});
+
+   if(count < 7) {
+    toast.error(
+      "Your organisation needs to be able to answer yes to at least 8 out of 10 questions"
+    );
+   } else {
+    toast.success("Thankyou for answering the questions.")
+    router.push('/apply')
+   }
 
 
 console.log({
@@ -47,7 +73,7 @@ console.log({
   child_protection_protocols,
   audited_financial_statements,
   registered,
-  bank_account,
+  organisation_name,
   tax_clearance,
   annual_report,
   website,
@@ -55,22 +81,7 @@ console.log({
 });
 
 
-if(high_school_work !== 'yes' || gender_based_violence_work !== 'yes' || child_protection_protocols !== 'yes' || audited_financial_statements !== 'yes' || registered !== 'yes' || bank_account !== 'yes' || tax_clearance !== 'yes' || active_social_media !== 'yes') {
-  alert('You currently do not meet the requirements to be part of the Changemaker Network. Your organisation needs to be able to answer yes to all the questions')
-} else if (
-  high_school_work === "yes" &&
-  gender_based_violence_work === "yes" &&
-  child_protection_protocols === "yes" &&
-  audited_financial_statements === "yes" &&
-  registered === "yes" &&
-  bank_account === "yes" &&
-  tax_clearance === "yes" &&
-  active_social_media === "yes"
-) {
-  router.push("/apply");
-} else {
-    router.push("/");
-}
+
 
   }
 
@@ -95,7 +106,8 @@ if(high_school_work !== 'yes' || gender_based_violence_work !== 'yes' || child_p
                         htmlFor="high_school_work"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Does your organization work within high-schools?
+                        Does your organisation have existing links and relations
+                        to local high schools?
                       </label>
                       <select
                         id="high_school_work"
@@ -119,8 +131,8 @@ if(high_school_work !== 'yes' || gender_based_violence_work !== 'yes' || child_p
                         htmlFor="gender_based_violence_work"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Does your organization work on topics aligned to
-                        Gender-Based-Violence?
+                        Does your organisation work on (or can imagine to work
+                        on) the topics school safety and prevention of GBV?
                       </label>
                       <select
                         id="gender_based_violence_work"
@@ -174,9 +186,8 @@ if(high_school_work !== 'yes' || gender_based_violence_work !== 'yes' || child_p
                         htmlFor="audited_financial_statements"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Does your organization have audited financial
-                        statements? If not, does your organization have
-                        something equivalent to audited financial statements?
+                        Does your organisation have (audited) financial
+                        statements?
                       </label>
                       <select
                         id="audited_financial_statements"
@@ -225,28 +236,26 @@ if(high_school_work !== 'yes' || gender_based_violence_work !== 'yes' || child_p
                     </div>
                     <div className="w-ful mt-4">
                       <label
-                        htmlFor="bank_account"
+                        htmlFor="organisation_name"
                         className="block text-sm font-medium text-gray-700"
                       >
-                        Does your organization have a bank account in the
-                        organizations name?
+                        What is the name of your organisation?
                       </label>
-                      <select
-                        id="bank_account"
-                        name="bank_account"
-                        value={formState.bank_account}
+                      <input
+                        id="organisation_name"
+                        name="organisation_name"
+                        value={formState.organisation_name}
+                        required
                         onChange={(e) =>
                           setFormState({
                             ...formState,
-                            bank_account: e.target.value,
+                            organisation_name: e.target.value,
                           })
                         }
                         className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
-                      >
-                        <option value="">Select Option</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
+                      />
+
+
                     </div>
                   </div>
                 )}
