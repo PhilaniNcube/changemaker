@@ -25,11 +25,11 @@ export default function Hero() {
           </h1>
           <p className="text-white text-sm md:text-md lg:text-base text-left leading-7 mt-6 max-w-[65ch]">
             Masifunde&apos;s Changemaker Network aims to capacitate high school
-            learners&apos; with practical knowledge on relevant social topics
-            such as school safety, violence and bullying. Through activation
-            workshops for all Grade 9 learners and intensive changemaker
-            trainings for selected learners they can spark positive change in
-            their schools and communities.
+            learners with practical knowledge on relevant social topics such as
+            school safety, violence, bullying and Environmental Awareness and
+            Protection. Through activation workshops for all Grade 9 learners
+            and intensive changemaker trainings for selected learners they can
+            spark positive change in their schools and communities.
           </p>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start gap-3 mt-6 text-black">

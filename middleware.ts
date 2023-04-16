@@ -7,22 +7,26 @@ import {Database} from './schema'
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
-
   const supabase = createMiddlewareSupabaseClient<Database>({ req, res })
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  const getsession = await supabase.auth.getSession()
 
 
   const {error, data, status} = await supabase.rpc("is_admin")
 
-  if (data !== true) {
+
+  if(req.nextUrl.pathname.startsWith('/dashboard')) {
+       if (data !== true) {
     return NextResponse.redirect(new URL('/', req.url))
+
+  }
+  } else {
+
+    return res
   }
 
 
+
+
+
 }
-export const config = {
-  matcher: '/dashboard/:path*',
-}
+

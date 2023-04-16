@@ -1,19 +1,25 @@
+
 import NationalGrid from "./NationalGrid";
 
 
 const Focus = () => {
   return (
     <section className="bg-white py-10 text-slate-800">
+
       <div className="max-w-7xl mx-auto  py-10 px-8 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
             <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
-              School-based interventions can positively influence communities
-              that experience high levels of violence. Such school-based
-              programmes offer resources and support structures that promote
-              change in attitudes and behaviours of learners to influence their
-              peers and community. The Masifunde Changemaker Network (MCN) is
-              one example of such a school based programme.
+              The Changemaker Network model is a whole-of-school community
+              intervention that activates, provides capacity and supports the
+              role of local Department of Education and school communities at
+              large: school management, educators, learners, parents/caregivers.
+            </p>
+            <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
+              This project has been implemented within the Nelson Mandela Bay
+              and aims to work within 45 high schools within this region. It
+              further aims to be replicated within 4 provinces in South Africa.
+              Specifically; Eastern Cape, KwaZulu-Natal, North West and Limpopo.
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -177,8 +183,8 @@ const Focus = () => {
               </div>
             </div>{" "}
             <p className="text-lg text-slate-800 leading-7 mt-6 font-medium">
-              The ChangeMakers&apos; Network aims to be replicated within 4 provinces
-              in South Africa. Specifically:
+              The ChangeMakers&apos; Network aims to be replicated within 4
+              provinces in South Africa. Specifically:
               <span className="font-extrabold">
                 {" "}
                 Eatern Cape, KwaZulu-Natal, North West and Limpopo.

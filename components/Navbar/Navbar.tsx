@@ -17,6 +17,9 @@ import { User, useUser } from "@supabase/auth-helpers-react";
 import { useSupabase } from "../Auth/SupabaseProvider";
 import { useRouter } from "next/navigation";
 import AccountMenu from "./AccountMenu";
+import { DesktopNavigation } from "./DesktopNavigation";
+import Image from "next/image";
+
 
 
 const about = [
@@ -75,7 +78,7 @@ export default function Navbar({user, admin}:Props) {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">ChangeMaker Network</span>
-            <img className="h-16 w-auto" src="/images/logo_2.svg" alt="Logo" />
+            <Image width={80} height={70} className="h-16 w-auto" src="/images/logo_2.svg" alt="Logo" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -88,89 +91,8 @@ export default function Navbar({user, admin}:Props) {
             <Bars3Icon className="h-8 w-8 text-accent" aria-hidden="true" />
           </button>
         </div>
-        <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative group">
-            <Popover.Button className="flex group-hover:text-accent items-center gap-x-1 text-md font-semibold leading-6 text-white hover:text-accent">
-              About
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-white group-hover:text-accent hover:text-accent"
-                aria-hidden="true"
-              />
-            </Popover.Button>
 
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
-              enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
-              leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
-            >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                <div className="p-4">
-                  {about.map((item) => (
-                    <div
-                      key={item.name}
-                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-md leading-6 hover:bg-gray-50"
-                    >
-                      <div className="flex-auto">
-                        <Link
-                          href={item.href}
-                          className="block font-semibold text-accent"
-                        >
-                          {item.name}
-                          <span className="absolute inset-0" />
-                        </Link>
-                        <p className="mt-1 text-gray-600">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-md font-semibold leading-6 text-accent hover:bg-gray-100"
-                    >
-                      <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover>
-
-          <Link
-            href="/in-action"
-            className="text-md font-semibold leading-6 text-white hover:text-accent"
-          >
-            MCN In Action
-          </Link>
-          <Link
-            href="/learner-area"
-            className="text-md font-semibold leading-6 text-white hover:text-accent"
-          >
-            Learner Area
-          </Link>
-          <Link
-            href="/partner-area"
-            className="text-md font-semibold leading-6 text-white hover:text-accent"
-          >
-            Partner Area
-          </Link>
-          <Link
-            href="/contact"
-            className="text-md font-semibold leading-6 text-white hover:text-accent"
-          >
-            Contact Us
-          </Link>
-        </Popover.Group>
+        <DesktopNavigation />
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {!user ? (
             <div className="flex space-x-3 items-center">
@@ -225,6 +147,13 @@ export default function Navbar({user, admin}:Props) {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                >
+                Home
+                </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>

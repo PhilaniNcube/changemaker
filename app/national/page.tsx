@@ -6,12 +6,14 @@ import HowItWorks from "./HowItWorks";
 
 
 
+
 const page = () => {
   return (
     <main>
      <NationalHero />
      <NationalDetails />
      <NationalFocus />
+
      <HowItWorks />
     </main>
   );

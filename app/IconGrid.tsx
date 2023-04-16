@@ -5,6 +5,12 @@ import Image from "next/image";
 
 const items = [
   {
+    id: 0,
+    icon: "/images/on_off.svg",
+    title: "Capacity building",
+    text: "Capacity building refers to the process of enhancing an individual, group, organization, or community's ability to identify, plan, and achieve their goals effectively and efficiently. This involves strengthening their knowledge, skills, resources, and competencies to adapt and respond to challenges, solve problems, and sustain growth and development. Capacity building can occur at various levels, including personal, organizational, and societal, and may encompass various activities such as training, mentoring, networking, strategic planning, and resource mobilization. ",
+  },
+  {
     id: 1,
     icon: "/images/on_off.svg",
     title: "Activation Workshops",
@@ -28,7 +34,7 @@ const IconGrid = () => {
 
   return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-28">
     {items.map((item) => (
-      <div key={item.id} className="w-full  aspect-square p-8 bg-accent group relative isolate">
+      <div key={item.id} className="w-full md:w-[85%] mx-auto  aspect-square p-8 bg-accent group relative isolate">
         <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
           <Image src={item.icon} width={50} height={50} className="w-16 h-16 object-contain" alt={item.title} />
           <p className="font-bold text-lg md:text-2xl mt-2 text-center">
@@ -36,7 +42,7 @@ const IconGrid = () => {
           </p>
         </div>
         <div className="absolute inset-0 px-6 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
-          <p className="text-white text-xs lg:text-sm font-medium text-justify">{item.text}</p>
+          <p className="text-white text-xs font-medium ">{item.text}</p>
         </div>
       </div>
     ))}
