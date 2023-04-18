@@ -52,10 +52,10 @@ const Timeline = () => {
             <div
               className={`${
                 index % 2 === 0 ? "float-left text-right" : "float-right text-left"
-              } bg-slate-50 rounded-xl p-4 shadow-lg w-[200px] md:w-[250px] odd:self-start even:self-end odd:place-items-start even:place-items-end`}
+              } bg-slate-50 rounded-xl p-4 shadow-lg w-[200px] md:w-[270px] odd:self-start even:self-end odd:place-items-start even:place-items-end`}
             >
-              <h2 className="text-2xl mb-2">{item.date}</h2>
-              <p className="text-xs md:text-sm">{item.text}</p>
+              <h2 className="text-md md:text-2xl font-extrabold text-accent">{item.date}</h2>
+              <p className="text-xs ">{item.text}</p>
             </div>
           </article>
         ))}

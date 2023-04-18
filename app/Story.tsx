@@ -36,7 +36,7 @@ const Story = () => {
 
         <div className="lg:mt-14 sm:mt-7 mt-14">
           <div className="flex lg:flex-row flex-col">
-            <div className="w-full lg:w-7/12 text-justify">
+            <div className="w-full lg:w-6/12 text-justify">
               <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">
                 Our Story
               </h2>
@@ -79,7 +79,7 @@ const Story = () => {
               </div>
             </div>
 
-            <div className="w-full lg:w-5/12">
+            <div className="w-full lg:w-6/12">
               <Timeline />
             </div>
           </div>
