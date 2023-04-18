@@ -5,7 +5,7 @@ import { Fragment } from "react";
 const timeline = [
   {
     text: "Masifunde registers as NPC",
-    date: "2019",
+    date: "2009",
   },
   {
     text: "Masifunde implements “Youth for Safer Communities” city wide",

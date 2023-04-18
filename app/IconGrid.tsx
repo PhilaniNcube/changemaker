@@ -32,16 +32,16 @@ const items = [
 
 const IconGrid = () => {
 
-  return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-28">
+  return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-20">
     {items.map((item) => (
-      <div key={item.id} className="w-full md:w-[85%] mx-auto  aspect-square p-8 bg-accent group relative isolate">
+      <div key={item.id} className="w-full mx-auto  aspect-[6/7] px-3 py-2 bg-accent group relative isolate">
         <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
-          <Image src={item.icon} width={50} height={50} className="w-16 h-16 object-contain" alt={item.title} />
-          <p className="font-bold text-lg md:text-2xl mt-2 text-center">
+          <Image src={item.icon} width={50} height={50} className="w-12 h-12 object-contain" alt={item.title} />
+          <p className="font-bold text-lg md:text-xl mt-2 text-center">
             {item.title}
           </p>
         </div>
-        <div className="absolute inset-0 px-6 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
+        <div className="absolute inset-0 px-2 group-hover:opacity-100 opacity-0 flex justify-center items-center">
           <p className="text-white text-xs font-medium ">{item.text}</p>
         </div>
       </div>

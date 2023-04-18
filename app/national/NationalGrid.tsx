@@ -32,25 +32,25 @@ const items = [
 
 const NationalGrid = () => {
   return (
-    <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-16 lg:gap-28">
+    <div className="max-w-7xl mx-auto px-8 lg:px-0 py-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-16 lg:gap-20">
       {items.map((item) => (
         <div
           key={item.id}
-          className="w-full md:w-[85%] mx-auto aspect-square p-8 bg-[#2a2d2e] group relative isolate"
+          className="w-full mx-auto aspect-square px-3 py-2 bg-[#2a2d2e] group relative isolate"
         >
           <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
             <Image
               src={item.icon}
               width={50}
               height={50}
-              className="w-20 h-20 object-contain"
+              className="w-12 h-12 object-contain"
               alt={item.title}
             />
-            <p className="font-bold text-lg md:text-2xl mt-2 text-center">
+            <p className="font-bold text-lg md:text-xl mt-2 text-center">
               {item.title}
             </p>
           </div>
-          <div className="absolute inset-0 px-2 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
+          <div className="absolute inset-0 px-2 group-hover:opacity-100 opacity-0 flex justify-center items-center">
             <p className="text-white text-justify text-xs font-medium">
               {item.text}
             </p>

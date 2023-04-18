@@ -9,8 +9,8 @@ const page = () => {
   return (
     <main className="bg-white pb-10" id="video">
       <NMBDetails />
-      <NMBFunders />
       <NMBFocus />
+      <NMBFunders />
       <NMBSchools />
       <NMBVideo />
     </main>

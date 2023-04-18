@@ -13,73 +13,52 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuPortal, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
+import { PlayIcon } from "lucide-react";
 
-const links = [
+
+const components: { title: string; href: string; description: string }[] = [
   {
-    name: "Home",
-    href: "/",
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    name: "About",
-    sublinks: [
-      {
-        name: "Mandela Bay Changemakers",
-        href: "/nmb",
-        subs: [
-          {
-            name: "Funders",
-            href: "/nmb#funders",
-          },
-          {
-            name: "Partners",
-            href: "/nmb#partners",
-          },
-          {
-            name: "Schools",
-            href: "/nmb#schools",
-          }
-        ]
-      },
-      {
-        name: "National Changemakers",
-        href: "/national",
-        subs: [
-          {
-            name: "Funders",
-            href: "/national#funders",
-          },
-          {
-            name: "Partners",
-            href: "/national#partners",
-          },
-          {
-            name: "CSOS",
-            href: "/national#csos",
-          }
-        ]
-      },
-      {
-        name: "NISSP",
-        href: "/about/nissp",
-      },
-      {
-        name: "Team",
-        href: "/about/team",
-      }
-    ]
-  }
-]
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+];
 
 export function DesktopNavigation() {
-
-  const [position, setPosition] = React.useState("bottom");
-
   return (
-    <NavigationMenu className="hidden md:block">
-      <NavigationMenuList className="space-x-2">
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800 focus:ring-0 focus:bg-transparent">
+    <NavigationMenu className="hidden lg:block">
+      <NavigationMenuList>
+        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
           <Link
             href="/"
             legacyBehavior
@@ -92,36 +71,34 @@ export function DesktopNavigation() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost">About</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuGroup>
-
-                <DropdownMenuItem>
-                  <Link href="/nmb" passHref>
-                    Neson Mandela Bay Changemakers
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/national" passHref>
-                    National Changemakers
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/about/nissp" passHref>
-                    NISSP
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="/about/team" passHref>
-                    Team
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <NavigationMenuTrigger>About</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-accent/40 to-accent p-6 no-underline outline-none focus:shadow-md"
+                    href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
+                    target="_blank"
+                  >
+                    <PlayIcon className="h-6 w-6 text-white" />
+                    <div className="mb-2 mt-4 text-lg text-white font-medium">
+                      Watch Video
+                    </div>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <ListItem href="/nmb" title="NMB">
+                Nelson Mandela Bay Changemakers
+              </ListItem>
+              <ListItem href="/national" title="National">
+                National Changemakers
+              </ListItem>
+              <ListItem href="/about/nissp" title="NISSP">
+                A joint national partnership to strengthen collective action
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
           <Link
@@ -146,7 +123,7 @@ export function DesktopNavigation() {
               Learner Area
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem>{" "}
         <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
           <Link
             href="/partner-area"
@@ -179,23 +156,24 @@ export function DesktopNavigation() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, href, children, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
+          href={`${href}`}
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 focus:bg-slate-100 dark:hover:bg-slate-700 dark:focus:bg-slate-700",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );

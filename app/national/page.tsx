@@ -2,6 +2,7 @@ import NationalHero from "./NationalHero";
 import NationalFocus from "./NationalFocus";
 import NationalDetails from "./NationalDetails";
 import HowItWorks from "./HowItWorks";
+import NationalFunders from "./NationalFunders";
 
 
 
@@ -13,7 +14,7 @@ const page = () => {
      <NationalHero />
      <NationalDetails />
      <NationalFocus />
-
+     <NationalFunders />
      <HowItWorks />
     </main>
   );

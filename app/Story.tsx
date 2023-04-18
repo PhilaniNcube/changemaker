@@ -36,7 +36,7 @@ const Story = () => {
 
         <div className="lg:mt-14 sm:mt-7 mt-14">
           <div className="flex lg:flex-row flex-col">
-            <div className="w-full lg:w-7/12">
+            <div className="w-full lg:w-7/12 text-justify">
               <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">
                 Our Story
               </h2>
@@ -68,15 +68,15 @@ const Story = () => {
                 200 schools, with 40 CSO partners in all provinces of South
                 Africa.
               </p>
-              <span className="pr-6 font-medium text-base leading-7 text-gray-600 w-full xl:w-9/12 mt-2">
+              <div className="pr-6 mt-8 font-medium text-base leading-7 text-gray-600 w-full xl:w-9/12">
                 Find out more about Masifunde{" "}
                 <Link
-                  className="text-blue-700 font-light underline"
+                  className="text-accent font-light underline"
                   href="https://www.masifunde.org"
                 >
                   www.masifunde.org
                 </Link>
-              </span>
+              </div>
             </div>
 
             <div className="w-full lg:w-5/12">

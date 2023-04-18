@@ -3,7 +3,7 @@ import NationalFunders from "./NationalFunders";
 const Details = () => {
   return (
     <section className="bg-white pt-10">
-      <NationalFunders />
+
       <div className="max-w-7xl mx-auto px-8 lg:px-0 gap-10">
         <p className="text-slate-700 text-justify text-base leading-7 mt-8">
           The Changemaker Network Project aims to capacitate learners with

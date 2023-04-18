@@ -26,20 +26,22 @@ function Hero() {
                     </p>
                   </div>
                   <div className="flex gap-3">
-                    <Link
+                    <a
+                      target="_blank"
                       href="https://www.instagram.com/changemaker_network/"
                       aria-label="Join the community"
                       className="mt-5 flex items-center space-x-2 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-slate-800 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
                     >
                       Instagram <FaInstagramSquare className="ml-3 h-6 w-6" />
-                    </Link>
-                    <Link
+                    </a>
+                    <a
+                      target="_blank"
                       href="https://www.facebook.com/profile.php?id=100083194785525"
                       aria-label="Join the community"
                       className="mt-5 flex items-center space-x-2 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-slate-800 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none"
                     >
                       Facebook <FaFacebookSquare className="ml-3 h-6 w-6" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
                 <div className="md:w-1/3 w-2/3">
