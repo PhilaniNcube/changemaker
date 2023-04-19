@@ -17,16 +17,23 @@ export async function middleware(req: NextRequest) {
 
    const { data:admin, error } = await supabase.rpc("is_admin");
 
-  console.log({admin, error})
 
-  //   if (admin !== true) {
-  //    const redirectUrl = req.nextUrl.clone()
-  // redirectUrl.pathname = '/'
-  // redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
-  // return NextResponse.redirect(redirectUrl)
-  // } else {
-  //      return res
-  // }
+
+  if (req.nextUrl.pathname.startsWith('/dashboard')) {
+    // This logic is only applied to /dashboard
+  if (admin !== true) {
+     const redirectUrl = req.nextUrl.clone()
+     redirectUrl.pathname = '/'
+     redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
+     return NextResponse.redirect(redirectUrl)
+    } else {
+      console.log({admin, error})
+    return res
+    }
+
+  }
+
+
 
   return res
 
