@@ -3,7 +3,7 @@ import IconGrid from "@/app/IconGrid";
 
 const NMBFocus = () => {
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-8 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>

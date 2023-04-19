@@ -3,7 +3,7 @@
 const NMBVideo = () => {
 
   return (
-    <section className="bg-white px-8 md:px-6 mt-6" id="video">
+    <section className="bg-white px-8 md:px-6 py-12 mt-6" id="video">
       <iframe
         className="max-w-4xl aspect-video mx-auto"
         width="900"

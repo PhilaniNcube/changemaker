@@ -4,29 +4,31 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import {Database} from './schema'
 
+// export const config = {
+//   matcher: ['/dashboard/:path*'],
+// }
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()
   const supabase = createMiddlewareSupabaseClient<Database>({ req, res })
-  const getsession = await supabase.auth.getSession()
+  const { data: { session } } = await supabase.auth.getSession()
 
+  console.log({session})
 
-  const {error, data, status} = await supabase.rpc("is_admin")
+   const { data:admin, error } = await supabase.rpc("is_admin");
 
+  console.log({admin, error})
 
-  if(req.nextUrl.pathname.startsWith('/dashboard')) {
-       if (data !== true) {
-    return NextResponse.redirect(new URL('/', req.url))
+  //   if (admin !== true) {
+  //    const redirectUrl = req.nextUrl.clone()
+  // redirectUrl.pathname = '/'
+  // redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
+  // return NextResponse.redirect(redirectUrl)
+  // } else {
+  //      return res
+  // }
 
-  }
-  } else {
-
-    return res
-  }
-
-
-
-
+  return res
 
 }
 

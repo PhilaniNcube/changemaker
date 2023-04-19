@@ -32,7 +32,7 @@ const items = [
 
 const NationalGrid = () => {
   return (
-    <div className="max-w-7xl mx-auto px-8 lg:px-0 py-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-16 lg:gap-20">
+    <div className="max-w-7xl mx-auto px-8 lg:px-0 py-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-16 lg:gap-12">
       {items.map((item) => (
         <div
           key={item.id}
@@ -50,8 +50,8 @@ const NationalGrid = () => {
               {item.title}
             </p>
           </div>
-          <div className="absolute inset-0 px-2 group-hover:opacity-100 opacity-0 flex justify-center items-center">
-            <p className="text-white text-justify text-xs font-medium">
+          <div className="absolute inset-0 px-6 group-hover:opacity-100 opacity-0 flex justify-center items-center">
+            <p className="text-white text-xs font-medium">
               {item.text}
             </p>
           </div>

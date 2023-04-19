@@ -15,19 +15,19 @@ const Story = () => {
               </h2>
             </div>
           </div>
-          <div>
+          <div className="overflow-hidden">
             <img
-              className="rounded-md lg:block hidden w-full object-cover aspect-[7/2] object-top"
+              className="rounded-md lg:block hidden w-full object-cover aspect-[7/3] object-top"
               src="/images/home_banner.jpeg"
               alt="Student"
             />
             <img
-              className="rounded-md lg:hidden sm:block hidden w-full object-cover aspect-[5/2]"
+              className="rounded-md lg:hidden sm:block hidden w-full object-cover aspect-[5/3]"
               src="/images/home_banner.jpeg"
               alt="Student"
             />
             <img
-              className="rounded-md sm:hidden block w-full object-cover aspect-[5/2]"
+              className="rounded-md sm:hidden block w-full object-cover aspect-[5/3]"
               src="/images/home_banner.jpeg"
               alt="Student"
             />
