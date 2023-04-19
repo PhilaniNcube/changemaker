@@ -8,7 +8,7 @@ import {Database} from './schema'
 //   matcher: ['/dashboard/:path*'],
 // }
 
-export async function middleware(req: NextRequest) {
+const middleware = async (req: NextRequest) => {
   const res = NextResponse.next()
   const supabase = createMiddlewareSupabaseClient<Database>({ req, res })
   const { data: { session } } = await supabase.auth.getSession()
@@ -39,3 +39,4 @@ export async function middleware(req: NextRequest) {
 
 }
 
+export default middleware
