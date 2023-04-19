@@ -1,6 +1,6 @@
 
 
-export default function HowItWorks() {
+const HowItWorks = () => {
   return (
     <section className="bg-white py-10">
       <div className="relative h-full max-w-7xl mx-auto px-8 lg:px-0">
@@ -73,3 +73,5 @@ export default function HowItWorks() {
     </section>
   );
 }
+
+export default HowItWorks;

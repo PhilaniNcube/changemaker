@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagramSquare } from "react-icons/fa";
 
 /* This example requires Tailwind CSS v3.0+ */
-export default function Hero() {
+const Hero = () => {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto min-h-[55vh] overflow-hidden py-20">
@@ -23,3 +23,5 @@ export default function Hero() {
     </div>
   );
 }
+
+export default Hero

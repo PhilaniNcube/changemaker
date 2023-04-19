@@ -6,7 +6,7 @@ import Story from './Story';
 
 
 
-export default function Home() {
+const Home = () => {
   return (
     <Fragment>
       <div className="flex justify-center items-center space-x-6 py-4 bg-accent text-black">
@@ -26,3 +26,6 @@ export default function Home() {
     </Fragment>
   );
 }
+
+
+export default Home

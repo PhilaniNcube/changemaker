@@ -54,7 +54,7 @@ type Props = {
   admin: boolean
 }
 
-export default function Navbar({user, admin}:Props) {
+const Navbar = ({user, admin}:Props) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const router = useRouter()
@@ -252,3 +252,6 @@ export default function Navbar({user, admin}:Props) {
     </header>
   );
 }
+
+
+export default Navbar;

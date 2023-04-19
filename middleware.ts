@@ -13,7 +13,7 @@ export async function middleware(req: NextRequest) {
   const supabase = createMiddlewareSupabaseClient<Database>({ req, res })
   const { data: { session } } = await supabase.auth.getSession()
 
-  console.log({session})
+  // console.log({session})
 
    const { data:admin, error } = await supabase.rpc("is_admin");
 

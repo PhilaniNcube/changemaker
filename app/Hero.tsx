@@ -2,7 +2,7 @@ import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero() {
+const Hero = () => {
   return (
     <div className="relative flex justify-end bg-dark">
       {" "}
@@ -57,3 +57,6 @@ export default function Hero() {
     </div>
   );
 }
+
+
+export default Hero
