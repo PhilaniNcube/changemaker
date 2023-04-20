@@ -22,12 +22,34 @@ export type Feed = {
   }
 };
 
+
+interface InstagramMedia {
+  id: string;
+  caption: string;
+  media_type: string;
+  media_url: string;
+  thumbnail_url?: string;
+  permalink: string;
+  timestamp: string;
+}
+
 const instagramFeedService = async () => {
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_TOKEN}`;
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=16`;
 
-  const data = await fetch(url, { cache: "no-store" });
+ try {
+   const response = await fetch(url);
+   const data = await response.json();
 
-  const feed = await data.json();
+   if (data.error) {
+     console.error("Error fetching Instagram feed:", data.error);
+     return [];
+   }
+
+   return data.data as Feed[];
+ } catch (error) {
+   console.error("Error fetching Instagram feed:", error);
+   return [];
+ }
 
   return feed as Feed;
 };
