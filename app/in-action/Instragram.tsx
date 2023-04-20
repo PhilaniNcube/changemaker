@@ -53,7 +53,7 @@ const Instragram =  ({feed}:ComponentProps) => {
             </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {feed.data.map((item) => (
+            {feed.map((item) => (
               <article
                 onClick={() => router.push(`${item.permalink}`)}
                 key={item.id}
