@@ -7,19 +7,19 @@ import { useRouter } from "next/navigation";
 import { InstagramMedia } from "./page";
 
 type ComponentProps = {
-  feed: InstagramMedia;
+  feed: InstagramMedia[];
 };
 
 const Instragram =  ({feed}:ComponentProps) => {
 
   const router = useRouter()
 
+  console.log({feed})
+
   return (
     <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-8 lg:px-0">
-        <h1 className="text-2xl md:text-5xl font-bold text-slate-800 ">
-          News
-        </h1>
+        <h1 className="text-2xl md:text-5xl font-bold text-slate-800 ">News</h1>
 
         <p className="text-slate-700 text-base">
           Stay updated through our Social Media Feeds!
@@ -45,8 +45,11 @@ const Instragram =  ({feed}:ComponentProps) => {
                   cite="https://www.facebook.com/profile.php?id=100083194785525"
                   className="fb-xfbml-parse-ignore"
                 >
-                  <Link className="text-slate-700" href="https://www.facebook.com/profile.php?id=100083194785525">
-                   Loading Facebook Feed...
+                  <Link
+                    className="text-slate-700"
+                    href="https://www.facebook.com/profile.php?id=100083194785525"
+                  >
+                    Loading Facebook Feed...
                   </Link>
                 </blockquote>
               </div>
@@ -60,7 +63,7 @@ const Instragram =  ({feed}:ComponentProps) => {
                 className="w-full cursor-pointer aspect-square rounded-md group relative isolate"
               >
                 <img
-                  src={item.media_url}
+                  src={item.thumbnail_url || item.media_url}
                   width={500}
                   height={500}
                   alt={item.caption}
