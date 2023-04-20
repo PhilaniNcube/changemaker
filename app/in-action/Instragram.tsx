@@ -4,10 +4,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Feed } from "./page";
+import { InstagramMedia } from "./page";
 
 type ComponentProps = {
-  feed: Feed;
+  feed: InstagramMedia;
 };
 
 const Instragram =  ({feed}:ComponentProps) => {
