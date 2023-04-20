@@ -34,7 +34,7 @@ export interface InstagramMedia {
 }
 
 const instagramFeedService = async () => {
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=16`;
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=18`;
 
  try {
    const response = await fetch(url);
