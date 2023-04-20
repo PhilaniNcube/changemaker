@@ -45,7 +45,7 @@ const instagramFeedService = async () => {
      return [];
    }
 
-   return data as InstagramMedia[];
+   return data.data as InstagramMedia[];
  } catch (error) {
    console.error("Error fetching Instagram feed:", error);
    return [];
