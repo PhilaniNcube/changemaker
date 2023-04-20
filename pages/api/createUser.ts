@@ -54,8 +54,12 @@ if(error !== null) {
   await client.send({
     from: {email: 'info@changemaker-network.org'},
     to: [{email: `${data?.user?.email}`}],
-    subject: 'A user for you has been created on ChangeMaker Network',
-    text: `Hello, a user has been created for you on the ChangeMaker Network, you can log in with the email address: <strong>${data.user.email}</strong>,  and you can use the temporary password: <strong>${first_name}123</strong>. Please change it as soon as possible. Please visit <a href="https://changemaker.vercel.app">https://changemaker.vercel.app</a> to set your own password.`
+   template_uuid: "fc6137fa-38b3-4ec7-8129-4b8efb8c2c5a",
+      template_variables: {
+      "first_name": `${first_name}`,
+      "last_name": `${last_name}`,
+      "email": `${email}`
+    }
   })
 
     res.status(200).json({ message: `User created: ${data.user.email}` })
