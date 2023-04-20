@@ -8,8 +8,8 @@ import { Database } from "@/schema";
 
 const newUserSchema = z.object({
   email: z.string().email(),
-  first_name: z.string(),
-  last_name: z.string(),
+  first_name: z.string().trim(),
+  last_name: z.string().trim(),
   organisation_id: z.string().uuid(),
 });
 
