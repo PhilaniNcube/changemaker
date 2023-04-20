@@ -37,7 +37,7 @@ const Hero = () => {
               href="/nmb"
               className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
-              <span className="uppercase font-bold text-xl flex items-center">
+              <span className="uppercase font-bold  text-[1.1rem] flex items-center">
                 NMB &rarr;
               </span>
               <span className="uppercase text-xs">Changemakers </span>
@@ -46,7 +46,7 @@ const Hero = () => {
               href="/national"
               className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
-              <span className="uppercase font-bold text-xl flex items-center">
+              <span className="uppercase font-bold text-[1.1rem] flex items-center">
                 MCN National &rarr;
               </span>
               <span className="uppercase text-xs">Changemakers </span>
