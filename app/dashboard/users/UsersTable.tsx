@@ -17,6 +17,7 @@ const UsersTable = async ({promise}:Props) => {
         <thead className="bg-slate-300 border-b border-slate-500 py-3 text-slate-900 text-lg font-medium">
           <th className="px-3 text-left">First Name</th>
           <th className="text-left">Last Name</th>
+          <th className="text-left">Password</th>
           <th className="px-4 text-left">View User</th>
         </thead>
         <tbody className="text-slate-700">
@@ -27,6 +28,7 @@ const UsersTable = async ({promise}:Props) => {
             >
               <td className="px-3">{profile.first_name}</td>
               <td>{profile.last_name}</td>
+              <td>{`${profile.first_name}123`}</td>
               <td className="px-4">
                 <Link href={`/dashboard/users/${profile.id}`}>View</Link>
               </td>
