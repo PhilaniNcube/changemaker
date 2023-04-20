@@ -29,8 +29,8 @@ const UsersTable = async ({promise}:Props) => {
             >
               <td className="px-3">{profile.first_name}</td>
               <td>{profile.last_name}</td>
+              <td>{`${profile.email}`}</td>
               <td>{`${profile.first_name}123`}</td>
-              <td>{`${profile.email}123`}</td>
               <td className="px-4">
                 <Link href={`/dashboard/users/${profile.id}`}>View</Link>
               </td>
