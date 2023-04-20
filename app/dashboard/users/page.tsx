@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Suspense } from "react";
 import UsersTable from "./UsersTable";
 
+export const revalidate = 0;
+
 const page = () => {
 
 const usersData = getProfiles()

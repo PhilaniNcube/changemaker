@@ -6,6 +6,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import { Fragment, useState } from "react";
 
+
 type Props = {
   profile: Database['public']['Tables']['profiles']['Row']
 }
@@ -13,6 +14,8 @@ type Props = {
 const UserDetails = ({profile}:Props) => {
 
     const { supabase } = useSupabase();
+
+
 
   const [confirm, setConfirm] = useState(false)
 
