@@ -23,7 +23,7 @@ export type Feed = {
 };
 
 
-interface InstagramMedia {
+export interface InstagramMedia {
   id: string;
   caption: string;
   media_type: string;
