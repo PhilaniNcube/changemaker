@@ -24,11 +24,11 @@ const timeline = [
     date: "2022",
   },
   {
-    text: "MCN starts replication in four provinces with 20 partner CSOs",
+    text: "MCN starts replication in four provinces – North West, KwaZulu-Natal, Limpopo, Eastern Cape - with 20 partner CSO’s. Aiming to reach 680 changemakers and 100 000 learners",
     date: "2023",
   },
   {
-    text: "MCN aims to train 680 changemakers to reach 100 000 learners in Eastern Cape, North-West, Limpopo, KZN 45 000 learners in the Nelson Mandela Bay",
+    text: "MCN starts replication in all provinces across South Africa, aiming to reach 1000 changemakers and 245 000 learners nationwide",
     date: "2024",
   },
 ];

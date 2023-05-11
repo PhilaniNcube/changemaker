@@ -77,82 +77,90 @@ const schools = [
   },
   {
     id: 20,
-    title: "Mzontsundu Secondary School",
+    title: "Morningside Highschool",
   },
   {
     id: 21,
-    title: "Ndyebo  Senior Secondary School",
+    title: "Mzontsundu Secondary School",
   },
   {
     id: 22,
-    title: "Ndzondelelo High School",
+    title: "Ndyebo  Senior Secondary School",
   },
   {
     id: 23,
-    title: "Newell High School",
+    title: "Ndzondelelo High School",
   },
   {
     id: 24,
-    title: "Nkululeko Public Secondary School",
+    title: "Newell High School",
   },
   {
     id: 25,
-    title: "Paterson High School",
+    title: "Nkululeko Public Secondary School",
   },
   {
     id: 26,
-    title: "Phakamisa High School",
+    title: "Paterson High School",
   },
   {
     id: 27,
-    title: "Qaphelani Senior Secondary School",
+    title: "Phakamisa High School",
   },
   {
     id: 28,
-    title: "Sanctor  High School",
+    title: "Qaphelani Senior Secondary School",
   },
   {
     id: 29,
-    title: "Solomon Mahlangu Secondary School",
+    title: "Sanctor  High School",
   },
   {
     id: 30,
-    title: "Soqhayisa Senior Secondary School",
+    title: "Solomon Mahlangu Secondary School",
   },
   {
     id: 31,
-    title: "St James Secondary School",
+    title: "Sophakama Highschool",
   },
   {
     id: 32,
-    title: "St Thomas",
+    title: "Soqhayisa Senior Secondary School",
   },
   {
     id: 33,
-    title: "Tinarha High School",
+    title: "St James Secondary School",
   },
   {
     id: 34,
-    title: "Tyhilulwazi Senior Secondary School",
+    title: "St Thomas",
   },
   {
     id: 35,
-    title: "V.M Kwinana Senior Secondary School",
+    title: "Tinarha High School",
   },
   {
     id: 36,
-    title: "Victoria Park High School",
+    title: "Tyhilulwazi Senior Secondary School",
   },
   {
     id: 37,
-    title: "Vulumzi  Secondary  School",
+    title: "V.M Kwinana Senior Secondary School",
   },
   {
     id: 38,
-    title: "Walmer High School",
+    title: "Victoria Park High School",
   },
   {
     id: 39,
+    title: "Vulumzi  Secondary  School",
+  },
+  {
+    id: 40,
+    title: "Walmer High School",
+  },
+  {
+    id: 41,
     title: "Woolhope  Secondary School",
   },
 ];

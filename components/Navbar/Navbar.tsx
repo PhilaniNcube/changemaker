@@ -79,7 +79,13 @@ const Navbar = ({user, admin}:Props) => {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">ChangeMaker Network</span>
-            <Image width={80} height={70} className="h-16 w-auto" src="/images/logo_2.svg" alt="Logo" />
+            <Image
+              width={80}
+              height={70}
+              className="h-16 w-auto"
+              src="/images/logo_2.svg"
+              alt="Logo"
+            />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -101,7 +107,7 @@ const Navbar = ({user, admin}:Props) => {
                 href="/login"
                 className="text-md font-semibold leading-6 text-accent"
               >
-                Log in <span aria-hidden="true">&rarr;</span>
+                Partner Area Log in <span aria-hidden="true">&rarr;</span>
               </Link>
               {/* <Link
                 href="/sign-up"
@@ -153,7 +159,7 @@ const Navbar = ({user, admin}:Props) => {
                   onClick={() => setMobileMenuOpen(false)}
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
                 >
-                Home
+                  Home
                 </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (

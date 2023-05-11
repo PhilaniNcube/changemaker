@@ -9,7 +9,7 @@ const HowItWorks = () => {
             <div className="flex items-left flex-col px-4">
               <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-accent">
                 <h2 className="text-4xl lg:text-5xl font-extrabold text-left leading-tight lg:w-7/12 md:w-9/12 pt-4">
-                  How we implement the ChangeMaker Network
+                  Roleplayers in the Changemaker Network
                 </h2>
               </span>
             </div>

@@ -12,14 +12,21 @@ const NMBDetails = () => {
       />
       <div className="absolute inset-0 py-10 bg-slate-600/60 ">
         <div className="flex flex-col gap-8 lg:h-full min-h-fit justify-center items-start max-w-7xl mx-auto px-8 lg:px-0 text-white">
-          <h2 className="font-extrabold text-3xl lg:text-5xl">
-            Nelson <br /> Mandela Bay
+          <h2 className="font-extrabold text-3xl lg:text-5xl max-w-[32ch]">
+            Masifundes Changemaker Network Nelson Mandela Bay
           </h2>
-          <p className="font-medium text-xs md:text-base leading-6 md:leading-7 text-left max-w-[55ch]">
-            Masifunde&apos;s Changemaker Network aims to capacitate learners
-            from 45 high schools in the NMBM with practical knowledge on
-            relevant social topics.
-          </p>
+          <div>
+            <p className="font-medium text-xs md:text-base leading-6 md:leading-7 text-left max-w-[55ch]">
+              Masifunde&apos;s Changemaker Network aims to capacitate learners
+              from 45 high schools in the NMBM with practical knowledge on
+              relevant social topics. Through activation workshops for all Grade
+              9 learners and intensive changemaker trainings for selected
+              learners they can spark positive change in their schools and
+              communities.
+            </p>
+
+          </div>
+
           {/* <p className="font-medium text-xs md:text-base leading-6 md:leading-7 text-justify max-w-[55ch]">
             The programmes can help guide learners that may be exposed to or
             experiencing violence to find coping skills, positive behavioural

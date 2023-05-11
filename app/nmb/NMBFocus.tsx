@@ -7,11 +7,11 @@ const NMBFocus = () => {
       <div className="max-w-7xl mx-auto px-8 lg:px-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
+            {/* <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
               Through activation workshops for all Grade 9 learners and
               intensive changemaker trainings for selected learners they can
               spark positive change in their schools and communities.
-            </p>
+            </p> */}
             <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch] mt-3">
               The programmes can help guide learners that may be exposed to or
               experiencing violence to find coping skills, positive behavioural
@@ -30,15 +30,14 @@ const NMBFocus = () => {
             </h3>
             <div>
               <p className="text-slate-800  text-lg font-bold leading-7">
-                The Changemaker Network will, among others, focus on the
-                following topics:
+                The Changemaker Network focuses on the following topics:
               </p>
               <ul className="list-disc pl-6 text-sm md:text-base leading-7">
                 <li className="text-slate-700 leading-7">
                   School Safety: Understanding violence
                 </li>
                 <li className="text-slate-700 leading-7">
-                  Prevention of Gender based violence
+                  Prevention of Gender Based Violence (GBV)
                 </li>
                 <li className="text-slate-700 leading-7">Leadership</li>
                 <li className="text-slate-700 leading-7">
@@ -56,10 +55,12 @@ const NMBFocus = () => {
                 <li className="text-slate-700 leading-7">LGBT awareness</li>
               </ul>{" "}
               <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch] mt-3">
-                Spark magazines contain more information on these focus topics,
-                compiled by researchers and learners. Content allows readers to
-                learn more about the topics as well as engage in practical tools
-                and activities that one can put into practice and do with peers.
+                Spark magazines are a youth friendly, interactive magazine that
+                changemakers use as a catalyst to bring change. Spark magazines
+                contain more information on these focus topics, compiled by
+                researchers and learners. Content allows readers to learn more
+                about the topics as well as engage in practical tools and
+                activities that one can put into practice and do with peers.
               </p>
             </div>
           </div>

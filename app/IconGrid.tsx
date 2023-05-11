@@ -4,12 +4,12 @@ import Image from "next/image";
 
 
 const items = [
-  {
-    id: 0,
-    icon: "/images/on_off.svg",
-    title: "Capacity building",
-    text: "Capacity building refers to the process of enhancing an individual, group, organization, or community's ability to identify, plan, and achieve their goals effectively and efficiently. This involves strengthening their knowledge, skills, resources, and competencies to adapt and respond to challenges, solve problems, and sustain growth and development. Capacity building can occur at various levels, including personal, organizational, and societal, and may encompass various activities such as training, mentoring, networking, strategic planning, and resource mobilization. ",
-  },
+  // {
+  //   id: 0,
+  //   icon: "/images/on_off.svg",
+  //   title: "Capacity building",
+  //   text: "Capacity building refers to the process of enhancing an individual, group, organization, or community's ability to identify, plan, and achieve their goals effectively and efficiently. This involves strengthening their knowledge, skills, resources, and competencies to adapt and respond to challenges, solve problems, and sustain growth and development. Capacity building can occur at various levels, including personal, organizational, and societal, and may encompass various activities such as training, mentoring, networking, strategic planning, and resource mobilization. ",
+  // },
   {
     id: 1,
     icon: "/images/on_off.svg",
@@ -20,7 +20,7 @@ const items = [
     id: 2,
     icon: "/images/gears.svg",
     title: "Changemaker Training",
-    text: "Selected learners then attend a one-week training to become capacitated in the core topics and receive tools and methods necessary to act as changemakers in their schools. The objective is to create a common understanding of the importance of youth participation and resilience even during the difficult times of a global pandemic. Youthful methods are used and a safe environment is created which encourages dialogues, positive thinking and action.",
+    text: "Selected learners then attend a one-week training to become capacitated in the core topics and receive tools and methods necessary to act as changemakers in their schools. The objective is to create a common understanding of the importance of youth participation and resilience. Youthful methods are used and a safe environment is created which encourages dialogues, positive thinking and action.",
   },
   {
     id: 3,
@@ -32,9 +32,9 @@ const items = [
 
 const IconGrid = () => {
 
-  return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-12">
+  return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12">
     {items.map((item) => (
-      <div key={item.id} className="w-full mx-auto  aspect-[6/7] px-3 py-2 bg-accent group relative isolate">
+      <div key={item.id} className="w-full mx-auto  aspect-square px-3 py-2 bg-accent group relative isolate">
         <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
           <Image src={item.icon} width={50} height={50} className="w-12 h-12 object-contain" alt={item.title} />
           <p className="font-bold text-lg md:text-xl mt-2 text-center">
@@ -42,7 +42,7 @@ const IconGrid = () => {
           </p>
         </div>
         <div className="absolute inset-0 px-6 group-hover:opacity-100 opacity-0 flex justify-center items-center">
-          <p className="text-white text-xs font-medium ">{item.text}</p>
+          <p className="text-white text-sm lg:text-md font-medium ">{item.text}</p>
         </div>
       </div>
     ))}

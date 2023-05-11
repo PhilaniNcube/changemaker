@@ -10,9 +10,9 @@ const page = () => {
     <main className="bg-white pb-10" id="video">
       <NMBDetails />
       <NMBFocus />
-      <NMBFunders />
       <NMBSchools />
       <NMBVideo />
+      <NMBFunders />
     </main>
   );
 };

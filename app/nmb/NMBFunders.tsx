@@ -26,7 +26,7 @@ const NMBFunders = () => {
 
   return (
     <section id="funders" className="max-w-7xl mx-auto px-8 lg:px-0 my-10 bg-white">
-      <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 text-center">Funders</h2>
+      <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 text-center">Funders/Partners</h2>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mt-8">
         {funders.map((funder, i) => (
           <div key={i} className="w-full flex items-center justify-center">

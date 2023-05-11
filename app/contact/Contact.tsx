@@ -39,7 +39,30 @@ function Contact() {
                     <path d="M15 3a6 6 0 0 1 6 6" />
                   </svg>
                 </div>
-                <p className="pl-4 text-white text-base">076 740 6241</p>
+                <p className="pl-4 text-white text-base">076 984 9922</p>
+              </div>{" "}
+              <div className="flex items-center">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="icon icon-tabler icon-tabler-mail"
+                    width={20}
+                    height={20}
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#FFFFFF"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <rect x={3} y={5} width={18} height={14} rx={2} />
+                    <polyline points="3 7 12 13 21 7" />
+                  </svg>
+                </div>
+                <p className="pl-4 text-white text-base">
+                  Andisiwe@masifunde.org
+                </p>
               </div>
               <h2 className="text-lg  text-white mt-8 font-medium">
                 Masifunde Changemaker Network National coordinator
@@ -65,7 +88,7 @@ function Contact() {
                     <path d="M15 3a6 6 0 0 1 6 6" />
                   </svg>
                 </div>
-                <p className="pl-4 text-white text-base">074 912 7928</p>
+                <p className="pl-4 text-white text-base">066 590 8200</p>
               </div>
               <div className="flex items-center">
                 <div>
@@ -209,7 +232,7 @@ function Contact() {
                       htmlFor="title"
                       className="text-gray-800 text-sm font-semibold leading-tight tracking-normal mb-2"
                     >
-                      Title
+                      Relation to MCN
                     </label>
                     <select
                       required

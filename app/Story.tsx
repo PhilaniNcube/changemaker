@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
+
 import Timeline from "@/components/Timeline/Timeline";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
 
 const Story = () => {
   return (
@@ -11,14 +12,20 @@ const Story = () => {
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="w-full h-full flex flex-col justify-center items-center bg-neutral-800 bg-opacity-40 text-white sm:px-12 px-6 rounded-md">
               <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7">
-                Learn more about us
+                Change starts with you
               </h2>
+              <p className="text-sm text-white text-center">
+                Linathi Mangether sparking change at Soqhayisa Secondary School
+                in Gqeberha
+              </p>
             </div>
           </div>
           <div className="overflow-hidden">
-            <img
-              className="rounded-md lg:block hidden w-full object-cover aspect-[7/3] object-top"
-              src="/images/home_banner.jpeg"
+            <Image
+              width={1920}
+              height={1080}
+              className="rounded-md lg:block hidden w-full object-cover aspect-[7/3] object-center"
+              src="https://res.cloudinary.com/dkqzhae7c/image/upload/v1683833665/phase_3_vpcgva.webp"
               alt="Student"
             />
             <img

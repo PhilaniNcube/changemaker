@@ -8,7 +8,7 @@ const items = [
     id: 0,
     icon: "/images/on_off.svg",
     title: "Capacity building",
-    text: "Capacity building refers to the process of enhancing an individual, group, organization, or community's ability to identify, plan, and achieve their goals effectively and efficiently. This involves strengthening their knowledge, skills, resources, and competencies to adapt and respond to challenges, solve problems, and sustain growth and development. Capacity building can occur at various levels, including personal, organizational, and societal, and may encompass various activities such as training, mentoring, networking, strategic planning, and resource mobilization. ",
+    text: "Selected Civil Society Organizations are trained in a one-week capacity building workshop. District officials join the training and work together with representatives to develop school safety interventions. ",
   },
   {
     id: 1,
@@ -19,8 +19,8 @@ const items = [
   {
     id: 2,
     icon: "/images/gears.svg",
-    title: "Changemaker Training",
-    text: "Selected learners then attend a one-week training to become capacitated in the core topics and receive tools and methods necessary to act as changemakers in their schools. The objective is to create a common understanding of the importance of youth participation and resilience even during the difficult times of a global pandemic. Youthful methods are used and a safe environment is created which encourages dialogues, positive thinking and action.",
+    title: "Virtual Changemaker Training",
+    text: "With support from Masifunde CSO’s coordinate a hybrid training for the selected changemakers. This allows learners to learn more about being a changemaker and be trained on topics including school safety and bullying prevention, as well as meet other changemakers from other parts of south africa",
   },
   {
     id: 3,
