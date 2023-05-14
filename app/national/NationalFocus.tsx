@@ -1,5 +1,21 @@
 
+import Link from "next/link";
 import NationalGrid from "./NationalGrid";
+import Image from "next/image";
+
+const sparkMags = [
+  {
+    title: "Spark 1st Edition",
+    thumbnail: "/images/national/spark_1st_ed.jpg",
+    doc: "/images/national/mag_1st_ed.pdf",
+  },
+  {
+    title: "Spark 2nd Edition",
+    thumbnail: "/images/national/spark_2nd_ed.jpg",
+    doc: "/images/national/mag_2nd_ed.pdf",
+  },
+
+];
 
 
 const Focus = () => {
@@ -196,6 +212,27 @@ const Focus = () => {
               ultimately 100 schools nationwide.
             </p>
           </div>
+        </div>
+      </div>{" "}
+      <div className="w-full max-w-7xl mx-auto mt-10">
+        <p className="text-slate-800 text-center text-2xl font-bold leading-7">
+          Spark Magazine Editions
+        </p>
+        <div className="w-full flex justify-center space-x-6 items-center mt-4">
+          {sparkMags.map((mag, i) => (
+            <Link
+              href={mag.doc}
+              key={i}
+              className="w-1/3 md:w-1/5 rounded-lg cursor-pointer overflow-hidden"
+            >
+              <Image
+                src={mag.thumbnail}
+                width={1748}
+                height={2480}
+                alt={mag.title}
+              />
+            </Link>
+          ))}
         </div>
       </div>
       <NationalGrid />

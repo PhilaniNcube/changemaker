@@ -1,4 +1,29 @@
 import IconGrid from "@/app/IconGrid";
+import Image from "next/image";
+import Link from "next/link";
+
+const sparkMags = [
+  {
+    title: "Spark 1st Edition",
+    thumbnail: "/images/nmb/nmb_spark_1.jpg",
+    doc: "/images/nmb/nmb_spark_1.pdf",
+  },
+  {
+    title: "Spark 2nd Edition",
+    thumbnail: "/images/nmb/nmb_spark_2.jpg",
+    doc: "/images/nmb/nmb_spark_2.pdf",
+  },
+  {
+    title: "Spark 3rd Edition",
+    thumbnail: "/images/nmb/nmb_spark_3.jpg",
+    doc: "/images/nmb/nmb_spark_3.pdf",
+  },
+  {
+    title: "Spark 4th Edition",
+    thumbnail: "/images/nmb/nmb_spark_4.jpg",
+    doc: "/images/nmb/nmb_spark_4.pdf",
+  },
+];
 
 
 const NMBFocus = () => {
@@ -63,6 +88,18 @@ const NMBFocus = () => {
                 activities that one can put into practice and do with peers.
               </p>
             </div>
+          </div>
+        </div>
+        <div className="w-full mt-10">
+          <p className="text-slate-800 text-center text-2xl font-bold leading-7">
+            Spark Magazine Editions
+          </p>
+          <div className="w-full flex justify-between items-center mt-4">
+            {sparkMags.map((mag, i) => (
+              <Link href={mag.doc} key={i} className="w-1/5 rounded-lg cursor-pointer overflow-hidden">
+                <Image src={mag.thumbnail} width={1748} height={2480} alt={mag.title} />
+              </Link>
+            ))}
           </div>
         </div>
         <IconGrid />
