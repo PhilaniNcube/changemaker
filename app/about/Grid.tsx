@@ -6,39 +6,39 @@ const items = [
   {
     id: 1,
     icon: "/images/links.svg",
-    title: "Activation Workshops",
-    text: "NISSP is a national multistakeholder structure/platform that aims to promote the collective action of the whole-of-school community to prevent violence and gender-based violence (GBV) occurring in South African schools.",
+    title: "NISSP",
+    text: "The trained MCN Partners are supported and mentored to facilitate Learner Activation workshops, where Changemakers will be selected by their peers to represent their clas select their Changemakers, Once they have selected their changemakers, they will guide their learners and educators to receive various online and offline training provided by Masifunde on various topics such as .....after the trained MCN partners have successfully completed the trainings with their Changemakers they will continue to support their learners to plan and implement their school campaigns",
   },
 
   {
     id: 2,
     icon: "/images/blocks.svg",
-    title: "Activation Workshops",
-    text: "NISSP Toolbox is an evidence and activities database that support the use and generating of evidence by the various interventions across the board of school-based programming.",
+    title: "NISSP Toolbox",
+    text: "The NISSP Toolbox is a digital platform that links the whole-of-school community to available and effective interventions available within a particular geographical network of  NISSP civil society partners.",
   },
   {
     id: 3,
     icon: "/images/money.svg",
-    title: "Activation Workshops",
-    text: "NISSP Fund that will be established as a  costed grant that supports the role of civil society organizations to access opportunities for capacity building and implementation resources available through NISSP mobilized resources for the prevention of violence and GBV in schools.",
+    title: "NISSP Fund",
+    text: "The NISSP Fund is a resource mobilization and distribution model that supports the role of civil society organizations to access opportunities for capacity building and implementation resources available through NISSP.",
   },
   {
     id: 4,
     icon: "/images/lightbulb.svg",
-    title: "Activation Workshops",
-    text: "NISSP Training for Districts & Civil Society Organizations is a sustainable model for the activation of community-based support, namely civil society organizations within close geographical location to schools.",
+    title: "NISSP Training",
+    text: "NISSP Districts Training facilitates the strengthening of the partnerships and capacities   of District Coordinators’  and their local Civil Society Organizations to jointly implement available and effective interventions in schools.",
   },
   {
     id: 5,
     icon: "/images/team.svg",
-    title: "Activation Workshops",
-    text: "NISSP Masifunde Changemaker Network is a demonstration model for the upscaling of a school-based project, through the establishment of networks of civil society organizations.",
+    title: "NISSP MCN",
+    text: "NISSP Masifunde Changemaker Network Is a learning and exchange platform for the joint implementation of the intervention in various school communities.",
   },
   {
     id: 6,
     icon: "/images/speaker.svg",
-    title: "Activation Workshops",
-    text: "The NISSP M & E Framework is a tool to track impact is a huge contribution to the sectoral needs for systematically measuring impact and promoting evidence -driven interventions.",
+    title: "The NISSP M & E Framework",
+    text: "The NISSP M & E Framework is an evidence tool to track the  impact of NISSP interventions by systematically capturing results, measuring  impact and promoting the use of  evidence methods in implementation.",
   },
 ];
 
@@ -55,19 +55,19 @@ const Grid = () => {
             className="w-full aspect-square p-8 bg-accent group relative isolate"
           >
             <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">
-              <Image
+              {/* <Image
                 src={item.icon}
                 width={50}
                 height={50}
                 className="w-16 object-cover"
                 alt={item.title}
-              />
-              {/* <p className="font-bold text-lg md:text-2xl mt-2 text-center">
+              /> */}
+              <p className="font-bold text-lg md:text-2xl mt-2 text-center">
               {item.title}
-            </p> */}
+            </p>
             </div>
             <div className="absolute inset-0 px-2 lg:p-8 group-hover:opacity-100 opacity-0 flex justify-center items-center">
-              <p className="text-white text-xs md:text-sm lg:text-lg text-center font-medium">
+              <p className="text-white text-xs md:text-sm text-center font-medium">
                 {item.text}
               </p>
             </div>

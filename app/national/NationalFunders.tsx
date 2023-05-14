@@ -33,10 +33,10 @@ const NationalFunders = () => {
       height: 1299,
     },
     {
-      name: "MasifVCPunde",
+      name: "VCP",
       image: "/images/vcp.png",
-      width: 264,
-      height: 191,
+      width: 2362,
+      height: 2362,
     },
   ];
 

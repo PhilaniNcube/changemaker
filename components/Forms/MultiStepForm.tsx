@@ -58,9 +58,8 @@ const MultiStepForm = () => {
    console.log({count});
 
    if(count < 7) {
-    toast.error(
-      "Your organisation needs to be able to answer yes to at least 8 out of 10 questions"
-    );
+
+    router.push('/partner-area/retry')
    } else {
     toast.success("Thankyou for answering the questions.")
     router.push('/apply')
