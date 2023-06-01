@@ -74,8 +74,11 @@ const Upload = () => {
                   type: "error",
                 })
               }
+              options={{
+                folder: "documents",
+              }}
             >
-              <span className="bg-accent text-white px-4 py-2 font-medium rounded-md">
+              <span className="bg-masifunde text-white px-4 py-2 font-medium rounded-md">
                 Upload Document
               </span>
             </CldUploadButton>

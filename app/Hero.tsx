@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row justify-center md:justify-start gap-3 mt-6 text-black">
             <Link
               href="/nmb"
-              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
+              className="bg-masifunde text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
               <span className="uppercase font-bold  text-[1.1rem] flex items-center">
                 NMB &rarr;
@@ -42,7 +42,7 @@ const Hero = () => {
             </Link>
             <Link
               href="/national"
-              className="bg-accent text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
+              className="bg-masifunde text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
               <span className="uppercase font-bold text-[1.1rem] flex items-center">
                 MCN National &rarr;

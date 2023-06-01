@@ -6,7 +6,7 @@ function Contact() {
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-8 lg:px-0 pt-16">
         <div className="lg:flex border-slate-200 border-2 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none">
-          <div className="xl:w-2/5 lg:w-2/5 bg-accent py-16 ">
+          <div className="xl:w-2/5 lg:w-2/5 bg-masifunde py-16 ">
             <div className="xl:w-5/6 xl:px-0 px-8 mx-auto">
               <h1 className="xl:text-4xl text-3xl pb-4 text-white font-bold">
                 Contact Us
@@ -185,7 +185,7 @@ function Contact() {
                       id="full_name"
                       name="full_name"
                       type="text"
-                      className="focus:outline-none focus:border focus:border-accent font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                      className="focus:outline-none focus:border focus:border-masifunde font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
                     />
                   </div>
                 </div>
@@ -202,7 +202,7 @@ function Contact() {
                       id="email"
                       name="email"
                       type="email"
-                      className="focus:outline-none focus:border focus:border-accent font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                      className="focus:outline-none focus:border focus:border-masifunde font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
                     />
                   </div>
                 </div>
@@ -222,7 +222,7 @@ function Contact() {
                       id="phone_number"
                       name="phone_number"
                       type="text"
-                      className="focus:outline-none focus:border focus:border-accent font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                      className="focus:outline-none focus:border focus:border-masifunde font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
                     />
                   </div>
                 </div>
@@ -238,7 +238,7 @@ function Contact() {
                       required
                       id="title"
                       name="title"
-                      className="focus:outline-none focus:border focus:border-accent font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                      className="focus:outline-none focus:border focus:border-masifunde font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
                     >
                       <option className="text-xs">I am a funder</option>
                       <option className="text-xs">
@@ -269,7 +269,7 @@ function Contact() {
                   </label>
                   <textarea
                     name="message"
-                    className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-accent"
+                    className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-masifunde"
                     rows={8}
                     id="message"
                     defaultValue={""}
@@ -277,7 +277,7 @@ function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="focus:outline-none bg-accent transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm leading-6"
+                  className="focus:outline-none bg-masifunde transition duration-150 ease-in-out hover:bg-indigo-600 rounded text-white px-8 py-3 text-sm leading-6"
                 >
                   Submit
                 </button>

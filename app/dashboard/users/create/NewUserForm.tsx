@@ -80,7 +80,7 @@ const NewUserForm = ({organisations}:PropTypes) => {
               type="email"
               id="email"
               {...register("email")}
-              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />{" "}
             {errors.email && (
               <p className="text-xs italic text-red-500 mt-2">
@@ -99,7 +99,7 @@ const NewUserForm = ({organisations}:PropTypes) => {
               type="text"
               id="first_name"
               {...register("first_name")}
-              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />{" "}
             {errors.first_name && (
               <p className="text-xs italic text-red-500 mt-2">
@@ -118,7 +118,7 @@ const NewUserForm = ({organisations}:PropTypes) => {
               type="text"
               id="last_name"
               {...register("last_name")}
-              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full max-w-md flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />{" "}
             {errors.last_name && (
               <p className="text-xs italic text-red-500 mt-2">
@@ -140,7 +140,7 @@ const NewUserForm = ({organisations}:PropTypes) => {
                   {...register("organisation_id")}
                   value={organisation.id}
                   type="radio"
-                  className="h-4 w-4 border-gray-300 text-accent focus:ring-accent"
+                  className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
                 />
                 <label
                   htmlFor="organisation_id"
@@ -155,7 +155,7 @@ const NewUserForm = ({organisations}:PropTypes) => {
         <div className="py-3 text-left mt-6">
           <button
             type="submit"
-            className="inline-flex justify-center rounded-md bg-accent py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="inline-flex justify-center rounded-md bg-masifunde py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
           >
             Create
           </button>

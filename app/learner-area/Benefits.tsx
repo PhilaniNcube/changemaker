@@ -60,7 +60,7 @@ const Benefits = () => {
         {benefits.map((benefit, i) => (
           <div
             key={i}
-            className="flex items-center p-6 justify-center bg-slate-200 rounded-lg shadow hover:bg-accent transition duration-300 ease-in-out w-full aspect-[5/3]"
+            className="flex items-center p-6 justify-center bg-slate-200 rounded-lg shadow hover:bg-masifunde transition duration-300 ease-in-out w-full aspect-[5/3]"
           >
             <p className="font-medium text-slate-800 text-md text-center">
               {benefit.title}

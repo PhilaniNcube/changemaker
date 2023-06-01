@@ -7,7 +7,7 @@ const HowItWorks = () => {
         <section className="max-w-8xl mx-auto container py-16">
           <div>
             <div className="flex items-left flex-col px-4">
-              <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-accent">
+              <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
                 <h2 className="text-4xl lg:text-5xl font-extrabold text-left leading-tight lg:w-7/12 md:w-9/12 pt-4">
                   Roleplayers in the Changemaker Network
                 </h2>
@@ -16,7 +16,7 @@ const HowItWorks = () => {
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 lg:gap-24 justify-between px-4">
               <div className="flex sm:w-full md:w-full pb-6">
                 <div className="w-full">
-                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-accent">
+                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
                     <h4 className="text-2xl font-bold leading-tight">
                       Civil Society Organisations
                     </h4>
@@ -32,7 +32,7 @@ const HowItWorks = () => {
               </div>
               <div className="flex sm:w-full md:w-full pb-6">
                 <div className="w-full">
-                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-accent">
+                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
                     <h4 className="text-2xl font-bold leading-tight">
                       District Officials
                     </h4>
@@ -52,7 +52,7 @@ const HowItWorks = () => {
               </div>
               <div className="flex sm:w-full md:w-full pb-6">
                 <div className="w-full">
-                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-accent">
+                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
                     <h4 className="text-2xl font-bold leading-tight">
                       Changemakers
                     </h4>

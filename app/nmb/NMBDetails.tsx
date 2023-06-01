@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const NMBDetails = () => {
   return (
-    <section id="nmb" className="bg-accent relative isolate">
+    <section id="nmb" className="bg-masifunde relative isolate">
       <Image
         src="/images/nmb_hero.jpg"
         width={2976}

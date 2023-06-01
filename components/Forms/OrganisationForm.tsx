@@ -126,7 +126,7 @@ const { data: org, error } = await supabase
               type="text"
               id="id"
               {...register("id")}
-              className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>
         </div>
@@ -142,7 +142,7 @@ const { data: org, error } = await supabase
               type="text"
               id="name"
               {...register("name")}
-              className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>
           {errors.name && (
@@ -166,7 +166,7 @@ const { data: org, error } = await supabase
               type="email"
               id="email"
               {...register("email")}
-              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>
           {errors.email && (
@@ -190,7 +190,7 @@ const { data: org, error } = await supabase
               type="tel"
               id="tel"
               {...register("tel")}
-              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>
           {errors.tel && (
@@ -214,7 +214,7 @@ const { data: org, error } = await supabase
               type="text"
               id="website"
               {...register("website")}
-              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>
           {errors.website && (
@@ -238,7 +238,7 @@ const { data: org, error } = await supabase
               type="text"
               {...register("facebook")}
               id="facebook"
-              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>{" "}
           {errors.facebook && (
@@ -262,7 +262,7 @@ const { data: org, error } = await supabase
               type="text"
               {...register("twitter")}
               id="twitter"
-              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>{" "}
           {errors.twitter && (
@@ -286,7 +286,7 @@ const { data: org, error } = await supabase
               type="text"
               {...register("other")}
               id="other"
-              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+              className="block w-full flex-1 rounded-none rounded-r-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
             />
           </div>{" "}
           {errors.other && (
@@ -308,7 +308,7 @@ const { data: org, error } = await supabase
             id="description"
             {...register("description")}
             rows={3}
-            className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:py-1.5 sm:text-sm sm:leading-6"
+            className="mt-1 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:py-1.5 sm:text-sm sm:leading-6"
           />
         </div>
         <p className="mt-2 text-sm text-gray-500">
@@ -333,7 +333,7 @@ const { data: org, error } = await supabase
                 {...register("district_id")}
                 value={district.id}
                 type="radio"
-                className="h-4 w-4 border-gray-300 text-accent focus:ring-accent"
+                className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
               />
               <label
                 htmlFor="district_id"
@@ -349,7 +349,7 @@ const { data: org, error } = await supabase
       <div className="bg-gray-100 px-4 py-3 text-right sm:px-6 mt-6">
         <button
           type="submit"
-          className="inline-flex justify-center rounded-md bg-accent py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="inline-flex justify-center rounded-md bg-masifunde py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
         >
           Save
         </button>

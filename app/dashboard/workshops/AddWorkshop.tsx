@@ -40,7 +40,7 @@ const AddWorkshop = () => {
       <button
         type="button"
         onClick={createWorkshop}
-        className="bg-accent hover:bg-orange-500 px-4 py-2 rounded-md text-white flex items-center space-x-3"
+        className="bg-masifunde hover:bg-orange-500 px-4 py-2 rounded-md text-white flex items-center space-x-3"
       >
         <PlusIcon className="h-8 w-8" /> <span>Add</span>
       </button>

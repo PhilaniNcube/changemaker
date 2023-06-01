@@ -95,7 +95,7 @@ const Navbar = ({user, admin}:Props) => {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-8 w-8 text-accent" aria-hidden="true" />
+            <Bars3Icon className="h-8 w-8 text-masifunde" aria-hidden="true" />
           </button>
         </div>
 
@@ -105,13 +105,13 @@ const Navbar = ({user, admin}:Props) => {
             <div className="flex space-x-3 items-center">
               <Link
                 href="/login"
-                className="text-md font-semibold leading-6 text-accent"
+                className="text-md font-semibold leading-6 text-masifunde"
               >
                 Partner Area Log in <span aria-hidden="true">&rarr;</span>
               </Link>
               {/* <Link
                 href="/sign-up"
-                className="text-md border-l border-accent pl-3 font-semibold leading-6 text-accent"
+                className="text-md border-l border-masifunde pl-3 font-semibold leading-6 text-masifunde"
               >
                 Sign Up <span aria-hidden="true">&uarr;</span>
               </Link> */}
@@ -148,7 +148,7 @@ const Navbar = ({user, admin}:Props) => {
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-8 w-8 text-accent" aria-hidden="true" />
+              <XMarkIcon className="h-8 w-8 text-masifunde" aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root">
@@ -157,14 +157,14 @@ const Navbar = ({user, admin}:Props) => {
                 <Link
                   href="/"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                 >
                   Home
                 </Link>
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-accent hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50">
                         About
                         <ChevronDownIcon
                           className={classNames(
@@ -180,7 +180,7 @@ const Navbar = ({user, admin}:Props) => {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-md font-semibold leading-7 text-accent hover:bg-gray-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-md font-semibold leading-7 text-masifunde hover:bg-gray-50"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -192,28 +192,28 @@ const Navbar = ({user, admin}:Props) => {
                 <Link
                   href="/in-action"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                 >
                   MCN In Action
                 </Link>
                 <Link
                   href="/learner-area"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                 >
                   Learner Area
                 </Link>
                 <Link
                   href="/partner-area"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                 >
                   Partner Area
                 </Link>
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                 >
                   Contact Us
                 </Link>
@@ -222,7 +222,7 @@ const Navbar = ({user, admin}:Props) => {
                 {!user ? (
                   <Link
                     href="/login"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                   >
                     Log in
                   </Link>
@@ -230,19 +230,19 @@ const Navbar = ({user, admin}:Props) => {
                   <Fragment>
                     <Link
                       href={`/account/${user.id}`}
-                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                     >
                       My Account
                     </Link>
                     <Link
                       href={`/account/documents`}
-                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                     >
                       Documents
                     </Link>
                     <Link
                       href={`/gallery`}
-                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-accent hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50"
                     >
                       Gallery
                     </Link>

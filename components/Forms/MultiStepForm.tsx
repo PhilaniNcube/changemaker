@@ -118,7 +118,7 @@ console.log({
                             high_school_work: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -143,7 +143,7 @@ console.log({
                             gender_based_violence_work: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         {" "}
                         <option value="">Select Option</option>
@@ -173,7 +173,7 @@ console.log({
                             child_protection_protocols: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -198,7 +198,7 @@ console.log({
                             audited_financial_statements: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -226,7 +226,7 @@ console.log({
                             registered: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -251,7 +251,7 @@ console.log({
                             organisation_name: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       />
 
 
@@ -278,7 +278,7 @@ console.log({
                             tax_clearance: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -302,7 +302,7 @@ console.log({
                             annual_report: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -330,7 +330,7 @@ console.log({
                             website: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -354,7 +354,7 @@ console.log({
                             active_social_media: e.target.value,
                           })
                         }
-                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-accent focus:outline-none focus:ring-accent sm:text-sm"
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-masifunde focus:outline-none focus:ring-masifunde sm:text-sm"
                       >
                         <option value="">Select Option</option>
                         <option value="yes">Yes</option>
@@ -367,7 +367,7 @@ console.log({
                 {step === 6 && (
                   <button
                     type="submit"
-                    className="w-36 mx-auto my-auto rounded-full px-4 font-medium py-1.5 text-white text-center bg-accent hover:bg-accent/70 cursor-pointer"
+                    className="w-36 mx-auto my-auto rounded-full px-4 font-medium py-1.5 text-white text-center bg-masifunde hover:bg-masifunde/70 cursor-pointer"
                   >
                     Save
                   </button>
@@ -384,7 +384,7 @@ console.log({
               <button
                 className={`${
                   step > 5 ? "pointer-events-none opacity-50" : ""
-                } rounded-full px-4 font-medium py-1.5 text-white text-center bg-accent hover:bg-accent/70 cursor-pointer`}
+                } rounded-full px-4 font-medium py-1.5 text-white text-center bg-masifunde hover:bg-masifunde/70 cursor-pointer`}
                 onClick={() => setStep(step > 5 ? step : step + 1)}
               >
                 Continue

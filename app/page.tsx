@@ -9,7 +9,7 @@ import Story from './Story';
 const Home = () => {
   return (
     <Fragment>
-      <div className="flex justify-center items-center space-x-6 py-4 bg-accent text-black">
+      <div className="flex justify-center items-center space-x-6 py-4 bg-masifunde text-black">
         <p className="text-sm lg:text-lg font-medium">
         See Changemakers In Action
         </p>

@@ -46,7 +46,7 @@ const Footer = () => {
             <p className="text-white text-md lg:text-lg font-bold">Masifunde Changemaker Network &copy;</p>
             <div className="flex flex-col items-start">
               {links.map((link) => (
-                <Link key={link.title} href={link.href} className="text-xs lg:text-sm text-white space-y-2 hover:text-accent font-medium">{link.title}</Link>
+                <Link key={link.title} href={link.href} className="text-xs lg:text-sm text-white space-y-2 hover:text-masifunde font-medium">{link.title}</Link>
               ))}
             </div>
           </div>

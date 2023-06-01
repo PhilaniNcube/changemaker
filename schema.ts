@@ -56,6 +56,7 @@ export interface Database {
           src: string | null
           organisation_id: Database['public']['Tables']['organisations']['Row']
           title: string | null
+          folder:string
         }
         Insert: {
           id?: string
@@ -63,6 +64,7 @@ export interface Database {
           src?: string | null
           organisation_id?: string
           title?: string | null
+          folder?:string
         }
         Update: {
           id?: string
@@ -70,6 +72,7 @@ export interface Database {
           src?: string | null
           organisation_id?: string
           title?: string | null
+          folder?:string
         }
       }
       media: {
@@ -84,6 +87,7 @@ export interface Database {
           thumbnail_url: string | null
           filename: string | null
           organisation_id: Database['public']['Tables']['workshops']['Row']
+          folder:string
         }
         Insert: {
           id?: string
@@ -96,6 +100,7 @@ export interface Database {
           thumbnail_url: string | null
           filename?: string | null
           organisation_id: string
+          folder?:string
         }
         Update: {
           id?: string
@@ -108,6 +113,7 @@ export interface Database {
           thumbnail_url: string | null
           filename?: string | null
           organisation_id?: string
+          folder?:string
         }
       }
       organisations: {

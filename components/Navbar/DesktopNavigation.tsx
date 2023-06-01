@@ -45,7 +45,7 @@ export function DesktopNavigation() {
               <ListItem href="/about/nissp" title="NISSP">
                 A joint national partnership to strengthen collective action
               </ListItem>
-              <div className="px-4 py-6 rounded-md hover:bg-accent text-slate-800 hover:text-white font-bold transition duration-100 grid grid-cols-2 gap-2 bg-slate-200">
+              <div className="px-4 py-6 rounded-md hover:bg-masifunde text-slate-800 hover:text-white font-bold transition duration-100 grid grid-cols-2 gap-2 bg-slate-200">
                 <Link
                   href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
                   className="flex gap-2"
@@ -126,7 +126,7 @@ const ListItem = React.forwardRef<
           href={`${href}`}
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-white focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-masifunde hover:text-white focus:bg-masifunde focus:text-masifunde-foreground",
             className
           )}
           {...props}

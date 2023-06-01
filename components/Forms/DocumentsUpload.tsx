@@ -53,7 +53,7 @@ return
 
   return (
     <div className="w-full">
-      <div className="bg-accent w-fit rounded-md text-white px-4 py-1">
+      <div className="bg-masifunde w-fit rounded-md text-white px-4 py-1">
         <ToastContainer position="top-right" autoClose={4000} />
         <CldUploadButton onUpload={handleOnUpload} uploadPreset="kfo3j4ot" />
       </div>

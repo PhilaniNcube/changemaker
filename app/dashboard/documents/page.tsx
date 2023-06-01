@@ -46,7 +46,7 @@ const page = async () => {
               <td className="pr-2 sm:pr-10 py-5 text-gray-800 flex justify-end  text-xs sm:text-sm text-right">
                 <a
                   href={doc.src!}
-                  className="bg-accent hover:bg-accent/90 px-4 py-2 w-fit rounded-lg text-white font-medium text-lg capitalize flex items-center space-x-2"
+                  className="bg-masifunde hover:bg-masifunde/90 px-4 py-2 w-fit rounded-lg text-white font-medium text-lg capitalize flex items-center space-x-2"
                 >
                   <DocumentIcon className="h-6 w-6" /> <span>View</span>
                 </a>

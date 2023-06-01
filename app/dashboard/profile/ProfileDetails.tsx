@@ -95,7 +95,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
                 type="text"
                 id="id"
                 {...register("id")}
-                className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+                className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
                 id="first_name"
                 {...register("first_name")}
                 autoComplete="given-name"
-                className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -129,7 +129,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
                 id="last_name"
                 {...register("last_name")}
                 autoComplete="family-name"
-                className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
                 id="email"
                 {...register("email")}
                 autoComplete="email"
-                className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -165,7 +165,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
                   {...register("organisation_id")}
                   value={organisation.id}
                   type="radio"
-                  className="h-4 w-4 border-gray-300 text-accent focus:ring-accent"
+                  className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
                 />
                 <label
                   htmlFor="organisation_id"
@@ -181,7 +181,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
         <div className="mt-10">
           <button
             type="submit"
-            className="block w-full rounded-md bg-accent px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="block w-full rounded-md bg-masifunde px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
           >
             Save
           </button>

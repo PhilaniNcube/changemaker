@@ -44,7 +44,7 @@ console.log({documents})
           {documents.map((doc) => (
            <span key={doc.id} className="flex items-center space-x-2">
             <div className="w-full aspect-square bg-slate-300 flex flex-col items-center justify-center space-y-3 rounded">
-            <DocumentIcon className="text-accent p-2 h-10 w-10" />
+            <DocumentIcon className="text-masifunde p-2 h-10 w-10" />
             <p className="text-sm md:text-md capitalize font-medium text-slate-800 text-center">{doc.title}</p>
             </div>
            </span>

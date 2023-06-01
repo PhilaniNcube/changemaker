@@ -78,7 +78,7 @@ const Story = () => {
               <div className="pr-6 mt-8 font-medium text-base leading-7 text-gray-600 w-full xl:w-9/12">
                 Find out more about Masifunde{" "}
                 <Link
-                  className="text-accent font-light underline"
+                  className="text-masifunde font-light underline"
                   href="https://www.masifunde.org"
                 >
                   www.masifunde.org

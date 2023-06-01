@@ -14,10 +14,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSupabase } from "@/components/Auth/SupabaseProvider";
 import { CldUploadButton } from "next-cloudinary";
 import { useRouter } from "next/navigation";
+import { Folder } from "../page";
 
 const mediaSchema = z.object({
   organisation_id: z.string().uuid(),
-  filename: z.string().min(3, {message: "Please enter a name for your image"})
+  filename: z.string().min(3, {message: "Please enter a name for your image"}),
+  folder: z.string()
 });
 
 type Media = z.infer<typeof mediaSchema>;
@@ -56,11 +58,13 @@ type Result = {
 
 type Props = {
   organisations: Database["public"]["Tables"]["organisations"]["Row"][];
+  folders: Folder[]
 };
 
-const MediaForm = ({  organisations }: Props) => {
+const MediaForm = ({  organisations, folders }: Props) => {
   const router = useRouter();
   const [image, setImage] = useState<Info | null>(null);
+  const [folder, setFolder] = useState("");
 
   const {
     register,
@@ -85,6 +89,9 @@ const MediaForm = ({  organisations }: Props) => {
     } else if(!data.filename ) {
       alert('Please give your image a name');
       return
+    } else if(!data.folder) {
+      alert('Please select a folder');
+      return
     }
       toast("Please wait...", {
         type: "warning",
@@ -101,7 +108,8 @@ const { data: mediaData, error } = await supabase
       filename: data.filename,
       type: image?.format,
       public_id: image?.public_id,
-      thumbnail_url: image?.thumbnail_url
+      thumbnail_url: image?.thumbnail_url,
+      folder: data.folder.toLowerCase(),
     },
   ]).select('*').single();
 
@@ -154,7 +162,7 @@ const { data: mediaData, error } = await supabase
                 type="text"
                 id="filename"
                 {...register("filename")}
-                className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-accent sm:text-sm sm:leading-6"
+                className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
               />
             </div>
             {errors.filename && (
@@ -163,6 +171,33 @@ const { data: mediaData, error } = await supabase
               </p>
             )}
           </div>
+
+          <fieldset className="mt-6 col-span-3 ">
+            <legend className="contents text-md font-medium leading-6 text-gray-700">
+              Seect Folder
+            </legend>
+
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+              {folders.map((folder, i) => (
+                <div key={i} className="flex items-center">
+                  <input
+                    id="folder"
+                    {...register("folder")}
+                    value={folder.name}
+                    onChange={(e) => setFolder(e.target.value)}
+                    type="radio"
+                    className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
+                  />
+                  <label
+                    htmlFor="folder"
+                    className="ml-3 block text-sm font-medium leading-6 text-gray-900 capitalize"
+                  >
+                    {folder.name}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </fieldset>
 
           <div className="col-span-3 sm:col-span-2">
             <label className="sr-only block text-sm font-medium leading-6 text-gray-900">
@@ -173,7 +208,12 @@ const { data: mediaData, error } = await supabase
                 <CldUploadButton
                   onUpload={handleOnUpload}
                   uploadPreset="kfo3j4ot"
-                >Select Image</CldUploadButton>
+                  options={{
+                    folder: folder,
+                  }}
+                >
+                  Select Image
+                </CldUploadButton>
               </div>
             </div>
           </div>
@@ -191,7 +231,7 @@ const { data: mediaData, error } = await supabase
                   {...register("organisation_id")}
                   value={organisation.id}
                   type="radio"
-                  className="h-4 w-4 border-gray-300 text-accent focus:ring-accent"
+                  className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
                 />
                 <label
                   htmlFor="organisation_id"
@@ -206,7 +246,7 @@ const { data: mediaData, error } = await supabase
         <div className="bg-gray-100 px-4 py-3 text-right sm:px-6 mt-6">
           <button
             type="submit"
-            className="inline-flex justify-center rounded-md bg-accent py-2 px-10 text-xl font-semibold text-white shadow-sm hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="inline-flex justify-center rounded-md bg-masifunde py-2 px-10 text-xl font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
           >
             Save
           </button>

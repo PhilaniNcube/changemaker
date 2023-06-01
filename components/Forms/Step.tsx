@@ -31,7 +31,7 @@ const Step = ({ step, currentStep }: { step: number; currentStep: number }) => {
           type: "tween",
           ease: "circOut",
         }}
-        className="absolute inset-0 bg-accent rounded-full"
+        className="absolute inset-0 bg-masifunde rounded-full"
       ></motion.div>
       <motion.div
         initial={false}
@@ -43,11 +43,11 @@ const Step = ({ step, currentStep }: { step: number; currentStep: number }) => {
           },
           active: {
             backgroundColor: "bg-white",
-            borderColor: "bg-accent",
-            color: "bg-accent",
+            borderColor: "bg-masifunde",
+            color: "bg-masifunde",
           },
           complete: {
-            backgroundColor: "bg-accent",
+            backgroundColor: "bg-masifunde",
             borderColor: "bg-slate-200",
             color: "bg-slate-400",
           },

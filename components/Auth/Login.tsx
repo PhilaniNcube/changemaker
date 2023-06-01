@@ -94,7 +94,7 @@ const {supabase} = useSupabase()
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="h-10 px-2 w-full rounded mt-2 text-gray-600 focus:outline-none focus:border focus:border-accent dark:focus:border-accent dark:border-gray-700accent/80ray-800 dark:teaccent/800 border-gray-300 border shadow"
+                  className="h-10 px-2 w-full rounded mt-2 text-gray-600 focus:outline-none focus:border focus:border-masifunde dark:focus:border-masifunde dark:border-gray-700 dark:text-accent/80 border-gray-300 border shadow"
                   type="email"
                 />
               </div>
@@ -111,7 +111,7 @@ const {supabase} = useSupabase()
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="h-10 px-2 w-full rounded mt-2 text-gray-600 focus:outline-none focus:border focus:border-accent dark:focus:border-accent dark:border-gray-700accent/80ray-800 dark:teaccent/800 border-gray-300 border shadow"
+                  className="h-10 px-2 w-full rounded mt-2 text-gray-600 focus:outline-none focus:border focus:border-masifunde dark:focus:border-masifunde dark:border-gray-700 border-gray-300 border shadow"
                   type="password"
                 />
               </div>
@@ -128,14 +128,14 @@ const {supabase} = useSupabase()
                   Remember Me
                 </label>
               </div>
-              <Link href="forgot-password" className="text-xs text-accent">
+              <Link href="forgot-password" className="text-xs text-masifunde">
                 Forgot Password?
               </Link>
             </div>
             <div className="px-2 sm:mb-16 sm:px-6">
               <button
                 type="submit"
-                className="focus:outline-none w-full sm:w-auto bg-accent transition duration-150 ease-in-out hover:bg-accent/80 rounded text-white px-8 py-3 text-sm mt-6"
+                className="focus:outline-none w-full sm:w-auto bg-masifunde transition duration-150 ease-in-out hover:bg-masifunde/80 rounded text-white px-8 py-3 text-sm mt-6"
               >
                 Login to Your Account
               </button>
@@ -143,7 +143,7 @@ const {supabase} = useSupabase()
           </div>
         </form>
 
-        <div className="w-full lg:w-1/2 bg-accent px-2 py-12 sm:p-12 flex flex-col relative">
+        <div className="w-full lg:w-1/2 bg-masifunde px-2 py-12 sm:p-12 flex flex-col relative">
           <div className="flex-1 flex flex-col justify-center">
             <div>
               <img

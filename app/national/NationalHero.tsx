@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NationalHero = () => {
   return (
-    <section id="national" className="bg-accent relative flex justify-end">
+    <section id="national" className="bg-masifunde relative flex justify-end">
       <Image
         src="/images/team.png"
         width={1500}
