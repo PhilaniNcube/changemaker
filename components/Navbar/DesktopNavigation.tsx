@@ -51,9 +51,10 @@ export function DesktopNavigation() {
                   className="flex gap-2"
                   target="_blank"
                 >
-                  {" "}
+                <>
                   <PlayCircleIcon className="text-2xl " />{" "}
                   <span>Watch Video</span>
+                 </>
                 </Link>
                 <Link href="/contact" className="flex gap-2">
                   {" "}
