@@ -46,9 +46,10 @@ export function DesktopNavigation() {
                 A joint national partnership to strengthen collective action
               </ListItem>
               <div className="px-4 py-6 rounded-md hover:bg-masifunde text-slate-800 hover:text-white font-bold transition duration-100 grid grid-cols-2 gap-2 bg-slate-200">
-                <Link
+                <a
                   href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
                   className="flex gap-2"
+                  target="_blank"
                 >
                   {" "}
                   <PlayCircleIcon className="text-2xl " />{" "}
