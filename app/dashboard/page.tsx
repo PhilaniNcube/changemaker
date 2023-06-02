@@ -10,10 +10,7 @@ export type Folder ={
 const page = async () => {
 
   const {folders, total_count} = await cloudinary.v2.api
-    .root_folders(() => console.log("root folders"), {
-      max_results: 500,
-
-    })
+    .root_folders(() => console.log("root folders"))
     .then((result:any) => {
       return result;
     })
@@ -27,7 +24,7 @@ const page = async () => {
   return <main className="w-full">
     <div className="">
       <h1 className="text-3xl font-semibold">Folders</h1>
-      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
+      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6 mt-4">
         {folders.map((folder:Folder, i:number) => (
           <Link href={`/dashboard/media/${folder.name}`} key={i} className="w-full flex flex-col items-center justify-center group">
             <Folder size={28} />

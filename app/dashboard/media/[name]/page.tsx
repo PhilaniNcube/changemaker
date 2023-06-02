@@ -8,27 +8,23 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
     const supabase = supabaseServer();
 
 
-  const {
-    data: media,
-    error: mediaError,
-    count: mediaCount,
-  } = await supabase
+
+
+  const mediaData =  supabase
     .from("media")
     .select("*", { count: "exact" })
     .eq("folder", name.toLowerCase())
     .limit(100);
 
-  const {
-    data: docs,
-    error: docsError,
-    count: docsCount,
-  } = await supabase
+  const docsData =  supabase
     .from("documents")
     .select("*", { count: "exact" })
     .eq("folder", name.toLowerCase())
     .limit(100);
 
-  console.log({media, docs})
+    const [{data:media}, {data:docs}] = await Promise.all([mediaData, docsData])
+
+
 
   return (
     <main className="w-full">

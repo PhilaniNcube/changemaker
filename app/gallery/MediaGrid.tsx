@@ -10,6 +10,9 @@ type Props = {
 
 
 const MediaGrid = ({media}:Props) => {
+
+
+
   return (
     <section>
       {" "}
@@ -37,6 +40,9 @@ const MediaGrid = ({media}:Props) => {
                       <p className="text-md text-white">{image.filename}</p>
                       <p className="text-xs text-white">
                         {image.organisation_id.name}
+                      </p>
+                      <p className="text-xs text-white capitalize">
+                        {image.folder ? image.folder : "No Folder"}
                       </p>
                     </div>
                   </div>

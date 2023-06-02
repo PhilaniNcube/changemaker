@@ -6,7 +6,7 @@ const SideBar = () => {
   return (
     <div className="h-full w-full absolute inset-0 py-10 px-6 scrollbar-hide overflow-hidden overflow-y-scroll">
       <div className="border-b-2 border-zinc-400 pb-3">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/dashboard" className="flex items-center space-x-2">
           <img className="h-16 w-auto" src="/images/logo_3.svg" alt="Logo" />
           <span className="text-slate-800 font-bold text-2xl leading-5">
             ChangeMaker
