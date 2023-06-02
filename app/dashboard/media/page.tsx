@@ -5,16 +5,16 @@ import CreateFolder from '../profile/CreateFolder';
 
 const page = async () => {
 
-  const organisations = await getOrganisations();
+  const organisationsData =  getOrganisations();
 
-    const { folders, total_count } = await cloudinary.v2.api
-      .root_folders(() => console.log("root folders"), {
-        max_results: 500,
-      })
+    const foldersData =  cloudinary.v2.api
+      .root_folders(() => console.log("root folders"))
       .then((result: any) => {
         return result;
       })
       .catch((err: any) => console.log(err));
+
+      const [{ folders }, organisations] = await Promise.all([foldersData, organisationsData]);
 
   return <div className="w-full">
    <h1 className="text-2xl text-slate-700 font-bold">Upload Image</h1>
