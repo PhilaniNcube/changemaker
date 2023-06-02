@@ -55,7 +55,7 @@ export function DesktopNavigation() {
                   <PlayCircleIcon className="text-2xl " />{" "}
                   <span>Watch Video</span>
                  </>
-                </Link>
+                </a>
                 <Link href="/contact" className="flex gap-2">
                   {" "}
                   <PhoneIcon className="text-2xl " /> <span>Contact Us</span>
