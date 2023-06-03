@@ -16,7 +16,7 @@ const Hero = () => {
         className="object-cover h-screen lg:max-h-[65vh] w-full md:w-1/2"
       />
       <div className="absolute inset-0 flex justify-start items-center py-12 bg-slate-600/60 lg:bg-transparent">
-        <div className="max-w-7xl mx-auto flex flex-col items-start w-full px-8 lg:px-0">
+        <div className="max-w-7xl mx-auto flex flex-col items-start w-full px-8 ">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white">
             Let’s Spark <span className="font-extrabold italic">Change</span>
           </h1>
