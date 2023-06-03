@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /account/
+Sitemap: https://www.changemaker-network.org/sitemap.xml
