@@ -13,7 +13,7 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"]
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Masifunde Cangemaker Network",
+  title: "Masifunde Changemaker Network",
   description:
     "Masifunde's Changemaker Network aims to capacitate high school learners with practical knowledge on relevant social topics such as school safety, violence, bullying and environmental awareness and protection. Through activation workshops for all Grade 9 learners and intensive changemaker trainings for selected learners they can spark positive change in their schools and communities.",
   keywords:
