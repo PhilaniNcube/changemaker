@@ -11,7 +11,7 @@ const NMBDetails = () => {
         className="w-full min-h-[65vh] max-h-[70vh] lg:max-h-[68vh] lg:aspect-video object-cover"
       />
       <div className="absolute inset-0 py-10 bg-slate-600/60 ">
-        <div className="flex flex-col gap-8 lg:h-full min-h-fit justify-center items-start max-w-7xl mx-auto px-8 lg:px-0 text-white">
+        <div className="flex flex-col gap-8 lg:h-full min-h-fit justify-center items-start max-w-7xl mx-auto px-8 text-white">
           <h2 className="font-extrabold text-3xl lg:text-5xl max-w-[32ch]">
             Masifundes Changemaker Network Nelson Mandela Bay
           </h2>

@@ -18,7 +18,7 @@ const Instragram =  ({feed}:ComponentProps) => {
 
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto px-8">
         <h1 className="text-2xl md:text-5xl font-bold text-slate-800 ">News</h1>
 
         <p className="text-slate-700 text-base">

@@ -5,7 +5,7 @@ import Image from "next/image";
 const Implementation = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
               <Image src="/images/advert.jpeg" width={1240} height={1754} alt="Join" className="w-[80%] objet-cover" />

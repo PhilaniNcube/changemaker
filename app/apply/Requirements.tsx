@@ -1,7 +1,7 @@
 const Requirements = () => {
   return (
     <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20">
           <div className="w-full">
             <p className="text-slate-700 text-justify text-base leading-7">

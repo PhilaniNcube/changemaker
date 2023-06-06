@@ -12,7 +12,7 @@ const NationalHero = () => {
         className="object-cover max-w-[88%] min-h-[55vh] max-h-[65vh]"
       />
       <div className="absolute inset-0 bg-slate-600/60 lg:bg-transparent">
-        <div className="max-w-7xl mx-auto py-20 flex justify-start">
+        <div className="max-w-7xl mx-auto px-8 py-20 flex justify-start">
           <div className="px-4">
             <h1 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
               Masifundes Changemaker Network National

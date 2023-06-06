@@ -29,7 +29,7 @@ const sparkMags = [
 const NMBFocus = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             {/* <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">

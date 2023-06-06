@@ -4,7 +4,7 @@ import Grid from "./Grid";
 const Details = () => {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="w-full">
           <h2 className="font-extrabold text-slate-800 text-4xl lg:text-6xl">
             NISSP

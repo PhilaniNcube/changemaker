@@ -21,7 +21,7 @@ const sparkMags = [
 const Focus = () => {
   return (
     <section className="bg-white py-10 text-slate-800">
-      <div className="max-w-7xl mx-auto  py-10 px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto  py-10 px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
             <p className="text-slate-700 text-justify text-base mb-5 leading-7 max-w-[60ch]">

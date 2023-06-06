@@ -45,7 +45,7 @@ const NationalFunders = () => {
 
   return (
     <section id="funders" className="bg-white">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0 py-10 bg-white">
+      <div className="max-w-7xl mx-auto px-8 py-10 bg-white">
         <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 text-center">
           Partners
         </h2>

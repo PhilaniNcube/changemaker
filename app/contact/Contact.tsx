@@ -4,7 +4,7 @@
 function Contact() {
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0 pt-16">
+      <div className="max-w-7xl mx-auto px-8 pt-16">
         <div className="lg:flex border-slate-200 border-2 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none">
           <div className="xl:w-2/5 lg:w-2/5 bg-masifunde py-16 ">
             <div className="xl:w-5/6 xl:px-0 px-8 mx-auto">

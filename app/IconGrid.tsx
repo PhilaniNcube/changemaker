@@ -32,7 +32,7 @@ const items = [
 
 const IconGrid = () => {
 
-  return <div className="max-w-7xl mx-auto px-8 lg:px-0 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12">
+  return <div className="max-w-7xl mx-auto px-8 mt-10 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12">
     {items.map((item) => (
       <div key={item.id} className="w-full mx-auto  aspect-square px-3 py-2 bg-masifunde group relative isolate">
         <div className="group-hover:hidden w-full h-full flex flex-col text-white transition-all duration-300 items-center justify-center gap-4">

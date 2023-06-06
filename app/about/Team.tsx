@@ -84,7 +84,7 @@ const Team = () => {
 
   return (
     <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto px-8">
         <h2 className="text-slate-800 font-extrabold text-4xl lg:text-5xl text-center mb-5">
           The Team
         </h2>

@@ -44,7 +44,7 @@ const items = [
 
 const Grid = () => {
   return (
-    <div className="max-w-7xl mx-auto px-8 lg:px-0">
+    <div className="max-w-7xl mx-auto px-8">
       <p className="text-2xl md:text-3xl font-bold text-center text-slate-800 mt-10 mb-6">
         The NISSP strategy consists of six areas
       </p>

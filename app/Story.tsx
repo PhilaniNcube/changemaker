@@ -7,7 +7,7 @@ import Link from "next/link";
 const Story = () => {
   return (
     <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0 ">
+      <div className="max-w-7xl mx-auto px-8 ">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="w-full h-full flex flex-col justify-center items-center bg-neutral-800 bg-opacity-40 text-white sm:px-12 px-6 rounded-md">

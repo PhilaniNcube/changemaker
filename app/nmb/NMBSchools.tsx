@@ -167,7 +167,7 @@ const schools = [
 
 const NMBSchools = () => {
   return <section id="schools" className="py-20 bg-slate-100">
-    <div className="max-w-7xl mx-auto px-8 lg:px-0">
+    <div className="max-w-7xl mx-auto px-8">
        <h2 className="font-bold mb-8 text-3xl text-slate-800 text-center">Schools currently in the programme are:</h2>
        <div className="columns-1 sm:columns-2 md:columns-3 gap-x-4 gap-y-2" >
         {schools.map((school) => (

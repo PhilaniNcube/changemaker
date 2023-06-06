@@ -4,7 +4,7 @@ import NationalFunders from "./NationalFunders";
 const Details = () => {
   return (
     <section className="bg-white pt-10">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0 gap-10">
+      <div className="max-w-7xl mx-auto px-8 gap-10">
         <p className="text-slate-700 text-justify text-base leading-7 mt-8">
           The Changemaker Network model is a whole-of-school community
           intervention supporting the&nbsp;

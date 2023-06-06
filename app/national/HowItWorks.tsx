@@ -3,8 +3,8 @@
 const HowItWorks = () => {
   return (
     <section className="bg-white py-10">
-      <div className="relative h-full max-w-7xl mx-auto px-8 lg:px-0">
-        <section className="max-w-8xl mx-auto container py-16">
+      <div className="relative h-full max-w-7xl mx-auto px-8">
+        <section className="w-full py-16">
           <div>
             <div className="flex items-left flex-col px-4">
               <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">

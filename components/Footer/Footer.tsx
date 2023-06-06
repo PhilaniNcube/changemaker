@@ -32,7 +32,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className="bg-black py-20">
-      <div className="max-w-7xl mx-auto px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="flex items-center justify-between gap-3">
           <Image
             src="/images/logo_2.svg"
