@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 
 import Timeline from "@/components/Timeline/Timeline";
 import Image from "next/image";

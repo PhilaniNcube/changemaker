@@ -8,9 +8,6 @@ const benefits = [
     title: "Become part of a community",
   },
   {
-    title: "Become part of a community",
-  },
-  {
     title: "Become part of a network of changemakers",
   },
   {
@@ -49,9 +46,9 @@ const Benefits = () => {
           </h2>
         </div>{" "}
         <Image
-          src="/images/benefits.JPG"
-          width="2976"
-          height={1984}
+          src="/images/learner_area.jpeg"
+          width="1500"
+          height={1000}
           alt="Benefits of being a changemaker"
           className="w-full aspect-video object-cover rounded-2xl"
         />

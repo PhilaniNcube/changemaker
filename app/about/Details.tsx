@@ -30,7 +30,10 @@ const Details = () => {
             implementing preventative approaches, led by the Department of Basic
             Education (DBE) supported by German Development Cooperation (GIZ)
             and various stakeholders from civil society, academia and other
-            government departments.
+            government departments. The Changemaker Network model is a
+            whole-of-school community intervention supporting the National
+            Inclusive and Safer Schools Partnership (NISSP) of the National
+            Department of Basic Education
           </p>
         </div>
       </div>
