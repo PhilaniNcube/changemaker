@@ -174,7 +174,7 @@ const { data: mediaData, error } = await supabase
 
           <fieldset className="mt-6 col-span-3 ">
             <legend className="contents text-md font-medium leading-6 text-gray-700">
-              Seect Folder
+              Select Folder
             </legend>
 
             <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
