@@ -1,166 +1,134 @@
 const schools = [
   {
-    id: 1,
     title: "Booysens Park Secondary School",
   },
   {
-    id: 2,
     title: "Chapman High School",
   },
   {
-    id: 3,
     title: "Coselelani  Secondary School",
   },
   {
-    id: 4,
     title: "David Livingstone  Secondary School",
   },
   {
-    id: 5,
     title: "Douglas Mbopa  High School",
   },
   {
-    id: 6,
     title: "EZ Khabane High School",
   },
   {
-    id: 7,
     title: "Gamble Street Secondary School",
   },
   {
-    id: 8,
     title: "Hoërskool Uitenhage High School",
   },
   {
-    id: 9,
     title: "Ithembelihle Comprehensive Technical High School",
   },
   {
-    id: 10,
     title: "James Jolobe  Secondary School",
   },
   {
-    id: 11,
     title: "Khumbulani High School",
   },
   {
-    id: 12,
     title: "Kwazakhele High School",
   },
   {
-    id: 13,
     title: "Limekhaya High School",
   },
   {
-    id: 14,
     title: "Loyiso Senior Secondary School",
   },
   {
-    id: 15,
     title: "Lungisa High School",
   },
   {
-    id: 16,
+    title: "Marymount High School",
+  },
+  {
     title: "Masibambane Senior Secondary School",
   },
   {
-    id: 17,
     title: "Masiphathisane  Senior Secondary School",
   },
   {
-    id: 18,
     title: "Mfesane  Secondary School",
   },
   {
-    id: 19,
     title: "Molly Blackburn Secondary School",
   },
   {
-    id: 20,
     title: "Morningside Highschool",
   },
   {
-    id: 21,
     title: "Mzontsundu Secondary School",
   },
   {
-    id: 22,
     title: "Ndyebo  Senior Secondary School",
   },
   {
-    id: 23,
     title: "Ndzondelelo High School",
   },
   {
-    id: 24,
     title: "Newell High School",
   },
   {
-    id: 25,
     title: "Nkululeko Public Secondary School",
   },
   {
-    id: 26,
     title: "Paterson High School",
   },
   {
-    id: 27,
     title: "Phakamisa High School",
   },
   {
-    id: 28,
     title: "Qaphelani Senior Secondary School",
   },
   {
-    id: 29,
+    title: "Reubin Burn School for Hearing Impaired",
+  },
+  {
+    title: "Sakhisizwe High School",
+  },
+  {
     title: "Sanctor  High School",
   },
   {
-    id: 30,
     title: "Solomon Mahlangu Secondary School",
   },
   {
-    id: 31,
     title: "Sophakama Highschool",
   },
   {
-    id: 32,
     title: "Soqhayisa Senior Secondary School",
   },
   {
-    id: 33,
     title: "St James Secondary School",
   },
   {
-    id: 34,
     title: "St Thomas",
   },
   {
-    id: 35,
     title: "Tinarha High School",
   },
   {
-    id: 36,
     title: "Tyhilulwazi Senior Secondary School",
   },
   {
-    id: 37,
     title: "V.M Kwinana Senior Secondary School",
   },
   {
-    id: 38,
     title: "Victoria Park High School",
   },
   {
-    id: 39,
     title: "Vulumzi  Secondary  School",
   },
   {
-    id: 40,
     title: "Walmer High School",
   },
   {
-    id: 41,
     title: "Woolhope  Secondary School",
   },
 ];
@@ -170,8 +138,8 @@ const NMBSchools = () => {
     <div className="max-w-7xl mx-auto px-8">
        <h2 className="font-bold mb-8 text-3xl text-slate-800 text-center">Schools currently in the programme are:</h2>
        <div className="columns-1 sm:columns-2 md:columns-3 gap-x-4 gap-y-2" >
-        {schools.map((school) => (
-          <p className="font-medium text-slate-700 text-sm md:text-md" key={school.id}>{school.title}</p>
+        {schools.map((school, index) => (
+          <p className="font-medium text-slate-700 text-sm md:text-md" key={index}>{school.title}</p>
         ))}
        </div>
     </div>

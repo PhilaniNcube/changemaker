@@ -1,3 +1,5 @@
+"use client"
+
 import Script from "next/script";
 import { Fragment } from "react";
 import Hero from "./Hero";
@@ -64,15 +66,18 @@ const page = async () => {
 
   return (
     <Fragment>
-      {/* <Hero /> */}
-      <Script
-        async
-        defer
-        crossOrigin="anonymous"
-        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0"
-        nonce="i0LiW14P"
-      />
-      <div id="fb-root"></div>
+      {/* <Hero /> */}{" "}
+      <div className="w-full flex items-center justify-center">
+        <Script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0"
+          nonce="i0LiW14P"
+        />
+
+        <div id="fb-root"></div>
+      </div>
       <Instragram feed={instgramFeed} />
     </Fragment>
   );

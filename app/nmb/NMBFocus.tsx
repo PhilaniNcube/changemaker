@@ -1,6 +1,7 @@
 import IconGrid from "@/app/IconGrid";
 import Image from "next/image";
 import Link from "next/link";
+import MagazineSlider from "./MagazineSlider";
 
 const sparkMags = [
   {
@@ -95,11 +96,12 @@ const NMBFocus = () => {
             Spark Magazine Editions
           </p>
           <div className="w-full flex justify-between items-center mt-4">
-            {sparkMags.map((mag, i) => (
+            {/* {sparkMags.map((mag, i) => (
               <Link href={mag.doc} key={i} className="w-1/5 rounded-lg cursor-pointer overflow-hidden">
                 <Image src={mag.thumbnail} width={1748} height={2480} alt={mag.title} />
               </Link>
-            ))}
+            ))} */}
+            <MagazineSlider />
           </div>
         </div>
         <IconGrid />

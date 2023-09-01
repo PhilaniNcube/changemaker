@@ -1,4 +1,7 @@
+import { Button } from "@/components/ui/button";
+import { FacebookIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const benefits = [
   {
@@ -38,12 +41,28 @@ const Benefits = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 py-10">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="w-full flex items-center">
-          {" "}
-          <h2 className="font-semibold text-3xl lg:leading-9 leading-7 text-gray-800 ">
-            Changemakers are changing the world, one act at a time. But what are
-            the benefits for them?
-          </h2>
+        <div className="flex flex-col justify-center">
+          <div className="w-full flex items-center">
+            {" "}
+            <h2 className="font-semibold text-3xl lg:leading-9 leading-7 text-gray-800 ">
+              Changemakers are changing the world, one act at a time. What are
+              the benefits to being a changemaker?
+            </h2>
+          </div>
+          <div className="my-4">
+            <Link
+              href="https://www.facebook.com/groups/960613284612519"
+              target="_blank"
+            >
+              <Button
+                type="button"
+                className="bg-blue-600 text-white font-medium"
+              >
+                <FacebookIcon className="w-6 h-6 mr-2" />
+                Follow Us
+              </Button>
+            </Link>
+          </div>
         </div>{" "}
         <Image
           src="/images/learner_area.jpeg"

@@ -72,7 +72,7 @@ const page = async () => {
         nonce="i0LiW14P"
       />
       <div id="fb-root"></div>
-      <Instragram feed={instgramFeed} />
+      {/* <Instragram feed={instgramFeed} /> */}
     </main>
   );
 };

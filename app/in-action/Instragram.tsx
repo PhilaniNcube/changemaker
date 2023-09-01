@@ -18,20 +18,20 @@ const Instragram =  ({feed}:ComponentProps) => {
 
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl flex flex-col items-center mx-auto px-8">
         <h1 className="text-2xl md:text-5xl font-bold text-slate-800 ">News</h1>
 
         <p className="text-slate-700 text-base">
           Stay updated through our Social Media Feeds!
         </p>
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="w-full">
+        <div className="w-full flex justify-center gap-8">
+          <div className="w-full flex justify-center">
             {/* <h1 className="text-2xl md:text-4xl font-bold text-slate-800">
               MCN In Action
             </h1> */}
             <div className="max-w-[500px] mt-4 text-slate-700">
               <div
-                className="fb-page "
+                className="fb-page w-full"
                 data-href="https://www.facebook.com/profile.php?id=100083194785525"
                 data-tabs="timeline"
                 data-width="500"
@@ -55,7 +55,7 @@ const Instragram =  ({feed}:ComponentProps) => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {feed.map((item) => (
               <article
                 onClick={() => router.push(`${item.permalink}`)}
@@ -76,7 +76,7 @@ const Instragram =  ({feed}:ComponentProps) => {
                 </div>
               </article>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
