@@ -43,6 +43,15 @@ const hompageTimeline = {
       title: 'Timeline Description',
       type: 'string'
     },
+  ],
+  orderings: [
+    {
+      title: 'Year',
+      name: 'yearAsc',
+      by: [
+        {field: 'Year', direction: 'asc'}
+      ]
+    }
   ]
 }
 

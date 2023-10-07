@@ -43,7 +43,7 @@ export async function getHomepageContent():Promise<HomepageContent> {
   return homepageContent
 }
 export async function getHomepageTimeline():Promise<HomepageTimeline[]> {
-  const homepageTimeline = await client.fetch(`*[_type == "homepageTimeline"]{Year, timelineDescription}`)
+  const homepageTimeline = await client.fetch(`*[_type == "homepageTimeline"]{Year, timelineDescription}|order(Year asc)`)
   return homepageTimeline
 }
 
