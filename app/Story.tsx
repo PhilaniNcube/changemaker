@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Timeline from "@/components/Timeline/Timeline";
+import { HomepageContent } from "@/sanity/lib/client";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 
-const Story = () => {
+const Story = ({ content , children}: { content: HomepageContent, children:ReactNode }) => {
   return (
     <section className="bg-white py-10">
       <div className="max-w-7xl mx-auto px-8 ">
@@ -46,9 +49,12 @@ const Story = () => {
           <div className="flex lg:flex-row flex-col">
             <div className="w-full lg:w-6/12 text-justify">
               <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">
-                Our Story
+                {content.homepageStory}
               </h2>
-              <p className="pr-6 font-medium text-base leading-7 text-gray-600 mt-6 w-full xl:w-9/12">
+              <div id="content" className="pr-6 font-medium text-base leading-7 text-gray-600 mt-6 w-full xl:w-9/12">
+                <PortableText value={content?.storyContent!} />
+              </div>
+              {/* <p>
                 Masifunde is an NGO founded in 2004, which runs holistic,
                 learner-centred community development programmes for children
                 and youth in Walmer Township, Gqeberha. Masifunde&apos;s vision
@@ -84,11 +90,11 @@ const Story = () => {
                 >
                   www.masifunde.org
                 </Link>
-              </div>
+              </div> */}
             </div>
 
             <div className="w-full lg:w-6/12">
-              <Timeline />
+              {children}
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 const NMBDetails = () => {
   return (
-    <section id="nmb" className="bg-masifunde relative isolate">
+    <section id="nmb" className="relative bg-masifunde isolate">
       <Image
         src="/images/nmb_hero.jpg"
         width={2976}
@@ -11,7 +11,7 @@ const NMBDetails = () => {
         className="w-full min-h-[65vh] max-h-[70vh] lg:max-h-[68vh] lg:aspect-video object-cover"
       />
       <div className="absolute inset-0 py-10 bg-slate-600/60 ">
-        <div className="flex flex-col gap-8 lg:h-full min-h-fit justify-center items-start max-w-7xl mx-auto px-8 text-white">
+        <div className="flex flex-col items-start justify-center gap-8 px-8 mx-auto text-white lg:h-full min-h-fit max-w-7xl">
           <h2 className="font-extrabold text-3xl lg:text-5xl max-w-[32ch]">
             Masifundes Changemaker Network Nelson Mandela Bay
           </h2>

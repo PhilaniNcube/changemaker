@@ -79,3 +79,8 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+
+#content a {
+  @apply text-masifunde;
+}

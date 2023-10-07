@@ -7,8 +7,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 const sparkMags = [
   {
@@ -58,7 +58,7 @@ const MagazineSlider = () => {
               <Link
                 href={mag.doc}
                 target="_blank"
-                className="w-1/5 rounded-lg cursor-pointer overflow-hidden"
+                className="w-1/5 overflow-hidden rounded-lg cursor-pointer"
               >
                 <Image
                   src={mag.thumbnail}
