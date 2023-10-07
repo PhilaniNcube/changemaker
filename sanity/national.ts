@@ -32,7 +32,8 @@ export const nationalDescription = {
     {
       name: 'descriptionText',
       title: 'Description Text',
-      type: 'string',
+        type: 'array',
+      of: [{type: 'block'}]
     }
   ]
 }

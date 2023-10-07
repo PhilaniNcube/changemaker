@@ -131,7 +131,7 @@ export async function getNationalPageHero():Promise<NationalPageHero>{
 
 
 export type NationalPageDescription = {
-  descriptionText: string
+  descriptionText: PortableTextBlock[]
 }
 
 export async function getNationalPageDescription():Promise<NationalPageDescription>{
