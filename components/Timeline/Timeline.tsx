@@ -2,43 +2,11 @@
 import { getHomepageTimeline } from "@/sanity/lib/client";
 import { Fragment } from "react";
 
-const timeline = [
-  {
-    text: "Masifunde registers as NPC",
-    date: "2009",
-  },
-  {
-    text: "Masifunde implements “Youth for Safer Communities” city wide",
-    date: "2013",
-  },
-  {
-    text: "Opening of the Changemaker Academy in Walmer Township",
-    date: "2017",
-  },
-  {
-    text: "Masifunde Changemaker Network launched",
-    date: "2021",
-  },
-  {
-    text: "MCN reaches 39 schools in Mandela Bay",
-    date: "2022",
-  },
-  {
-    text: "MCN starts replication in four provinces – North West, KwaZulu-Natal, Limpopo, Eastern Cape - with 20 partner CSO’s. Aiming to reach 680 changemakers and 100 000 learners",
-    date: "2023",
-  },
-  {
-    text: "MCN starts replication in all provinces across South Africa, aiming to reach 1000 changemakers and 245 000 learners nationwide",
-    date: "2024",
-  },
-];
-
 
 const Timeline = async () => {
 
   const timelineData = await getHomepageTimeline();
 
-  console.log(timelineData)
 
   return (
     <Fragment>
