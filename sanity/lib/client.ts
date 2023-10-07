@@ -16,6 +16,7 @@ export type HomepageHero =  {
   image: {
     asset: {
       _ref: string
+      _type: string
     }
   }
 }
@@ -101,16 +102,17 @@ export async function getNMBSchools():Promise<NMBSchool[]>{
 export type NMBPageFunders = {
   funderName: string
   funderWebsite: string
-  funderLogo: {
+  nmbfunderLogo: {
     asset: {
       _ref: string
+      _type: string
     }
   }
 }
 
 
 export async function getNMBPageFunders():Promise<NMBPageFunders[]>{
-  const nmbFunders = await client.fetch(`*[_type == "nmbFunders"]{funderName, funderWebsite, funderLogo}`)
+  const nmbFunders = await client.fetch(`*[_type == "nmbFunders"]{funderName, funderWebsite, nmbfunderLogo}`)
   return nmbFunders
 }
 

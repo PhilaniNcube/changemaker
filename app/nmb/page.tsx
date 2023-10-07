@@ -1,4 +1,4 @@
-import { getNMBHero, getNmbPageDescription, nmbPageFocus } from "@/sanity/lib/client";
+import { getNMBHero, getNMBPageFunders, getNmbPageDescription, nmbPageFocus } from "@/sanity/lib/client";
 import NationalGrid from "../national/NationalGrid";
 import NMBDetails from "./NMBDetails";
 import NMBFocus from "./NMBFocus";
@@ -13,6 +13,8 @@ const page = async () => {
   const {descriptionText} = await getNmbPageDescription()
   const nmbFocus = await nmbPageFocus();
 
+  const funders = await getNMBPageFunders()
+
   return (
     <main className="bg-white pb-10" id="video">
       <NMBDetails
@@ -23,7 +25,7 @@ const page = async () => {
       <NMBVideo />
       <NMBFocus text={descriptionText} focus={nmbFocus} />
       <NMBSchools />
-      <NMBFunders />
+      <NMBFunders funders={funders} />
     </main>
   );
 };
