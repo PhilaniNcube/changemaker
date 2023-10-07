@@ -84,3 +84,17 @@
 #content a {
   @apply text-masifunde;
 }
+
+#content p {
+  @apply py-1;
+}
+
+#content p > a {
+  @apply font-bold underline;
+}
+
+
+#content h5 {
+  @apply font-semibold;
+  font-size: 1.1em;
+}

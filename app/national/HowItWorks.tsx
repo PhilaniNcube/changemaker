@@ -1,6 +1,10 @@
+import { NationalPageRolePlayers } from "@/sanity/lib/client";
 
+type PageProps = {
+  roleplayers: NationalPageRolePlayers[];
+};
 
-const HowItWorks = () => {
+const HowItWorks = ({ roleplayers }: PageProps) => {
   return (
     <section className="bg-white py-10">
       <div className="relative h-full max-w-7xl mx-auto px-8">
@@ -14,7 +18,7 @@ const HowItWorks = () => {
               </span>
             </div>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 lg:gap-24 justify-between px-4">
-              <div className="flex sm:w-full md:w-full pb-6">
+              {/* <div className="flex sm:w-full md:w-full pb-6">
                 <div className="w-full">
                   <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
                     <h4 className="text-2xl font-bold leading-tight">
@@ -29,8 +33,8 @@ const HowItWorks = () => {
                     program in their respective organisations and provinces
                   </p>
                 </div>
-              </div>
-              <div className="flex sm:w-full md:w-full pb-6">
+              </div> */}
+              {/* <div className="flex sm:w-full md:w-full pb-6">
                 <div className="w-full">
                   <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
                     <h4 className="text-2xl font-bold leading-tight">
@@ -49,29 +53,28 @@ const HowItWorks = () => {
                     prevention programmes in schools.
                   </p>
                 </div>
-              </div>
-              <div className="flex sm:w-full md:w-full pb-6">
-                <div className="w-full">
-                  <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
-                    <h4 className="text-2xl font-bold leading-tight">
-                      Changemakers
-                    </h4>
-                  </span>
-                  <p className="text-base text-gray-600 leading-normal pt-2">
-                    Changemakers are expected to advocate for social issues and
-                    bring a positive change in their schools and communities.
-                    This is achieved through having campaigns and events to
-                    create awareness, share knowledge and skills necessary to
-                    stand up against presenting social issues.
-                  </p>
+              </div> */}
+
+              {roleplayers.map((item, index) => (
+                <div key={index} className="flex sm:w-full md:w-full pb-6">
+                  <div className="w-full">
+                    <span className="focus:text-gray-600 focus:underline hover:text-gray-600 focus:outline-none text-masifunde">
+                      <h4 className="text-2xl font-bold leading-tight">
+                        {item.title}
+                      </h4>
+                    </span>
+                    <p className="text-base text-gray-600 leading-normal pt-2">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
       </div>
     </section>
   );
-}
+};
 
 export default HowItWorks;

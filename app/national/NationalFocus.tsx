@@ -2,6 +2,8 @@
 import Link from "next/link";
 import NationalGrid from "./NationalGrid";
 import Image from "next/image";
+import { NationalPageFocus } from "@/sanity/lib/client";
+import { PortableText } from "@portabletext/react";
 
 const sparkMags = [
   {
@@ -17,21 +19,20 @@ const sparkMags = [
 
 ];
 
+type PageProps = {
+  province: string;
+  pageFocus: NationalPageFocus;
+}
 
-const Focus = () => {
+
+const Focus = ({ province, pageFocus }: PageProps) => {
   return (
     <section className="bg-white py-10 text-slate-800">
       <div className="max-w-7xl mx-auto  py-10 px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div>
             <p className="text-slate-700 text-justify text-base mb-5 leading-7 max-w-[60ch]">
-              Within these 4 provinces, Civil Society Organisations (CSO)
-              applies to become Implementation Partners and 5 will be selected
-              from each province to become implementation partners of the MCN.
-              Each CSO will work within 5 high-schools within their district.
-              Thus, resulting in 20 districts and 25 schools per province and
-              ultimately 100 schools nationwide. In 2024 we will work within 200
-              schools nationwide with 40 civil society organisations
+              {province}
             </p>
             {/* <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
               The Changemaker Network model is a whole-of-school community
@@ -179,38 +180,28 @@ const Focus = () => {
               <h3 className="font-extrabold text-4xl uppercase">Focus</h3>
               <div className="flex-1">
                 <p className="text-lg font-bold  text-slate-800 leading-7">
-                  The Changemaker Network focuses on the following topics:
+                  {pageFocus.focusSubheading}
                 </p>
-                <ul className="pl-6 text-sm md:text-base leading-7">
-                  <li className="text-slate-700 leading-7">
-                    School Safety: Understanding violence
-                  </li>
-                  <li className="text-slate-700 leading-7">
-                    Prevention of Gender based violence
-                  </li>
-                  <li className="text-slate-700 leading-7">
-                    {" "}
-                    In 2024 we will cover Environment and Climate change
-                  </li>
+                <ul className="pl-6 list-disc text-sm md:text-base leading-7">
+                  {pageFocus.nationalList.map((item, index) => (
+                    <li key={index} className="text-slate-700 leading-7">
+                      {item}
+                    </li>
+                  ))}
                 </ul>{" "}
               </div>
             </div>{" "}
-            <p className="text-lg text-slate-800 leading-7 mt-6 font-medium">
+            {/* <p className="text-lg text-slate-800 leading-7 mt-6 font-medium">
               The ChangeMakers&apos; Network aims to be replicated within 4
               provinces in South Africa. Specifically:
               <span className="font-extrabold">
                 {" "}
                 Eastern Cape, Gauteng, KwaZulu-Natal, North West and Limpopo.
               </span>
-            </p>{" "}
-            <p className="text-slate-700 text-base leading-7 mt-5 lg:pr-16">
-              Within these 4 provinces, Civil Society Organisations (CSO)
-              applies to become Implementation Partners and 5 will be selected
-              from each province to become implementation partners of the MCN.
-              Each CSO will work within 5 high-schools within their district.
-              Thus, resulting in 20 districts and 25 schools per province and
-              ultimately 100 schools nationwide.
-            </p>
+            </p>{" "} */}
+            <div id="content" className="text-slate-700 text-base leading-7 mt-5 lg:pr-16">
+              <PortableText value={pageFocus.nationFocusDescription} />
+            </div>
           </div>
         </div>
       </div>{" "}

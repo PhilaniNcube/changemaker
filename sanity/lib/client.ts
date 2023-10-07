@@ -128,7 +128,7 @@ export type NationalPageHero = {
 }
 
 export async function getNationalPageHero():Promise<NationalPageHero>{
-  const nationalHero = await client.fetch(`*[_type == "nationalHero"]{heading, subtitle, image}[0]`)
+  const nationalHero = await client.fetch(`*[_type == "nationalpageHero"]{heading, subtitle, image}[0]`)
   return nationalHero
 }
 
@@ -162,7 +162,7 @@ export type NationalPageFocus = {
 
 
 export async function getNationalPageFocus():Promise<NationalPageFocus>{
-  const nationalFocus = await client.fetch(`*[_type == "nationalFocus"]{focusHeading, focusSubheading, nationalList, nationFocusDescription}[0]`)
+  const nationalFocus = await client.fetch(`*[_type == "nationalfocus"]{focusHeading, focusSubheading, nationalList, nationFocusDescription}[0]`)
   return nationalFocus
 }
 
@@ -173,7 +173,7 @@ export type NationalPageRolePlayers = {
 }
 
 export async function getNationalPageRolePlayers():Promise<NationalPageRolePlayers[]>{
-  const nationalRolePlayers = await client.fetch(`*[_type == "nationalRolePlayers"]{title, description}`)
+  const nationalRolePlayers = await client.fetch(`*[_type == "roleplayers"]{title, description}`)
   return nationalRolePlayers
 }
 

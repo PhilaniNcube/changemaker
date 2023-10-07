@@ -4,28 +4,7 @@ import Link from "next/link";
 import MagazineSlider from "./MagazineSlider";
 import { NmbPageFocus } from "@/sanity/lib/client";
 
-const sparkMags = [
-  {
-    title: "Spark 1st Edition",
-    thumbnail: "/images/nmb/nmb_spark_1.jpg",
-    doc: "/images/nmb/nmb_spark_1.pdf",
-  },
-  {
-    title: "Spark 2nd Edition",
-    thumbnail: "/images/nmb/nmb_spark_2.jpg",
-    doc: "/images/nmb/nmb_spark_2.pdf",
-  },
-  {
-    title: "Spark 3rd Edition",
-    thumbnail: "/images/nmb/nmb_spark_3.jpg",
-    doc: "/images/nmb/nmb_spark_3.pdf",
-  },
-  {
-    title: "Spark 4th Edition",
-    thumbnail: "/images/nmb/nmb_spark_4.jpg",
-    doc: "/images/nmb/nmb_spark_4.pdf",
-  },
-];
+
 
 type PageProps = {
   text: string;

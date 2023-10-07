@@ -1,11 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const NationalHero = () => {
+type PageProps = {
+  title: string;
+  image: string;
+  subheading: string;
+};
+
+const NationalHero = ({title, image, subheading}:PageProps) => {
+
+  console.log(image)
+
   return (
     <section id="national" className="bg-masifunde relative flex justify-end">
       <Image
-        src="/images/team.png"
+        src={image}
         width={1500}
         height={1014}
         alt="Changemakers"
@@ -15,19 +24,10 @@ const NationalHero = () => {
         <div className="max-w-7xl mx-auto px-8 py-20 flex justify-start">
           <div className="px-4">
             <h1 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
-              Masifundes Changemaker Network National
+              {title}
             </h1>
             <p className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-white text-xs md:text-base font-medium ">
-              The Changemaker Network Project aims to capacitate learners with
-              practical knowledge on relevant social topics, such as school
-              safety, violence and bullying. This is achieved through activation
-              workshops for all Grade 9 learners and intensive changemaker
-              trainings for selected learners. The training equips learners with
-              practical tools to act as agents of change in their schools. They
-              learn campaigning, public speaking and in general about the role
-              they and their peers can play in initiating change in their direct
-              social environment, particularly regarding addressing
-              interpersonal/gender-based violence.
+           {subheading}
             </p>
             {/* <p className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-white text-xs md:text-base font-medium ">
               The Changemaker Network model is a whole-of-school community

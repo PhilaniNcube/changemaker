@@ -10,7 +10,6 @@ type PageProps = {
 
 const NMBFunders = ({ funders }: PageProps) => {
 
-  console.log(funders)
 
   // const funders = [
   //   {
