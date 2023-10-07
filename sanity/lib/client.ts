@@ -26,6 +26,7 @@ export type NmbPageHero =  {
   nmbHeroImage: {
     asset: {
       _ref: string
+      _type: string
     }
   }
 }

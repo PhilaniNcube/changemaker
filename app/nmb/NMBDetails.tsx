@@ -1,10 +1,27 @@
+import { NmbPageHero } from '@/sanity/lib/client';
+import { urlForImage } from '@/sanity/lib/image';
 import Image from 'next/image';
 
-const NMBDetails = () => {
+type PageProps = {
+  title: string;
+  description: string;
+  imageObject: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  };
+};
+
+
+const NMBDetails = ({ title, imageObject, description }: PageProps) => {
+
+  const image = urlForImage(imageObject.asset).url();
+
   return (
     <section id="nmb" className="relative bg-masifunde isolate">
       <Image
-        src="/images/nmb_hero.jpg"
+        src={image}
         width={2976}
         height={1984}
         alt="Team"
@@ -13,18 +30,12 @@ const NMBDetails = () => {
       <div className="absolute inset-0 py-10 bg-slate-600/60 ">
         <div className="flex flex-col items-start justify-center gap-8 px-8 mx-auto text-white lg:h-full min-h-fit max-w-7xl">
           <h2 className="font-extrabold text-3xl lg:text-5xl max-w-[32ch]">
-            Masifundes Changemaker Network Nelson Mandela Bay
+            {title}
           </h2>
           <div>
             <p className="font-medium text-xs md:text-base leading-6 md:leading-7 text-left max-w-[55ch]">
-              Masifunde&apos;s Changemaker Network aims to capacitate learners
-              from 45 high schools in the NMBM with practical knowledge on
-              relevant social topics. Through activation workshops for all Grade
-              9 learners and intensive changemaker trainings for selected
-              learners they can spark positive change in their schools and
-              communities.
+              {description}
             </p>
-
           </div>
 
           {/* <p className="font-medium text-xs md:text-base leading-6 md:leading-7 text-justify max-w-[55ch]">
