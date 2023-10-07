@@ -106,18 +106,18 @@ export const nationalPartners = {
   type: 'document',
   fields: [
     {
-      name: 'funderName',
-      title: 'Funder Name',
+      name: 'partnerName',
+      title: 'Partner Name',
       type: 'string',
     },
     {
-      name: 'funderWebsite',
-      title: 'Funder Website',
+      name: 'partnerWebsite',
+      title: 'Partner Website',
       type: 'string',
     },
     {
-      name: 'funderLogo',
-      title: 'Funder Logo',
+      name: 'partnerLogo',
+      title: 'Partner Logo',
       type: 'image',
       options: {
         hotspot: true,
