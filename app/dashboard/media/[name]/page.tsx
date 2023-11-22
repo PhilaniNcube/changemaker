@@ -13,8 +13,8 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
   const mediaData =  supabase
     .from("media")
     .select("*", { count: "exact" })
-    // .eq("folder", name.toLowerCase())
-    // .limit(100);
+    .eq("folder", name.toLowerCase())
+    .limit(100);
 
   const docsData =  supabase
     .from("documents")
