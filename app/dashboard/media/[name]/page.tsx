@@ -3,23 +3,31 @@ import supabaseServer from "@/lib/supabase-server";
 import cloudinary from "@/utils/cloudinary";
 import Link from "next/link";
 import { File } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { XIcon } from "lucide-react";
+import { redirect } from "next/navigation";
 
 const page = async ({params: {name}}:{params:{name:string}}) => {
     const supabase = supabaseServer();
 
+    // decode url parameter
+    const folderName = decodeURIComponent(name)
+
+    console.log({folderName})
 
 
 
-  const mediaData =  supabase
+  const mediaData = supabase
     .from("media")
-    .select("*", { count: "exact" })
-    .eq("folder", name.toLowerCase())
+    .select("*")
+    .eq("folder", folderName.toLowerCase())
     .limit(100);
 
-  const docsData =  supabase
+  const docsData = supabase
     .from("documents")
     .select("*", { count: "exact" })
-    .eq("folder", name.toLowerCase())
+    .eq("folder", folderName.toLowerCase())
     .limit(100);
 
     const [{data:media}, {data:docs}] = await Promise.all([mediaData, docsData])
@@ -36,14 +44,23 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
             {media?.length === 0
               ? "No media found"
               : media?.map((item) => (
-                  <Link
-                    href={item.thumbnail_url!}
-                    key={item.id}
-                    className="flex flex-col items-center"
-                  >
-                    <File size={28} />
-                    <p className="text-xs text-center">{item.filename}</p>
-                  </Link>
+                  <div key={item.id} className="relative">
+                    <Link
+                      href={item.src!}
+                      className="relative flex flex-col items-center cursor-pointer isolate"
+                      target="_blank"
+                    >
+                      <Image
+                        src={item.src!}
+                        width={item.width!}
+                        height={item.height!}
+                        alt={item.filename!}
+                        className="object-cover w-full"
+                      />
+                      <p className="text-xs text-center">{item.filename}</p>
+                    </Link>
+
+                  </div>
                 ))}
           </div>
         </div>
