@@ -27,9 +27,9 @@ type PageProps = {
 
 const Focus = ({ province, pageFocus }: PageProps) => {
   return (
-    <section className="bg-white py-10 text-slate-800">
-      <div className="max-w-7xl mx-auto  py-10 px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <section className="py-10 bg-white text-slate-800">
+      <div className="px-8 py-10 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div>
             <p className="text-slate-700 text-justify text-base mb-5 leading-7 max-w-[60ch]">
               {province}
@@ -49,7 +49,7 @@ const Focus = ({ province, pageFocus }: PageProps) => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 500 370"
-              className="w-full object-cover"
+              className="object-cover w-full"
             >
               <g
                 fill="white"
@@ -137,7 +137,7 @@ const Focus = ({ province, pageFocus }: PageProps) => {
                 />
               </g>
               <g
-                className="hover:fill-zinc-600"
+                className="fill-zinc-300"
                 fill="#f99d1c"
                 stroke="white"
                 strokeWidth={1}
@@ -176,22 +176,22 @@ const Focus = ({ province, pageFocus }: PageProps) => {
           </div>
           <div>
             {" "}
-            <div className="flex flex-col md:flex-row gap-6">
-              <h3 className="font-extrabold text-4xl uppercase">Focus</h3>
+            <div className="flex flex-col gap-6 md:flex-row">
+              <h3 className="text-4xl font-extrabold uppercase">Focus</h3>
               <div className="flex-1">
-                <p className="text-lg font-bold  text-slate-800 leading-7">
+                <p className="text-lg font-bold leading-7 text-slate-800">
                   {pageFocus.focusSubheading}
                 </p>
-                <ul className="pl-6 list-disc text-sm md:text-base leading-7">
+                <ul className="pl-6 text-sm leading-7 list-disc md:text-base">
                   {pageFocus.nationalList.map((item, index) => (
-                    <li key={index} className="text-slate-700 leading-7">
+                    <li key={index} className="leading-7 text-slate-700">
                       {item}
                     </li>
                   ))}
                 </ul>{" "}
               </div>
             </div>{" "}
-            {/* <p className="text-lg text-slate-800 leading-7 mt-6 font-medium">
+            {/* <p className="mt-6 text-lg font-medium leading-7 text-slate-800">
               The ChangeMakers&apos; Network aims to be replicated within 4
               provinces in South Africa. Specifically:
               <span className="font-extrabold">
@@ -199,22 +199,25 @@ const Focus = ({ province, pageFocus }: PageProps) => {
                 Eastern Cape, Gauteng, KwaZulu-Natal, North West and Limpopo.
               </span>
             </p>{" "} */}
-            <div id="content" className="text-slate-700 text-base leading-7 mt-5 lg:pr-16">
+            <div
+              id="content"
+              className="mt-5 text-base leading-7 text-slate-700 lg:pr-16"
+            >
               <PortableText value={pageFocus.nationFocusDescription} />
             </div>
           </div>
         </div>
       </div>{" "}
-      <div className="w-full max-w-7xl mx-auto mt-10">
-        <p className="text-slate-800 text-center text-2xl font-bold leading-7">
+      <div className="w-full mx-auto mt-10 max-w-7xl">
+        <p className="text-2xl font-bold leading-7 text-center text-slate-800">
           Spark Magazine Editions
         </p>
-        <div className="w-full flex justify-center space-x-6 items-center mt-4">
+        <div className="flex items-center justify-center w-full mt-4 space-x-6">
           {sparkMags.map((mag, i) => (
             <Link
               href={mag.doc}
               key={i}
-              className="w-1/3 md:w-1/5 rounded-lg cursor-pointer overflow-hidden"
+              className="w-1/3 overflow-hidden rounded-lg cursor-pointer md:w-1/5"
             >
               <Image
                 src={mag.thumbnail}
