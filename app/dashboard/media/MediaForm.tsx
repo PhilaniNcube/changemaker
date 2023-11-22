@@ -4,11 +4,6 @@ import { Database } from "@/schema";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  CalendarDaysIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/outline";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSupabase } from "@/components/Auth/SupabaseProvider";
@@ -145,7 +140,7 @@ const { data: mediaData, error } = await supabase
   }
 
   return (
-    <div className="px-6 pt-10 mt-6 max-w-2xl rounded-md bg-slate-100 shadow-md">
+    <div className="max-w-2xl px-6 pt-10 mt-6 rounded-md shadow-md bg-slate-100">
       {" "}
       <ToastContainer position="top-right" autoClose={2500} />
       <form className="w-full " onSubmit={handleSubmit(onSubmit)}>
@@ -157,7 +152,7 @@ const { data: mediaData, error } = await supabase
             >
               Image Name
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
+            <div className="flex mt-2 rounded-md shadow-sm">
               <input
                 type="text"
                 id="filename"
@@ -166,18 +161,18 @@ const { data: mediaData, error } = await supabase
               />
             </div>
             {errors.filename && (
-              <p className="text-xs italic text-red-500 mt-2">
+              <p className="mt-2 text-xs italic text-red-500">
                 {errors.filename?.message}
               </p>
             )}
           </div>
 
-          <fieldset className="mt-6 col-span-3 ">
-            <legend className="contents text-md font-medium leading-6 text-gray-700">
+          <fieldset className="col-span-3 mt-6 ">
+            <legend className="font-medium leading-6 text-gray-700 contents text-md">
               Select Folder
             </legend>
 
-            <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3">
               {folders.map((folder, i) => (
                 <div key={i} className="flex items-center">
                   <input
@@ -186,11 +181,11 @@ const { data: mediaData, error } = await supabase
                     value={folder.name}
                     onChange={(e) => setFolder(e.target.value)}
                     type="radio"
-                    className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
+                    className="w-4 h-4 border-gray-300 text-masifunde focus:ring-masifunde"
                   />
                   <label
                     htmlFor="folder"
-                    className="ml-3 block text-sm font-medium leading-6 text-gray-900 capitalize"
+                    className="block ml-3 text-sm font-medium leading-6 text-gray-900 capitalize"
                   >
                     {folder.name}
                   </label>
@@ -200,11 +195,11 @@ const { data: mediaData, error } = await supabase
           </fieldset>
 
           <div className="col-span-3 sm:col-span-2">
-            <label className="sr-only block text-sm font-medium leading-6 text-gray-900">
+            <label className="block text-sm font-medium leading-6 text-gray-900 sr-only">
               Select Image
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
-              <div className="bg-blue-400 text-white text-sm font-medium w-fit px-4 py-2 rounded-md">
+            <div className="flex mt-2 rounded-md shadow-sm">
+              <div className="px-4 py-2 text-sm font-medium text-white bg-blue-400 rounded-md w-fit">
                 <CldUploadButton
                   onUpload={handleOnUpload}
                   uploadPreset="kfo3j4ot"
@@ -219,11 +214,11 @@ const { data: mediaData, error } = await supabase
           </div>
         </div>
         <fieldset className="mt-6">
-          <legend className="contents text-md font-medium leading-6 text-gray-700">
+          <legend className="font-medium leading-6 text-gray-700 contents text-md">
             Select Organisation
           </legend>
 
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3">
             {organisations.map((organisation) => (
               <div key={organisation.id} className="flex items-center">
                 <input
@@ -231,11 +226,11 @@ const { data: mediaData, error } = await supabase
                   {...register("organisation_id")}
                   value={organisation.id}
                   type="radio"
-                  className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
+                  className="w-4 h-4 border-gray-300 text-masifunde focus:ring-masifunde"
                 />
                 <label
                   htmlFor="organisation_id"
-                  className="ml-3 block text-sm font-medium leading-6 text-gray-900"
+                  className="block ml-3 text-sm font-medium leading-6 text-gray-900"
                 >
                   {organisation.name}
                 </label>
@@ -243,10 +238,10 @@ const { data: mediaData, error } = await supabase
             ))}
           </div>
         </fieldset>
-        <div className="bg-gray-100 px-4 py-3 text-right sm:px-6 mt-6">
+        <div className="px-4 py-3 mt-6 text-right bg-gray-100 sm:px-6">
           <button
             type="submit"
-            className="inline-flex justify-center rounded-md bg-masifunde py-2 px-10 text-xl font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
+            className="inline-flex justify-center px-10 py-2 text-xl font-semibold text-white rounded-md shadow-sm bg-masifunde hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
           >
             Save
           </button>

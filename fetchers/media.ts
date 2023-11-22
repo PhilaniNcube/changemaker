@@ -1,5 +1,9 @@
 import supabaseServer from "@/lib/supabase-server";
 
+async function getAllMedia(){
+
+}
+
 
 async function getMedia(){
   const supabase = supabaseServer();

@@ -13,8 +13,8 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
   const mediaData =  supabase
     .from("media")
     .select("*", { count: "exact" })
-    .eq("folder", name.toLowerCase())
-    .limit(100);
+    // .eq("folder", name.toLowerCase())
+    // .limit(100);
 
   const docsData =  supabase
     .from("documents")
@@ -28,11 +28,11 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
 
   return (
     <main className="w-full">
-      <h1 className="font-semibold text-2xl">Documents and Media</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h1 className="text-2xl font-semibold">Documents and Media</h1>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="w-full mt-4">
-          <h2 className="font-semibold text-xl text-slate-600">Media</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <h2 className="text-xl font-semibold text-slate-600">Media</h2>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {media?.length === 0
               ? "No media found"
               : media?.map((item) => (
@@ -48,8 +48,8 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
           </div>
         </div>
         <div className="w-full mt-4">
-          <h2 className="font-semibold text-xl text-slate-600">Documents</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <h2 className="text-xl font-semibold text-slate-600">Documents</h2>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {docs?.length === 0
               ? "No documents found"
               : docs?.map((item) => (
