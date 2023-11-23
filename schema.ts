@@ -206,17 +206,17 @@ export interface Database {
       schools: {
         Row: {
           id: number,
-          created_at: string | null,
+          created_at: string ,
           name: string,
         }
         Insert: {
           id?: number,
-          created_at?: string | null,
+          created_at?: string ,
           name: string,
         }
         Update: {
           id?: number,
-          created_at?: string | null,
+          created_at?: string ,
           name: string,
         }
       }

@@ -5,6 +5,7 @@ import NMBFocus from "./NMBFocus";
 import NMBFunders from "./NMBFunders";
 import NMBSchools from "./NMBSchools";
 import NMBVideo from "./NMBVideo";
+import { getSchools } from "@/fetchers/schools";
 
 const page = async () => {
 
@@ -13,10 +14,12 @@ const page = async () => {
   const {descriptionText} = await getNmbPageDescription()
   const nmbFocus = await nmbPageFocus();
 
+  const schools = await getSchools()
+
   const funders = await getNMBPageFunders()
 
   return (
-    <main className="bg-white pb-10" id="video">
+    <main className="pb-10 bg-white" id="video">
       <NMBDetails
         title={nmbheading}
         imageObject={nmbHeroImage}
@@ -24,7 +27,7 @@ const page = async () => {
       />
       <NMBVideo />
       <NMBFocus text={descriptionText} focus={nmbFocus} />
-      <NMBSchools />
+      <NMBSchools schools={schools!} />
       <NMBFunders funders={funders} />
     </main>
   );
