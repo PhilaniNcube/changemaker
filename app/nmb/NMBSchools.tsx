@@ -33,6 +33,9 @@ const schools = [
     title: "Khumbulani High School",
   },
   {
+    title: "Kwa-Magxaki High School",
+  },
+  {
     title: "Kwazakhele High School",
   },
   {
@@ -135,11 +138,11 @@ const schools = [
 
 const NMBSchools = () => {
   return <section id="schools" className="py-20 bg-slate-100">
-    <div className="max-w-7xl mx-auto px-8">
-       <h2 className="font-bold mb-8 text-3xl text-slate-800 text-center">Schools currently in the programme are:</h2>
+    <div className="px-8 mx-auto max-w-7xl">
+       <h2 className="mb-8 text-3xl font-bold text-center text-slate-800">Schools currently in the programme are:</h2>
        <div className="columns-1 sm:columns-2 md:columns-3 gap-x-4 gap-y-2" >
         {schools.map((school, index) => (
-          <p className="font-medium text-slate-700 text-sm md:text-md" key={index}>{school.title}</p>
+          <p className="text-sm font-medium text-slate-700 md:text-md" key={index}>{school.title}</p>
         ))}
        </div>
     </div>
