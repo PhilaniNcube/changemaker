@@ -203,6 +203,23 @@ export interface Database {
           slug?: string | null
         }
       }
+      schools: {
+        Row: {
+          id: number,
+          created_at: string | null,
+          name: string,
+        }
+        Insert: {
+          id?: number,
+          created_at?: string | null,
+          name: string,
+        }
+        Update: {
+          id?: number,
+          created_at?: string | null,
+          name: string,
+        }
+      }
       workshops: {
         Row: {
           id: string
