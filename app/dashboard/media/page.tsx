@@ -2,6 +2,7 @@ import cloudinary from '@/utils/cloudinary';
 import MediaForm from './MediaForm'
 import { getOrganisations } from '@/fetchers/organisations';
 import CreateFolder from '../profile/CreateFolder';
+import FolderTable from '../_components/folder-table';
 
 const page = async () => {
 
@@ -16,17 +17,15 @@ const page = async () => {
 
       const [{ folders }, organisations] = await Promise.all([foldersData, organisationsData]);
 
-  return <div className="w-full">
-   <h1 className="text-2xl text-slate-700 font-bold">Upload Image</h1>
-   <div className="grid grid-cols-3 gap-2">
-    <div className="col-span-2">
-
-    <MediaForm organisations={organisations} folders={folders} />
-    </div>
-    <div className="col-span-1 py-6">
-      <CreateFolder />
+  return (
+    <div className="w-full gap-8 flex flex-col md:flex-row">
+      <div >
+        <CreateFolder />
       </div>
-   </div>
-  </div>;
+      <div className="flex-1">
+      <FolderTable folders={folders} />
+      </div>
+    </div>
+  );
 };
 export default page;
