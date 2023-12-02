@@ -7,27 +7,7 @@ import { SubmitButton } from "@/components/Forms/submit-button";
 
 const CreateFolder = () => {
 
-// const router = useRouter()
 
-// const createFolder = async (e:FormEvent<HTMLFormElement>) => {
-// e.preventDefault();
-
-// const {name} = Object.fromEntries(new FormData(e.currentTarget))
-
-// const response = await fetch('/api/folders', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({name})
-// }).then(res => res.json()).catch(err => console.log(err))
-
-// const data = await response
-// console.log(data)
-
-// router.push(`/dashboard/`)
-
-// }
 
   return (
     <div className="w-full py-8 px-6 bg-slate-100 rounded-md">

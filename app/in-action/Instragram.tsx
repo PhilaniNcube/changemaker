@@ -14,7 +14,7 @@ const Instragram =  ({feed}:ComponentProps) => {
 
   const router = useRouter()
 
-  console.log({feed})
+
 
   return (
     <section className="py-10 bg-white">

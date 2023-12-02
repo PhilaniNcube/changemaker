@@ -9,9 +9,9 @@ const folderName = formData.get('folderName') as string;
 
 
 // create folder from cloudinary
-const data = await cloudinary.v2.api.create_folder(folderName).then(result => result.json()).catch(err => console.log(err));
+const data = await cloudinary.v2.api.create_folder(folderName).then(result => result.json()).catch(err => console.error(err));
 
-console.log(data);
+
 
 }
 

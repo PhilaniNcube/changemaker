@@ -73,7 +73,7 @@ const MediaForm = ({  organisations, folders }: Props) => {
 
 
   const onSubmit: SubmitHandler<Media> = async (data) => {
-    console.log("submitting", data);
+
 
     if(image === null) {
       alert('Please upload a new image');
@@ -118,7 +118,7 @@ const { data: mediaData, error } = await supabase
           type: "success",
 
         });
-        console.log({image})
+
         router.push('/gallery')
   }
 
@@ -126,7 +126,7 @@ const { data: mediaData, error } = await supabase
   };
 
   async function handleOnUpload(result: Result, widget: any) {
-    console.log({ result, widget });
+
     if (result.event === "success") {
       setImage(result.info);
       widget.close();

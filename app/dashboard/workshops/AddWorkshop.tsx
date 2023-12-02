@@ -28,7 +28,7 @@ const AddWorkshop = () => {
       throw new Error(error.message);
     } else {
       alert("Organisation created successfully");
-      console.log({ workshop, error });
+
       setLoading(false);
       router.push(`/dashboard/workshops/${workshop.id}`);
     }

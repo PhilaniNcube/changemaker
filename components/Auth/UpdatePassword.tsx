@@ -15,7 +15,7 @@ const UpdatePasword = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(event);
+    ;
 
     if (typeof email !== "string") {
       throw new Error("Please provide valid details");
@@ -25,10 +25,10 @@ const UpdatePasword = () => {
 
     if (error) {
       alert(error.message);
-      console.log({ error });
+
     }
 
-    console.log({ data, error });
+
 
     if (data) {
       alert("We sent a password reset link to your email address.");

@@ -50,7 +50,7 @@ export default async function RootLayout({
 
     let { data:admin, error } = await supabase.rpc("is_admin");
 
-    console.log({admin})
+
 
 
   return (

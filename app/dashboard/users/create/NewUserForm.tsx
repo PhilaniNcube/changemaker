@@ -52,7 +52,7 @@ const NewUserForm = ({organisations}:PropTypes) => {
         });
 
         const response = await req.json()
-         console.log(response);
+
               toast(response.message, {
                 type: "warning",
               });

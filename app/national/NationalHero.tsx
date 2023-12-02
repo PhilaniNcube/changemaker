@@ -9,7 +9,7 @@ type PageProps = {
 
 const NationalHero = ({title, image, subheading}:PageProps) => {
 
-  console.log(image)
+
 
   return (
     <section id="national" className="bg-masifunde relative flex justify-end">

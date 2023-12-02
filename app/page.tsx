@@ -12,7 +12,7 @@ const Home = async () => {
   const homepageContent = await getHomepageContent()
 
 
-  console.log(homepageContent.objectiveTitle)
+
 
   return (
     <Fragment>

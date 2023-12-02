@@ -30,7 +30,7 @@ const page = async({params: {id}}:Props) => {
     districtsData,
   ]);
 
-console.log({documents})
+
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

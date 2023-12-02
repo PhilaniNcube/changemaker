@@ -16,7 +16,7 @@ const SignUp = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(event);
+
 
     if (typeof email !== "string" || typeof password !== "string") {
       throw new Error("Please provide valid details");
@@ -29,10 +29,10 @@ const SignUp = () => {
 
     if (error) {
       alert(error.message);
-      console.log({ error });
+
     }
 
-    console.log({ data, error });
+
      alert('Please check your email address for a confirmation link')
     // Place your API call here to submit your payload.
   };

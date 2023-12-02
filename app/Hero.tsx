@@ -14,7 +14,7 @@ const Hero = async () => {
 
   const firstTwo = titleArray.slice(0, 2).join(" ");
 
-  console.log(firstTwo);
+
 
   const lastWord = titleArray.slice(titleArray.length - 1).join(" ");
 

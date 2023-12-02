@@ -57,7 +57,7 @@ const page = async () => {
 
    const instgramFeed = await instagramFeedService();
 
-   console.log(instgramFeed);
+
 
   return (
     <main className="bg-white">

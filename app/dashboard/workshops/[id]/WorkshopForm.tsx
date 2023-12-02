@@ -65,7 +65,7 @@ const WorkshopForm = ({workshop, organisations}:Props) => {
 
    const onSubmit: SubmitHandler<Workshop> = async (data) => {
 
-    console.log('submitting', data)
+
 
         toast("Please wait...", {
           type: "warning",
@@ -104,7 +104,7 @@ const { data: workshop, error } = await supabase
 
 
      async function handleOnUpload(result: any, widget: any) {
-       console.log({ result, widget });
+
        if (result.event === "success") {
          setImageUrl(result.info.url);
          toast("Image uploaded successfully", {

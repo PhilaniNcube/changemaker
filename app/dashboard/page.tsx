@@ -20,12 +20,14 @@ const page = async () => {
     .then((result:any) => {
       return result;
     })
-    .catch((err:any) => console.log(err));
+    .catch((err:any) => console.error(err));
 
    const folders = data.folders as Folder[]
 
 
-  console.log(folders);
+
+  const images = await cloudinary.v2.search.max_results(20).execute()
+
 
   if(!folders || folders.length === 0) {
     return <div className="w-full">

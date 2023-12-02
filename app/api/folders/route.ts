@@ -13,7 +13,7 @@ export async function POST(request: Request) {
   return result
 } );
 
-  console.log(data)
+
 
   return NextResponse.json({details: 'Folder created', data: data})
 
@@ -25,9 +25,9 @@ export async function GET(request: Request) {
 .root_folders()
 .then(result => {
   return result
-} ).catch(err => console.log(err));
+} ).catch(err => console.error(err));
 
-  console.log(data)
+
 
   return NextResponse.json({details: 'Folders', data: data})
 
@@ -42,9 +42,9 @@ export async function DELETE(request: Request) {
 .root_folders()
 .then(result => {
   return result
-} ).catch(err => console.log(err));
+} ).catch(err => console.error(err));
 
-  console.log(data)
+
 
   return NextResponse.json({details: 'Folders', data: data})
 

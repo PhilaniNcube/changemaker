@@ -22,7 +22,7 @@ const {supabase} = useSupabase()
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(event)
+
 
     if(typeof email !== 'string' || typeof password !== 'string') {
         throw new Error('Please provide valid details')
@@ -35,7 +35,7 @@ const {supabase} = useSupabase()
 
     if(error) {
      alert(error.message)
-     console.log({error})
+
     }
 
     toast('Login successful, please wait while you are being redirected',

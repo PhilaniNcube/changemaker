@@ -96,13 +96,13 @@ const { data: org, error } = await supabase
     toast(`There was an error: ${error.message}`, {
       type: 'error'
     });
-    console.log({error})
+
     return
   } else if (org) {
     toast("Organisation succesfully updated", {
       type: "success",
     });
-    console.log({ org });
+
     return;
   }
 

@@ -20,7 +20,7 @@ const DocumentsUpload = ({organisation}: Props) => {
   const [uploadResult, setUploadResult] = useState()
 
 async function handleOnUpload(result:any, widget:any) {
-  console.log({result, widget})
+
   setUploadResult(result.info)
 // save the result in the documents table
 
@@ -39,7 +39,7 @@ async function handleOnUpload(result:any, widget:any) {
       toast("Document succesfully uploaded", {
         type: "success",
       });
-      console.log({data})
+
     }
       toast("Document succesfully uploaded", {
         type: "success",

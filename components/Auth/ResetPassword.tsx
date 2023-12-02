@@ -20,7 +20,7 @@ const ResetPassword = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log(event);
+
 
     if (typeof email !== "string" || typeof password !== "string") {
       throw new Error("Please provide valid details");
@@ -33,12 +33,12 @@ const ResetPassword = () => {
 
     if (error) {
       alert(error.message);
-      console.log({ error });
+
     }
 
 
     if(data) {
-      console.log({ data, error });
+
       alert('Your password has been reset successfully')
       router.push('/dashboard/profile')
     }

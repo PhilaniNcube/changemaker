@@ -14,7 +14,7 @@ const DeleteButton = ({id}:{id:string}) => {
 const handleDelete = async () => {
 
   const {data, error} = await supabase.from('documents').delete().eq("id", id).select('*').single()
-  console.log({data, error})
+
 
   if(error) {
       toast("Delete operation failed", {

@@ -17,7 +17,7 @@ const Upload = () => {
     const [uploadResult, setUploadResult] = useState();
 
     async function handleOnUpload(result: any, widget: any) {
-      console.log({ result, widget });
+
       setUploadResult(result.info);
       // save the result in the documents table
 
@@ -44,7 +44,7 @@ const Upload = () => {
           toast("Document succesfully uploaded", {
             type: "success",
           });
-          console.log({ data });
+
           widget.close();
         }
 

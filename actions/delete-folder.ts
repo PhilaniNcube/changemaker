@@ -9,9 +9,8 @@ const folderName = formData.get('folderName') as string;
 
 
 // delete folder from cloudinary
-const data = cloudinary.v2.api.delete_folder(folderName).then((result) => result.json()).catch(err => console.log(err));
+const data = cloudinary.v2.api.delete_folder(folderName).then((result) => result.json()).catch(err => console.error(err));
 
-console.log(data);
 
 redirect("/dashboard")
 

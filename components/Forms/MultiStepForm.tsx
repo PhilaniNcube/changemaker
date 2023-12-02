@@ -55,7 +55,7 @@ const MultiStepForm = () => {
      }
    }
 
-   console.log({count});
+
 
    if(count < 7) {
 

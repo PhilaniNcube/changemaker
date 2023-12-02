@@ -13,7 +13,6 @@ const middleware = async (req: NextRequest) => {
   const supabase = createMiddlewareSupabaseClient<Database>({ req, res })
   const { data: { session } } = await supabase.auth.getSession()
 
-  // console.log({session})
 
    const { data:admin, error } = await supabase.rpc("is_admin");
 
@@ -27,7 +26,7 @@ const middleware = async (req: NextRequest) => {
      redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
      return NextResponse.redirect(redirectUrl)
     } else {
-      console.log({admin, error})
+
     return res
     }
 
