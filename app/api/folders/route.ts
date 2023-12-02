@@ -32,3 +32,20 @@ export async function GET(request: Request) {
   return NextResponse.json({details: 'Folders', data: data})
 
 }
+
+
+
+
+export async function DELETE(request: Request) {
+
+ const data = cloudinary.v2.api
+.root_folders()
+.then(result => {
+  return result
+} ).catch(err => console.log(err));
+
+  console.log(data)
+
+  return NextResponse.json({details: 'Folders', data: data})
+
+}
