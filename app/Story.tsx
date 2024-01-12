@@ -10,15 +10,15 @@ import { ReactNode } from "react";
 
 const Story = ({ content , children}: { content: HomepageContent, children:ReactNode }) => {
   return (
-    <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-8 ">
+    <section className="py-10 bg-white">
+      <div className="px-8 mx-auto max-w-7xl ">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="w-full h-full flex flex-col justify-center items-center bg-neutral-800 bg-opacity-40 text-white sm:px-12 px-6 rounded-md">
-              <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7">
+            <div className="flex flex-col items-center justify-center w-full h-full px-6 text-white rounded-md bg-neutral-800 bg-opacity-40 sm:px-12">
+              <h2 className="text-3xl font-bold leading-7 text-center lg:text-4xl lg:leading-9">
                 Change starts with you
               </h2>
-              <p className="text-sm text-white text-center">
+              <p className="text-sm text-center text-white">
                 Linathi Mangether sparking change at Soqhayisa Secondary School
                 in Gqeberha
               </p>
@@ -28,8 +28,8 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
             <Image
               width={1920}
               height={1080}
-              className="rounded-md lg:block hidden w-full object-cover aspect-[7/3] object-center"
-              src="https://res.cloudinary.com/dkqzhae7c/image/upload/v1683833665/phase_3_vpcgva.webp"
+              className="rounded-md lg:block hidden w-full object-cover aspect-[7/3] object-top "
+              src="/images/home_banner.jpeg"
               alt="Student"
             />
             <img
@@ -46,12 +46,15 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
         </div>
 
         <div className="lg:mt-14 sm:mt-7 mt-14">
-          <div className="flex lg:flex-row flex-col">
-            <div className="w-full lg:w-6/12 text-justify">
-              <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">
+          <div className="flex flex-col lg:flex-row">
+            <div className="w-full text-justify lg:w-6/12">
+              <h2 className="text-3xl font-bold leading-7 text-gray-800 lg:text-4xl lg:leading-9">
                 {content.homepageStory}
               </h2>
-              <div id="content" className="pr-6 font-medium text-base leading-7 text-gray-600 mt-6 w-full xl:w-9/12">
+              <div
+                id="content"
+                className="w-full pr-6 mt-6 text-base font-medium leading-7 text-gray-600 xl:w-9/12"
+              >
                 <PortableText value={content?.storyContent!} />
               </div>
               {/* <p>
@@ -63,7 +66,7 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
                 change in their own lives and the lives of other - and thereby
                 acting as changemakers.
               </p>
-              <p className="pr-6 font-medium text-base leading-7 text-gray-600 w-full xl:w-9/12 mt-6">
+              <p className="w-full pr-6 mt-6 text-base font-medium leading-7 text-gray-600 xl:w-9/12">
                 Since 2013 Masifunde has implemented a variety of city-wide
                 programmes with the focus on learner activation mainly on the
                 topics of school safety and gender-based violence (GBV). The
@@ -74,7 +77,7 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
                 participating schools to take positive and constructive action
                 as part of the school community.
               </p>
-              <p className="pr-6 font-medium text-base leading-7 text-gray-600 w-full xl:w-9/12 mt-6">
+              <p className="w-full pr-6 mt-6 text-base font-medium leading-7 text-gray-600 xl:w-9/12">
                 In 2021, Masifunde officially launched its Changemaker Network
                 in the Nelson Mandela Bay. Since 2023, the programme gets
                 replicated with 20 CSO partners in the Eastern Cape, Limpopo,
@@ -82,10 +85,10 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
                 200 schools, with 40 CSO partners in all provinces of South
                 Africa.
               </p>
-              <div className="pr-6 mt-8 font-medium text-base leading-7 text-gray-600 w-full xl:w-9/12">
+              <div className="w-full pr-6 mt-8 text-base font-medium leading-7 text-gray-600 xl:w-9/12">
                 Find out more about Masifunde{" "}
                 <Link
-                  className="text-masifunde font-light underline"
+                  className="font-light underline text-masifunde"
                   href="https://www.masifunde.org"
                 >
                   www.masifunde.org
@@ -93,9 +96,7 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
               </div> */}
             </div>
 
-            <div className="w-full lg:w-6/12">
-              {children}
-            </div>
+            <div className="w-full lg:w-6/12">{children}</div>
           </div>
         </div>
       </div>
