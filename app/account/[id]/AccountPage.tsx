@@ -9,6 +9,25 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+
 
 type Props = {
   profile: Database["public"]["Tables"]["profiles"]["Row"];
@@ -33,6 +52,17 @@ const AccountPage = ({profile, organisations}:Props) => {
 
    const router = useRouter();
    const { supabase } = useSupabase();
+
+     const form = useForm<Profile>({
+       resolver: zodResolver(profileSchema),
+       defaultValues: {
+         id: profile.id,
+         first_name: profile.first_name!,
+         last_name: profile.last_name!,
+         organisation_id: profile.organisation_id.id!,
+       },
+     });
+
      const {
        register,
        handleSubmit,
@@ -73,118 +103,103 @@ const AccountPage = ({profile, organisations}:Props) => {
      };
 
    return (
-     <div className="w-full max-w-7xl mx-auto py-10 px-8">
+     <div className="w-full px-8 mx-auto max-w-7xl">
        <ToastContainer position="top-right" autoClose={2500} />
        <h1 className="text-3xl font-bold text-slate-700">Profile Details</h1>
-       <form
-         onSubmit={handleSubmit(onSubmit)}
-         className="mt-16 max-w-xl sm:mt-20"
-       >
-         <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-           <div className="sr-only">
-             <label
-               htmlFor="id"
-               className="block text-sm font-medium leading-6 text-gray-900"
-             >
-               Profile ID
-             </label>
-             <div className="mt-2 flex rounded-md shadow-sm">
-               <input
-                 type="text"
-                 id="id"
-                 {...register("id")}
-                 className="block w-full flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
-               />
-             </div>
-           </div>
-           <div>
-             <label
-               htmlFor="first_name"
-               className="block text-sm font-semibold leading-6 text-slate-700"
-             >
-               First name
-             </label>
-             <div className="mt-2.5">
-               <input
-                 type="text"
-                 id="first_name"
-                 {...register("first_name")}
-                 autoComplete="given-name"
-                 className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
-               />
-             </div>
-           </div>
-           <div>
-             <label
-               htmlFor="last_name"
-               className="block text-sm font-semibold leading-6 text-slate-700"
-             >
-               Last name
-             </label>
-             <div className="mt-2.5">
-               <input
-                 type="text"
-                 id="last_name"
-                 {...register("last_name")}
-                 autoComplete="family-name"
-                 className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
-               />
-             </div>
-           </div>
-           <div>
-             <label
-               htmlFor="email"
-               className="block text-sm font-semibold leading-6 text-slate-700"
-             >
-               Email
-             </label>
-             <div className="mt-2.5">
-               <input
-                 type="email"
-                 id="email"
-                 {...register("email")}
-                 autoComplete="email"
-                 className="block w-full rounded-md border-0 py-2 px-3.5 text-slate-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-masifunde sm:text-sm sm:leading-6"
-               />
-             </div>
-           </div>
-         </div>
+       <Form {...form}>
+         <form
+           onSubmit={form.handleSubmit(onSubmit)}
+           className="max-w-xl mt-16 sm:mt-20"
+         >
+           <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
+             <FormField
+               control={form.control}
+               name="id"
+               render={({ field }) => (
+                 <FormItem className="hidden">
+                   <FormControl>
+                     <Input type="hidden" {...field} />
+                   </FormControl>
+                 </FormItem>
+               )}
+             />
+             <FormField
+               control={form.control}
+               name="first_name"
+               render={({ field }) => (
+                 <FormItem>
+                   <FormLabel>First Name</FormLabel>
+                   <FormControl>
+                     <Input placeholder="shadcn" {...field} />
+                   </FormControl>
 
-         <fieldset className="mt-6">
-           <legend className="contents text-md font-medium leading-6 text-gray-700">
-             Select Organisation
-           </legend>
+                   <FormMessage />
+                 </FormItem>
+               )}
+             />
+             <FormField
+               control={form.control}
+               name="last_name"
+               render={({ field }) => (
+                 <FormItem>
+                   <FormLabel>Last Name</FormLabel>
+                   <FormControl>
+                     <Input placeholder="" {...field} />
+                   </FormControl>
 
-           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
-             {organisations.map((organisation) => (
-               <div key={organisation.id} className="flex items-center">
-                 <input
-                   id="organisation_id"
-                   {...register("organisation_id")}
-                   value={organisation.id}
-                   type="radio"
-                   className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
-                 />
-                 <label
-                   htmlFor="organisation_id"
-                   className="ml-3 block text-sm font-medium leading-6 text-gray-900"
-                 >
-                   {organisation.name}
-                 </label>
-               </div>
-             ))}
+                   <FormMessage />
+                 </FormItem>
+               )}
+             />
+             <FormField
+               control={form.control}
+               name="email"
+               render={({ field }) => (
+                 <FormItem>
+                   <FormLabel>Email</FormLabel>
+                   <FormControl>
+                     <Input type="email" placeholder="" {...field} />
+                   </FormControl>
+
+                   <FormMessage />
+                 </FormItem>
+               )}
+             />
+             <FormField
+               control={form.control}
+               name="organisation_id"
+               render={({ field }) => (
+                 <FormItem>
+                   <FormLabel>Organisation</FormLabel>
+                   <Select
+                     onValueChange={field.onChange}
+                     defaultValue={field.value}
+                   >
+                     <FormControl>
+                       <SelectTrigger>
+                         <SelectValue placeholder="Select your organisation" />
+                       </SelectTrigger>
+                     </FormControl>
+                     <SelectContent>
+                       {organisations.map((organisation) => (
+                         <SelectItem
+                           key={organisation.id}
+                           value={organisation.id}
+                         >
+                           {organisation.name}
+                         </SelectItem>
+                       ))}
+                     </SelectContent>
+                   </Select>
+
+                   <FormMessage />
+                 </FormItem>
+               )}
+             />
            </div>
-         </fieldset>
-
-         <div className="mt-10">
-           <button
-             type="submit"
-             className="block w-full rounded-md bg-masifunde px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
-           >
-             Save
-           </button>
-         </div>
-       </form>
+           <Button className="min-w-[200px] mt-4" type="submit">Save</Button>
+         </form>
+       </Form>
      </div>
    );
 

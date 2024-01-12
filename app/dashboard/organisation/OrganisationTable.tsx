@@ -2,6 +2,7 @@
 
 import { Database } from "@/schema";
 import Link from "next/link";
+import { DeleteOrganisation } from "./DeleteOrganisation";
 
 
 type Props = {
@@ -29,7 +30,7 @@ const OrganisationTable = ({ organisations }:Props) => {
             Contact
           </th>
           <th className="py-5 w-1/5 text-base text-gray-800  pr-2 sm:pr-10 text-right">
-          
+
           </th>
         </tr>
       </thead>
@@ -51,7 +52,8 @@ const OrganisationTable = ({ organisations }:Props) => {
             <td className="pr-2 sm:pr-10 py-5 text-gray-800  text-xs sm:text-sm text-right">
               {organisation.tel}
             </td>
-            <td className="pr-2 sm:pr-10 py-5 text-gray-800  text-xs sm:text-sm text-right">
+            <td className="pr-2 sm:pr-10 py-5 text-gray-800  text-xs sm:text-sm text-right flex items-center gap-x-4">
+              <DeleteOrganisation id={organisation.id} />
               <Link href={`/dashboard/organisation/${organisation.id}`} className="px-6 py-2 rounded">
               View
               </Link>

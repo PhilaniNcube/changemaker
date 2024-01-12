@@ -2,6 +2,7 @@ import ProfileDetails from "./ProfileDetails";
 import createClient from "../../../lib/supabase-server";
 import { getOrganisations } from "@/fetchers/organisations";
 import CreateFolder from "./CreateFolder";
+import AccountPage from "@/app/account/[id]/AccountPage";
 
 
 const getProfile = async () => {
@@ -34,9 +35,10 @@ const page = async () => {
   ]);
 
   return <main>
+
     <div className="flex flex-col gap-8">
-    <ProfileDetails profile={profile!} organisations={organisations} />
-    <div className="mt-3 w-full md:w-2/3 lg:w-1/2">
+    <AccountPage profile={profile!} organisations={organisations} />
+    <div className="w-full mt-3 md:w-2/3 lg:w-1/2">
     <CreateFolder />
     </div>
     </div>
