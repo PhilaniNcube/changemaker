@@ -43,3 +43,28 @@ export type CloudinarySearchResponse = {
   rate_limit_reset_at: string;
   rate_limit_remaining: number;
 }
+
+export type ResourceType = {
+  asset_id: string;
+  public_id: string;
+  version: number;
+  resource_type: string;
+  type: string;
+  created_at: string;
+  bytes: number;
+  width: number;
+  height: number;
+  folder: string;
+  access_mode: string;
+  url: string;
+  secure_url: string;
+}
+
+
+export type ResourcesType = {
+  resources: ResourceType[];
+  next_cursor: string;
+  rate_limit_allowed: number;
+  rate_limit_reset_at: string;
+  rate_limit_remaining: number;
+}

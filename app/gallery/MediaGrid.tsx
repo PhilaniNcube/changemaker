@@ -1,11 +1,12 @@
 "use client"
 import { Database } from "@/schema";
+import { ResourceType } from "@/types/cloudinary-types";
 import Image from "next/image";
 import Link from "next/link";
 
 
 type Props = {
-  media: Database['public']['Tables']['media']['Row'][]
+  media:ResourceType[]
 }
 
 
@@ -16,11 +17,11 @@ const MediaGrid = ({media}:Props) => {
   return (
     <section>
       {" "}
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         {media.map((image) => (
-          <Link href={image.src}
-            key={image.id}
-            className="w-full relative aspect-video rounded-md overflow-hidden shadow-md"
+          <Link href={image.url}
+            key={image.public_id}
+            className="relative w-full overflow-hidden rounded-md shadow-md aspect-video"
           >
             {" "}
             <section>
@@ -28,18 +29,18 @@ const MediaGrid = ({media}:Props) => {
                 <div>
 
                     <Image
-                      src={image.src}
+                      src={image.url}
                       width={image.width!}
                       height={image.height!}
-                      alt={image.filename!}
-                      className="w-full aspect-video rounded-md object-cover"
+                      alt={image.folder!}
+                      className="object-cover w-full rounded-md aspect-video"
                     />
 
-                  <div className="bg-gradient-to-t from-slate-600/50 to-transparent absolute inset-0 flex items-end justify-start p-5">
+                  <div className="absolute inset-0 flex items-end justify-start p-5 bg-gradient-to-t from-slate-600/50 to-transparent">
                     <div>
-                      <p className="text-md text-white">{image.filename}</p>
+                      {/* <p className="text-white text-md">{image.filename}</p> */}
                       <p className="text-xs text-white">
-                        {image.organisation_id.name}
+                        {/* {image.organisation_id.name} */}
                       </p>
                       <p className="text-xs text-white capitalize">
                         {image.folder ? image.folder : "No Folder"}
