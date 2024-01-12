@@ -1,7 +1,7 @@
 "use client"
 
 import Script from "next/script";
-import { Fragment } from "react";
+import { Fragment, Suspense } from "react";
 import Hero from "./Hero";
 import Instragram from "./Instragram";
 
@@ -59,7 +59,7 @@ const instagramFeedService = async () => {
 
 const page = async () => {
 
-   const instgramFeed = await instagramFeedService();
+
 
 
 
@@ -67,7 +67,7 @@ const page = async () => {
   return (
     <Fragment>
       {/* <Hero /> */}{" "}
-      <div className="w-full flex items-center justify-center">
+      <div className="flex items-center justify-center w-full">
         <Script
           async
           defer
@@ -78,7 +78,15 @@ const page = async () => {
 
         <div id="fb-root"></div>
       </div>
-      <Instragram feed={instgramFeed} />
+      <Suspense
+        fallback={
+          <p className="mt-4 text-lg font-medium text-gray-600 dark:text-gray-400 animate-pulse">
+            Loading...
+          </p>
+        }
+      >
+        <Instragram />
+      </Suspense>
     </Fragment>
   );
 };

@@ -10,9 +10,9 @@ type ComponentProps = {
   feed: InstagramMedia[];
 };
 
-const Instragram =  ({feed}:ComponentProps) => {
+const Instragram =  () => {
 
-  const router = useRouter()
+
 
 
 

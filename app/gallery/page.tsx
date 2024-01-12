@@ -9,7 +9,7 @@ import Back from "@/components/back";
 
 const page = async ({searchParams}:{searchParams: {next: string | undefined}}) => {
 
-    console.log(searchParams)
+
 
     const data = await cloudinary.v2.api
       .resources({next_cursor: searchParams.next, max_results: 9})
@@ -17,14 +17,7 @@ const page = async ({searchParams}:{searchParams: {next: string | undefined}}) =
         return result;
       });
 
-      console.log({data})
 
-
-
-  const mediaData = getMedia()
-  const organisationData = getOrganisations()
-
-  const [media, organisations] = await Promise.all([mediaData, organisationData])
 
   return (
     <main className="bg-white">
