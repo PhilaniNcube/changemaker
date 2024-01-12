@@ -63,7 +63,7 @@ export type ResourceType = {
 
 export type ResourcesType = {
   resources: ResourceType[];
-  next_cursor: string;
+  next_cursor: string | undefined;
   rate_limit_allowed: number;
   rate_limit_reset_at: string;
   rate_limit_remaining: number;
