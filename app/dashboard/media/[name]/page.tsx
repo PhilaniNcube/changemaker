@@ -2,13 +2,14 @@ import supabaseService from "@/lib/service-role";
 import supabaseServer from "@/lib/supabase-server";
 import cloudinary from "@/utils/cloudinary";
 import Link from "next/link";
-import { File } from "lucide-react";
+import { File, Trash2Icon } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { XIcon } from "lucide-react";
 import { redirect } from "next/navigation";
 import { CloudinarySearchResponse } from "@/types/cloudinary-types";
 import ImageUpload from "../_components/image-upload";
+import { deleteAsset } from "@/actions/delete-asset";
 
 const page = async ({params: {name}}:{params:{name:string}}) => {
 
@@ -33,7 +34,7 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
 
 
     const mediaResources = images.resources
-     console.log(folderName, images);
+
 
      if (!images || images.total_count === 0 ) {
           return (
@@ -63,26 +64,75 @@ const page = async ({params: {name}}:{params:{name:string}}) => {
                <h3 className="text-lg">Upload Image/Document</h3>
                <ImageUpload folderName={folderName!} />
              </div>
-             <div className="grid grid-cols-1 lg:grid-cols-3  gap-6">
+             <div className="grid grid-cols-1 lg:grid-cols-4  gap-6">
                {mediaResources.length > 0 &&
                  mediaResources.map((item) => {
                    if (item.resource_type === "image") {
                      return (
-                       <Image
-                         key={item.asset_id}
-                         src={item.url}
-                         width={item.width}
-                         height={item.height}
-                         alt={item.filename}
-                         className="py-3 rounded-lg object-cover"
-                       />
+                       <div key={item.asset_id} className="relative group">
+                         <form
+                           action={deleteAsset}
+                           className="absolute group-hover:opacity-100 opacity-0 top-5 right-2 z-10"
+                         >
+                           <input
+                             type="hidden"
+                             name="id"
+                             value={item.public_id}
+                           />
+                           <input
+                             type="hidden"
+                             name="folder"
+                             value={folderName}
+                           />
+                           <Button
+                             variant="destructive"
+                             className=""
+                             type="submit"
+                             size="sm"
+                           >
+                             <Trash2Icon size={16} />
+                           </Button>
+                         </form>
+                         <Link href={item.url} prefetch={false} target="_blank">
+                           <Image
+                             src={item.url}
+                             width={item.width}
+                             height={item.height}
+                             alt={item.filename}
+                             className="py-3 rounded-lg object-cover aspect-square"
+                           />
+                         </Link>
+                       </div>
                      );
                    } else {
                      return (
                        <div
                          key={item.asset_id}
-                         className="flex flex-col items-center justify-center w-full h-40 bg-gray-100 rounded-lg"
+                         className="flex flex-col relative group items-center justify-center w-full h-40 bg-gray-100 rounded-lg"
                        >
+                         <form
+                           action={deleteAsset}
+                           className="absolute group-hover:opacity-100 opacity-0 top-5 right-2 z-10"
+                         >
+                           <input
+                             type="hidden"
+                             name="id"
+                             value={item.public_id}
+                           />
+                           <input
+                             type="hidden"
+                             name="folder"
+                             value={folderName}
+                           />
+                           <Button
+                             variant="destructive"
+                             className=""
+                             type="submit"
+                             size="sm"
+                           >
+                             <Trash2Icon size={16} />
+                           </Button>
+                         </form>
                          <File size={48} />
                          <p className="text-sm font-semibold">
                            {item.filename}

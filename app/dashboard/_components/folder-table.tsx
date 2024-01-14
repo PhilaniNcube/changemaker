@@ -48,11 +48,11 @@ export default function FolderTable({ folders }: TableProps) {
                 {folder.name}
               </TableCell>
               <TableCell className="flex space-x-2">
-                <Link href={`/dashboard/media/${folder.path}`}>
                   <Button size="sm" variant="outline">
+                <Link href={`/dashboard/media/${folder.path}`}>
                     Open
-                  </Button>
                 </Link>
+                  </Button>
                 <AlertDialog>
                   <AlertDialogTrigger>
                     <Button size="sm" type="button" variant="destructive">

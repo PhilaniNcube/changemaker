@@ -1,5 +1,6 @@
 "use client";
-import { experimental_useFormStatus as useFormStatus } from "react-dom";
+//@ts-ignore
+import { useFormStatus } from "react-dom";
 import { Button } from "../ui/button";
 import { CircleSlashed } from "lucide-react";
 import { ReactNode } from "react";
