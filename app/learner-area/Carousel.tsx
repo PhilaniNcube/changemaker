@@ -4,23 +4,14 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const images = [
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_1_we3iwn.jpg",
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_2_gtil8j.jpg",
-
-  // "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_4_oo0efe.jpg",
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_7_dwps2c.jpg",
-
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_5_zlqiwv.jpg",
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_9_m2tker.jpg",
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_11_sumpqv.jpg",
-  // "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_10_eako06.jpg",
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_6_inktic.jpg",
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_16_cjnzv5.jpg",
-
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_17_pdjhod.jpg",
-
-
-  "https://res.cloudinary.com/dkqzhae7c/image/upload/v1684070719/learner%20area/learner_area_19_dvhykt.jpg",
+  "/images/one.jpg",
+  "/images/two.jpg",
+  "/images/three.jpg",
+  "/images/four.jpg",
+  "/images/five.jpg",
+  "/images/six.jpg",
+  "/images/seven.jpg",
+  "/images/eight.jpg",
 ];
 
 // const images = [
@@ -53,7 +44,7 @@ const Carousel = () => {
 
 
   return (
-    <div className="flex h-full w-full items-center justify-center bg-white py-20 overflow-hidden px-6">
+    <div className="flex items-center justify-center w-full h-full px-6 py-20 overflow-hidden bg-white">
       <div className="w-[1200px] min-w-[280px] mx-auto max-w-full overflow-hidden realtive isolate">
         <div
           className={`flex h-[200px] md:h-[400px] lg:h-[640px] w-full gap-2 `}

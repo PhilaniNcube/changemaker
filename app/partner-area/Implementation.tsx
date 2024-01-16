@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const Implementation = () => {
   return (
-    <section className="bg-white py-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section className="py-20 bg-white">
+      <div className="px-8 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-              <Image src="/images/advert.jpeg" width={1240} height={1754} alt="Join" className="w-[80%] objet-cover" />
+              <Image src="/images/advert_.jpeg" width={1240} height={1754} alt="Join" className="w-[80%] objet-cover shadow-md" />
           </div>
 
           <div className="w-full text-slate-800">
