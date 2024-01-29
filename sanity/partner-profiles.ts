@@ -102,9 +102,10 @@ export const partnerProfiles = {
       type: 'string',
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [{type: 'image'}]
     },
 
   ]
