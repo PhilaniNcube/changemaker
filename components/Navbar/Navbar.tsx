@@ -36,6 +36,12 @@ const about = [
     href: "/about/team",
 
   },
+  {
+    name: "CSO Partners",
+    description: "Take a look at our partners across the country",
+    href: "/about/partners",
+
+  },
 ];
 const callsToAction = [
   {

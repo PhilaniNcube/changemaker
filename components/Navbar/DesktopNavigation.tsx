@@ -20,19 +20,19 @@ export function DesktopNavigation() {
   return (
     <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
+        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
           <Link
             href="/"
             legacyBehavior
             passHref
-            className="bg-black text-white"
+            className="text-white bg-black"
           >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Home
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
+        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
@@ -45,17 +45,21 @@ export function DesktopNavigation() {
               <ListItem href="/about/nissp" title="NISSP">
                 A joint national partnership to strengthen collective action
               </ListItem>
-              <div className="px-4 py-6 rounded-md hover:bg-masifunde text-slate-800 hover:text-white font-bold transition duration-100 grid grid-cols-2 gap-2 bg-slate-200">
-                <a
+              <ListItem href="/about/partners" title="CSO Partners">
+                Take a look at our partners across the country
+              </ListItem>
+              <div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 hover:text-white bg-slate-200">
+                <Link
                   href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
                   className="flex gap-2"
                   target="_blank"
+                  prefetch={false}
                 >
-                <>
-                  <PlayCircleIcon className="text-2xl " />{" "}
-                  <span>Watch Video</span>
-                 </>
-                </a>
+                  <>
+                    <PlayCircleIcon className="text-2xl " />{" "}
+                    <span>Watch Video</span>
+                  </>
+                </Link>
                 <Link href="/contact" className="flex gap-2">
                   {" "}
                   <PhoneIcon className="text-2xl " /> <span>Contact Us</span>
@@ -64,48 +68,48 @@ export function DesktopNavigation() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
+        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
           <Link
             href="/in-action"
             legacyBehavior
             passHref
-            className="bg-black text-white"
+            className="text-white bg-black"
           >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               MCN In Action
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
+        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
           <Link
             href="/learner-area"
             legacyBehavior
             passHref
-            className="bg-black text-white"
+            className="text-white bg-black"
           >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Learner Area
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>{" "}
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
+        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
           <Link
             href="/partner-area"
             legacyBehavior
             passHref
-            className="bg-black text-white"
+            className="text-white bg-black"
           >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Partner Area
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="bg-black text-white hover:text-neutral-800">
+        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
           <Link
             href="/contact"
             legacyBehavior
             passHref
-            className="bg-black text-white"
+            className="text-white bg-black"
           >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Contact Us
@@ -133,8 +137,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <h3 className="text-sm font-bold tracking-wide leading-none">{title}</h3>
-          <p className="line-clamp-2 text-sm leading-6 font-medium text-muted-foreground">
+          <h3 className="text-sm font-bold leading-none tracking-wide">{title}</h3>
+          <p className="text-sm font-medium leading-6 line-clamp-2 text-muted-foreground">
             {children}
           </p>
         </Link>
