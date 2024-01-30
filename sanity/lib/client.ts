@@ -231,6 +231,14 @@ export  async function getPartners():Promise<any[]>{
     town,
     province,
     images,
+    website,
+    facebook,
+    instagram,
+    twitter,
+    youtube,
+    contactPerson,
+    contactNumber,
+    email,
   }`)
   return partners
 }
