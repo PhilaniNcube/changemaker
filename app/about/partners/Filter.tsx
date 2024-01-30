@@ -84,7 +84,7 @@ export default function Filter({ partners }: PartnersProps) {
             {towns.map((town) => {
               if (town === null) return;
               return (
-                <DropdownMenuItem key={town}>
+                <DropdownMenuItem asChild className="w-full" key={town}>
                   <Link
                     prefetch={false}
                     href={`/about/partners?town=${town.toLowerCase()}`}
@@ -110,7 +110,7 @@ export default function Filter({ partners }: PartnersProps) {
               if (district === null) return null;
 
               return (
-                <DropdownMenuItem key={district}>
+                <DropdownMenuItem asChild className="w-full" key={district}>
                   <Link
                     prefetch={false}
                     href={`/about/partners?district=${district.toLowerCase()}`}
@@ -135,7 +135,7 @@ export default function Filter({ partners }: PartnersProps) {
             {provinces.map((province) => {
               if (province === null) return;
               return (
-                <DropdownMenuItem key={province}>
+                <DropdownMenuItem asChild className="w-full" key={province}>
                   <Link
                     href={`/about/partners?province=${province.toLowerCase()}`}
                     prefetch={false}
