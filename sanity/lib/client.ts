@@ -229,9 +229,7 @@ export  async function getPartners():Promise<any[]>{
     slug,
     district,
     town,
-    "province": *[_type == "provinces"]{
-      province
-    },
+    province,
     images,
   }`)
   return partners
