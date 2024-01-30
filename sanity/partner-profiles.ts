@@ -102,6 +102,11 @@ export const partnerProfiles = {
       type: 'string',
     },
     {
+      name: 'logo',
+      title: 'Logo',
+      type: 'image'
+    },
+    {
       name: 'images',
       title: 'Images',
       type: 'array',
