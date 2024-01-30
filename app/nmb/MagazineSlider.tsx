@@ -53,7 +53,7 @@ const MagazineSlider = () => {
         scrollbar={{ draggable: true }}
       >
         {sparkMags.map((mag, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={mag.title}>
             {({ isActive }) => (
               <Link
                 href={mag.doc}

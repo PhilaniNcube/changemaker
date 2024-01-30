@@ -184,6 +184,7 @@ const Focus = ({ province, pageFocus }: PageProps) => {
                 </p>
                 <ul className="pl-6 text-sm leading-7 list-disc md:text-base">
                   {pageFocus.nationalList.map((item, index) => (
+                    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                     <li key={index} className="leading-7 text-slate-700">
                       {item}
                     </li>

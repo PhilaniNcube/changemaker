@@ -27,7 +27,7 @@ const page = async () => {
       />
       <NMBVideo />
       <NMBFocus text={descriptionText} focus={nmbFocus} />
-      <NMBSchools schools={schools!} />
+      <NMBSchools schools={schools} />
       <NMBFunders funders={funders} />
     </main>
   );
