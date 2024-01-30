@@ -1,10 +1,8 @@
-"use client"
 
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+
 import { PortableTextBlock } from "sanity";
 import Filter from "./Filter";
-import PartnerAccordions from "./PartnerAccordions";
+import { getPartners } from "@/sanity/lib/client";
 
 type SanityImageType = {
   type: "string";
@@ -45,76 +43,12 @@ export type PartnersProps = {
   }[];
 };
 
-const Partners = ({ partners }: PartnersProps) => {
-  const searchParams = useSearchParams();
-
-  const [filteredPartners, setFilteredPartners] = useState(partners);
-
-  const town = searchParams ? searchParams.get("town") || "" : "";
-  const district = searchParams ? searchParams.get("district") || "" : "";
-  const province = searchParams ? searchParams.get("province") || "" : "";
-
-  const townFilter = partners.map((partner) => {
-    return partner.town;
-  })
-
-  const districtFilter = partners.map((partner) => {
-    return partner.district;
-  });
-
-  const provinceFilter = partners.map((partner) => {
-    return partner.province;
-  });
-
-  const towns = Array.from(new Set(townFilter));
-  const districts = Array.from(new Set(districtFilter));
-  const provinces = Array.from(new Set(provinceFilter));
-
-  useEffect(() => {
-    // write a function to filter the partners based on the search parameters
-    // and set the filtered partners to the state
-    // setFilteredPartners();
-
-    const filter = partners.filter((partner) => {
-      if (
-        town.toLowerCase() &&
-        partner.town?.toLowerCase() !== town.toLowerCase()
-      ) {
-        return false;
-      }
-
-      if (
-        district.toLowerCase() &&
-        partner.district?.toLowerCase() !== district.toLowerCase()
-      ) {
-        return false;
-      }
-
-      if (
-        province.toLowerCase() &&
-        partner.province?.toLowerCase() !== province.toLowerCase()
-      ) {
-        return false;
-      }
-
-      return true;
-    });
-
-    setFilteredPartners(filter);
-
-
-  },[
-    town,
-    district,
-    province,
-    partners
-  ]);
+const Partners = async () => {
+  const partners = await getPartners();
 
   return (
     <div className="container">
-      <Filter towns={towns} districts={districts} provinces={provinces} />
-
-      <PartnerAccordions partners={filteredPartners} />
+      <Filter partners={partners} />
     </div>
   );
 };

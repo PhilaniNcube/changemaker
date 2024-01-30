@@ -53,7 +53,9 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.website ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Globe2Icon />
-                          <Link href={item.website}>{item.website}</Link>
+                          <Link prefetch={false} href={item.website}>
+                            {item.website}
+                          </Link>
                         </div>
                       ) : (
                         ""
@@ -61,7 +63,9 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.facebook ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Facebook />
-                          <Link href={item.facebook}>{item.facebook}</Link>
+                          <Link prefetch={false} href={item.facebook}>
+                            {item.facebook}
+                          </Link>
                         </div>
                       ) : (
                         ""
@@ -69,7 +73,9 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.twitter ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Twitter />
-                          <Link href={item.twitter}>{item.twitter}</Link>
+                          <Link prefetch={false} href={item.twitter}>
+                            {item.twitter}
+                          </Link>
                         </div>
                       ) : (
                         ""
@@ -77,7 +83,9 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.instagram ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Instagram />
-                          <Link href={item.instagram}>{item.instagram}</Link>
+                          <Link prefetch={false} href={item.instagram}>
+                            {item.instagram}
+                          </Link>
                         </div>
                       ) : (
                         ""
@@ -85,7 +93,9 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.youtube ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Youtube />
-                          <Link href={item.youtube}>{item.youtube}</Link>
+                          <Link prefetch={false} href={item.youtube}>
+                            {item.youtube}
+                          </Link>
                         </div>
                       ) : (
                         ""
@@ -93,7 +103,7 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.contactPerson ? (
                         <div className="flex flex-row items-center space-x-2">
                           <User />
-                          <Link href={item.contactPerson}>
+                          <Link prefetch={false} href={item.contactPerson}>
                             {item.contactPerson}
                           </Link>
                         </div>
@@ -103,9 +113,9 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.contactNumber ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Phone />
-                          <Link href={item.contactNumber}>
+                          <p >
                             {item.contactNumber}
-                          </Link>
+                          </p>
                         </div>
                       ) : (
                         ""
@@ -113,7 +123,7 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.email ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Mail />
-                          <Link href={item.email}>{item.email}</Link>
+                          <p >{item.email}</p>
                         </div>
                       ) : (
                         ""

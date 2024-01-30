@@ -4,12 +4,69 @@
 import { Button } from "@/components/ui/button"
 import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
+import { PartnersProps } from "./Partners"
+import { useEffect, useState } from "react"
+import PartnerAccordions from "./PartnerAccordions"
 
-export default function Filter({towns, districts, provinces}:{towns: string[], districts: string[], provinces: string[]}) {
+export default function Filter({ partners }: PartnersProps) {
+  const searchParams = useSearchParams();
 
-  const router = useRouter()
+  const [filteredPartners, setFilteredPartners] = useState(partners);
+
+  const town = searchParams ? searchParams.get("town") || "" : "";
+  const district = searchParams ? searchParams.get("district") || "" : "";
+  const province = searchParams ? searchParams.get("province") || "" : "";
+
+  const townFilter = partners.map((partner) => {
+    return partner.town;
+  });
+
+  const districtFilter = partners.map((partner) => {
+    return partner.district;
+  });
+
+  const provinceFilter = partners.map((partner) => {
+    return partner.province;
+  });
+
+  const towns = Array.from(new Set(townFilter));
+  const districts = Array.from(new Set(districtFilter));
+  const provinces = Array.from(new Set(provinceFilter));
+
+  useEffect(() => {
+    // write a function to filter the partners based on the search parameters
+    // and set the filtered partners to the state
+    // setFilteredPartners();
+
+    const filter = partners.filter((partner) => {
+      if (
+        town.toLowerCase() &&
+        partner.town?.toLowerCase() !== town.toLowerCase()
+      ) {
+        return false;
+      }
+
+      if (
+        district.toLowerCase() &&
+        partner.district?.toLowerCase() !== district.toLowerCase()
+      ) {
+        return false;
+      }
+
+      if (
+        province.toLowerCase() &&
+        partner.province?.toLowerCase() !== province.toLowerCase()
+      ) {
+        return false;
+      }
+
+      return true;
+    });
+
+    setFilteredPartners(filter);
+  }, [town, district, province, partners]);
 
   return (
     <section className="w-full py-8">
@@ -26,7 +83,16 @@ export default function Filter({towns, districts, provinces}:{towns: string[], d
             <DropdownMenuSeparator />
             {towns.map((town) => {
               if (town === null) return;
-              return <DropdownMenuItem onClick={() => router.push(`/about/partners?town=${town.toLowerCase()}`)} key={town}>{town}</DropdownMenuItem>;
+              return (
+                <DropdownMenuItem key={town}>
+                  <Link
+                    prefetch={false}
+                    href={`/about/partners?town=${town.toLowerCase()}`}
+                  >
+                    {town}
+                  </Link>
+                </DropdownMenuItem>
+              );
             })}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -41,17 +107,16 @@ export default function Filter({towns, districts, provinces}:{towns: string[], d
             <DropdownMenuLabel>Select a District</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {districts.map((district) => {
-              if (district === null) return;
+              if (district === null) return null;
+
               return (
-                <DropdownMenuItem
-                  onClick={() =>
-                    router.push(
-                      `/about/partners?district=${district.toLowerCase()}`
-                    )
-                  }
-                  key={district}
-                >
-                  {district}
+                <DropdownMenuItem key={district}>
+                  <Link
+                    prefetch={false}
+                    href={`/about/partners?district=${district.toLowerCase()}`}
+                  >
+                    {district}
+                  </Link>
                 </DropdownMenuItem>
               );
             })}
@@ -70,21 +135,20 @@ export default function Filter({towns, districts, provinces}:{towns: string[], d
             {provinces.map((province) => {
               if (province === null) return;
               return (
-                <DropdownMenuItem
-                  onClick={() =>
-                    router.push(
-                      `/about/partners?province=${province.toLowerCase()}`
-                    )
-                  }
-                  key={province}
-                >
-                  {province}
+                <DropdownMenuItem key={province}>
+                  <Link
+                    href={`/about/partners?province=${province.toLowerCase()}`}
+                    prefetch={false}
+                  >
+                    {province}
+                  </Link>
                 </DropdownMenuItem>
               );
             })}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+      <PartnerAccordions partners={filteredPartners} />
     </section>
   );
 }
