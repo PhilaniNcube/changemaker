@@ -8,9 +8,11 @@ const {data: workshops, error} = await supabase.from('workshops').select('*, org
 
 if(error) {
   throw new Error(error.message)
-} else if (workshops === null) {
+// biome-ignore lint/style/noUselessElse: <explanation>
+}  else if (workshops === null) {
   return []
-} else {
+// biome-ignore lint/style/noUselessElse: <explanation>
+}  else {
   return workshops
 }
 
@@ -22,9 +24,11 @@ const {data: workshop, error} = await supabase.from('workshops').select('*, orga
 
 if(error) {
   throw new Error(error.message)
-} else if (workshop === null) {
+// biome-ignore lint/style/noUselessElse: <explanation>
+}  else if (workshop === null) {
  throw new Error('workshop no roganisation found')
-} else {
+// biome-ignore lint/style/noUselessElse: <explanation>
+}  else {
   return workshop
 }
 

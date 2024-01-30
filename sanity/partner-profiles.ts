@@ -52,8 +52,8 @@ export const partnerProfiles = {
     {
       name: 'province',
       title: 'Province',
-      type: 'reference',
-      to: [{type: 'provinces'}]
+      type: 'string',
+
     },
     {
       name: 'description',

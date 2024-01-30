@@ -218,3 +218,21 @@ export async function getNisspDescription():Promise<NisspDescription>{
   const nisspDescription = await client.fetch(`*[_type == "niispdescription"]{descriptionText}[0]`)
   return nisspDescription
 }
+
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export  async function getPartners():Promise<any[]>{
+  const partners = await client.fetch(`*[_type == "partnerProfiles"]{
+    organisationName,
+    description,
+    logo,
+    slug,
+    district,
+    town,
+    "province": *[_type == "provinces"]{
+      province
+    },
+    images,
+  }`)
+  return partners
+}
