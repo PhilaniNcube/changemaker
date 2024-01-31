@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const PartnersHero = () => {
   return (
-    <section id="nmb" className="relative bg-masifunde isolate">
+    <section id="partners" className="relative bg-masifunde isolate">
       <Image
         src="/images/four.jpg"
         width={2976}
