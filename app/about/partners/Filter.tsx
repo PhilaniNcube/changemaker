@@ -13,6 +13,8 @@ import PartnerAccordions from "./PartnerAccordions"
 export default function Filter({ partners }: PartnersProps) {
   const searchParams = useSearchParams();
 
+  const router = useRouter()
+
   const [filteredPartners, setFilteredPartners] = useState(partners);
 
   const town = searchParams ? searchParams.get("town") || "" : "";
@@ -70,26 +72,27 @@ export default function Filter({ partners }: PartnersProps) {
 
   return (
     <section className="w-full py-8">
-      <div className="container grid gap-4 mx-auto md:gap-6 lg:grid-cols-3">
+      <div className="container grid gap-4 mx-auto md:gap-6 lg:grid-cols-4">
+        {" "}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="w-full" variant="outline">
-              Town
+              Province
               <ChevronDownIcon className="w-4 h-4 ml-2" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
-            <DropdownMenuLabel>Select a Town</DropdownMenuLabel>
+            <DropdownMenuLabel>Select a Province</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {towns.map((town) => {
-              if (town === null) return;
+            {provinces.map((province) => {
+              if (province === null) return;
               return (
-                <DropdownMenuItem asChild className="w-full" key={town}>
+                <DropdownMenuItem asChild className="w-full" key={province}>
                   <Link
+                    href={`/about/partners?province=${province.toLowerCase()}`}
                     prefetch={false}
-                    href={`/about/partners?town=${town.toLowerCase()}`}
                   >
-                    {town}
+                    {province}
                   </Link>
                 </DropdownMenuItem>
               );
@@ -121,32 +124,35 @@ export default function Filter({ partners }: PartnersProps) {
               );
             })}
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu>{" "}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="w-full" variant="outline">
-              Province
+              Town
               <ChevronDownIcon className="w-4 h-4 ml-2" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
-            <DropdownMenuLabel>Select a Province</DropdownMenuLabel>
+            <DropdownMenuLabel>Select a Town</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {provinces.map((province) => {
-              if (province === null) return;
+            {towns.map((town) => {
+              if (town === null) return;
               return (
-                <DropdownMenuItem asChild className="w-full" key={province}>
+                <DropdownMenuItem asChild className="w-full" key={town}>
                   <Link
-                    href={`/about/partners?province=${province.toLowerCase()}`}
                     prefetch={false}
+                    href={`/about/partners?town=${town.toLowerCase()}`}
                   >
-                    {province}
+                    {town}
                   </Link>
                 </DropdownMenuItem>
               );
             })}
           </DropdownMenuContent>
         </DropdownMenu>
+        <Button onClick={() => router.push("/about/partners")} variant="outline" type="button">
+           Clear Filter
+        </Button>
       </div>
       <PartnerAccordions partners={filteredPartners} />
     </section>

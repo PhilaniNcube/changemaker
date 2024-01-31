@@ -113,9 +113,7 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.contactNumber ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Phone />
-                          <p >
-                            {item.contactNumber}
-                          </p>
+                          <p>{item.contactNumber}</p>
                         </div>
                       ) : (
                         ""
@@ -123,7 +121,7 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                       {item.email ? (
                         <div className="flex flex-row items-center space-x-2">
                           <Mail />
-                          <p >{item.email}</p>
+                          <p>{item.email}</p>
                         </div>
                       ) : (
                         ""
@@ -131,14 +129,15 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
                     </div>
                   </div>
                 </div>
-
-                <Image
-                  width={400}
-                  height={400}
-                  className="object-cover w-44"
-                  src={urlForImage(item.logo.asset).url()}
-                  alt={item.organisationName}
-                />
+                {item.logo?.asset && (
+                  <Image
+                    width={400}
+                    height={400}
+                    className="object-cover w-44"
+                    src={urlForImage(item.logo?.asset).url()}
+                    alt={item.organisationName}
+                  />
+                )}
               </div>
               <div className="flex flex-col my-3">
                 <PortableText value={item.description} />

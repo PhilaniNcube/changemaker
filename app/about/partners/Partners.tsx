@@ -48,6 +48,7 @@ const Partners = async () => {
 
   return (
     <div className="container">
+      <h1 className="mt-10 mb-5 text-4xl font-bold">Partner CSO&apos;s Profiles</h1>
       <Filter partners={partners} />
     </div>
   );
