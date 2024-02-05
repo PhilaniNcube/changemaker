@@ -18,107 +18,110 @@ import { PhoneIcon, PlayCircleIcon, PlayIcon } from "lucide-react";
 
 export function DesktopNavigation() {
   return (
-    <NavigationMenu className="hidden lg:block">
-      <NavigationMenuList>
-        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
-          <Link
-            href="/"
-            legacyBehavior
-            passHref
-            className="text-white bg-black"
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
-          <NavigationMenuTrigger>About</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
-              <ListItem href="/nmb" title="NMB">
-                Nelson Mandela Bay Changemakers
-              </ListItem>
-              <ListItem href="/national" title="National">
-                National Changemakers
-              </ListItem>
-              <ListItem href="/about/nissp" title="NISSP">
-                A joint national partnership to strengthen collective action
-              </ListItem>
-              <ListItem href="/about/partners" title="CSO Partners">
-                Take a look at our partners across the country
-              </ListItem>
-              <div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 hover:text-white bg-slate-200">
-                <Link
-                  href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
-                  className="flex gap-2"
-                  target="_blank"
-                  prefetch={false}
-                >
-                  <>
-                    <PlayCircleIcon className="text-2xl " />{" "}
-                    <span>Watch Video</span>
-                  </>
-                </Link>
-                <Link href="/contact" className="flex gap-2">
-                  {" "}
-                  <PhoneIcon className="text-2xl " /> <span>Contact Us</span>
-                </Link>
-              </div>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
-          <Link
-            href="/in-action"
-            legacyBehavior
-            passHref
-            className="text-white bg-black"
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              MCN In Action
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
-          <Link
-            href="/learner-area"
-            legacyBehavior
-            passHref
-            className="text-white bg-black"
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Learner Area
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>{" "}
-        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
-          <Link
-            href="/partner-area"
-            legacyBehavior
-            passHref
-            className="text-white bg-black"
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Partner Area
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
-          <Link
-            href="/contact"
-            legacyBehavior
-            passHref
-            className="text-white bg-black"
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact Us
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  );
+			<NavigationMenu className="hidden lg:block">
+				<NavigationMenuList>
+					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+						<Link
+							href="/"
+							legacyBehavior
+							passHref
+							className="text-white bg-black"
+						>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								Home
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+						<NavigationMenuTrigger>About</NavigationMenuTrigger>
+						<NavigationMenuContent>
+							<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
+								<ListItem href="/nmb" title="NMB">
+									Nelson Mandela Bay Changemakers
+								</ListItem>
+								<ListItem href="/national" title="National">
+									National Changemakers
+								</ListItem>
+								<ListItem href="/about/nissp" title="NISSP">
+									A joint national partnership to strengthen collective action
+								</ListItem>
+								<ListItem href="/about/junior-academy" title="TUI Junior Academy SA">
+									Practical knowledge on relevant social topics,
+								</ListItem>
+								<ListItem href="/about/partners" title="CSO Partners">
+									Take a look at our partners across the country
+								</ListItem>
+								<div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 hover:text-white bg-slate-200">
+									<Link
+										href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
+										className="flex gap-2"
+										target="_blank"
+										prefetch={false}
+									>
+										<>
+											<PlayCircleIcon className="text-2xl " />{" "}
+											<span>Watch Video</span>
+										</>
+									</Link>
+									<Link href="/contact" className="flex gap-2">
+										{" "}
+										<PhoneIcon className="text-2xl " /> <span>Contact Us</span>
+									</Link>
+								</div>
+							</ul>
+						</NavigationMenuContent>
+					</NavigationMenuItem>
+					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+						<Link
+							href="/in-action"
+							legacyBehavior
+							passHref
+							className="text-white bg-black"
+						>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								MCN In Action
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+						<Link
+							href="/learner-area"
+							legacyBehavior
+							passHref
+							className="text-white bg-black"
+						>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								Learner Area
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>{" "}
+					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+						<Link
+							href="/partner-area"
+							legacyBehavior
+							passHref
+							className="text-white bg-black"
+						>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								Partner Area
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+						<Link
+							href="/contact"
+							legacyBehavior
+							passHref
+							className="text-white bg-black"
+						>
+							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+								Contact Us
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+				</NavigationMenuList>
+			</NavigationMenu>
+		);
 }
 
 const ListItem = React.forwardRef<

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const NationalFunders = () => {
+const AcademyFunders = () => {
   const funders = [
     {
       name: "Dept of Basic Education",
@@ -8,24 +8,24 @@ const NationalFunders = () => {
       width: 3273,
       height: 1281,
     },
-    {
-      name: "GIZ",
-      image: "/images/giz.jpg",
-      width: 3543,
-      height: 1299,
-    },
-    {
-      name: "Canada",
-      image: "/images/global_affairs.png",
-      width: 806,
-      height: 490,
-    },
-    {
-      name: "Agape",
-      image: "/images/agape.png",
-      width: 750,
-      height: 207,
-    },
+    // {
+    //   name: "GIZ",
+    //   image: "/images/giz.jpg",
+    //   width: 3543,
+    //   height: 1299,
+    // },
+    // {
+    //   name: "Canada",
+    //   image: "/images/global_affairs.png",
+    //   width: 806,
+    //   height: 490,
+    // },
+    // {
+    //   name: "Agape",
+    //   image: "/images/agape.png",
+    //   width: 750,
+    //   height: 207,
+    // },
     {
       name: "Masifunde",
       image: "/images/masifunde.png",
@@ -33,11 +33,17 @@ const NationalFunders = () => {
       height: 1299,
     },
     {
-      name: "VCP",
-      image: "/images/vcp.png",
-      width: 2362,
-      height: 2362,
+      name: "TUI Academy",
+      image: "/images/tui.png",
+      width: 558,
+      height: 82,
     },
+    // {
+    //   name: "VCP",
+    //   image: "/images/vcp.png",
+    //   width: 2362,
+    //   height: 2362,
+    // },
   ];
 
 
@@ -67,4 +73,4 @@ const NationalFunders = () => {
     </section>
   );
 };
-export default NationalFunders;
+export default AcademyFunders;

@@ -46,10 +46,12 @@ const Focus = ({ province, pageFocus }: PageProps) => {
               further aims to be replicated within 4 provinces in South Africa.
               Specifically; Eastern Cape, KwaZulu-Natal, North West and Limpopo.
             </p> */}
+            {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 500 370"
               className="object-cover w-full"
+              // title="Map of South Africa"
             >
               <g
                 fill="white"
@@ -217,7 +219,7 @@ const Focus = ({ province, pageFocus }: PageProps) => {
           {sparkMags.map((mag, i) => (
             <Link
               href={mag.doc}
-              key={i}
+              key={mag.title}
               className="w-1/3 overflow-hidden rounded-lg cursor-pointer md:w-1/5"
             >
               <Image
