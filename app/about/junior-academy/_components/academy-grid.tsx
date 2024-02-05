@@ -37,7 +37,7 @@ const items = [
 
 const AcademyGrid = () => {
   return (
-    <div className="grid grid-cols-1 gap-6 px-8 py-10 mx-auto bg-white max-w-7xl md:grid-cols-2 lg:grid-cols-4 md:gap-16 lg:gap-12">
+    <div className="container grid grid-cols-1 gap-6 px-8 py-10 mx-auto bg-white md:grid-cols-2 lg:grid-cols-5 md:gap-16 lg:gap-4">
       {items.map((item) => (
         <div
           key={item.id}
@@ -55,7 +55,7 @@ const AcademyGrid = () => {
               {item.title}
             </p>
           </div>
-          <div className="absolute inset-0 flex items-center justify-center px-6 opacity-0 group-hover:opacity-100">
+          <div className="absolute inset-0 flex items-center justify-center px-6 opacity-0 lg:px-2 group-hover:opacity-100">
             <p className="text-xs font-medium text-white">
               {item.text}
             </p>
