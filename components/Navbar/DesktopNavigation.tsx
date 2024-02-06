@@ -45,9 +45,9 @@ export function DesktopNavigation() {
 								<ListItem href="/about/nissp" title="NISSP">
 									A joint national partnership to strengthen collective action
 								</ListItem>
-								{/* <ListItem href="/about/junior-academy" title="TUI Junior Academy SA">
+								<ListItem href="/about/junior-academy" title="TUI Junior Academy SA">
 									Practical knowledge on relevant social topics,
-								</ListItem> */}
+								</ListItem>
 								<ListItem href="/about/partners" title="CSO Partners">
 									Take a look at our partners across the country
 								</ListItem>
