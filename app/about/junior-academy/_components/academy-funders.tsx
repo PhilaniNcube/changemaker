@@ -51,7 +51,7 @@ const AcademyFunders = () => {
 
   return (
     <section id="funders" className="bg-white">
-      <div className="px-8 py-10 mx-auto bg-white max-w-7xl">
+      <div className="px-8 pb-16 mx-auto bg-white max-w-7xl">
         <h2 className="text-3xl font-bold leading-7 text-center text-gray-800 lg:text-4xl lg:leading-9">
           Partners
         </h2>

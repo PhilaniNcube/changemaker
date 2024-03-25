@@ -17,10 +17,12 @@ const AcademyHero = () => {
 								TUI JUNIOR ACADEMY SA
 							</h1>
 							<p className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-white text-xs md:text-lg font-medium ">
-								The Changemaker Network Project aims to capacitate learners with
-								practical knowledge on relevant social topics, such as school
-								safety, violence, bullying and environmental awareness and
-								protection.
+								Empowering young children to become Eco-Champions through
+								environmental education and enabling learning opportunities for
+								young people from disadvantaged communities. This is achieved
+								through capacitation of youth through a peer-to-peer learning
+								approach so they are able to advocate for and spark change
+								within their environments.
 							</p>
 						</div>
 					</div>

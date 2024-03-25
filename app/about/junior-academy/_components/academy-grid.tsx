@@ -41,7 +41,7 @@ const AcademyGrid = () => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="w-full mx-auto aspect-square px-3 py-2 bg-[#2a2d2e] group relative isolate"
+          className="w-full mx-auto aspect-[4/5] px-3 py-2 bg-[#2a2d2e] group relative isolate"
         >
           <div className="flex flex-col items-center justify-center w-full h-full gap-4 text-white transition-all duration-300 group-hover:hidden">
             <Image
@@ -51,7 +51,7 @@ const AcademyGrid = () => {
               className="object-contain w-12 h-12"
               alt={item.title}
             />
-            <p className="mt-2 text-lg font-bold text-center md:text-xl">
+            <p className="mt-2 text-lg font-bold text-center">
               {item.title}
             </p>
           </div>

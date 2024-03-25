@@ -1,4 +1,4 @@
-import { NationalPageRolePlayers } from "@/sanity/lib/client";
+import type { NationalPageRolePlayers } from "@/sanity/lib/client";
 
 type PageProps = {
   roleplayers: NationalPageRolePlayers[];

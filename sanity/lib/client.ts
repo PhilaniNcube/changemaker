@@ -1,7 +1,7 @@
 import {createClient} from 'next-sanity'
 
 import { apiVersion, dataset, projectId, useCdn } from '../env'
-import { PortableTextBlock } from 'sanity'
+import type { PortableTextBlock } from 'sanity'
 
 export const client = createClient({
   apiVersion,
