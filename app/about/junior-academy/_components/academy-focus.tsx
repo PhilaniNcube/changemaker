@@ -20,8 +20,23 @@ const AcademyFocus = () => {
   return (
 			<section id="content" className="pt-10 bg-white">
 				<div className="gap-10 px-8 mx-auto max-w-7xl">
-					<div className="mt-8 text-base leading-7 text-justify text-slate-700">
-						<h3 className="text-2xl font-bold">About TUI Care Foundation</h3>
+					<div className="mt-3 text-base leading-7 text-justify text-slate-700">
+						<p className="">
+							This is achieved through activation workshops for all Grade 9
+							learners and intensive virtual changemaker trainings for selected
+							learners. The training equips learners with practical tools to act
+							as agents of change and Eco-Champions in their schools. They learn
+							campaigning, public speaking and in general about the role they
+							and their peers can play in initiating change in their
+							environment, protecting the environment and bringing about
+							awareness about climate change. This is accompanied by Community
+							Action Projects which they will implement within their respective
+							communities.
+						</p>
+						<h3 className="mt-4 text-2xl font-bold">
+							About TUI Care Foundation
+						</h3>
+
 						<p className="">
 							Building on the potential of tourism as a force for good, the TUI
 							Care Foundation supports and initiates projects, which create new
@@ -46,18 +61,6 @@ const AcademyFocus = () => {
 							by developing these competencies in schools and communities and
 							brings the classroom to life through excursions and nature-based
 							experiences.
-						</p>
-						<p className="mt-6">
-							This is achieved through activation workshops for all Grade 9
-							learners and intensive virtual changemaker trainings for selected
-							learners. The training equips learners with practical tools to act
-							as agents of change and Eco-Champions in their schools. They learn
-							campaigning, public speaking and in general about the role they
-							and their peers can play in initiating change in their
-							environment, protecting the environment and bringing about
-							awareness about climate change. This is accompanied by Community
-							Action Projects which they will implement within their respective
-							communities.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 mt-8 md:grid-cols-2">
