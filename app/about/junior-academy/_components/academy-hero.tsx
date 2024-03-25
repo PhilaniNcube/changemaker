@@ -10,7 +10,7 @@ const AcademyHero = () => {
 					alt="Changemakers"
 					className="object-cover max-w-[88%] min-h-[55vh] max-h-[65vh]"
 				/> */}
-				<div className=" bg-slate-600/60 lg:bg-transparent w-full min-h-[55vh] max-h-[65vh]">
+				<div className=" w-full min-h-[55vh] max-h-[65vh]">
 					<div className="flex justify-start px-8 py-20 mx-auto max-w-7xl">
 						<div className="px-4">
 							<h1 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
