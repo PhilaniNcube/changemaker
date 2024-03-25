@@ -13,7 +13,7 @@ import {
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import { User, useUser } from "@supabase/auth-helpers-react";
+import  { type User, useUser } from "@supabase/auth-helpers-react";
 import { useSupabase } from "../Auth/SupabaseProvider";
 import { useRouter } from "next/navigation";
 import AccountMenu from "./AccountMenu";
@@ -34,6 +34,12 @@ const about = [
     name: "Team",
     description: "Get to know our team",
     href: "/about/team",
+
+  },
+  {
+    name: "TUI Junior Academy SA",
+    description: "Practical knowledge on relevant social topics",
+    href: "/about/junior-academy",
 
   },
   {
