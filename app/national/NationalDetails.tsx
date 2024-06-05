@@ -1,6 +1,5 @@
 import { PortableText } from "@portabletext/react";
-import Link from "next/link";
-import { PortableTextBlock } from "sanity";
+import type { PortableTextBlock } from "sanity";
 
 type PageProps = {
   description: PortableTextBlock[];
@@ -9,9 +8,9 @@ type PageProps = {
 
 const Details = ({ description }: PageProps) => {
   return (
-    <section id="content" className="bg-white pt-10">
-      <div className="max-w-7xl mx-auto px-8 gap-10">
-        <div className="text-slate-700 text-justify text-base leading-7 mt-8">
+    <section id="content" className="pt-10 bg-white">
+      <div className="gap-10 px-8 mx-auto max-w-7xl">
+        <div className="mt-8 text-base leading-7 text-justify text-slate-700">
           <PortableText value={description} />
 
         </div>
