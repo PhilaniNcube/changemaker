@@ -9,7 +9,7 @@ const NationalVideo = () => {
         src="https://www.youtube.com/embed/d_uSXPua3SY"
         title="masifunde Changemaker Network (national NISSP version)"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      ></iframe>
+      />
     </section>
   );
 };

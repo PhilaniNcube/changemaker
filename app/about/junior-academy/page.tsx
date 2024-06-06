@@ -12,7 +12,7 @@ const page = async () => {
 			<main>
 				<AcademyHero />
 				<AcademyFocus />
-				<HowItWorks roleplayers={roleplayers} />
+				{/* <HowItWorks roleplayers={roleplayers} /> */}
         <AcademyFunders />
 			</main>
 		);

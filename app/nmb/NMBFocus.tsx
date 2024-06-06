@@ -1,8 +1,6 @@
 import IconGrid from "@/app/IconGrid";
-import Image from "next/image";
-import Link from "next/link";
 import MagazineSlider from "./MagazineSlider";
-import { NmbPageFocus } from "@/sanity/lib/client";
+import type { NmbPageFocus } from "@/sanity/lib/client";
 
 
 

@@ -36,20 +36,26 @@ export function DesktopNavigation() {
 						<NavigationMenuTrigger>About</NavigationMenuTrigger>
 						<NavigationMenuContent>
 							<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
-								<ListItem href="/nmb" title="NMB">
-									Nelson Mandela Bay Changemakers
+								<ListItem href="/nmb" title="Mandela Bay Changemakers">
+									Home of the Changemaker Network
 								</ListItem>
-								<ListItem href="/national" title="National">
-									National Changemakers
+								<ListItem href="/national" title="National Changemakers">
+									Replication of the Changemaker Network
 								</ListItem>
-								<ListItem href="/about/nissp" title="NISSP">
-									A joint national partnership to strengthen collective action
-								</ListItem>
-								<ListItem href="/about/junior-academy" title="TUI Junior Academy SA">
-									Practical knowledge on relevant social topics,
-								</ListItem>
+								<ListItem href="/global" title="Global Changemakers">
+									International Exchange and Partnerships
+								</ListItem>{" "}
 								<ListItem href="/about/partners" title="CSO Partners">
 									Take a look at our partners across the country
+								</ListItem>
+								<ListItem href="/about/nissp" title="NISSP">
+									Changemakers for School Safety
+								</ListItem>
+								<ListItem
+									href="/about/junior-academy"
+									title="TUI Junior Academy SA"
+								>
+									Practical knowledge on relevant social topics,
 								</ListItem>
 								<div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 hover:text-white bg-slate-200">
 									<Link

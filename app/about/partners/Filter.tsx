@@ -6,7 +6,7 @@ import { DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, Dropdown
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
-import { PartnersProps } from "./Partners"
+import type { PartnersProps } from "./Partners"
 import { useEffect, useState } from "react"
 import PartnerAccordions from "./PartnerAccordions"
 
@@ -34,8 +34,15 @@ export default function Filter({ partners }: PartnersProps) {
   });
 
   const towns = Array.from(new Set(townFilter));
+  // sort towns array alpahebtically
+  towns.sort();
+
   const districts = Array.from(new Set(districtFilter));
+  // sort districts array alpahebtically
+  districts.sort();
   const provinces = Array.from(new Set(provinceFilter));
+  // sort provinces array alpahebtically
+  provinces.sort();
 
   useEffect(() => {
     // write a function to filter the partners based on the search parameters

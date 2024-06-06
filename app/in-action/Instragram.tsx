@@ -4,16 +4,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { InstagramMedia } from "./page";
+import type { InstagramMedia } from "./page";
 
 type ComponentProps = {
   feed: InstagramMedia[];
 };
 
 const Instragram =  () => {
-
-
-
 
 
   return (
@@ -52,28 +49,7 @@ const Instragram =  () => {
               </div>
             </div>
           </div>
-          {/* <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {feed.map((item) => (
-              <article
-                onClick={() => router.push(`${item.permalink}`)}
-                key={item.id}
-                className="relative w-full rounded-md cursor-pointer aspect-square group isolate"
-              >
-                <img
-                  src={item.thumbnail_url || item.media_url}
-                  width={500}
-                  height={500}
-                  alt={item.caption}
-                  className="object-cover w-full aspect-square"
-                />
-                <div className="absolute inset-0 flex items-center justify-center p-2 overflow-hidden group-hover:bg-slate-700/90">
-                  <p className="hidden text-xs text-white group-hover:flex">
-                    {item.caption}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div> */}
+
         </div>
       </div>
     </section>

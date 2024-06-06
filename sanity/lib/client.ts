@@ -222,7 +222,7 @@ export async function getNisspDescription():Promise<NisspDescription>{
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export  async function getPartners():Promise<any[]>{
-  const partners = await client.fetch(`*[_type == "partnerProfiles"]{
+  const partners = await client.fetch(`*[_type == "partnerProfiles"] | order(organisationName asc){
     organisationName,
     description,
     logo,
@@ -239,6 +239,6 @@ export  async function getPartners():Promise<any[]>{
     contactPerson,
     contactNumber,
     email,
-  }`)
+  }`);
   return partners
 }

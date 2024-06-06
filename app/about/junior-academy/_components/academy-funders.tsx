@@ -2,49 +2,50 @@ import Image from "next/image";
 
 const AcademyFunders = () => {
   const funders = [
-    {
-      name: "Dept of Basic Education",
-      image: "/images/basic_education.jpg",
-      width: 3273,
-      height: 1281,
-    },
-    // {
-    //   name: "GIZ",
-    //   image: "/images/giz.jpg",
-    //   width: 3543,
-    //   height: 1299,
-    // },
-    // {
-    //   name: "Canada",
-    //   image: "/images/global_affairs.png",
-    //   width: 806,
-    //   height: 490,
-    // },
-    // {
-    //   name: "Agape",
-    //   image: "/images/agape.png",
-    //   width: 750,
-    //   height: 207,
-    // },
-    {
-      name: "Masifunde",
-      image: "/images/masifunde.png",
-      width: 3543,
-      height: 1299,
-    },
-    {
-      name: "TUI Academy",
-      image: "/images/tui.png",
-      width: 558,
-      height: 82,
-    },
-    // {
-    //   name: "VCP",
-    //   image: "/images/vcp.png",
-    //   width: 2362,
-    //   height: 2362,
-    // },
-  ];
+			{
+				name: "TUI Academy",
+				image: "/images/tui.png",
+				width: 558,
+				height: 82,
+			},
+			{
+				name: "Masifunde",
+				image: "/images/masifunde.png",
+				width: 3543,
+				height: 1299,
+			},
+			{
+				name: "Dept of Basic Education",
+				image: "/images/basic_education.jpg",
+				width: 3273,
+				height: 1281,
+			},
+			// {
+			//   name: "GIZ",
+			//   image: "/images/giz.jpg",
+			//   width: 3543,
+			//   height: 1299,
+			// },
+			// {
+			//   name: "Canada",
+			//   image: "/images/global_affairs.png",
+			//   width: 806,
+			//   height: 490,
+			// },
+			// {
+			//   name: "Agape",
+			//   image: "/images/agape.png",
+			//   width: 750,
+			//   height: 207,
+			// },
+
+			// {
+			//   name: "VCP",
+			//   image: "/images/vcp.png",
+			//   width: 2362,
+			//   height: 2362,
+			// },
+		];
 
 
 

@@ -4,7 +4,7 @@ import  createClient  from "../lib/supabase-server";
 import {  Roboto} from "next/font/google";
 import Footer from '@/components/Footer/Footer';
 import SupabaseProvider from '@/components/Auth/SupabaseProvider';
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 
 

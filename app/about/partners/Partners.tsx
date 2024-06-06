@@ -1,6 +1,6 @@
 
 
-import { PortableTextBlock } from "sanity";
+import type { PortableTextBlock } from "sanity";
 import Filter from "./Filter";
 import { getPartners } from "@/sanity/lib/client";
 
