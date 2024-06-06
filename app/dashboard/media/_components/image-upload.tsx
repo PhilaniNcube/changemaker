@@ -49,7 +49,7 @@ const ImageUpload = ({folderName}:Props) => {
 async function handleOnUpload(result: any, widget: any) {
 	if (result.event === "success") {
 		if (result.info && typeof result.info === "object") {
-			setImage(result.info as Info);
+			setImage(result.info);
 		} else {
 			setImage(null);
 		}
