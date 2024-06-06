@@ -10,15 +10,17 @@ const page = async () => {
 
     const foldersData =  cloudinary.v2.api
       .root_folders(() => console.log("root folders"))
+      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       .then((result: any) => {
         return result;
       })
+      // biome-ignore lint/suspicious/noExplicitAny: <explanation>
       .catch((err: any) => console.log(err));
 
       const [{ folders }, organisations] = await Promise.all([foldersData, organisationsData]);
 
   return (
-    <div className="w-full gap-8 flex flex-col md:flex-row">
+    <div className="flex flex-col w-full gap-8 md:flex-row">
       <div >
         <CreateFolder />
       </div>

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import SideBar from "./SideBar";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 

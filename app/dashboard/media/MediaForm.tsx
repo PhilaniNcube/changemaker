@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSupabase } from "@/components/Auth/SupabaseProvider";
-import { CldUploadButton, type CldUploadWidgetResults } from "next-cloudinary";
+import { CldUploadButton } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import type { Folder } from "../page";
 import { Button } from "@/components/ui/button";
@@ -87,12 +87,12 @@ const MediaForm = ({ organisations, folders }: Props) => {
 		}
 
 		if (!data.filename) {
-			alert("Please give your image a name");
+			alert("Please give your image a name.");
 			return;
 		}
 
 		if (!data.folder) {
-			alert("Please select a folder");
+			alert("Please select a folder.");
 			return;
 		}
 
@@ -135,7 +135,7 @@ const MediaForm = ({ organisations, folders }: Props) => {
 	};
 
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-async function handleOnUpload(result: CldUploadWidgetResults, widget: any) {
+async function handleOnUpload(result: any, widget: any) {
 if (result.event === "success") {
 	if (result.info && typeof result.info === "object") {
 		setImage(result.info as Info);
