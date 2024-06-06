@@ -2,7 +2,7 @@ import Link from "next/link";
 import NationalGrid from "./NationalGrid";
 import Image from "next/image";
 import type { NationalPageFocus } from "@/sanity/lib/client";
-import type { PortableText } from "@portabletext/react";
+import  { PortableText } from "@portabletext/react";
 
 const sparkMags = [
 	{
