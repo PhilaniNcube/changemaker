@@ -10,6 +10,7 @@ import { useSupabase } from "@/components/Auth/SupabaseProvider";
 import { CldUploadButton, type CldUploadWidgetResults } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import type { Folder } from "../page";
+import { Button } from "@/components/ui/button";
 
 const mediaSchema = z.object({
 	organisation_id: z.string().uuid(),
@@ -212,7 +213,7 @@ if (result.event !== "success") {
 							Select Image
 						</label>
 						<div className="flex mt-2 rounded-md shadow-sm">
-							<div className="px-4 py-2 text-sm font-medium text-white bg-blue-400 rounded-md w-fit">
+							<div className="px-4 py-3 text-sm font-medium text-white bg-blue-400 rounded-md w-fit">
 								<CldUploadButton
 									onUpload={handleOnUpload}
 									uploadPreset="kfo3j4ot"
@@ -239,7 +240,7 @@ if (result.event !== "success") {
 									{...register("organisation_id")}
 									value={organisation.id}
 									type="radio"
-									className="w-4 h-4 border-gray-300 text-masifunde focus:ring-masifunde"
+									className="w-4 h-4 border-gray-400 text-masifunde focus:ring-masifunde"
 								/>
 								<label
 									htmlFor="organisation_id"
@@ -252,12 +253,12 @@ if (result.event !== "success") {
 					</div>
 				</fieldset>
 				<div className="px-4 py-3 mt-6 text-right bg-gray-100 sm:px-6">
-					<button
+					<Button
 						type="submit"
 						className="inline-flex justify-center px-10 py-2 text-xl font-semibold text-white rounded-md shadow-sm bg-masifunde hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
 					>
 						Save
-					</button>
+					</Button>
 				</div>
 			</form>
 		</div>
