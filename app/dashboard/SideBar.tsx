@@ -5,9 +5,9 @@ import Link from "next/link";
 const SideBar = () => {
   return (
     <div className="absolute inset-0 w-full h-full px-6 py-10 overflow-hidden scrollbar-hide ">
-      <div className="pb-3 border-b-2 border-zinc-400">
+      <div className="pb-3 border-b-2 border-zinc-300">
         <Link href="/dashboard" className="flex items-center space-x-2">
-          <img className="w-auto h-16" src="/images/logo_3.svg" alt="Logo" />
+          <img className="object-cover w-auto h-16" src="/images/logo_3.svg" alt="Logo" />
           <span className="text-2xl font-bold leading-5 text-slate-800">
             ChangeMaker
             <br /> Network

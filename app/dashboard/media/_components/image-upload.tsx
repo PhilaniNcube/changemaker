@@ -22,6 +22,7 @@ type Info = {
   resource_type: string;
   secure_url: string;
   signature: string;
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   tags: any[];
   thumbnail_url: string;
   type: string;
@@ -44,19 +45,24 @@ const ImageUpload = ({folderName}:Props) => {
 
     const [image, setImage] = useState(null);
 
-    async function handleOnUpload(result: Result, widget: any) {
-      if (result.event === "success") {
-        // setImage(result.info);
-        widget.close();
-        return;
-      } else if (result.event !== "success") {
-        toast("Image upload failed", {
-          type: "error",
-        });
-        widget.close();
-      }
-    }
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+async function handleOnUpload(result: any, widget: any) {
+	if (result.event === "success") {
+		if (result.info && typeof result.info === "object") {
+			setImage(result.info as Info);
+		} else {
+			setImage(null);
+		}
+		widget.close();
+		return;
+	}
 
+	if (result.event !== "success") {
+		toast("Image upload failed", {
+			type: "error",
+		});
+	}
+}
   return (
     <div>
       {" "}
