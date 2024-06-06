@@ -16,8 +16,8 @@ const getProfile = async () => {
 
    const {data:profile, error} = await supabase.from('profiles').select('*, organisation_id(*)').eq('id', user?.id).single()
 
-   if(error) {
-    throw new Error(error.message)
+   if(error || !profile) {
+    return null
    }
 
    return profile
@@ -37,7 +37,7 @@ const page = async () => {
   return <main>
 
     <div className="flex flex-col gap-8">
-    <AccountPage profile={profile!} organisations={organisations} />
+   {profile ? <AccountPage profile={profile} organisations={organisations} /> : null}
     <div className="w-full mt-3 md:w-2/3 lg:w-1/2">
     <CreateFolder />
     </div>
