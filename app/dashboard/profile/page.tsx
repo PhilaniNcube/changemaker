@@ -14,6 +14,10 @@ const getProfile = async () => {
      data: { user },
    } = await supabase.auth.getUser();
 
+   if(!user) {
+      return null
+   }
+
    const {data:profile, error} = await supabase.from('profiles').select('*, organisation_id(*)').eq('id', user?.id).single()
 
    if(error || !profile) {
