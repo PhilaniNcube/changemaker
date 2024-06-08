@@ -1,4 +1,12 @@
+import GlobalPageDescription from "./_components/global-page-description";
+import GlobalPageHero from "./_components/global-page-hero";
+
 const Page = () => {
-  return <div>Page</div>;
+	return (
+		<main>
+			<GlobalPageHero />
+      <GlobalPageDescription />
+		</main>
+	);
 };
 export default Page;

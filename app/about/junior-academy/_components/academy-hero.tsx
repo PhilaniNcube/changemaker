@@ -16,6 +16,11 @@ const AcademyHero = () => {
 							<h1 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
 								TUI JUNIOR ACADEMY SA
 							</h1>
+
+							<h3 className="mt-3 text-lg md:text-xl font-medium text-white max-w-[50ch]">
+								The TUI Junior Academy South Africa is an initiative of the TUI
+								Care Foundation in partnership with Masifunde
+							</h3>
 							<p className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-white text-xs md:text-lg font-medium ">
 								Empowering young children to become Eco-Champions through
 								environmental education and enabling learning opportunities for

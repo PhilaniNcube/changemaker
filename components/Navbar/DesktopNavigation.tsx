@@ -20,19 +20,19 @@ export function DesktopNavigation() {
   return (
 			<NavigationMenu className="hidden lg:block">
 				<NavigationMenuList>
-					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<Link
 							href="/"
 							legacyBehavior
 							passHref
-							className="text-white bg-black"
+							className="bg-black text-masifunde"
 						>
 							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 								Home
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>
-					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<NavigationMenuTrigger>About</NavigationMenuTrigger>
 						<NavigationMenuContent>
 							<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
@@ -57,7 +57,7 @@ export function DesktopNavigation() {
 								>
 									Practical knowledge on relevant social topics,
 								</ListItem>
-								<div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 hover:text-white bg-slate-200">
+								<div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 bg-slate-200">
 									<Link
 										href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
 										className="flex gap-2"
@@ -77,48 +77,48 @@ export function DesktopNavigation() {
 							</ul>
 						</NavigationMenuContent>
 					</NavigationMenuItem>
-					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<Link
 							href="/in-action"
 							legacyBehavior
 							passHref
-							className="text-white bg-black"
+							className="bg-black text-masifunde"
 						>
 							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 								MCN In Action
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>
-					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<Link
 							href="/learner-area"
 							legacyBehavior
 							passHref
-							className="text-white bg-black"
+							className="bg-black text-masifunde"
 						>
 							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 								Learner Area
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>{" "}
-					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<Link
 							href="/partner-area"
 							legacyBehavior
 							passHref
-							className="text-white bg-black"
+							className="bg-black text-masifunde"
 						>
 							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 								Partner Area
 							</NavigationMenuLink>
 						</Link>
 					</NavigationMenuItem>
-					<NavigationMenuItem className="text-white bg-black hover:text-neutral-800">
+					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<Link
 							href="/contact"
 							legacyBehavior
 							passHref
-							className="text-white bg-black"
+							className="bg-black text-masifunde"
 						>
 							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
 								Contact Us
@@ -141,7 +141,7 @@ const ListItem = React.forwardRef<
           href={`${href}`}
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-masifunde hover:text-white focus:bg-masifunde focus:text-masifunde-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-masifunde  focus:bg-masifunde focus:text-masifunde-foreground",
             className
           )}
           {...props}

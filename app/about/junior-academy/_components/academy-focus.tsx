@@ -34,6 +34,17 @@ const AcademyFocus = () => {
 							communities.
 						</p>
 						<h3 className="mt-4 text-2xl font-bold">
+							About TUI Junior Academy
+						</h3>
+						<p className="">
+							The TUI Junior Academy programme inspires young people to protect
+							nature and wildlife and empowers them to become Eco Champions in
+							their communities. It builds awareness for the fragility of nature
+							by developing these competencies in schools and communities and
+							brings the classroom to life through excursions and nature-based
+							experiences.
+						</p>
+						<h3 className="mt-4 text-2xl font-bold">
 							About TUI Care Foundation
 						</h3>
 
@@ -51,21 +62,9 @@ const AcademyFocus = () => {
 							organisation was founded by TUI, one of the world&apos;s leading
 							tourism businesses, and is based in the Netherlands.
 						</p>
-						<h3 className="mt-4 text-2xl font-bold">
-							About TUI Junior Academy
-						</h3>
-						<p className="">
-							The TUI Junior Academy programme inspires young people to protect
-							nature and wildlife and empowers them to become Eco Champions in
-							their communities. It builds awareness for the fragility of nature
-							by developing these competencies in schools and communities and
-							brings the classroom to life through excursions and nature-based
-							experiences.
-						</p>
 					</div>
 					<div className="grid grid-cols-1 mt-8 md:grid-cols-2">
 						<div className="col-span-1">
-
 							<svg
 								version="1.2"
 								xmlns="http://www.w3.org/2000/svg"
