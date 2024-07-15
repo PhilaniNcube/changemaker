@@ -1,7 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import NationalGrid from "@/app/national/NationalGrid";
 import AcademyGrid from "./academy-grid";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { CardContent } from "@/components/ui/card";
+import { ArrowBigRight } from "lucide-react";
 
 const sparkMags = [
 	{
@@ -19,6 +31,114 @@ const sparkMags = [
 const AcademyFocus = () => {
   return (
 			<section id="content" className="pt-10 bg-white">
+				<div className="grid gap-10 px-8 mx-auto lg:grid-cols-2 max-w-7xl">
+					<div className="flex flex-col justify-center">
+						<p className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-sm md:text-lg text-slate-700 font-medium ">
+							Empowering young children to become Eco-Champions through
+							environmental education and enabling learning opportunities for
+							young people from disadvantaged communities. This is achieved
+							through capacitation of youth through a peer-to-peer learning
+							approach so they are able to advocate for and spark change within
+							their environments.
+						</p>
+					</div>
+					<div>
+						<Carousel
+							opts={{
+								align: "start",
+								loop: true,
+							}}
+							plugins={[
+								Autoplay({
+									delay: 2000,
+								}),
+							]}
+							className="w-full p-0"
+						>
+							<CarouselContent className="p-0">
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-1.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-2.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-3.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-4.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-5.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-6.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+								<CarouselItem className="p-0">
+									<CardContent className="flex items-center justify-center h-full p-0">
+										<Image
+											src="/images/tui/tui-7.webp"
+											alt="carousel"
+											width={1600}
+											height={1200}
+											className="object-cover w-full aspect-[5/3] object-top"
+										/>
+									</CardContent>
+								</CarouselItem>
+							</CarouselContent>
+							<CarouselPrevious className="absolute transform translate-y-1/2 left-4 top-1/2" />
+							<CarouselNext className="absolute transform translate-y-1/2 right-4 top-1/2" />
+						</Carousel>
+					</div>
+				</div>
 				<div className="gap-10 px-8 mx-auto max-w-7xl">
 					<div className="mt-3 text-base leading-7 text-justify text-slate-700">
 						<p className="">
