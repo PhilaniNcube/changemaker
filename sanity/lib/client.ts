@@ -242,3 +242,40 @@ export  async function getPartners():Promise<any[]>{
   }`);
   return partners
 }
+
+export async function getPageContent(slug:string){
+  console.log(slug)
+  const content = await client.fetch(
+			`*[_type == "page" && slug.current == "${slug}"]{
+    title,
+    slug,
+    subtitle,
+    hero_image,
+    "pageSlider": *[_type == "pageSlider" && references(^._id)],
+    "list_items": *[_type == "page_list_group" && references(^._id)]{
+      list_title,
+      list_items[],
+      },
+    content,
+    illustration,
+    logo_carousel,
+    }[0]`,
+
+		);
+
+  return content
+}
+
+export async function getPageLists(){
+  const pageList = await client.fetch(
+			`*[_type == "page_list_group"]{
+      list_title,
+      list_items[],
+      "page": *[_type == "page" && references(^._id)]{
+        title,
+        slug
+        }
+      }`,
+		);
+  return pageList
+}
