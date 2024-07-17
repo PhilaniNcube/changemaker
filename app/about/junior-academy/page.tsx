@@ -6,8 +6,7 @@ import AcademyFunders from "./_components/academy-funders";
 
 const page = async () => {
 
-  const content = await getPageContent("junior-academy");
-  console.log(JSON.stringify(content, null, 2));
+
 
 
 
