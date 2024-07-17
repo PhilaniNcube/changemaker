@@ -19,6 +19,7 @@ export const pageContent = {
 			name: "subtitle",
 			title: "Page Subtitle",
 			type: "string",
+      required: true,
 		},
 		{
 			name: "hero_image",

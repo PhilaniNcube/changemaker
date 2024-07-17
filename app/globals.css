@@ -76,10 +76,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 }
-
 
 #content a {
   @apply text-masifunde;
@@ -93,8 +92,11 @@
   @apply font-bold underline;
 }
 
-
 #content h5 {
   @apply font-semibold;
   font-size: 1.1em;
+}
+
+#content h3 {
+  @apply font-semibold mb-2 text-lg md:text-2xl;
 }

@@ -14,32 +14,24 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { CardContent } from "@/components/ui/card";
 import { ArrowBigRight } from "lucide-react";
+import type { Page, PageSlider } from "@/app/studio/sanity.types";
+import { PortableText } from "@portabletext/react";
 
-const sparkMags = [
-	{
-		title: "Spark 1st Edition",
-		thumbnail: "/images/national/spark_1st_ed.jpg",
-		doc: "/images/national/mag_1st_ed.pdf",
-	},
-	{
-		title: "Spark 2nd Edition",
-		thumbnail: "/images/national/spark_2nd_ed.jpg",
-		doc: "/images/national/mag_2nd_ed.pdf",
-	},
-];
 
-const AcademyFocus = () => {
+const AcademyFocus = ({pageContent}:{pageContent:Page}) => {
+
+  console.log(pageContent)
+
+  const sliderContent  = pageContent.pageSlider as unknown as PageSlider[]
+
+  const slider = sliderContent[0]
+
   return (
 			<section id="content" className="pt-10 bg-white">
 				<div className="grid gap-10 px-8 mx-auto lg:grid-cols-2 max-w-7xl">
 					<div className="flex flex-col justify-center">
 						<p className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-sm md:text-lg text-slate-700 font-medium ">
-							Empowering young children to become Eco-Champions through
-							environmental education and enabling learning opportunities for
-							young people from disadvantaged communities. This is achieved
-							through capacitation of youth through a peer-to-peer learning
-							approach so they are able to advocate for and spark change within
-							their environments.
+							{slider.description}
 						</p>
 					</div>
 					<div>
@@ -140,7 +132,12 @@ const AcademyFocus = () => {
 					</div>
 				</div>
 				<div className="gap-10 px-8 mx-auto max-w-7xl">
-					<div className="mt-3 text-base leading-7 text-justify text-slate-700">
+					<div id="content" className="mt-3 text-base leading-7 text-justify text-slate-700">
+						{pageContent.content && (
+							<PortableText value={pageContent.content} />
+						)}
+					</div>
+					{/* <div className="mt-3 text-base leading-7 text-justify text-slate-700">
 						<p className="">
 							This is achieved through activation workshops for all Grade 9
 							learners and intensive virtual changemaker trainings for selected
@@ -182,7 +179,7 @@ const AcademyFocus = () => {
 							organisation was founded by TUI, one of the world&apos;s leading
 							tourism businesses, and is based in the Netherlands.
 						</p>
-					</div>
+					</div> */}
 					<div className="grid grid-cols-1 mt-8 md:grid-cols-2">
 						<div className="col-span-1">
 							<svg

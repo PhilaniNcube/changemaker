@@ -6,14 +6,15 @@ import AcademyFunders from "./_components/academy-funders";
 
 const page = async () => {
 
+const pageContent = await getPageContent('junior-academy');
 
 
 
 
   return (
 			<main>
-				<AcademyHero />
-				<AcademyFocus />
+				<AcademyHero title={pageContent.title} subtitle={pageContent.subtitle} />
+				<AcademyFocus pageContent={pageContent} />
 				{/* <HowItWorks roleplayers={roleplayers} /> */}
         <AcademyFunders />
 			</main>

@@ -1,6 +1,7 @@
+import type { Page } from "@/app/studio/sanity.types";
 import Image from "next/image";
 
-const AcademyHero = () => {
+const AcademyHero = ({title, subtitle}:{title:Page['title'], subtitle:Page['subtitle']}) => {
   return (
 			<section id="national" className="relative flex justify-end bg-masifunde">
 				{/* <Image
@@ -14,12 +15,11 @@ const AcademyHero = () => {
 					<div className="flex justify-start px-8 py-20 mx-auto max-w-7xl">
 						<div className="px-4">
 							<h1 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
-								TUI JUNIOR ACADEMY SA
+								{title}
 							</h1>
 
 							<h3 className="mt-3 text-lg md:text-xl font-medium text-white max-w-[50ch]">
-								The TUI Junior Academy South Africa is an initiative of the TUI
-								Care Foundation in partnership with Masifunde
+								{subtitle}
 							</h3>
 
 						</div>

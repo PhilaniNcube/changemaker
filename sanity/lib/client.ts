@@ -2,6 +2,8 @@ import {createClient} from 'next-sanity'
 
 import { apiVersion, dataset, projectId, useCdn } from '../env'
 import type { PortableTextBlock } from 'sanity'
+import type{ Page } from '@/app/studio/sanity.types'
+import {groq} from 'next-sanity'
 
 export const client = createClient({
   apiVersion,
@@ -243,7 +245,28 @@ export  async function getPartners():Promise<any[]>{
   return partners
 }
 
-export async function getPageContent(slug:string){
+export type PageContent = {
+  title: string
+}
+
+const PAGE_CONTENT_QUERY = groq`*[_type == "page" && slug.current == "$slug"]{
+    title,
+    slug,
+    subtitle,
+    hero_image,
+    "pageSlider": *[_type == "pageSlider" && references(^._id)],
+    "list_items": *[_type == "page_list_group" && references(^._id)]{
+      list_title,
+      list_items[],
+      },
+    content,
+    illustration,
+    logo_carousel,
+    }[0]{
+    slug
+    }`;
+
+export async function getPageContent(slug:string):Promise<Page>{
   console.log(slug)
   const content = await client.fetch(
 			`*[_type == "page" && slug.current == "${slug}"]{
