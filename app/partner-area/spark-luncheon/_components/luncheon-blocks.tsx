@@ -9,7 +9,7 @@ const blocks = [
 const LuncheonBlocks = () => {
   return (
 			<section className="py-10">
-				<div className="px-6 mx-auto max-w-7xl lg:px-0">
+				<div className="max-w-6xl px-6 mx-auto lg:px-0">
 					<h2 className="mb-3 text-xl font-bold text-center text-black">
 						Since the inception of SPARK Change Luncheons, five events have been
 						held, focusing on the following topics:

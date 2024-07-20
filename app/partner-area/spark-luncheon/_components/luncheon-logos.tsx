@@ -44,7 +44,7 @@ import Image from "next/image";
 const LuncheonLogos = () => {
   return (
 			<section className="py-10">
-				<div className="px-6 mx-auto max-w-7xl lg:px-0">
+				<div className="max-w-6xl px-6 mx-auto lg:px-0">
 					<div className="grid grid-cols-2 gap-6 md:grid-cols-3">
 						{funders.map((funder, i) => (
 							<div

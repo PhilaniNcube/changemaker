@@ -3,7 +3,7 @@ import { YouTubeEmbed } from "@next/third-parties/google";
 const LuncheonVideos = () => {
   return (
 			<section className="py-10 bg-slate-200">
-				<div className="px-8 mx-auto max-w-7xl lg:px-0">
+				<div className="max-w-6xl px-6 mx-auto lg:px-0">
 					<h2 className="mb-3 text-2xl font-bold text-center text-black">
 						Watch the SPARK Change Luncheon videos
 					</h2>

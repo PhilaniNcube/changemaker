@@ -11,7 +11,7 @@ const LuncheonHero = ({leftImage, rightImage}:{leftImage:string, rightImage:stri
 					className="object-cover w-full mx-auto max-h-[400px] object-top"
 				/>
         <div className="absolute inset-0">
-          <div className="relative flex h-full mx-auto max-w-7xl isolate">
+          <div className="relative flex h-full max-w-6xl mx-auto isolate">
              <div className="flex items-center justify-start h-full">
             <Image src={leftImage} width={318} height={199} alt="Left Image" className="object-cover" />
              </div>

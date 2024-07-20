@@ -4,7 +4,7 @@ import { PortableText } from "@portabletext/react";
 const LuncheonContent = ({content, title}:{content:Page['content'], title:string | undefined}) => {
   return (
 			<div className="py-8">
-				<div className="px-4 mx-auto max-w-7xl lg:px-0">
+				<div className="max-w-6xl px-4 mx-auto lg:px-0">
 					<div className="flex flex-col gap-6 md:flex-row">
 						<h2 className="text-3xl font-bold md:text-5xl text-orange-600 max-w-[10ch]">
 							{title}
