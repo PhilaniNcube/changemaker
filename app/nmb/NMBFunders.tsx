@@ -1,5 +1,5 @@
 
-import { NMBPageFunders } from "@/sanity/lib/client";
+import type { NMBPageFunders } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 
@@ -33,13 +33,13 @@ const NMBFunders = ({ funders }: PageProps) => {
   // ];
 
   return (
-    <section id="funders" className="max-w-7xl mx-auto px-8 my-10 bg-white">
-      <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 text-center">
+    <section id="funders" className="px-8 mx-auto my-10 bg-white max-w-7xl">
+      <h2 className="text-3xl font-bold leading-7 text-center text-gray-800 lg:text-4xl lg:leading-9">
         Funders/Partners
       </h2>
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mt-8">
+      <div className="grid w-full grid-cols-1 gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3 md:gap-10">
         {funders.map((funder, i) => (
-          <div key={i} className="w-full flex items-center justify-center">
+          <div key={funder.funderName} className="flex items-center justify-center w-full">
             <Image
               src={urlForImage(funder.nmbfunderLogo.asset).url()}
               width={951}

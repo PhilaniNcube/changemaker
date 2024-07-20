@@ -102,16 +102,23 @@ export function DesktopNavigation() {
 						</Link>
 					</NavigationMenuItem>{" "}
 					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-						<Link
-							href="/partner-area"
-							legacyBehavior
-							passHref
-							className="bg-black text-masifunde"
-						>
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
-								Partner Area
-							</NavigationMenuLink>
-						</Link>
+						<NavigationMenuTrigger>Partner Area</NavigationMenuTrigger>
+						<NavigationMenuContent>
+							<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
+								<ListItem
+									href="/partner-area/implementation-partner"
+									title="Becom an Implementation Partner"
+								>
+									Becom an Implementation Partner
+								</ListItem>
+								<ListItem
+									href="/partner-area/spark-luncheon"
+									title="Spark Change Luncheon"
+								>
+									Be inspired by the knowledge shared by a panel
+								</ListItem>
+							</ul>
+						</NavigationMenuContent>
 					</NavigationMenuItem>
 					<NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
 						<Link

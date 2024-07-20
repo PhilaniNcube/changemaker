@@ -83,7 +83,7 @@ const Navbar = ({user, admin}:Props) => {
 
 
   return (
-    <header className="z-50 bg-black ">
+    <header className="z-[999] bg-black ">
       <nav
         className="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8"
         aria-label="Global"

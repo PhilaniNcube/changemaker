@@ -1,19 +1,19 @@
 const Hero = () => {
   return (
-    <section className="bg-masifunde py-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="h-full w-full flex flex-col items-start justify-center">
+    <section className="py-20 bg-masifunde">
+      <div className="px-8 mx-auto max-w-7xl">
+        <div className="flex flex-col items-start justify-center w-full h-full">
           <h1 className="text-white text-4xl max-w-[20ch] uppercase font-extrabold lg:text-5xl">
-            {/* <span className="font-bold italic">Join the national</span> <br /> */}
+            {/* <span className="italic font-bold">Join the national</span> <br /> */}
             Become an Implementation Partner
-            <span className="lg:text-5xl max-w-[25ch] uppercase font-extrabold"></span>{" "}
+
             <br />
-            {/* <span className="lg:text-7xl uppercase font-extrabold">
+            {/* <span className="font-extrabold uppercase lg:text-7xl">
               Network
             </span>{" "} */}
             <br />
           </h1>
-          {/* <span className="bg-slate-700 mt-3 px-4 py-4 text-white">
+          {/* <span className="px-4 py-4 mt-3 text-white bg-slate-700">
             <p className="text-2xl font-bold">
               become an implementation partner
             </p>

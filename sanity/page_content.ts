@@ -14,6 +14,10 @@ export const pageContent = {
 			title: "Slug",
 			type: "slug",
 			required: true,
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
 		},
 		{
 			name: "subtitle",
