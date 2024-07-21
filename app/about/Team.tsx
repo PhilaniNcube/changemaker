@@ -48,7 +48,7 @@ const Team = () => {
     },
     {
       id: 5,
-      title: "Masifunde Learner Development",
+      title: "masifunde Learner Development",
       image: "/images/masifunde.png",
       link: "https://www.masifunde.org/",
       width: 2546,

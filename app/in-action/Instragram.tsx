@@ -16,7 +16,6 @@ const InstagramFeed =  async () => {
 
 				const data = await instagramFeed.json();
 
-				console.log(data);
 
 				return (
 					<div className="max-w-6xl px-6 py-10 mx-auto lg:px-0">

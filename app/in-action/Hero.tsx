@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="bg-white">
       <div className="max-w-7xl mx-auto min-h-[55vh] overflow-hidden py-20">
         <h1 className="text-4xl font-extrabold text-slate-800 text-center">
-          To see the Masifunde’s Changemaker Network in action and stay updated,
+          To see the masifunde’s Changemaker Network in action and stay updated,
           click on our social media feed
         </h1>
 

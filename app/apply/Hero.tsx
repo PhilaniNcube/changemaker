@@ -16,7 +16,7 @@ const Hero = () => {
           </h1>
           <p className="max-w-lg text-white text-md font-medium">
             Thank you for completing the Partner Self Check. You qualify to
-            apply to become an implementation partner for Masifunde’s
+            apply to become an implementation partner for masifunde’s
             Changemaker Network. Please apply on the link below.
           </p>
           <span className="bg-slate-700 mt-3 px-10 py-2 text-white">

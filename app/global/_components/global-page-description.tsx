@@ -145,7 +145,7 @@ const GlobalPageDescription = () => {
 							During this encounter, they participated in facilitation training,
 							workshops on racism and sexism sensitisation, the 2030 SDG Agenda,
 							and filmmaking workshops. Additionally, the partners received
-							training on implementing the Masifunde Changemaker Network. Before
+							training on implementing the masifunde Changemaker Network. Before
 							concluding this initial meeting, the partners collaboratively
 							selected specific SDG’s to address in partnership, with each South
 							African NGO pairing with a German NGO. Together, they developed
@@ -170,7 +170,7 @@ const GlobalPageDescription = () => {
 							opportunities for feedback and reflection. Additionally, each NGO
 							representative will be responsible for filming and documenting
 							their local work, using video cameras provided to them by
-							Masifunde.
+							masifunde.
 						</p>
 					</div>
 					<div className="px-4 py-5 text-center text-white bg-masifunde">

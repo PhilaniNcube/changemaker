@@ -13,11 +13,11 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"]
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: "Masifunde Changemaker Network",
+  title: "masifunde Changemaker Network",
   description:
-    "Masifunde's Changemaker Network aims to capacitate high school learners with practical knowledge on relevant social topics such as school safety, violence, bullying and environmental awareness and protection. Through activation workshops for all Grade 9 learners and intensive changemaker trainings for selected learners they can spark positive change in their schools and communities.",
+    "masifunde's Changemaker Network aims to capacitate high school learners with practical knowledge on relevant social topics such as school safety, violence, bullying and environmental awareness and protection. Through activation workshops for all Grade 9 learners and intensive changemaker trainings for selected learners they can spark positive change in their schools and communities.",
   keywords:
-    "Masifunde, Changemaker, Network, NMB, National, South Africa, Youth, Education, Social, Change, Activism, Activist, Activists, Youth Activism, Youth Activist, Youth Activists, Youth Activists South Africa, Youth Activism South Africa, Youth Activist South Africa, Youth Activists South Africa",
+    "masifunde, Changemaker, Network, NMB, National, South Africa, Youth, Education, Social, Change, Activism, Activist, Activists, Youth Activism, Youth Activist, Youth Activists, Youth Activists South Africa, Youth Activism South Africa, Youth Activist South Africa, Youth Activists South Africa",
   openGraph: {
     type: "website",
     locale: "en_ZA",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     images: ["https://www.changemaker-network.org/images/logo.svg"],
     card: "summary_large_image",
     description:
-      "Masifunde's Changemaker Network aims to capacitate high school learners with practical knowledge on relevant social topics such as school safety, violence, bullying and environmental awareness and protection. Through activation workshops for all Grade 9 learners and intensive changemaker trainings for selected learners they can spark positive change in their schools and communities.",
+      "masifunde's Changemaker Network aims to capacitate high school learners with practical knowledge on relevant social topics such as school safety, violence, bullying and environmental awareness and protection. Through activation workshops for all Grade 9 learners and intensive changemaker trainings for selected learners they can spark positive change in their schools and communities.",
   },
 };
 

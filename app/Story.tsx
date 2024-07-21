@@ -58,16 +58,16 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
                 <PortableText value={content?.storyContent!} />
               </div>
               {/* <p>
-                Masifunde is an NGO founded in 2004, which runs holistic,
+                masifunde is an NGO founded in 2004, which runs holistic,
                 learner-centred community development programmes for children
-                and youth in Walmer Township, Gqeberha. Masifunde&apos;s vision
+                and youth in Walmer Township, Gqeberha. masifunde&apos;s vision
                 is to empower its beneficiaries to participate pro-actively and
                 confidently in societal issues and thereby initiating positive
                 change in their own lives and the lives of other - and thereby
                 acting as changemakers.
               </p>
               <p className="w-full pr-6 mt-6 text-base font-medium leading-7 text-gray-600 xl:w-9/12">
-                Since 2013 Masifunde has implemented a variety of city-wide
+                Since 2013 masifunde has implemented a variety of city-wide
                 programmes with the focus on learner activation mainly on the
                 topics of school safety and gender-based violence (GBV). The
                 model is based on the believe that positive change is
@@ -78,15 +78,15 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
                 as part of the school community.
               </p>
               <p className="w-full pr-6 mt-6 text-base font-medium leading-7 text-gray-600 xl:w-9/12">
-                In 2021, Masifunde officially launched its Changemaker Network
+                In 2021, masifunde officially launched its Changemaker Network
                 in the Nelson Mandela Bay. Since 2023, the programme gets
                 replicated with 20 CSO partners in the Eastern Cape, Limpopo,
-                North-West and KwaZulu-Natal. In 2024, Masifunde aims to reach
+                North-West and KwaZulu-Natal. In 2024, masifunde aims to reach
                 200 schools, with 40 CSO partners in all provinces of South
                 Africa.
               </p>
               <div className="w-full pr-6 mt-8 text-base font-medium leading-7 text-gray-600 xl:w-9/12">
-                Find out more about Masifunde{" "}
+                Find out more about masifunde{" "}
                 <Link
                   className="font-light underline text-masifunde"
                   href="https://www.masifunde.org"

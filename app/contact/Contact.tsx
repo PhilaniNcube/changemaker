@@ -16,7 +16,7 @@ function Contact() {
 									to call or email
 								</p>
 								<h2 className="text-lg font-medium text-white">
-									Masifunde Changemaker Network NMB coordinator
+									masifunde Changemaker Network NMB coordinator
 								</h2>
 								<p className="pt-4 text-white">Chuma Cuba</p>
 								<div className="flex items-center">
@@ -69,7 +69,7 @@ function Contact() {
 									</p>
 								</div>
 								<h2 className="mt-8 text-lg font-medium text-white">
-									Masifunde Changemaker Network National coordinator
+									masifunde Changemaker Network National coordinator
 								</h2>
 								<p className="pt-4 text-white">Debaneigh Jordaan</p>
 								<div className="flex items-center">

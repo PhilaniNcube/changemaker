@@ -20,7 +20,7 @@ const items = [
     id: 2,
     icon: "/images/gears.svg",
     title: "Virtual Changemaker Training",
-    text: "With support from Masifunde CSO’s coordinate a hybrid training for the selected changemakers. This allows learners to learn more about being a changemaker and be trained on topics including school safety and bullying prevention, as well as meet other changemakers from other parts of south africa",
+    text: "With support from masifunde CSO’s coordinate a hybrid training for the selected changemakers. This allows learners to learn more about being a changemaker and be trained on topics including school safety and bullying prevention, as well as meet other changemakers from other parts of south africa",
   },
   {
     id: 3,

@@ -32,7 +32,7 @@ const Requirements = () => {
             </ul>{" "}
             <h3 className="text-md md:text-lg font-bold  mb-3">
               We are not accepting applications from Nelson Mandela Bay, as
-              Masifunde has implemented this program within this district.
+              masifunde has implemented this program within this district.
             </h3>
           </div>
         </div>

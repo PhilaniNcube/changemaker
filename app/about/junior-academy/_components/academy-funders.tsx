@@ -9,7 +9,7 @@ const AcademyFunders = () => {
 				height: 82,
 			},
 			{
-				name: "Masifunde",
+				name: "masifunde",
 				image: "/images/masifunde.png",
 				width: 3543,
 				height: 1299,
