@@ -1,7 +1,12 @@
 
 import Script from "next/script";
-import {  Suspense } from "react";
 import Instragram from "./Instragram";
+import Image from "next/image";
+import React, { Suspense, lazy } from "react";
+import InstagramFeed from "./Instragram";
+
+// @ts-ignore
+const Instagram = lazy(() => import("./Instragram"));
 
 export const revalidate = 0;
 
@@ -26,7 +31,7 @@ export type Feed = {
 export interface InstagramMedia {
   id: string;
   caption: string;
-  media_type: string;
+  media_type: "VIDEO" | "IMAGE" | "CAROUSEL_ALBUM"  | "IGTV";
   media_url: string;
   thumbnail_url?: string;
   permalink: string;
@@ -36,34 +41,21 @@ export interface InstagramMedia {
 
 
 
-const page = () => {
+
+
+const page = async () => {
+
+  const instagramFeed = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=9`)
+
+  const data = await instagramFeed.json()
+
+  console.log(data)
 
 
   return (
-    <div className="mx-auto max-w-7xl">
-
-      {/* <Hero /> */}{" "}
-      <div className="flex items-center justify-center w-full">
-        <Script
-          async
-          defer
-          crossOrigin="anonymous"
-          src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0"
-          nonce="i0LiW14P"
-        />
-
-        <div id="fb-root"/>
-      </div>
-      <Suspense
-        fallback={
-          <p className="mt-4 text-lg font-medium text-gray-600 dark:text-gray-400 animate-pulse">
-            Loading...
-          </p>
-        }
-      >
-        <Instragram />
-      </Suspense>
-    </div>
-  );
+			<Suspense fallback={<div>Loading...</div>}>
+				<Instagram />
+			</Suspense>
+		);
 };
 export default page;

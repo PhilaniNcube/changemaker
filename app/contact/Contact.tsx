@@ -18,7 +18,7 @@ function Contact() {
 								<h2 className="text-lg font-medium text-white">
 									Masifunde Changemaker Network NMB coordinator
 								</h2>
-								<p className="pt-4 text-white">Andisiwe Mbelekane</p>
+								<p className="pt-4 text-white">Chuma Cuba</p>
 								<div className="flex items-center">
 									<div>
 										<svg
@@ -41,7 +41,7 @@ function Contact() {
 											<path d="M15 3a6 6 0 0 1 6 6" />
 										</svg>
 									</div>
-									<p className="pl-4 text-base text-white">076 984 9922</p>
+									<p className="pl-4 text-base text-white">067 181 5976</p>
 								</div>{" "}
 								<div className="flex items-center">
 									<div>

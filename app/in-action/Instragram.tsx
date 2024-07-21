@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-"use client"
 
 import Image from "next/image";
 import Link from "next/link";
@@ -10,47 +8,52 @@ type ComponentProps = {
   feed: InstagramMedia[];
 };
 
-const Instragram =  () => {
+const InstagramFeed =  async () => {
 
+    const instagramFeed = await fetch(
+					`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=9`,
+				);
 
-  return (
-			<section className="py-10 bg-white">
-				<div className="flex flex-col items-center px-8 mx-auto max-w-7xl">
-					<h1 className="text-2xl font-bold md:text-5xl text-slate-800 ">
-						News
-					</h1>
+				const data = await instagramFeed.json();
 
-					<p className="text-base text-slate-700">
-						Stay updated through our Social Media Feeds!
-					</p>
-					<div className="flex justify-center w-full gap-8">
-						<div className="flex justify-center w-full">
-							<div className="flex justify-center w-full px-3 mt-4 text-slate-700">
+				console.log(data);
+
+				return (
+					<div className="max-w-6xl px-6 py-10 mx-auto lg:px-0">
+						<h1 className="text-2xl font-bold text-center md:text-5xl text-slate-800 ">
+							News
+						</h1>
+						<div className="grid grid-cols-1 gap-4 mx-auto mt-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl">
+							{data.data.map((media: InstagramMedia) => (
 								<div
-									className="fb-page"
-									data-href="https://www.facebook.com/profile.php?id=100083194785525"
-									data-tabs="timeline"
-									data-width="500"
-									data-height=""
-									data-small-header="false"
-									data-adapt-container-width="true"
-									data-hide-cover="false"
-									data-show-facepile="false"
+									key={media.id}
+									className="relative items-center justify-center w-full transition duration-300 ease-in-out rounded-lg shadow group aspect-square"
 								>
-									<blockquote
-										cite="https://www.facebook.com/profile.php?id=100083194785525"
-										className="fb-xfbml-parse-ignore"
-									>
-										<a href="https://www.facebook.com/profile.php?id=100083194785525">
-											Changemaker Network
-										</a>
-									</blockquote>
+									{media.media_type === "VIDEO" ? (
+										<Image
+											width={200}
+											height={200}
+											src={media.thumbnail_url || media.media_url}
+											alt="Instagram post"
+											className="object-cover w-full h-full"
+										/>
+									) : (
+										<Image
+											width={200}
+											height={200}
+											src={media.media_url}
+											alt="Instagram post"
+											className="object-cover w-full h-full"
+										/>
+									)}
+
+									<p className="inset-0 items-center justify-center hidden px-4 text-slate-800 text-balance bg-slate-300/60 line-clamp-1 group-hover:absolute group-hover:flex">
+										{media.caption}
+									</p>
 								</div>
-							</div>
+							))}
 						</div>
 					</div>
-				</div>
-			</section>
-		);
+				);
 };
-export default Instragram;
+export default InstagramFeed;
