@@ -22,8 +22,8 @@ const Carousel = () => {
 
 
   return (
-			<div className="flex items-center justify-center w-full h-full py-10 overflow-hidden bg-white">
-				<div className="max-w-7xl min-w-[280px] mx-auto overflow-hidden realtive isolate">
+			<div className="flex items-center justify-center w-full h-full py-10 mb-10 overflow-hidden bg-white rounded-2xl">
+				<div className="max-w-7xl min-w-[280px] mx-auto overflow-hidden realtive isolate rounded-2xl">
 					<div className="flex h-[200px] md:h-[400px] lg:h-[640px] w-full gap-2">
 						{images.map((image, i) => (
 							<Image
