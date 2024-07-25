@@ -186,6 +186,7 @@ const AcademyFocus = ({pageContent}:{pageContent:Page}) => {
 							tourism businesses, and is based in the Netherlands.
 						</p>
 					</div> */}
+					<h3 className="mt-5 text-4xl font-extrabold text-center uppercase text-masifunde">Focus</h3>
 					<div className="grid grid-cols-1 mt-8 md:grid-cols-2">
 						<div className="col-span-1">
 							<svg
@@ -194,7 +195,7 @@ const AcademyFocus = ({pageContent}:{pageContent:Page}) => {
 								viewBox="0 0 669 567"
 								width="669"
 								height="567"
-								className="object-cover w-full p-6 lg:p-12"
+								className="object-cover w-full px-6 -translate-y-16 lg:px-12"
 							>
 								<title>South Africa</title>
 
@@ -433,14 +434,13 @@ const AcademyFocus = ({pageContent}:{pageContent:Page}) => {
 								/>
 								<path
 									fill-rule="evenodd"
-                  fill="#000000"
+									fill="#000000"
 									d="m568.1 81c-2.6 0-4.7-2.1-4.7-4.7 0-2.6 2.1-4.7 4.7-4.7 2.6 0 4.7 2.1 4.7 4.7 0 2.6-2.1 4.7-4.7 4.7zm2.8-4.8c0-1.5-1.3-2.8-2.8-2.8-1.5 0-2.8 1.3-2.8 2.8 0 1.6 1.3 2.9 2.8 2.9 1.5 0 2.8-1.3 2.8-2.9z"
 								/>
 							</svg>
 						</div>
 						<div className="col-span-1">
-							<div className="flex flex-col gap-6 md:flex-row">
-								<h3 className="text-4xl font-extrabold uppercase">Focus</h3>
+							<div className="flex flex-col md:flex-row">
 								<div className="flex-1">
 									<p className="text-lg font-bold leading-7 text-slate-800">
 										The Changemaker Network focuses on the following topics:
