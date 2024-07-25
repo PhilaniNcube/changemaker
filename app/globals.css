@@ -98,7 +98,7 @@
 }
 
 #content h3 {
-  @apply font-semibold mb-2 text-lg md:text-2xl;
+  @apply font-semibold mb-2 text-lg md:text-2xl mt-6;
 }
 
 #content h4 {
