@@ -45,17 +45,22 @@ export interface InstagramMedia {
 
 const page = async () => {
 
-  const instagramFeed = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=9`)
 
-  const data = await instagramFeed.json()
+    const instagramFeed = await fetch(
+					`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=9`,
+				);
 
-  console.log(data)
+				const data = await instagramFeed.json();
 
 
-  return (
-			<Suspense fallback={<div>Loading...</div>}>
-				<Instagram />
-			</Suspense>
-		);
+
+				return (
+					<Suspense fallback={<div className="min-h-[50vh] flex flex-col items-center justify-center">
+            <h1 className="text-2xl font-bold text-center md:text-5xl text-slate-800 ">
+              Loading...</h1>
+          </div>}>
+						<Instagram feed={data.data} />
+					</Suspense>
+				);
 };
 export default page;
