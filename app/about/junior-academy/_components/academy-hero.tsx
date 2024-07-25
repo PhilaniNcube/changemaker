@@ -11,8 +11,9 @@ const AcademyHero = ({title, subtitle}:{title:Page['title'], subtitle:Page['subt
 					alt="Changemakers"
 					className="object-cover max-w-[88%] min-h-[55vh] max-h-[65vh]"
 				/> */}
-				<div className="w-full ">
+				<div className="relative w-full isolate">
 					<div className="flex justify-start px-8 py-20 mx-auto max-w-7xl">
+          <Image src="/images/junior_academy_logo.webp" width={174} height={171} alt="TUI Logo" className="hidden lg:block absolute top-[17%] right-[10%]" />
 						<div className="px-4">
 							<h1 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
 								{title}
