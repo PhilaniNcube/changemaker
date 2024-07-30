@@ -47,7 +47,7 @@ const page = async () => {
 
 
     const instagramFeed = await fetch(
-					`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=9`,
+					`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=15`,
 				);
 
 				const data = await instagramFeed.json();
