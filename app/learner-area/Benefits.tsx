@@ -96,7 +96,7 @@ const Benefits = () => {
 										className="font-medium text-white bg-blue-600"
 									>
 										<FacebookIcon className="w-6 h-6 mr-2" />
-										Follow Us
+										Join Us
 									</Button>
 								</Link>
 							</div>
