@@ -289,6 +289,44 @@ export async function getPageContent(slug:string):Promise<Page>{
   return content
 }
 
+export async function getGlobalPageContent():Promise<Page>{
+
+  const content = await client.fetch(
+			`*[_type == "page" && slug.current == "global"]{
+    title,
+    slug,
+    subtitle,
+    hero_image,
+    "pageSlider": *[_type == "pageSlider" && references(^._id)],
+    "list_items": *[_type == "page_list_group" && references(^._id)]{
+      list_title,
+      list_items[],
+      },
+    listBox,
+    content,
+    illustration,
+    logo_carousel,
+    }[0]`,
+		);
+
+  return content
+}
+
+export async function getGlobalSlider(){
+	const content = await client.fetch(
+		`*[_type == "pageSlider" && description == "Understanding the global changemaker network"]{
+      page->{
+        title,
+        slug
+      },
+      images,
+      description
+    }[0]`,
+	);
+
+	return content;
+}
+
 export async function getPageLists(){
   const pageList = await client.fetch(
 			`*[_type == "page_list_group"]{

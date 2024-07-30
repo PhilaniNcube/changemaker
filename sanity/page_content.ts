@@ -48,6 +48,13 @@ export const pageContent = {
 			title: "Illustration",
 			type: "image",
 		},
+    // reference to a list box
+    {
+      name: 'listBox',
+      title: 'List Box Items',
+      type: 'array',
+      of: [{type: 'listBox'}],
+    },
 		{
 			name: "logo_carousel",
 			title: "Logo Carousel",
@@ -105,10 +112,95 @@ export const pageList = {
 			required: true,
 		},
     {
+      name: 'list_subtitle',
+      title: 'List Subtitle',
+      type: 'string',
+    },
+    {
       name: 'page',
       title: 'Page',
       type: 'reference',
       to: [{type: 'page'}],
+      required: true,
     }
 	],
 };
+
+
+export const pageTextBoxes = {
+	name: "pageTextBoxes",
+	title: "Page Text Boxes",
+	type: "document",
+	fields: [
+		{
+			name: "title",
+			title: "Title",
+			type: "string",
+			required: true,
+		},
+		{
+			name: "slug",
+			title: "Slug",
+			type: "slug",
+			options: {
+				source: "title",
+				maxLength: 96,
+			},
+		},
+		{
+			name: "page",
+			title: "Page",
+			type: "reference",
+			to: [{ type: "page" }],
+			required: true,
+		},
+		{
+			name: "subtitle",
+			title: "Subtitle",
+			type: "string",
+		},
+	],
+};
+
+export const listBox = {
+  name: "listBox",
+  title: "List Box",
+  type: "document",
+  fields: [
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      required: true,
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    },
+    // {
+    //   name: "page",
+    //   title: "Page",
+    //   type: "reference",
+    //   to: [{ type: "page" }],
+    //   required: true,
+    // },
+    {
+      name: "description",
+      title: "Description",
+      type: "string",
+    },
+  ],
+};
+
+
