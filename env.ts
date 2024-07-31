@@ -15,6 +15,7 @@ const envVariables = z.object({
 	SUPABASE_SERVICE_ROLE: z.string(),
 	MAILTRAP_TOKEN: z.string(),
 	NEXT_PUBLIC_SANITY_API_VERSION: z.string(),
+	RESEND_API_KEY: z.string(),
 });
 
 

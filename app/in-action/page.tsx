@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { Suspense, lazy } from "react";
 import InstagramFeed from "./Instragram";
 
-// @ts-ignore
+
 const Instagram = lazy(() => import("./Instragram"));
 
 export const revalidate = 0;

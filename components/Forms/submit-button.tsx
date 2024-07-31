@@ -1,9 +1,8 @@
 "use client";
-//@ts-ignore
 import { useFormStatus } from "react-dom";
 import { Button } from "../ui/button";
 import { CircleSlashed } from "lucide-react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export function SubmitButton({children}:{children:ReactNode}) {
 

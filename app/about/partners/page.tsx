@@ -13,7 +13,6 @@ const page = () => {
     <main>
       <PartnersHero />
       <Suspense fallback={<div>Loading...</div>}>
-      {/* @ts-expect-error Server Component */}
         <Partners />
       </Suspense>
     </main>

@@ -14,7 +14,6 @@ const Page = async () => {
 	return (
 		<main>
 			<GlobalPageHero title={heroTitle} />
-      {/* @ts-ignore */}
       <GlobalPageDescription  />
 		</main>
 	);
