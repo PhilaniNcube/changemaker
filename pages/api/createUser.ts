@@ -21,6 +21,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
 
+  // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const client = new MailtrapClient({token: process.env.MAILTRAP_TOKEN!})
 
 if(req.method !== 'POST') {

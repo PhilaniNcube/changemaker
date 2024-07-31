@@ -1,41 +1,19 @@
-import { createMiddlewareSupabaseClient } from '@supabase/auth-helpers-nextjs'
-import { NextResponse } from 'next/server'
+import type { NextRequest } from "next/server";
+import { updateSession } from "@/utils/supabase/middleware";
 
-import type { NextRequest } from 'next/server'
-import {Database} from './schema'
-
-// export const config = {
-//   matcher: ['/dashboard/:path*'],
-// }
-
-const middleware = async (req: NextRequest) => {
-  const res = NextResponse.next()
-  const supabase = createMiddlewareSupabaseClient<Database>({ req, res })
-  const { data: { session } } = await supabase.auth.getSession()
-
-
-   const { data:admin, error } = await supabase.rpc("is_admin");
-
-
-
-  if (req.nextUrl.pathname.startsWith('/dashboard')) {
-    // This logic is only applied to /dashboard
-  if (admin !== true) {
-     const redirectUrl = req.nextUrl.clone()
-     redirectUrl.pathname = '/'
-     redirectUrl.searchParams.set(`redirectedFrom`, req.nextUrl.pathname)
-     return NextResponse.redirect(redirectUrl)
-    } else {
-
-    return res
-    }
-
-  }
-
-
-
-  return res
-
+export async function middleware(request: NextRequest) {
+	return await updateSession(request);
 }
 
-export default middleware
+export const config = {
+	matcher: [
+		/*
+		 * Match all request paths except for the ones starting with:
+		 * - _next/static (static files)
+		 * - _next/image (image optimization files)
+		 * - favicon.ico (favicon file)
+		 * Feel free to modify this pattern to include more paths.
+		 */
+		"/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+	],
+};
