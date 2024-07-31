@@ -16,22 +16,22 @@ const Home = async () => {
 
   return (
     <Fragment>
-      <div className="flex justify-center items-center space-x-6 py-4 bg-masifunde text-black">
-        <p className="text-sm lg:text-lg font-medium">
+      <div className="flex items-center justify-center py-4 space-x-6 text-black bg-masifunde">
+        <p className="text-sm font-medium lg:text-lg">
           See Changemakers In Action
         </p>
         <Link
           href="/in-action"
-          className="border-2 border-black rounded-full px-2 lg:px-12 py-2 lg:py-2 text-base font-bold"
+          className="px-2 py-2 text-base font-bold border-2 border-black rounded-full lg:px-12 lg:py-2"
         >
           Learn More
         </Link>
       </div>
-      {/* @ts-expect-error Server Component */}
+
       <Hero />
       <Mission content={homepageContent} />
       <Story content={homepageContent}>
-        {/* @ts-expect-error Server Component */}
+
         <Timeline />
       </Story>
     </Fragment>

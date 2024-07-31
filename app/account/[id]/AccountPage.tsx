@@ -1,10 +1,10 @@
 "use client"
 
 import { useSupabase } from "@/components/Auth/SupabaseProvider";
-import { Database } from "@/schema";
+import type { Database } from "@/schema";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
