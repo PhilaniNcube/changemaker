@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const AddOrganisation = () => {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
-  const {supabase} = useSupabase()
+  const supabase = createClient()
 
   async function createOrg(){
 setLoading(true)
@@ -20,6 +20,7 @@ const { data:organisation, error } = await supabase.from("organisations")
   if(error) {
     setLoading(false);
     throw new Error(error.message);
+  // biome-ignore lint/style/noUselessElse: <explanation>
   } else {
     toast("Please wait while you are being redirected", { type: "info" });
     setLoading(false)
@@ -30,15 +31,15 @@ const { data:organisation, error } = await supabase.from("organisations")
   }
 
   return (
-    <div className="w-full flex justify-between items-center mb-4">
+    <div className="flex items-center justify-between w-full mb-4">
       <ToastContainer position="top-right" autoClose={3500} />
       <h1 className="text-2xl font-medium text-slate-800">Organisations</h1>
       <button
         type="button"
         onClick={createOrg}
-        className="bg-masifunde hover:bg-orange-500 px-4 py-2 rounded-md text-white flex items-center space-x-3"
+        className="flex items-center px-4 py-2 space-x-3 text-white rounded-md bg-masifunde hover:bg-orange-500"
       >
-        <PlusIcon className="h-8 w-8" /> <span>Add</span>
+        <PlusIcon className="w-8 h-8" /> <span>Add</span>
       </button>
     </div>
   );
