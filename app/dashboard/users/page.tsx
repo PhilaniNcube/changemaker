@@ -13,11 +13,11 @@ const usersData = getProfiles()
   return (
     <div>
       <div className="flex items-center justify-between">
-      <h1 className="text-slate-700 font-bold text-2xl ">Users</h1>
-      <Link className="w-fit px-6 py-2 bg-masifunde text-white text-xl font-medium flex space-x-2 items-center" href="/dashboard/users/create"><PlusIcon className="h-6 w-6" />Create User</Link>
+      <h1 className="text-2xl font-bold text-slate-700 ">Users</h1>
+      <Link className="flex items-center px-6 py-2 space-x-2 text-xl font-medium text-white w-fit bg-masifunde" href="/dashboard/users/create"><PlusIcon className="w-6 h-6" />Create User</Link>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-        {/* @ts-expect-error Async Server Component */}
+
         <UsersTable promise={usersData} />
       </Suspense>
     </div>
