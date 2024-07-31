@@ -27,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { createClient } from "@/utils/supabase/client";
 
 
 type Props = {
@@ -51,15 +52,15 @@ type Profile = z.infer<typeof profileSchema>;
 const AccountPage = ({profile, organisations}:Props) => {
 
    const router = useRouter();
-   const { supabase } = useSupabase();
+  const supabase = createClient();
 
      const form = useForm<Profile>({
        resolver: zodResolver(profileSchema),
        defaultValues: {
          id: profile.id,
-         first_name: profile.first_name!,
-         last_name: profile.last_name!,
-         organisation_id: profile.organisation_id.id!,
+         first_name: profile.first_name,
+         last_name: profile.last_name,
+         organisation_id: profile.organisation_id.id,
        },
      });
 
@@ -71,9 +72,9 @@ const AccountPage = ({profile, organisations}:Props) => {
        resolver: zodResolver(profileSchema),
        defaultValues: {
          id: profile.id,
-         first_name: profile.first_name!,
-         last_name: profile.last_name!,
-         organisation_id: profile.organisation_id.id!,
+         first_name: profile.first_name,
+         last_name: profile.last_name,
+         organisation_id: profile.organisation_id.id,
        },
      });
 
@@ -96,6 +97,7 @@ const AccountPage = ({profile, organisations}:Props) => {
        if (error) {
          alert(error.message);
          return;
+       // biome-ignore lint/style/noUselessElse: <explanation>
        } else {
          toast("Profile updated", { type: "info" });
          router.refresh();
