@@ -1,5 +1,8 @@
 "use client"
 
+import { contactAction } from "@/actions/contact-action";
+import SubmitButton from "@/components/submit-button";
+
 
 function Contact() {
   return (
@@ -178,6 +181,7 @@ function Contact() {
 						<div className="h-full rounded-tr rounded-br xl:w-3/5 lg:w-3/5 xl:pr-5 xl:pl-0">
 							<form
 								id="contact"
+                action={contactAction}
 								className="px-8 py-4 bg-white rounded-tr rounded-br"
 							>
 								<h1 className="mb-6 text-4xl font-extrabold text-gray-800">
@@ -288,12 +292,11 @@ function Contact() {
 											defaultValue={""}
 										/>
 									</div>
-									<button
-										type="submit"
+									<SubmitButton
 										className="px-8 py-3 text-sm leading-6 text-white transition duration-150 ease-in-out rounded focus:outline-none bg-masifunde hover:bg-indigo-600"
 									>
 										Submit
-									</button>
+									</SubmitButton>
 								</div>
 							</form>
 						</div>

@@ -6,11 +6,11 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
 import { CldUploadButton } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import type { Folder } from "../page";
 import { Button } from "@/components/ui/button";
+import { createClient } from "@/utils/supabase/client";
 
 const mediaSchema = z.object({
 	organisation_id: z.string().uuid(),
@@ -73,7 +73,7 @@ const MediaForm = ({ organisations, folders }: Props) => {
 		resolver: zodResolver(mediaSchema),
 	});
 
-	const { supabase } = useSupabase();
+	const supabase = createClient()
 
 	const onSubmit: SubmitHandler<Media> = async (data) => {
 		if (image === null) {

@@ -1,6 +1,7 @@
 "use client"
 
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
+
+import { createClient } from "@/utils/supabase/client";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
@@ -8,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const DeleteButton = ({id}:{id:string}) => {
 
-   const { supabase } = useSupabase();
+   const  supabase  = createClient();
 
    const router = useRouter()
 const handleDelete = async () => {
@@ -33,11 +34,11 @@ const handleDelete = async () => {
   return (
     <button
       onClick={handleDelete}
-      className="bg-red-700 px-2 rounded-md ml-4 aspect-square"
+      className="px-2 ml-4 bg-red-700 rounded-md aspect-square"
       type="button"
     >
       <ToastContainer position="top-right" autoClose={4000} />
-      <TrashIcon className="text-white h-6 w-6" />
+      <TrashIcon className="w-6 h-6 text-white" />
     </button>
   );
 };

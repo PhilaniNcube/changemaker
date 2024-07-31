@@ -1,21 +1,22 @@
 "use client"
 import React, { useState } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+
 import { CldUploadButton } from "next-cloudinary";
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
+
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
+import { createClient } from "@/utils/supabase/client";
 
 
 const Upload = () => {
 
     const router =  useRouter()
 
-    const { supabase } = useSupabase();
+    const  supabase  = createClient();
     const [uploadResult, setUploadResult] = useState();
 
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
     async function handleOnUpload(result: any, widget: any) {
 
       setUploadResult(result.info);
@@ -40,6 +41,7 @@ const Upload = () => {
           });
           widget.close();
           return
+        // biome-ignore lint/style/noUselessElse: <explanation>
         } else if (data) {
           toast("Document succesfully uploaded", {
             type: "success",
@@ -78,7 +80,7 @@ const Upload = () => {
                 folder: "documents",
               }}
             >
-              <span className="bg-masifunde text-white px-4 py-2 font-medium rounded-md">
+              <span className="px-4 py-2 font-medium text-white rounded-md bg-masifunde">
                 Upload Document
               </span>
             </CldUploadButton>

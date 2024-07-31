@@ -1,16 +1,15 @@
 "use client"
 
-import { Database } from "@/schema";
+import type { Database } from "@/schema";
 import slugify from 'slugify'
-import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import {z} from 'zod'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { EnvelopeIcon, GlobeAltIcon, PhoneIcon } from "@heroicons/react/24/outline";
-import { useSupabase } from "../Auth/SupabaseProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
+import { createClient } from "@/utils/supabase/client";
 
 const organisationSchema = z.object({
   id: z.string().uuid(),
@@ -39,7 +38,7 @@ type Props = {
 
 const OrganisationForm = ({organisation, districts}:Props) => {
 
-  const {supabase} = useSupabase()
+  const supabase = createClient();
 
    const {
      register,
@@ -49,15 +48,15 @@ const OrganisationForm = ({organisation, districts}:Props) => {
      resolver: zodResolver(organisationSchema),
      defaultValues: {
       id: organisation.id,
-      name: organisation.name!,
-      description: organisation.description!,
-      email: organisation.email!,
-      tel: organisation.tel!,
-      facebook: organisation.facebook!,
-      website: organisation.website!,
-      district_id: organisation.district_id!,
-      twitter: organisation.twitter!,
-      other: organisation.other!
+      name: organisation.name,
+      description: organisation.description || "",
+      email: organisation.email || "",
+      tel: organisation.tel || "",
+      facebook: organisation.facebook || "",
+      website: organisation.website || "",
+      district_id: organisation.district_id || "",
+      twitter: organisation.twitter || "",
+      other: organisation.other || "",
      }
    });
 
@@ -98,6 +97,7 @@ const { data: org, error } = await supabase
     });
 
     return
+  // biome-ignore lint/style/noUselessElse: <explanation>
   } else if (org) {
     toast("Organisation succesfully updated", {
       type: "success",
@@ -113,7 +113,7 @@ const { data: org, error } = await supabase
   return (
     <form className="w-full px-6 mt-6" onSubmit={handleSubmit(onSubmit)}>
       <ToastContainer position="top-right" autoClose={2500} />
-      <div className="grid grid-cols-3 lg:grid-cols-4 gap-6 max-w-2xl">
+      <div className="grid max-w-2xl grid-cols-3 gap-6 lg:grid-cols-4">
         <div className="sr-only">
           <label
             htmlFor="id"
@@ -121,7 +121,7 @@ const { data: org, error } = await supabase
           >
             Organisation ID
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
+          <div className="flex mt-2 rounded-md shadow-sm">
             <input
               type="text"
               id="id"
@@ -137,7 +137,7 @@ const { data: org, error } = await supabase
           >
             Organisation Name
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
+          <div className="flex mt-2 rounded-md shadow-sm">
             <input
               type="text"
               id="name"
@@ -146,7 +146,7 @@ const { data: org, error } = await supabase
             />
           </div>
           {errors.name && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.name?.message}
             </p>
           )}
@@ -158,9 +158,9 @@ const { data: org, error } = await supabase
           >
             Email
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              <EnvelopeIcon className="h-4 w-4 text-gray-500" />
+          <div className="flex mt-2 rounded-md shadow-sm">
+            <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+              <EnvelopeIcon className="w-4 h-4 text-gray-500" />
             </span>
             <input
               type="email"
@@ -170,7 +170,7 @@ const { data: org, error } = await supabase
             />
           </div>
           {errors.email && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.email?.message}
             </p>
           )}
@@ -182,9 +182,9 @@ const { data: org, error } = await supabase
           >
             Telephone Number
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              <PhoneIcon className="h-4 w-4 text-gray-500" />
+          <div className="flex mt-2 rounded-md shadow-sm">
+            <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+              <PhoneIcon className="w-4 h-4 text-gray-500" />
             </span>
             <input
               type="tel"
@@ -194,7 +194,7 @@ const { data: org, error } = await supabase
             />
           </div>
           {errors.tel && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.tel?.message}
             </p>
           )}
@@ -206,9 +206,9 @@ const { data: org, error } = await supabase
           >
             Website
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              <GlobeAltIcon className="h-4 w-4 text-gray-500" />
+          <div className="flex mt-2 rounded-md shadow-sm">
+            <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+              <GlobeAltIcon className="w-4 h-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -218,7 +218,7 @@ const { data: org, error } = await supabase
             />
           </div>
           {errors.website && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.website?.message}
             </p>
           )}
@@ -230,9 +230,9 @@ const { data: org, error } = await supabase
           >
             Facebook
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              <FaFacebook className="h-4 w-4 text-gray-500" />
+          <div className="flex mt-2 rounded-md shadow-sm">
+            <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+              <FaFacebook className="w-4 h-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -242,7 +242,7 @@ const { data: org, error } = await supabase
             />
           </div>{" "}
           {errors.facebook && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.facebook?.message}
             </p>
           )}
@@ -254,9 +254,9 @@ const { data: org, error } = await supabase
           >
             Twitter
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              <FaTwitter className="h-4 w-4 text-gray-500" />
+          <div className="flex mt-2 rounded-md shadow-sm">
+            <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+              <FaTwitter className="w-4 h-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -266,7 +266,7 @@ const { data: org, error } = await supabase
             />
           </div>{" "}
           {errors.twitter && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.twitter?.message}
             </p>
           )}
@@ -278,9 +278,9 @@ const { data: org, error } = await supabase
           >
             Other Social Media
           </label>
-          <div className="mt-2 flex rounded-md shadow-sm">
-            <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-              <GlobeAltIcon className="h-4 w-4 text-gray-500" />
+          <div className="flex mt-2 rounded-md shadow-sm">
+            <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+              <GlobeAltIcon className="w-4 h-4 text-gray-500" />
             </span>
             <input
               type="text"
@@ -290,7 +290,7 @@ const { data: org, error } = await supabase
             />
           </div>{" "}
           {errors.other && (
-            <p className="text-xs italic text-red-500 mt-2">
+            <p className="mt-2 text-xs italic text-red-500">
               {errors.other?.message}
             </p>
           )}
@@ -315,17 +315,17 @@ const { data: org, error } = await supabase
           Brief description for the organisation.
         </p>
         {errors.description && (
-          <p className="text-xs italic text-red-500 mt-2">
+          <p className="mt-2 text-xs italic text-red-500">
             {errors.description?.message}
           </p>
         )}
       </div>
       <fieldset className="mt-6">
-        <legend className="contents text-md font-medium leading-6 text-gray-700">
+        <legend className="font-medium leading-6 text-gray-700 contents text-md">
           Select district/municipality
         </legend>
 
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3">
           {districts.map((district) => (
             <div key={district.id} className="flex items-center">
               <input
@@ -333,11 +333,11 @@ const { data: org, error } = await supabase
                 {...register("district_id")}
                 value={district.id}
                 type="radio"
-                className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
+                className="w-4 h-4 border-gray-300 text-masifunde focus:ring-masifunde"
               />
               <label
                 htmlFor="district_id"
-                className="ml-3 block text-sm font-medium leading-6 text-gray-900"
+                className="block ml-3 text-sm font-medium leading-6 text-gray-900"
               >
                 {district.name}
               </label>
@@ -346,10 +346,10 @@ const { data: org, error } = await supabase
         </div>
       </fieldset>
 
-      <div className="bg-gray-100 px-4 py-3 text-right sm:px-6 mt-6">
+      <div className="px-4 py-3 mt-6 text-right bg-gray-100 sm:px-6">
         <button
           type="submit"
-          className="inline-flex justify-center rounded-md bg-masifunde py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
+          className="inline-flex justify-center px-3 py-2 text-sm font-semibold text-white rounded-md shadow-sm bg-masifunde hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
         >
           Save
         </button>

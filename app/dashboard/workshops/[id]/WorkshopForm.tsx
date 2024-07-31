@@ -1,15 +1,15 @@
 "use client"
 
-import { Database } from "@/schema";
+import type { Database } from "@/schema";
 import slugify from "slugify";
 import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CalendarDaysIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
+import { createClient } from "@/utils/supabase/client";
 import { CldUploadButton } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 
@@ -48,16 +48,16 @@ const WorkshopForm = ({workshop, organisations}:Props) => {
        resolver: zodResolver(workshopSchema),
        defaultValues: {
          id: workshop.id,
-         name: workshop.name!,
-         description: workshop.description!,
-         slug: workshop.slug!,
-         date: workshop.date!,
-         time: workshop.time!,
-         organisation_id: workshop.organisation_id.id!,
+         name: workshop.name || '',
+         description: workshop.description || '',
+         slug: workshop.slug || '',
+         date: workshop.date || '',
+         time: workshop.time || '',
+         organisation_id: workshop.organisation_id.id || '',
        },
      });
 
-  const { supabase } = useSupabase();
+  const supabase = createClient();
 
   const [imageUrl, setImageUrl] = useState('')
 
@@ -95,6 +95,7 @@ const { data: workshop, error } = await supabase
   if(error) {
     toast.error(error.message);
     return
+  // biome-ignore lint/style/noUselessElse: <explanation>
   } else if(workshop) {
     toast.success('Workshop details updated successfully')
     router.refresh();
@@ -103,6 +104,7 @@ const { data: workshop, error } = await supabase
    };
 
 
+     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
      async function handleOnUpload(result: any, widget: any) {
 
        if (result.event === "success") {
@@ -112,6 +114,7 @@ const { data: workshop, error } = await supabase
          });
          widget.close();
          return;
+       // biome-ignore lint/style/noUselessElse: <explanation>
        } else if (result.event !== "success") {
          toast("Image upload failed", {
            type: "error",
@@ -121,7 +124,7 @@ const { data: workshop, error } = await supabase
      }
 
   return (
-    <div className="px-6 pt-10 mt-6 max-w-2xl rounded-md bg-slate-100 shadow-md">
+    <div className="max-w-2xl px-6 pt-10 mt-6 rounded-md shadow-md bg-slate-100">
       {" "}
       <ToastContainer position="top-right" autoClose={2500} />
       <form className="w-full " onSubmit={handleSubmit(onSubmit)}>
@@ -133,7 +136,7 @@ const { data: workshop, error } = await supabase
             >
               Workshop ID
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
+            <div className="flex mt-2 rounded-md shadow-sm">
               <input
                 type="text"
                 id="id"
@@ -149,7 +152,7 @@ const { data: workshop, error } = await supabase
             >
               Workshop Name
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
+            <div className="flex mt-2 rounded-md shadow-sm">
               <input
                 type="text"
                 id="name"
@@ -158,7 +161,7 @@ const { data: workshop, error } = await supabase
               />
             </div>
             {errors.name && (
-              <p className="text-xs italic text-red-500 mt-2">
+              <p className="mt-2 text-xs italic text-red-500">
                 {errors.name?.message}
               </p>
             )}
@@ -171,7 +174,7 @@ const { data: workshop, error } = await supabase
             >
               Workshop Description
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
+            <div className="flex mt-2 rounded-md shadow-sm">
               <textarea
                 id="description"
                 rows={4}
@@ -180,7 +183,7 @@ const { data: workshop, error } = await supabase
               />
             </div>
             {errors.description && (
-              <p className="text-xs italic text-red-500 mt-2">
+              <p className="mt-2 text-xs italic text-red-500">
                 {errors.description?.message}
               </p>
             )}
@@ -193,9 +196,9 @@ const { data: workshop, error } = await supabase
             >
               Date
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
-              <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-                <CalendarDaysIcon className="h-4 w-4 text-gray-500" />
+            <div className="flex mt-2 rounded-md shadow-sm">
+              <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+                <CalendarDaysIcon className="w-4 h-4 text-gray-500" />
               </span>
               <input
                 type="date"
@@ -205,7 +208,7 @@ const { data: workshop, error } = await supabase
               />
             </div>
             {errors.date && (
-              <p className="text-xs italic text-red-500 mt-2">
+              <p className="mt-2 text-xs italic text-red-500">
                 {errors.date?.message}
               </p>
             )}
@@ -218,9 +221,9 @@ const { data: workshop, error } = await supabase
             >
               Time
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
-              <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 px-3 text-gray-500 sm:text-sm">
-                <CalendarDaysIcon className="h-4 w-4 text-gray-500" />
+            <div className="flex mt-2 rounded-md shadow-sm">
+              <span className="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+                <CalendarDaysIcon className="w-4 h-4 text-gray-500" />
               </span>
               <input
                 type="time"
@@ -230,7 +233,7 @@ const { data: workshop, error } = await supabase
               />
             </div>
             {errors.time && (
-              <p className="text-xs italic text-red-500 mt-2">
+              <p className="mt-2 text-xs italic text-red-500">
                 {errors.time?.message}
               </p>
             )}
@@ -240,9 +243,9 @@ const { data: workshop, error } = await supabase
             <p className="block text-sm font-medium leading-6 text-gray-900">
               Upload Image
             </p>
-            <div className="mt-2 flex rounded-md shadow-sm">
+            <div className="flex mt-2 rounded-md shadow-sm">
               <div
-                className="bg-masifunde text-white text-lg font-medium w-fit px-6 py-2 rounded-md"
+                className="px-6 py-2 text-lg font-medium text-white rounded-md bg-masifunde w-fit"
               >
                 <CldUploadButton
                   onUpload={handleOnUpload}
@@ -253,11 +256,11 @@ const { data: workshop, error } = await supabase
           </div>
         </div>
         <fieldset className="mt-6">
-          <legend className="contents text-md font-medium leading-6 text-gray-700">
+          <legend className="font-medium leading-6 text-gray-700 contents text-md">
             Select Organisation
           </legend>
 
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3">
             {organisations.map((organisation) => (
               <div key={organisation.id} className="flex items-center">
                 <input
@@ -265,11 +268,11 @@ const { data: workshop, error } = await supabase
                   {...register("organisation_id")}
                   value={organisation.id}
                   type="radio"
-                  className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
+                  className="w-4 h-4 border-gray-300 text-masifunde focus:ring-masifunde"
                 />
                 <label
                   htmlFor="organisation_id"
-                  className="ml-3 block text-sm font-medium leading-6 text-gray-900"
+                  className="block ml-3 text-sm font-medium leading-6 text-gray-900"
                 >
                   {organisation.name}
                 </label>
@@ -277,10 +280,10 @@ const { data: workshop, error } = await supabase
             ))}
           </div>
         </fieldset>
-        <div className="bg-gray-100 px-4 py-3 text-right sm:px-6 mt-6">
+        <div className="px-4 py-3 mt-6 text-right bg-gray-100 sm:px-6">
           <button
             type="submit"
-            className="inline-flex justify-center rounded-md bg-masifunde py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
+            className="inline-flex justify-center px-3 py-2 text-sm font-semibold text-white rounded-md shadow-sm bg-masifunde hover:bg-masifunde focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-masifunde"
           >
             Save
           </button>

@@ -1,11 +1,11 @@
 "use client"
 
-import { Database } from '@/schema';
+import type { Database } from '@/schema';
 import {CldUploadButton} from 'next-cloudinary'
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
-import { useSupabase } from '../Auth/SupabaseProvider';
 import "react-toastify/dist/ReactToastify.css";
+import { createClient } from '@/utils/supabase/client';
 
 type Props = {
   organisation: Database['public']['Tables']['organisations']['Row']
@@ -15,10 +15,11 @@ type Props = {
 
 const DocumentsUpload = ({organisation}: Props) => {
 
-  const {supabase} = useSupabase();
+  const supabase = createClient()
 
   const [uploadResult, setUploadResult] = useState()
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 async function handleOnUpload(result:any, widget:any) {
 
   setUploadResult(result.info)
@@ -53,7 +54,7 @@ return
 
   return (
     <div className="w-full">
-      <div className="bg-masifunde w-fit rounded-md text-white px-4 py-1">
+      <div className="px-4 py-1 text-white rounded-md bg-masifunde w-fit">
         <ToastContainer position="top-right" autoClose={4000} />
         <CldUploadButton onUpload={handleOnUpload} uploadPreset="kfo3j4ot" options={{
           folder: "Documents"

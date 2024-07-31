@@ -1,10 +1,10 @@
 "use client"
 
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
-import { Database } from "@/schema";
+import { createClient } from "@/utils/supabase/client";
+import type { Database } from "@/schema";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ToastContainer, toast } from "react-toastify";
@@ -32,7 +32,7 @@ type Profile = z.infer<typeof profileSchema>;
 const ProfileDetails = ({profile, organisations}: Props) => {
 
     const router = useRouter();
-    const { supabase } = useSupabase();
+    const supabase = createClient()
 
      const {
        register,
@@ -42,10 +42,10 @@ const ProfileDetails = ({profile, organisations}: Props) => {
        resolver: zodResolver(profileSchema),
        defaultValues: {
          id: profile.id,
-         first_name: profile.first_name!,
-         last_name: profile.last_name!,
-         email: profile.email!,
-         organisation_id: profile.organisation_id.id!,
+         first_name: profile.first_name,
+         last_name: profile.last_name,
+         email: profile.email,
+         organisation_id: profile.organisation_id.id,
        },
      });
 
@@ -68,6 +68,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
   if (error) {
     alert(error.message);
     return;
+  // biome-ignore lint/style/noUselessElse: <explanation>
   } else {
     toast("Profile updated", { type: "info" });
     router.refresh();
@@ -80,7 +81,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
       <h1 className="text-3xl font-bold text-slate-700">Profile Details</h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-16 max-w-xl sm:mt-20"
+        className="max-w-xl mt-16 sm:mt-20"
       >
         <div className="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
           <div className="sr-only">
@@ -90,7 +91,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
             >
              Profile ID
             </label>
-            <div className="mt-2 flex rounded-md shadow-sm">
+            <div className="flex mt-2 rounded-md shadow-sm">
               <input
                 type="text"
                 id="id"
@@ -153,11 +154,11 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
         </div>
 
         <fieldset className="mt-6">
-          <legend className="contents text-md font-medium leading-6 text-gray-700">
+          <legend className="font-medium leading-6 text-gray-700 contents text-md">
             Select Organisation
           </legend>
 
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3">
             {organisations.map((organisation) => (
               <div key={organisation.id} className="flex items-center">
                 <input
@@ -165,11 +166,11 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
                   {...register("organisation_id")}
                   value={organisation.id}
                   type="radio"
-                  className="h-4 w-4 border-gray-300 text-masifunde focus:ring-masifunde"
+                  className="w-4 h-4 border-gray-300 text-masifunde focus:ring-masifunde"
                 />
                 <label
                   htmlFor="organisation_id"
-                  className="ml-3 block text-sm font-medium leading-6 text-gray-900"
+                  className="block ml-3 text-sm font-medium leading-6 text-gray-900"
                 >
                   {organisation.name}
                 </label>

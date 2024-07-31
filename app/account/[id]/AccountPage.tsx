@@ -1,6 +1,6 @@
 "use client"
 
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
+
 import type { Database } from "@/schema";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";

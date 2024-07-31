@@ -1,6 +1,6 @@
 "use client";
 
-import { useSupabase } from "@/components/Auth/SupabaseProvider";
+import { createClient } from "@/utils/supabase/client";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import slugify from "slugify";
 const AddWorkshop = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const { supabase } = useSupabase();
+  const supabase = createClient()
 
   async function createWorkshop() {
     setLoading(true);
@@ -26,6 +26,7 @@ const AddWorkshop = () => {
     if (error) {
       setLoading(false);
       throw new Error(error.message);
+    // biome-ignore lint/style/noUselessElse: <explanation>
     } else {
       alert("Organisation created successfully");
 
@@ -35,14 +36,14 @@ const AddWorkshop = () => {
   }
 
   return (
-    <div className="w-full flex justify-between items-center mb-4">
+    <div className="flex items-center justify-between w-full mb-4">
       <h1 className="text-2xl font-medium text-slate-800">Workshops</h1>
       <button
         type="button"
         onClick={createWorkshop}
-        className="bg-masifunde hover:bg-orange-500 px-4 py-2 rounded-md text-white flex items-center space-x-3"
+        className="flex items-center px-4 py-2 space-x-3 text-white rounded-md bg-masifunde hover:bg-orange-500"
       >
-        <PlusIcon className="h-8 w-8" /> <span>Add</span>
+        <PlusIcon className="w-8 h-8" /> <span>Add</span>
       </button>
     </div>
   );

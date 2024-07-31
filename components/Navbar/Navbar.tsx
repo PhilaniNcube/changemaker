@@ -2,7 +2,7 @@
 "use client"
 
 import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import { Dialog, Disclosure } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -14,12 +14,12 @@ import {
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import  { type User, useUser } from "@supabase/auth-helpers-react";
-import { useSupabase } from "../Auth/SupabaseProvider";
 import { useRouter } from "next/navigation";
 import AccountMenu from "./AccountMenu";
 import { DesktopNavigation } from "./DesktopNavigation";
 import Image from "next/image";
 import MainMenu from "./MainMenu";
+import { createClient } from "@/utils/supabase/client";
 
 
 
@@ -72,7 +72,7 @@ const Navbar = ({user, admin}:Props) => {
 
   const router = useRouter()
 
-  const {supabase} = useSupabase()
+  const supabase = createClient();
 
 
 
