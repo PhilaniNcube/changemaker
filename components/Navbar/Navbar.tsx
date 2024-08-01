@@ -20,6 +20,7 @@ import { DesktopNavigation } from "./DesktopNavigation";
 import Image from "next/image";
 import MainMenu from "./MainMenu";
 import { createClient } from "@/utils/supabase/client";
+import { signOutAction } from "@/actions/sign-out";
 
 
 
@@ -263,6 +264,7 @@ const Navbar = ({user, admin}:Props) => {
                       Gallery
                     </Link>
                     <button
+                      formAction={signOutAction}
                       type="button"
                       className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-red-500 hover:bg-gray-50"
                     >

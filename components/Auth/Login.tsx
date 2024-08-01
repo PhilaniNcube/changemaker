@@ -8,8 +8,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { loginAction } from "@/actions/login";
 import SubmitButton from "../submit-button";
+import { useFormState } from "react-dom";
 
 const Login = () => {
+
+  const [state, formAction] = useFormState(loginAction, null);
 
 
   const router = useRouter()
@@ -19,7 +22,7 @@ const Login = () => {
       <ToastContainer position="top-right" autoClose={2500} />
       <div className="flex flex-col justify-center h-full mx-auto lg:flex-row">
         <form
-          action={loginAction}
+          action={formAction}
           className="flex justify-center w-full bg-gray-100 lg:w-1/2 dark:bg-gray-900"
         >
           <div className="w-full px-2 mb-12 text-gray-800 sm:w-4/6 md:w-4/6 xl:w-2/3 dark:text-gray-100 sm:mb-0 sm:px-0">

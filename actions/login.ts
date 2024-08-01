@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 import { z } from "zod";
 
 const loginSchema = z.object({
@@ -8,7 +9,7 @@ const loginSchema = z.object({
   password: z.string()
 })
 
-export const loginAction = async (formData:FormData) => {
+export const loginAction = async (prev:unknown, formData:FormData) => {
 
   const supabase = createClient();
 
@@ -18,19 +19,31 @@ export const loginAction = async (formData:FormData) => {
   });
 
   if(!validatedFields.success) {
-    throw new Error('Invalid Fields');
+    return {
+      status: 400,
+      error: {
+        message: 'Invalid fields',
+        data: validatedFields.error.flatten().fieldErrors
+    }
   }
+}
 
   const {data, error} = await supabase.auth.signInWithPassword({
     email: validatedFields.data.email,
     password: validatedFields.data.password
   });
 
-  if(error) {
-    throw new Error(error.message);
-  }
+  if (error) {
+			return {
+				status: 500,
+				error: {
+					message: error.message,
+					data: error.cause,
+				},
+			};
+		}
 
-  return data;
+redirect("/dashboard");
 
 
 }
