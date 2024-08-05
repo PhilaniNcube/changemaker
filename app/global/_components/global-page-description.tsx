@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ArrowBigRight } from "lucide-react";
 import type { Page } from "@/app/studio/sanity.types";
 import GlobalCarousel from "./global-carousel";
-import { getGlobalPageContent, getGlobalSlider } from "@/sanity/lib/client";
+import { getGlobalPageContent, getGlobalPageList, getGlobalSlider } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 
 export type SliderType = {
@@ -26,10 +26,20 @@ type ListBoxContent = {
   description: string;
 }
 
+type GlobalList = {
+  _id: string;
+  list_title: string;
+  list_subtitle: string;
+  list_items: string[];
+}
+
 const GlobalPageDescription = async () => {
 
   const slider: SliderType = await getGlobalSlider();
    const content = await getGlobalPageContent();
+
+     const list: GlobalList = await getGlobalPageList();
+
 
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -97,73 +107,26 @@ const transformedListBox = content?.listBox?.map((item: any) => ({
 							/>
 							<h3 className="mt-4 text-xl font-bold text-slate-950">
 								<span className="text-4xl font-extrabold">Goals</span>
-								<br /> of the Glocal Changemaker Network
+								<br /> of the Global Changemaker Network
+
 							</h3>
 						</div>
 						<div className="w-full ">
 							<ul className="pl-10 my-3">
-								<li className="flex justify-end gap-2 my-2">
-									<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-									<span className="max-w-xl">
-										Provide representatives of local NGOs with knowledge, skills
-										and methods to share the 2030 Agenda with young people in
-										their local projects, and train them to be Changemakers.
-									</span>
-								</li>
-								<li className="flex justify-end gap-2 my-2">
-									<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-									<span className="max-w-xl">
-										Provide an opportunity for the participants, both NGO
-										representatives and young Changemakers, to get to develop
-										new southern and northern perspectives. Therefore,
-										incorporating these perspectives within their project ideas.
-									</span>
-								</li>
-								<li className="flex justify-end gap-2 my-2">
-									<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-									<span className="max-w-xl">
-										Provide grounds for the international replicability of the
-										Changemaker network, which has been successfully tested and
-										implemented in South Africa.
-									</span>
-								</li>
-								<li className="flex justify-end gap-2 my-2">
-									<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-									<span className="max-w-xl">
-										Raising the voice of the youth, especially those in
-										marginalized groups and sectors of society.
-									</span>
-								</li>
-								<li className="flex justify-end gap-2 my-2">
-									<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-									<span className="max-w-xl">
-										Promoting youth engagement, by involving young people as
-										Changemakers and activating them in their own local
-										communities.
-									</span>
-								</li>
-								<li className="flex justify-end gap-2 my-2">
-									<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-									<span className="max-w-xl">
-										Sustainability of the project, by documenting the work done,
-										and sharing the best practices discovered throughout the
-										process. Thus, participants know how to best replicate such
-										initiatives, within their own contexts.
-									</span>
-								</li>
+								{list.list_items.map((item) => (
+									<li key={item} className="flex justify-end gap-2 my-2">
+										<ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
+										<span className="max-w-xl">
+											{item}
+										</span>
+									</li>
+								))}
 							</ul>
 						</div>
 					</div>
 					<div className="w-[150px] h-4 bg-masifunde mb-3" />
 					<p>
-						In Conclusion, this project contributes to the strengthening of
-						international youth work, by providing young people with an
-						opportunity of actively participating in social change, while
-						gaining intercultural understanding and creating significant
-						awareness on global challenges. This initiative not only
-						significantly impacts the individual, but also contributes in the
-						development of the global network of committed and excited young
-						people, working towards a better world.
+					{list.list_subtitle}
 					</p>
 				</div>
 			</section>

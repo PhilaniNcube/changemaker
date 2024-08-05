@@ -340,3 +340,15 @@ export async function getPageLists(){
 		);
   return pageList
 }
+
+export async function getGlobalPageList(){
+  const pageList = await client.fetch(
+			`*[_type == "page_list_group" && _id == "23a1b830-d739-49af-ba33-95551bb06df5"][0]{
+      _id,
+      list_title,
+      list_subtitle,
+      list_items[],
+      }`,
+		);
+  return pageList
+}
