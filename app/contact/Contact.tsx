@@ -68,7 +68,7 @@ function Contact() {
 										</svg>
 									</div>
 									<p className="pl-4 text-base text-white">
-										Andisiwe@masifunde.org
+										chuma@masifunde.org
 									</p>
 								</div>
 								<h2 className="mt-8 text-lg font-medium text-white">

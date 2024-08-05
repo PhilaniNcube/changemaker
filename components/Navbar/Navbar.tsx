@@ -25,30 +25,31 @@ import { signOutAction } from "@/actions/sign-out";
 
 
 const about = [
-  {
-    name: "NISSP",
-    description: "National Inclusive and Safer Schools Partnership",
-    href: "/about/nissp",
-
-  },
-  {
-    name: "Team",
-    description: "Get to know our team",
-    href: "/about/team",
-
-  },
-  {
-    name: "TUI Junior Academy SA",
-    description: "Practical knowledge on relevant social topics",
-    href: "/about/junior-academy",
-
-  },
-  {
-    name: "CSO Partners",
-    description: "Take a look at our partners across the country",
-    href: "/about/partners",
-
-  },
+	{
+		name: "NISSP",
+		description: "National Inclusive and Safer Schools Partnership",
+		href: "/about/nissp",
+	},
+	{
+		name: "Team",
+		description: "Get to know our team",
+		href: "/about/team",
+	},
+	{
+		name: "TUI Junior Academy SA",
+		description: "Changemakers for Environmental Awareness",
+		href: "/about/junior-academy",
+	},
+	{
+		name: "Spark Change Luncheon",
+		description: "Be inspired by the knowledge shared by a panel",
+		href: "/partner-area/spark-luncheon",
+	},
+	{
+		name: "CSO Partners",
+		description: "Take a look at our partners across the country",
+		href: "/about/partners",
+	},
 ];
 const callsToAction = [
   {

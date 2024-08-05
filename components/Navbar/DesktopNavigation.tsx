@@ -52,6 +52,12 @@ export function DesktopNavigation() {
 									Changemakers for School Safety
 								</ListItem>
 								<ListItem
+									href="/partner-area/spark-luncheon"
+									title="Spark Change Luncheon"
+								>
+									Be inspired by the knowledge shared by a panel
+								</ListItem>
+								<ListItem
 									href="/about/junior-academy"
 									title="TUI Junior Academy SA"
 								>
@@ -110,12 +116,6 @@ export function DesktopNavigation() {
 									title="Becom an Implementation Partner"
 								>
 									Becom an Implementation Partner
-								</ListItem>
-								<ListItem
-									href="/partner-area/spark-luncheon"
-									title="Spark Change Luncheon"
-								>
-									Be inspired by the knowledge shared by a panel
 								</ListItem>
 							</ul>
 						</NavigationMenuContent>
