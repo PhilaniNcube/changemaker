@@ -55,7 +55,7 @@ export function DesktopNavigation() {
 									href="/about/junior-academy"
 									title="TUI Junior Academy SA"
 								>
-									Practical knowledge on relevant social topics,
+									Changemakers for Environmental Awareness
 								</ListItem>
 								<div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 bg-slate-200">
 									<Link
