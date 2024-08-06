@@ -2,56 +2,20 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-
-import { type FormEvent, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/utils/supabase/client";
+import { updateUserAction } from "@/actions/login";
+import { useFormState } from "react-dom";
 
 const ResetPassword = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const router = useRouter()
-
-  const supabase = createClient()
-
-  const form = useRef(null);
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
 
 
-
-    if (typeof email !== "string" || typeof password !== "string") {
-      throw new Error("Please provide valid details");
-    }
-
- const { data, error } = await supabase.auth.updateUser({
-   email,
-   password,
- });
-
-    if (error) {
-      alert(error.message);
-
-    }
+  const [state, formAction] = useFormState(updateUserAction, null);
 
 
-    if(data) {
-
-      alert('Your password has been reset successfully')
-      router.push('/dashboard/profile')
-    }
-
-
-    // Place your API call here to submit your payload.
-  };
   return (
     <section className="bg-white {-- h-screen --}">
       <div className="flex flex-col justify-center h-full mx-auto lg:flex-row">
         <form
-          onSubmit={handleSubmit}
-          ref={form}
+          action={formAction}
           className="flex justify-center w-full bg-gray-100 lg:w-1/2 dark:bg-gray-900"
         >
           <div className="w-full px-2 mb-12 text-gray-800 sm:w-4/6 md:w-4/6 xl:w-2/3 dark:text-gray-100 sm:mb-0 sm:px-0">
@@ -81,8 +45,7 @@ const ResetPassword = () => {
                   required
                   id="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+
                   className="w-full h-10 px-2 mt-2 text-gray-600 border border-gray-300 rounded shadow focus:outline-none focus:border focus:border-masifunde dark:focus:border-masifunde dark:border-gray-700"
                   type="email"
                 />
@@ -98,8 +61,7 @@ const ResetPassword = () => {
                   required
                   id="password"
                   name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+
                   className="w-full h-10 px-2 mt-2 text-gray-600 border border-gray-300 rounded shadow focus:outline-none focus:border focus:border-masifunde dark:focus:border-masifunde dark:border-gray-700"
                   type="password"
                 />
