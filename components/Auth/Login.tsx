@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { loginAction } from "@/actions/login";
 import SubmitButton from "../submit-button";
 import { useFormState } from "react-dom";
+import { cn } from "@/lib/utils";
 
 const Login = () => {
 
@@ -26,6 +27,11 @@ const Login = () => {
           className="flex justify-center w-full bg-gray-100 lg:w-1/2 dark:bg-gray-900"
         >
           <div className="w-full px-2 mb-12 text-gray-800 sm:w-4/6 md:w-4/6 xl:w-2/3 dark:text-gray-100 sm:mb-0 sm:px-0">
+          <p className={cn("text-xs",
+            state?.status === 400 && "text-red-500",
+            state?.status === 500 && "text-red-500",
+            state?.status === 200 && "text-green-500"
+          )}>{state?.error.message}</p>
             <div className="flex flex-col items-center justify-center px-2 mt-8 sm:py-8 sm:mt-0">
               <Image
                 className="w-auto h-16"
