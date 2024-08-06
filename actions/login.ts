@@ -47,3 +47,37 @@ redirect("/dashboard");
 
 
 }
+
+
+export async function forgotPasswordAction(prevState:unknown, formData:FormData) {
+  const supabase  = createClient();
+
+  const email = formData.get('email') as string;
+
+  if(typeof email !== 'string' || !email) {
+    return {
+      status: 400,
+      error: {
+        message: 'Invalid email'
+      }
+    }
+  }
+
+  const {data, error} = await supabase.auth.resetPasswordForEmail(email);
+
+  if(error) {
+    return {
+      status: 500,
+      error: {
+        message: error.message,
+        data: error.cause
+      }
+    }
+  }
+
+  return {
+			status: 200,
+			message: "We sent a password reset link to your email address.",
+		};
+
+}
