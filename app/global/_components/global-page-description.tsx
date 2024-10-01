@@ -40,6 +40,8 @@ const GlobalPageDescription = async () => {
 
      const list: GlobalList = await getGlobalPageList();
 
+     console.log(slider)
+
 
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>

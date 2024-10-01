@@ -314,15 +314,16 @@ export async function getGlobalPageContent():Promise<Page>{
 
 export async function getGlobalSlider(){
 	const content = await client.fetch(
-		`*[_type == "pageSlider" && description == "Understanding the global changemaker network"]{
+    `*[_type == "pageSlider" && _id == "46c53a91-c222-4d3f-86df-8ab4c7a4b721"]{
+    _id,
       page->{
         title,
         slug
       },
       images,
       description
-    }[0]`,
-	);
+    }[0]`
+  );
 
 	return content;
 }
