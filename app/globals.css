@@ -108,3 +108,7 @@
 #content p > strong {
   @apply text-masifunde;
 }
+
+#description a {
+  @apply underline text-blue-500;
+}

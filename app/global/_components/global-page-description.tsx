@@ -61,7 +61,7 @@ const transformedListBox = content?.listBox?.map((item: any) => ({
 							<h2 className="text-2xl font-bold capitalize">
 								{slider.description}
 							</h2>
-							<div className="mt-3 text-base leading-7 text-justify text-slate-700">
+							<div className="mt-3 text-base leading-7 text-justify text-slate-700" id="description">
 								{content.content && <PortableText value={content?.content} />}
 							</div>
 						</div>
