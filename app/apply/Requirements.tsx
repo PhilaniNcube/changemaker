@@ -1,40 +1,43 @@
 const Requirements = () => {
   return (
-    <section className="bg-white py-10">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20">
+    <section className="py-10 bg-white">
+      <div className="px-8 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-20">
           <div className="w-full">
-            <p className="text-slate-700 text-justify text-base leading-7">
-              To support the roll-out of the Changemaker Network in the four
-              provinces, we are looking for 20 civil society organizations (five
-              per province) to become local partners in implementing the
-              Changemaker network in five high schools.
+            <p className="text-base leading-7 text-justify text-slate-700">
+              We have selected implementation partners in 40 Districts, in all
+              nine provinces and currently do not select additional
+              organisations.
+            </p>
+            <p className="text-base leading-7 text-justify text-slate-700">
+              You may nevertheless submit your application to have you on the
+              waiting list should we start to search new implementation partners
             </p>
           </div>
-          <div className="w-full">
-            <h3 className="text-md md:text-lg font-bold  mb-3">
+          {/* <div className="w-full">
+            <h3 className="mb-3 font-bold text-md md:text-lg">
               Please note: Applications only from the following provinces and
               districts permitted:
             </h3>
-            <ul className="list-disc pl-6 text-sm md:text-base leading-7">
-              <li className="text-slate-700 leading-7">
+            <ul className="pl-6 text-sm leading-7 list-disc md:text-base">
+              <li className="leading-7 text-slate-700">
                 Eastern Cape - Alfred Nzo
               </li>
-              <li className="text-slate-700 leading-7">
+              <li className="leading-7 text-slate-700">
                 Limpopo - Sekhukhune East, Waterberg
               </li>
-              <li className="text-slate-700 leading-7">
+              <li className="leading-7 text-slate-700">
                 KwaZulu-Natal - Amajuba, Harry Gwala, Ugu, Umlazi, Umzinyathi
               </li>
-              <li className="text-slate-700 leading-7">
+              <li className="leading-7 text-slate-700">
                 North West - Dr Kenneth Kaunda, Ngaka Modiri Molema
               </li>
             </ul>{" "}
-            <h3 className="text-md md:text-lg font-bold  mb-3">
+            <h3 className="mb-3 font-bold text-md md:text-lg">
               We are not accepting applications from Nelson Mandela Bay, as
               masifunde has implemented this program within this district.
             </h3>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

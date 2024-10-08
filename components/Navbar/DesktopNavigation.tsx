@@ -115,7 +115,7 @@ export function DesktopNavigation() {
 									href="/partner-area/implementation-partner"
 									title="Becom an Implementation Partner"
 								>
-									Becom an Implementation Partner
+									Become an Implementation Partner
 								</ListItem>
 							</ul>
 						</NavigationMenuContent>

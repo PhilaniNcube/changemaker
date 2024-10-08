@@ -50,7 +50,13 @@ const page = async () => {
 					`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=15`,
 				);
 
+    // const instagramFeed = await fetch(
+    //   `https://graph.instagram.com/714674353708139/media?&access_token=${process.env.INSTAGRAM_TOKEN}&limit=15`
+    // );
+
 				const data = await instagramFeed.json();
+
+        console.log(data)
 
 
 
@@ -59,7 +65,7 @@ const page = async () => {
             <h1 className="text-2xl font-bold text-center md:text-5xl text-slate-800 ">
               Loading...</h1>
           </div>}>
-						<Instagram feed={data.data} />
+						{/* <Instagram feed={data.data} /> */}
 					</Suspense>
 				);
 };
