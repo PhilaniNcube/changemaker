@@ -122,17 +122,18 @@ export async function getNMBPageFunders():Promise<NMBPageFunders[]>{
 
 
 export type NationalPageHero = {
-  heading: string
-  subtitle: string
+  heading: string;
+  subtitle: string;
+  subtitleContent: PortableTextBlock[];
   image: {
     asset: {
-      _ref: string
-    }
-  }
-}
+      _ref: string;
+    };
+  };
+};
 
 export async function getNationalPageHero():Promise<NationalPageHero>{
-  const nationalHero = await client.fetch(`*[_type == "nationalpageHero"]{heading, subtitle, image}[0]`)
+  const nationalHero = await client.fetch(`*[_type == "nationalpageHero"]{heading, subtitle, image, subtitleContent}[0]`)
   return nationalHero
 }
 
@@ -312,6 +313,17 @@ export async function getGlobalPageContent():Promise<Page>{
 		);
 
   return content
+}
+
+export async function getAcademySlider(){
+  const content = await client.fetch(
+    `*[_type == "pageSlider" && _id == "0eb86c53-f1a8-46f5-9d60-9c3d6ec7386b"]{
+    _id,
+    sliderText
+  }[0]`
+  );
+
+  return content;
 }
 
 export async function getGlobalSlider(){

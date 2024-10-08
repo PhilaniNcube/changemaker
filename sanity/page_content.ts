@@ -89,6 +89,12 @@ export const pageSlider = {
       title: 'Description',
       type: 'string',
     },
+    {
+      name: 'sliderText',
+      title: 'Slider Text',
+      type: 'array',
+      of: [{type: 'string'}],
+    }
   ]
 };
 

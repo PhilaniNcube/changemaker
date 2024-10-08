@@ -1,28 +1,34 @@
 export const nationalHero = {
-  name: 'nationalpageHero',
-  title: 'National Page Hero',
-  type: 'document',
+  name: "nationalpageHero",
+  title: "National Page Hero",
+  type: "document",
   fields: [
     {
-      name: 'heading',
-      title: 'Heading',
-      type: 'string',
+      name: "heading",
+      title: "Heading",
+      type: "string",
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
     },
     {
-        name: 'image',
-        title: 'Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
+      name: "subtitleContent",
+      title: "Subtitle Content",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+      options: {
+        hotspot: true,
       },
+    },
   ],
-}
+};
 
 export const nationalDescription = {
   name: 'nationalDescription',

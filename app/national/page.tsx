@@ -13,7 +13,7 @@ import { imageBuilder, urlForImage } from "../sanity.image";
 
 const page = async () => {
 
-  const {heading, subtitle, image} = await getNationalPageHero();
+  const {heading, subtitle, image, subtitleContent} = await getNationalPageHero();
 
 
 
@@ -29,7 +29,12 @@ const page = async () => {
 
   return (
     <main>
-      <NationalHero title={heading} image={heroImage} subheading={subtitle} />
+      <NationalHero
+        title={heading}
+        image={heroImage}
+        subheading={subtitle}
+        subtitleContent={subtitleContent}
+      />
       <NationalVideo />
       <NationalDetails description={pageDescription.descriptionText} />
       <NationalFocus province={descriptionText} pageFocus={pageFocus} />

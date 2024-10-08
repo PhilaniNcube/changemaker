@@ -20,7 +20,7 @@
     stroke="none"
     stroke-width="1"
     fill="none"
-    fill-rule="evenodd"
+    fillRule="evenodd"
     transform="translate(-199.000000, -13.000000)"
   >
         <g
