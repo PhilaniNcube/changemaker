@@ -65,7 +65,7 @@ const page = async () => {
             <h1 className="text-2xl font-bold text-center md:text-5xl text-slate-800 ">
               Loading...</h1>
           </div>}>
-						{/* <Instagram feed={data.data} /> */}
+						<Instagram feed={data.data} />
 					</Suspense>
 				);
 };
