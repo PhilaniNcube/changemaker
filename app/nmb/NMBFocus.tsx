@@ -1,16 +1,23 @@
 import IconGrid from "@/app/IconGrid";
 import MagazineSlider from "./MagazineSlider";
 import type { NmbPageFocus } from "@/sanity/lib/client";
+import { PortableTextBlock } from "sanity";
+import { PortableText } from "@portabletext/react";
+
 
 
 
 type PageProps = {
   text: string;
   focus: NmbPageFocus;
+  content: PortableTextBlock[];
 };
 
 
-const NMBFocus = ({ text, focus }: PageProps) => {
+const NMBFocus = ({ text, focus ,content}: PageProps) => {
+
+
+
   return (
     <section className="py-20 bg-white">
       <div className="px-8 mx-auto max-w-7xl">
@@ -21,8 +28,8 @@ const NMBFocus = ({ text, focus }: PageProps) => {
               intensive changemaker trainings for selected learners they can
               spark positive change in their schools and communities.
             </p> */}
-            <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch] mt-3">
-              {text}
+            <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch] grid gap-x-5  ">
+              <PortableText value={content} />
             </p>
           </div>
           <div className="flex flex-col gap-6 md:flex-row">

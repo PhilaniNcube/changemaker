@@ -32,34 +32,34 @@ const Hero = async () => {
         alt="Background"
         className="object-cover h-screen lg:max-h-[65vh] w-full md:w-1/2"
       />
-      <div className="absolute inset-0 flex justify-start items-center py-12 bg-slate-600/60 lg:bg-transparent">
-        <div className="max-w-7xl mx-auto flex flex-col items-start w-full px-8 ">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium text-white">
-            {firstTwo} <span className="font-extrabold italic">{lastWord}</span>
+      <div className="absolute inset-0 flex items-center justify-start py-12 bg-slate-600/60 lg:bg-transparent">
+        <div className="flex flex-col items-start w-full px-8 mx-auto max-w-7xl ">
+          <h1 className="text-4xl font-medium text-white md:text-6xl lg:text-7xl">
+            {firstTwo} <span className="italic font-extrabold">{lastWord}</span>
           </h1>
 
           <p className="text-white text-sm md:text-md lg:text-base text-left leading-7 mt-6 max-w-[65ch]">
-           {homepageHero.subtitle}
+            {homepageHero.subtitle}
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start gap-3 mt-6 text-black">
+          <div className="flex flex-col justify-center gap-3 mt-6 text-black md:flex-row md:justify-start">
             <Link
               href="/nmb"
               className="bg-masifunde text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
               <span className="uppercase font-bold  text-[1.1rem] flex items-center">
-                NMB &rarr;
+                Mandela Bay &rarr;
               </span>
-              <span className="uppercase text-xs">Changemakers </span>
+              <span className="text-xs lowercase">changemakers </span>
             </Link>
             <Link
               href="/national"
               className="bg-masifunde text-lg flex flex-col font-medium px-6 py-2.5 w-[220px]"
             >
               <span className="uppercase font-bold text-[1.1rem] flex items-center">
-                MCN National &rarr;
+                National &rarr;
               </span>
-              <span className="uppercase text-xs">Changemakers </span>
+              <span className="text-xs lowercase">changemakers </span>
             </Link>
           </div>
         </div>

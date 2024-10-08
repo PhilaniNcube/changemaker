@@ -11,7 +11,7 @@ const page = async () => {
 
   const {nmbheading, nmbSubtitle , nmbHeroImage} = await getNMBHero()
 
-  const {descriptionText} = await getNmbPageDescription()
+  const {descriptionText, content} = await getNmbPageDescription()
   const nmbFocus = await nmbPageFocus();
 
   const schools = await getSchools()
@@ -26,7 +26,7 @@ const page = async () => {
         description={nmbSubtitle}
       />
       <NMBVideo />
-      <NMBFocus text={descriptionText} focus={nmbFocus} />
+      <NMBFocus text={descriptionText} content={content} focus={nmbFocus} />
       <NMBSchools schools={schools} />
       <NMBFunders funders={funders} />
     </main>

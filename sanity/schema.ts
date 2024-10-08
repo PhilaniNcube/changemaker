@@ -17,6 +17,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     pageTextBoxes,
     listBox,
 		pageSlider,
+		partnerProfiles,
 		homepageHero,
 		homepageContent,
 		hompageTimeline,
@@ -33,7 +34,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		nationalPartners,
 		nisspHero,
 		nisspDescription,
-		partnerProfiles,
 		provinces,
 	],
 };

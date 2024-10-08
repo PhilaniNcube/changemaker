@@ -54,6 +54,11 @@ const sparkMags = [
     thumbnail: "/images/nmb/nmb_spark_7.png",
     doc: "/images/nmb/nmb_spark_7.pdf",
   },
+  {
+    title: "Spark 8th Edition",
+    thumbnail: "/images/nmb/nmb_spark_8.png",
+    doc: "/images/nmb/nmb_spark_8.pdf",
+  },
 ];
 
 const MagazineSlider = () => {

@@ -70,11 +70,13 @@ export async function getNMBHero():Promise<NmbPageHero>{
 
 export type NmbPageDescription = {
   descriptionText: string
+  content: PortableTextBlock[]
 }
 
 
 export async function getNmbPageDescription():Promise<NmbPageDescription>{
-  const nmbDescription = await client.fetch(`*[_type == "nmbDescription"]{descriptionText}[0]`)
+  const nmbDescription = await client.fetch(`*[_type == "nmbDescription"]{descriptionText, content}[0]`)
+
   return nmbDescription
 }
 

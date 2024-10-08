@@ -25,46 +25,53 @@ export const nmbHero = {
 }
 
 export const nmbDescription = {
-  name: 'nmbDescription',
-  title: 'NMB Page Description',
-  type: 'document',
+  name: "nmbDescription",
+  title: "NMB Page Description",
+  type: "document",
   fields: [
     {
-      name: 'descriptionText',
-      title: 'Description Text',
-      type: 'string',
-    }
-  ]
-}
+      name: "descriptionText",
+      title: "Description Text",
+      type: "string",
+    },
+    {
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+  ],
+};
 
 export const nmbFocus = {
-  name: 'nmbfocus',
-  title: 'NMB Page Focus',
-  type: 'document',
+  name: "nmbfocus",
+  title: "NMB Page Focus",
+  type: "document",
   fields: [
     {
-      name: 'nmbfocuHeading',
-      title: 'Focus Heading',
-      type: 'string',
+      name: "nmbfocuHeading",
+      title: "Focus Heading",
+      type: "string",
     },
     {
-      name: 'nmbfocusSubheading',
-      title: 'NMB Focus Subheading',
-      type: 'string',
+      name: "nmbfocusSubheading",
+      title: "NMB Focus Subheading",
+      type: "string",
     },
     {
-      name: 'nmbFocusList',
-      title: 'NMB Focus List',
-      type: 'array',
-      of: [{type: 'string'}]
+      name: "nmbFocusList",
+      title: "NMB Focus List",
+      type: "array",
+      of: [{ type: "string" }],
     },
     {
-      name: 'nmbfocusDescription',
-      title: 'NMB Focus Description',
-      type: 'string',
-    }
-  ]
-}
+      name: "nmbfocusDescription",
+      title: "NMB Focus Description",
+      type: "string",
+    },
+
+  ],
+};
 
 export const nmbSchools = {
   name: 'nmbSchools',
