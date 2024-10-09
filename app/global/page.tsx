@@ -9,7 +9,7 @@ const Page = async () => {
 
 
 
-  const heroTitle = content.title || "Global Changemaker Network";
+  const heroTitle = content.title || "Glocal Changemaker Network";
 
 
 
