@@ -13,25 +13,27 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { CardContent } from "@/components/ui/card";
-import { ArrowBigRight } from "lucide-react";
 import type { Page, PageSlider } from "@/app/studio/sanity.types";
 import { PortableText } from "@portabletext/react";
-import { getAcademySlider } from "@/sanity/lib/client";
 
+type AcademyFocusProps = {
+  pageContent: Page;
+  text: string[];
+  academyListContent: {
+    _id: string;
+    first_list_title: string;
+    first_list_items: string[];
+    second_list_title: string;
+    second_list_items: string[];
+  }
+};
 
-type SliderText = {
-  _id: string
-  text: string[]
-}
-
-
-const AcademyFocus =   ({pageContent, text}:{pageContent:Page, text:string[]}) => {
-
-
-
-  const sliderContent  = pageContent.pageSlider as unknown as PageSlider[]
-
-
+const AcademyFocus = ({
+  pageContent,
+  text,
+  academyListContent,
+}: AcademyFocusProps) => {
+  const sliderContent = pageContent.pageSlider as unknown as PageSlider[];
 
   return (
     <section id="content" className="bg-white">
@@ -39,7 +41,10 @@ const AcademyFocus =   ({pageContent, text}:{pageContent:Page, text:string[]}) =
         <div className="grid gap-10 px-8 mx-auto lg:grid-cols-2 max-w-7xl">
           <div className="flex flex-col justify-center">
             {text.map((item, index) => (
-              <p key={item} className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-sm md:text-lg text-white font-medium ">
+              <p
+                key={item}
+                className="max-w-[65ch] mt-3 lg:mt-8 leading-6 md:leading-7 text-sm md:text-lg text-white font-medium "
+              >
                 {item}
               </p>
             ))}
@@ -452,30 +457,24 @@ const AcademyFocus =   ({pageContent, text}:{pageContent:Page, text:string[]}) =
             <div className="flex flex-col md:flex-row">
               <div className="flex-1">
                 <p className="text-lg font-bold leading-7 text-slate-800">
-                  The Changemaker Network focuses on the following topics:
+                  {academyListContent.first_list_title}
                 </p>
                 <ul className="pl-6 text-sm leading-7 list-disc md:text-base">
-                  <li className="leading-7 text-slate-700">
-                    School Safety: Understanding Violence
-                  </li>
-                  <li className="leading-7 text-slate-700">
-                    Environmental Awareness and Protection
-                  </li>
+                  {academyListContent.first_list_items.map((item, i) => (
+                    <li key={i} className="leading-7 text-slate-700">
+                      {item}
+                    </li>
+                  ))}
                 </ul>{" "}
                 <p className="text-lg font-bold leading-7 text-slate-800">
-                  In 2024 the Changemaker&#39;s Network will be replicated
-                  within all nine provinces in South Africa.
+                  {academyListContent.second_list_title}
                 </p>
                 <ul className="pl-6 text-sm leading-7 list-disc md:text-base">
-                  <li className="leading-7 text-slate-700">
-                    Thus, resulting in 40 Civil Society Organisations
-                  </li>
-                  <li className="leading-7 text-slate-700">40 Districts</li>
-                  <li className="leading-7 text-slate-700">200 Schools</li>
-                  <li className="leading-7 text-slate-700">200 Educators</li>
-                  <li className="leading-7 text-slate-700">
-                    1000 Changemakers
-                  </li>
+                  {academyListContent.second_list_items.map((item, i) => (
+                    <li key={i} className="leading-7 text-slate-700">
+                      {item}
+                    </li>
+                  ))}
                 </ul>{" "}
               </div>
             </div>

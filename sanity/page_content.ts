@@ -98,6 +98,36 @@ export const pageSlider = {
   ]
 };
 
+export const academyFocus = {
+  name: "academyFocus",
+  title: "Academy Page Focus",
+  type: "document",
+  fields: [
+    {
+      name: "first_list_title",
+      title: "First List Title",
+      type: "string",
+    },
+    {
+      name: "first_list_items",
+      title: "First List Items",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "second_list_title",
+      title: "Second List Title",
+      type: "string",
+    },
+    {
+      name: "second_list_items",
+      title: "Second List Items",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+  ],
+};
+
 
 export const pageList = {
 	name: "page_list_group",

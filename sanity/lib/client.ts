@@ -270,7 +270,7 @@ const PAGE_CONTENT_QUERY = groq`*[_type == "page" && slug.current == "$slug"]{
     }`;
 
 export async function getPageContent(slug:string):Promise<Page>{
-  console.log(slug)
+
   const content = await client.fetch(
 			`*[_type == "page" && slug.current == "${slug}"]{
     title,
@@ -366,4 +366,19 @@ export async function getGlobalPageList(){
       }`,
 		);
   return pageList
+}
+
+
+export async function getAcademyListContent(){
+  const content = await client.fetch(`
+    *[_type == "academyFocus" ]{
+     _id,
+      first_list_title,
+      first_list_items[],
+      second_list_title,
+      second_list_items[],
+    }[0]
+    `);
+
+  return content;
 }
