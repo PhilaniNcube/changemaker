@@ -382,3 +382,15 @@ export async function getAcademyListContent(){
 
   return content;
 }
+
+
+export async function getLuncheonBlocks(){
+  const content = await client.fetch(`
+    *[_type == "luncheonBlocks"]{
+      _id,
+      blockTitle,
+      blocks[],
+    }[0]`);
+
+  return content;
+}

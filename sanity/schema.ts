@@ -6,6 +6,7 @@ import { nationalDescription, nationalHero,nationalPartners, nationalRoleplayers
 import { nisspDescription, nisspHero } from './nissp'
 import { partnerProfiles, provinces } from './partner-profiles'
 import {  academyFocus, listBox, pageContent, pageList, pageSlider, pageTextBoxes } from "./page_content";
+import { luncheonBlocks } from "./luncheon";
 
 
 
@@ -16,6 +17,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		pageList,
     pageTextBoxes,
     listBox,
+    luncheonBlocks,
 		pageSlider,
     academyFocus,
 		partnerProfiles,
