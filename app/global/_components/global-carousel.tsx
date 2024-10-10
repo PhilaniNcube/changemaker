@@ -36,7 +36,7 @@ const GlobalCarousel = ({images}:{images:SliderType['images']}) => {
 									alt="carousel"
 									width={1600}
 									height={1200}
-									className="object-cover w-full aspect-[5/3] object-top"
+									className="object-contain w-1/2 mx-auto aspect-[3/5] object-top"
 								/>
 							</CardContent>
 						</CarouselItem>
