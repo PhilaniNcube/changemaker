@@ -113,7 +113,7 @@ export function DesktopNavigation() {
 							<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
 								<ListItem
 									href="/partner-area/implementation-partner"
-									title="Becom an Implementation Partner"
+									title="Become an Implementation Partner"
 								>
 									Become an Implementation Partner
 								</ListItem>
