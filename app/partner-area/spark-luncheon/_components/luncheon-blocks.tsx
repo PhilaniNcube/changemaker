@@ -25,7 +25,8 @@ const LuncheonBlocks = async () => {
     <section className="py-10">
       <div className="max-w-6xl px-6 mx-auto lg:px-0">
         <h2 className="mb-3 text-xl font-bold text-center text-black">
-          {blocksContent.blockTitle}
+          {blocksContent?.blockTitle ||
+            "Since the inception of SPARK Change Luncheons, five events have been held, focusing on the following topics:"}
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-6">
           {blocksContent.blocks.map((block) => (
