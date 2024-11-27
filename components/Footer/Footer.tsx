@@ -8,10 +8,7 @@ import React from 'react'
      title: "Home",
      href: "/",
    },
-   {
-     title: "About Us",
-     href: "/about",
-   },
+
    {
      title: "MCN In Action",
      href: "/in-action",
