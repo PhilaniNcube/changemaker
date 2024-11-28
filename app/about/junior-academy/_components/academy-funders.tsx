@@ -1,4 +1,6 @@
+import { YouTubeEmbed } from "@next/third-parties/google";
 import Image from "next/image";
+import Link from "next/link";
 
 const AcademyFunders = () => {
   const funders = [
@@ -53,12 +55,24 @@ const AcademyFunders = () => {
   return (
     <section id="funders" className="bg-white">
       <div className="px-8 pb-16 mx-auto bg-white max-w-7xl">
-        <h2 className="text-3xl font-bold leading-7 text-center text-gray-800 lg:text-4xl lg:leading-9">
+        <div className="max-w-3xl mx-auto">
+          <YouTubeEmbed videoid="PbM32Cm7qzA" style="aspect-ratio: 16 / 9" />
+          <Link
+            href="https://www.youtube.com/watch?v=PbM32Cm7qzA"
+            className="font-medium text-md md:text-xl"
+          >
+            Environmental Awareness Campaigns with TUICF
+          </Link>
+        </div>
+        <h2 className="mt-12 text-3xl font-bold leading-7 text-center text-gray-800 lg:text-4xl lg:leading-9">
           Partners
         </h2>
         <div className="grid w-full grid-cols-1 gap-6 mt-8 md:grid-cols-3 lg:grid-cols-3 md:gap-10">
           {funders.map((funder, i) => (
-            <div key={funder.name} className="flex items-center justify-center w-full">
+            <div
+              key={funder.name}
+              className="flex items-center justify-center w-full"
+            >
               <Image
                 src={funder.image}
                 width={funder.width}
@@ -69,7 +83,6 @@ const AcademyFunders = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
