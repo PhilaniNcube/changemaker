@@ -17,13 +17,13 @@ const sparkMags = [
   },
   {
     title: "Spark 3rd Edition",
-    thumbnail: "/images/nmb/nmb_spark_7.png",
-    doc: "/images/nmb/nmb_spark_7.pdf",
+    thumbnail: "/images/national/gbv.png",
+    doc: "/images/nmb/national_gbv.pdf",
   },
   {
     title: "Spark 4th Edition",
-    thumbnail: "/images/nmb/nmb_spark_8.png",
-    doc: "/images/nmb/nmb_spark_8.pdf",
+    thumbnail: "/images/national/climate_change.png",
+    doc: "/images/national/national_climate_change.pdf",
   },
 ];
 
