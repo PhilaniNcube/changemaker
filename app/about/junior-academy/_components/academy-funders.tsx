@@ -55,15 +55,7 @@ const AcademyFunders = () => {
   return (
     <section id="funders" className="bg-white">
       <div className="px-8 pb-16 mx-auto bg-white max-w-7xl">
-        <div className="max-w-3xl mx-auto">
-          <YouTubeEmbed videoid="PbM32Cm7qzA" style="aspect-ratio: 16 / 9" />
-          <Link
-            href="https://www.youtube.com/watch?v=PbM32Cm7qzA"
-            className="font-medium text-md md:text-xl"
-          >
-            Environmental Awareness Campaigns with TUICF
-          </Link>
-        </div>
+
         <h2 className="mt-12 text-3xl font-bold leading-7 text-center text-gray-800 lg:text-4xl lg:leading-9">
           Partners
         </h2>

@@ -15,6 +15,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { CardContent } from "@/components/ui/card";
 import type { Page, PageSlider } from "@/app/studio/sanity.types";
 import { PortableText } from "@portabletext/react";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 type AcademyFocusProps = {
   pageContent: Page;
@@ -148,56 +149,7 @@ const AcademyFocus = ({
         </div>
       </div>
 
-      <div className="gap-10 px-8 mx-auto max-w-7xl">
-        <div
-          id="content"
-          className="mt-3 text-base leading-7 text-justify text-slate-700"
-        >
-          {pageContent.content && <PortableText value={pageContent.content} />}
-        </div>
-        {/* <div className="mt-3 text-base leading-7 text-justify text-slate-700">
-						<p className="">
-							This is achieved through activation workshops for all Grade 9
-							learners and intensive virtual changemaker trainings for selected
-							learners. The training equips learners with practical tools to act
-							as agents of change and Eco-Champions in their schools. They learn
-							campaigning, public speaking and in general about the role they
-							and their peers can play in initiating change in their
-							environment, protecting the environment and bringing about
-							awareness about climate change. This is accompanied by Community
-							Action Projects which they will implement within their respective
-							communities.
-						</p>
-						<h3 className="mt-4 text-2xl font-bold">
-							About TUI Junior Academy
-						</h3>
-						<p className="">
-							The TUI Junior Academy programme inspires young people to protect
-							nature and wildlife and empowers them to become Eco Champions in
-							their communities. It builds awareness for the fragility of nature
-							by developing these competencies in schools and communities and
-							brings the classroom to life through excursions and nature-based
-							experiences.
-						</p>
-						<h3 className="mt-4 text-2xl font-bold">
-							About TUI Care Foundation
-						</h3>
-
-						<p className="">
-							Building on the potential of tourism as a force for good, the TUI
-							Care Foundation supports and initiates projects, which create new
-							opportunities and contribute to thriving communities in tourism
-							destinations all over the world. Connecting holidaymakers to good
-							causes, it supports education and training opportunities for young
-							people; drives the protection of natural habitats and the marine
-							environment; and helps local communities to thrive sustainably and
-							benefit from tourism. The TUI Care Foundation builds on strong
-							partnerships with local and international organisations to create
-							meaningful and long-lasting impact. The independent charitable
-							organisation was founded by TUI, one of the world&apos;s leading
-							tourism businesses, and is based in the Netherlands.
-						</p>
-					</div> */}
+      <div className="gap-4 px-8 mx-auto max-w-7xl">
         <h3 className="mt-5 text-4xl font-extrabold text-center uppercase text-masifunde">
           Focus
         </h3>
@@ -480,6 +432,65 @@ const AcademyFocus = ({
             </div>
           </div>
         </div>
+        <div className="max-w-3xl mx-auto">
+          <YouTubeEmbed videoid="PbM32Cm7qzA" style="aspect-ratio: 16 / 9" />
+          <Link
+            href="https://www.youtube.com/watch?v=PbM32Cm7qzA"
+            className="font-medium text-md md:text-xl"
+          >
+            Environmental Awareness Campaigns with TUICF
+          </Link>
+        </div>
+        <div
+          id="content"
+          className="mt-3 text-base leading-7 text-justify text-slate-700"
+        >
+          {pageContent.content && <PortableText value={pageContent.content} />}
+        </div>
+        {/* <div className="mt-3 text-base leading-7 text-justify text-slate-700">
+						<p className="">
+							This is achieved through activation workshops for all Grade 9
+							learners and intensive virtual changemaker trainings for selected
+							learners. The training equips learners with practical tools to act
+							as agents of change and Eco-Champions in their schools. They learn
+							campaigning, public speaking and in general about the role they
+							and their peers can play in initiating change in their
+							environment, protecting the environment and bringing about
+							awareness about climate change. This is accompanied by Community
+							Action Projects which they will implement within their respective
+							communities.
+						</p>
+						<h3 className="mt-4 text-2xl font-bold">
+							About TUI Junior Academy
+						</h3>
+						<p className="">
+							The TUI Junior Academy programme inspires young people to protect
+							nature and wildlife and empowers them to become Eco Champions in
+							their communities. It builds awareness for the fragility of nature
+							by developing these competencies in schools and communities and
+							brings the classroom to life through excursions and nature-based
+							experiences.
+						</p>
+						<h3 className="mt-4 text-2xl font-bold">
+							About TUI Care Foundation
+						</h3>
+
+						<p className="">
+							Building on the potential of tourism as a force for good, the TUI
+							Care Foundation supports and initiates projects, which create new
+							opportunities and contribute to thriving communities in tourism
+							destinations all over the world. Connecting holidaymakers to good
+							causes, it supports education and training opportunities for young
+							people; drives the protection of natural habitats and the marine
+							environment; and helps local communities to thrive sustainably and
+							benefit from tourism. The TUI Care Foundation builds on strong
+							partnerships with local and international organisations to create
+							meaningful and long-lasting impact. The independent charitable
+							organisation was founded by TUI, one of the world&apos;s leading
+							tourism businesses, and is based in the Netherlands.
+						</p>
+					</div> */}
+
         {/* <div className="w-full mx-auto mt-10 max-w-7xl">
 						<p className="text-2xl font-bold leading-7 text-center text-slate-800">
 							Spark Magazine Editions
