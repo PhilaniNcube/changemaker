@@ -149,7 +149,7 @@ const AcademyFocus = ({
         </div>
       </div>
 
-      <div className="gap-4 px-8 mx-auto max-w-7xl">
+      <div className="px-8 mx-auto max-w-7xl">
         <h3 className="mt-5 text-4xl font-extrabold text-center uppercase text-masifunde">
           Focus
         </h3>
