@@ -16,7 +16,6 @@ const Login = () => {
   const [state, formAction] = useFormState(loginAction, null);
 
 
-  const router = useRouter()
 
   return (
 			<section className="bg-white {-- h-screen --}">
@@ -84,7 +83,7 @@ const Login = () => {
 								</div>
 							</div>
 							<div className="flex justify-between w-full px-2 pt-6 sm:px-6">
-								<Link href="forgot-password" className="text-xs text-masifunde">
+								<Link href="/forgot-password" className="text-xs text-masifunde">
 									Forgot Password?
 								</Link>
 							</div>

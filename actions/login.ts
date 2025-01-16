@@ -29,10 +29,11 @@ export const loginAction = async (prev: unknown, formData: FormData) => {
 		};
 	}
 
-	const { data, error } = await supabase.auth.signInWithPassword({
-		email: validatedFields.data.email,
-		password: validatedFields.data.password,
-	});
+	const { data, error } = await supabase.auth.signInWithOtp({
+    email: validatedFields.data.email,
+  })
+
+  console.log({data, error})
 
 	if (error) {
 		return {
@@ -67,6 +68,8 @@ export async function forgotPasswordAction(
 	}
 
 	const { data, error } = await supabase.auth.resetPasswordForEmail(email);
+
+  console.log({data, error})
 
 	if (error) {
 		return {
