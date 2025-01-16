@@ -10,12 +10,13 @@ const Page = async () => {
 
 
   const heroTitle = content.title || "Glocal Changemaker Network";
+  const subtitle = content.subtitle || ''
 
 
 
 	return (
 		<main>
-			<GlobalPageHero title={heroTitle} />
+			<GlobalPageHero title={heroTitle} subtitle={subtitle} />
       <GlobalPageDescription  />
 		</main>
 	);
