@@ -73,6 +73,15 @@ const LuncheonVideos = () => {
               Luncheon on Environmental Awareness
             </Link>
           </div>
+          <div>
+            <YouTubeEmbed videoid="qBG-yAdT_lg" style="aspect-ratio: 16 / 9" />
+            <Link
+              href="https://www.youtube.com/watch?v=qBG-yAdT_lg"
+              className="font-medium text-md"
+            >
+              Luncheon on Inclusion of People with Disability
+            </Link>
+          </div>
         </div>
       </div>
     </section>
