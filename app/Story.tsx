@@ -16,7 +16,7 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="flex flex-col items-center justify-center w-full h-full px-6 text-white rounded-md bg-neutral-800 bg-opacity-40 sm:px-12">
               <h2 className="text-3xl font-bold leading-7 text-center lg:text-4xl lg:leading-9">
-                &ldquo;Change starts with you&rdquo;
+                &ldquo;Change starts with YOU&rdquo;
               </h2>
               <p className="text-sm text-center text-white">
                 Linathi Mangether sparking change at Soqhayisa Secondary School
