@@ -29,8 +29,9 @@ export const loginAction = async (prev: unknown, formData: FormData) => {
 		};
 	}
 
-	const { data, error } = await supabase.auth.signInWithOtp({
+	const { data, error } = await supabase.auth.signInWithPassword({
     email: validatedFields.data.email,
+    password: validatedFields.data.password
   })
 
   console.log({data, error})

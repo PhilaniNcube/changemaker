@@ -1,9 +1,12 @@
 import supabaseServer from "@/lib/supabase-server";
+import { createClient } from "@/utils/supabase/server";
 
 async function getProfiles(){
-  const supabase = supabaseServer();
+  const supabase = createClient();
 
 const {data: profiles, error} = await supabase.from('profiles').select('*, organisation_id(*)')
+
+
 
 if(error) {
   throw new Error(error.message)
