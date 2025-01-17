@@ -26,11 +26,11 @@ import { Button } from "../ui/button";
 
 
 const about = [
-	{
-		name: "NISSP",
-		description: "National Inclusive and Safer Schools Partnership",
-		href: "/about/nissp",
-	},
+	// {
+	// 	name: "NISSP",
+	// 	description: "National Inclusive and Safer Schools Partnership",
+	// 	href: "/about/nissp",
+	// },
 	{
 		name: "Team",
 		description: "Get to know our team",

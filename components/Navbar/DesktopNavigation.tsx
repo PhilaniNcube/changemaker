@@ -45,9 +45,9 @@ export function DesktopNavigation() {
               <ListItem href="/global" title="Global Changemakers">
                 International Exchange and Partnerships
               </ListItem>{" "}
-              <ListItem href="/about/nissp" title="NISSP">
+              {/* <ListItem href="/about/nissp" title="NISSP">
                 Changemakers for School Safety
-              </ListItem>
+              </ListItem> */}
               <ListItem
                 href="/about/junior-academy"
                 title="TUI Junior Academy SA"
