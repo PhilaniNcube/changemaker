@@ -106,16 +106,16 @@ export function DesktopNavigation() {
                 href="/partner-area/implementation-partner"
                 title="Become an Implementation Partner"
               >
-                Sign up to become an implementation partner
+                Self-Check and Application
               </ListItem>
               <ListItem href="/about/partners" title="CSO Partners">
                 Take a look at our partners across the country
               </ListItem>
               <ListItem
                 href="/partner-area/spark-luncheon"
-                title="Spark Change Luncheon"
+                title='"SPARK Change" Luncheon'
               >
-                Be inspired by the knowledge shared by a panel
+                Knowledge transfer and networking
               </ListItem>
             </ul>
           </NavigationMenuContent>
