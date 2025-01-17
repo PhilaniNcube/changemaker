@@ -45,17 +45,8 @@ export function DesktopNavigation() {
               <ListItem href="/global" title="Global Changemakers">
                 International Exchange and Partnerships
               </ListItem>{" "}
-              <ListItem href="/about/partners" title="CSO Partners">
-                Take a look at our partners across the country
-              </ListItem>
               <ListItem href="/about/nissp" title="NISSP">
                 Changemakers for School Safety
-              </ListItem>
-              <ListItem
-                href="/partner-area/spark-luncheon"
-                title="Spark Change Luncheon"
-              >
-                Be inspired by the knowledge shared by a panel
               </ListItem>
               <ListItem
                 href="/about/junior-academy"
@@ -116,6 +107,15 @@ export function DesktopNavigation() {
                 title="Become an Implementation Partner"
               >
                 Sign up to become an implementation partner
+              </ListItem>
+              <ListItem href="/about/partners" title="CSO Partners">
+                Take a look at our partners across the country
+              </ListItem>
+              <ListItem
+                href="/partner-area/spark-luncheon"
+                title="Spark Change Luncheon"
+              >
+                Be inspired by the knowledge shared by a panel
               </ListItem>
             </ul>
           </NavigationMenuContent>
