@@ -108,8 +108,11 @@ export function DesktopNavigation() {
               >
                 Self-Check and Application
               </ListItem>
-              <ListItem href="/about/partners" title="CSO Partners">
-                Take a look at our partners across the country
+              <ListItem
+                href="/about/partners"
+                title="MCN Partner Organisations"
+              >
+                Our nationwide replication partners
               </ListItem>
               <ListItem
                 href="/partner-area/spark-luncheon"
