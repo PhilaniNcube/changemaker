@@ -326,6 +326,32 @@ export async function getAcademySlider(){
   return content;
 }
 
+export type CSOSliderType = {
+  images: {
+    _key: string;
+    type: string;
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  }[];
+};
+
+export async function getCSOSlider(){
+  const content = await client.fetch(
+    `*[_type == "pageSlider" && _id == "e8bef5a3-af31-4f40-bd4c-a588ba2440bb"]{
+   images
+  }[0]`
+  );
+
+  return content as CSOSliderType;
+}
+
+
+
+
+
+
 export async function getGlobalSlider(){
 	const content = await client.fetch(
     `*[_type == "pageSlider" && _id == "46c53a91-c222-4d3f-86df-8ab4c7a4b721"]{
