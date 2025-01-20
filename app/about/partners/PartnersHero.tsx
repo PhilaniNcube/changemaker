@@ -62,7 +62,7 @@ const PartnersHero = ({images}:{images: {src:string, alt:string}[]}) => {
                 <CarouselItem key={image.src} className="p-0">
                   <CardContent className="flex items-center justify-center h-full p-0">
                     <Image
-                      src="/images/carousel/img-1.jpg"
+                      src={image.src}
                       alt="carousel"
                       width={1600}
                       height={1200}
