@@ -19,11 +19,6 @@ const page = async () => {
     }
   });
 
-  console.log(images);
-
-
-
-
 
   return (
     <main>
