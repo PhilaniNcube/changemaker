@@ -16,6 +16,8 @@ import { Separator } from "@radix-ui/react-dropdown-menu";
 import Link from "next/link";
 
 const PartnerAccordions = ({ partners }: PartnersProps) => {
+
+  console.log(partners)
   return (
 			<Accordion type="single" collapsible className="w-full my-8">
 				{partners.map((item) => (
@@ -176,16 +178,24 @@ const PartnerAccordions = ({ partners }: PartnersProps) => {
 								</div>
 
 								<div className="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2 lg:grid-cols-3">
-									{item.images?.map((image) => (
-										<Image
-											key={image._key}
-											width={400}
-											height={400}
-											className="object-contain w-full aspect-video"
-											src={urlForImage(image.asset).url()}
-											alt={item.organisationName}
-										/>
-									))}
+                  {item.images && item.images?.map((image) => {
+
+                      if(!image.asset) return null;
+
+                    return (
+                      <div key={image.asset._ref} className="relative w-full h-80">
+                        <Image
+                          layout="fill"
+                          objectFit="cover"
+                          src={urlForImage(image.asset).url()}
+                          alt="Partner Image"
+                          priority={false}
+                          quality={70}
+                        />
+                      </div>
+                    );
+                  })}
+
 								</div>
 							</div>
 						</AccordionContent>
