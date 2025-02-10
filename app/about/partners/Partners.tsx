@@ -44,6 +44,7 @@ export type PartnersProps = {
 };
 
 const Partners = async () => {
+  
   const partners = await getPartners();
 
   return (
