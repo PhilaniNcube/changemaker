@@ -6,6 +6,8 @@ import PartnersHero from "./PartnersHero";
 import { getCSOSlider } from "@/sanity/lib/client";
 import { urlForImage } from "@/app/sanity.image";
 
+export const revalidate = 0
+
 
 const page = async () => {
 

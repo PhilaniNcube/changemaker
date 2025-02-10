@@ -44,7 +44,7 @@ export type PartnersProps = {
 };
 
 
-export const revalidate = 0
+
 
 const Partners = async () => {
   
