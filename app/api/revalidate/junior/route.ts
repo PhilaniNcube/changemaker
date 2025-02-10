@@ -8,6 +8,8 @@ export async function POST(req: Request, res: Response) {
   console.log(revalidationData);
 
   revalidatePath("/junior-academy");
+  revalidatePath("/", 'layout');
+  revalidatePath("/about/partners");
 
   return NextResponse.json({ message: "Revalidated" });
 }
