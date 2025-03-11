@@ -1,10 +1,6 @@
-
-import Script from "next/script";
-import Instragram from "./Instragram";
-import Image from "next/image";
 import React, { Suspense, lazy } from "react";
-import InstagramFeed from "./Instragram";
 
+import { getInstagramPosts } from "@/lib/utils/instagram";
 
 const Instagram = lazy(() => import("./Instragram"));
 
@@ -18,55 +14,49 @@ export type Feed = {
     media_type: string;
     media_url: string;
     permalink: string;
-  }[],
+  }[];
   paging: {
     cursors: {
-      before: string,
-      after: string
-    }
-  }
+      before: string;
+      after: string;
+    };
+  };
 };
-
 
 export interface InstagramMedia {
   id: string;
   caption: string;
-  media_type: "VIDEO" | "IMAGE" | "CAROUSEL_ALBUM"  | "IGTV";
+  media_type: "VIDEO" | "IMAGE" | "CAROUSEL_ALBUM" | "IGTV";
   media_url: string;
   thumbnail_url?: string;
   permalink: string;
   timestamp: string;
 }
 
-
-
-
-
-
 const page = async () => {
+  try {
+    const instagramPosts = await getInstagramPosts(15);
 
-
-    const instagramFeed = await fetch(
-					`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${process.env.INSTAGRAM_TOKEN}&limit=15`,
-				);
-
-    // const instagramFeed = await fetch(
-    //   `https://graph.instagram.com/714674353708139/media?&access_token=${process.env.INSTAGRAM_TOKEN}&limit=15`
-    // );
-
-				const data = await instagramFeed.json();
-
-        console.log(data)
-
-
-
-				return (
-					<Suspense fallback={<div className="min-h-[50vh] flex flex-col items-center justify-center">
-            <h1 className="text-2xl font-bold text-center md:text-5xl text-slate-800 ">
-              Loading...</h1>
-          </div>}>
-						<Instagram feed={data.data} />
-					</Suspense>
-				);
+    return (
+      <Suspense
+        fallback={
+          <div className="min-h-[50vh] flex flex-col items-center justify-center">
+            <h1 className="text-2xl font-bold text-center md:text-5xl text-slate-800">
+              Loading...
+            </h1>
+          </div>
+        }
+      >
+        <Instagram feed={instagramPosts} />
+      </Suspense>
+    );
+  } catch (error) {
+    console.error("Error fetching Instagram feed:", error);
+    return (
+      <div className="min-h-[70vh] px-8 py-6 mx-auto max-w-7xl">
+        Error loading Instagram feed
+      </div>
+    );
+  }
 };
 export default page;
