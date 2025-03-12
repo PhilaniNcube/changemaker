@@ -3,7 +3,7 @@ import Hero from "./Hero";
 import Carousel from "./Carousel";
 import Benefits from "./Benefits";
 import Script from "next/script";
-import Instragram from "../in-action/Instragram";
+import Instragram from "../in-action/SocialFeed";
 import Resources from "./Resources";
 
 export const revalidate = 0;
@@ -35,13 +35,9 @@ export interface InstagramMedia {
   timestamp: string;
 }
 
-
-
 const page = async () => {
-
   return (
     <main className="bg-white">
-
       <Benefits />
       {/* <Carousel /> */}
       <Resources />

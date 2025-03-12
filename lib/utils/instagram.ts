@@ -19,7 +19,8 @@ export async function getInstagramPosts(
   limit: number = 20
 ): Promise<InstagramPost[]> {
   if (!process.env.INSTAGRAM_TOKEN) {
-    throw new Error("Instagram access token is not configured");
+    console.error("No Instagram token found");
+    return [];
   }
 
   try {
@@ -34,11 +35,11 @@ export async function getInstagramPosts(
     ].join(",");
 
     const response = await fetch(
-      `https://graph.instagram.com/me/media?fields=${fields}&access_token=${process.env.INSTAGRAM_TOKEN}&limit=${limit}`
+      `https://graph.facebook.com/me/media?fields=${fields}&access_token=${process.env.INSTAGRAM_TOKEN}&limit=${limit}`
     );
 
     if (!response.ok) {
-      throw new Error("Failed to fetch Instagram posts");
+      return [];
     }
 
     const data = await response.json();
@@ -46,6 +47,6 @@ export async function getInstagramPosts(
     return data.data as InstagramPost[];
   } catch (error) {
     console.error("Error fetching Instagram posts:", error);
-    throw error;
+    return [];
   }
 }
