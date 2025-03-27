@@ -1,71 +1,47 @@
-"use client"
+"use client";
+import { deleteOrganisation } from "@/actions/delete-organisation";
 
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase-browser";
-import { revalidatePath } from "next/cache";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Trash2 } from "lucide-react";
+
 import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import { useActionState } from "react";
 
 export function DeleteOrganisation({id}:{id:string}) {
 
   const router = useRouter()
 
 
-  const deleteOrganisation = async () => {
-
-    console.log("delete")
-
-    const supabase = createClient();
-
-  const { data, error } = await supabase.from("organisations").delete().eq("id", id);
-
-  // if there was an error show an error toast
-  if (error) {
-    console.log(error);
-    toast.error("There was an error deleting this organisation");
-  }
-
-  // if there was no error show a success toast
-  toast.success("Organisation deleted successfully");
-  router.refresh();
-  // revalidatePath("/dashboard/organisation");
-
-  }
+ 
 
 
   return (
-    <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <Button variant="destructive">Delete</Button>
-      </AlertDialogTrigger>
-      <AlertDialogContent>
-        <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="destructive" size="icon" className="w-8 h-8 p-0 rounded-full">
+          <Trash2 className="w-4 h-4" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogTitle>Are you sure you want to delete this organisation?</DialogTitle>
+        <DialogDescription>
+          This action cannot be undone. This will permanently delete the organisation and remove it from the list.
+        </DialogDescription>
+        <div className="mt-4 flex justify-end space-x-2">
+          <Button variant="outline" onClick={() => router.back()}>
+            Cancel
+          </Button>
+          <form action={deleteOrganisation} className="flex items-center gap-x-2">
+            <input type="hidden" name="id" value={id} />
+            <Button type="submit" variant="destructive" size="sm" className="w-24">
+              Delete
+            </Button>
+          </form>
+        </div>
+      </DialogContent>
 
-          <AlertDialogAction onClick={deleteOrganisation}>
-              Continue
-          </AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
+    </Dialog>
   );
 }
 

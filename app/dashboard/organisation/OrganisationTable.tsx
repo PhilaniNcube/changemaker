@@ -2,6 +2,10 @@
 
 import { Database } from "@/schema";
 import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
+import { deleteOrganisation } from "@/actions/delete-organisation";
 import { DeleteOrganisation } from "./DeleteOrganisation";
 
 
@@ -53,7 +57,7 @@ const OrganisationTable = ({ organisations }:Props) => {
               {organisation.tel}
             </td>
             <td className="pr-2 sm:pr-10 py-5 text-gray-800  text-xs sm:text-sm text-right flex items-center gap-x-4">
-              <DeleteOrganisation id={organisation.id} />
+               <DeleteOrganisation id={organisation.id} />
               <Link href={`/dashboard/organisation/${organisation.id}`} className="px-6 py-2 rounded">
               View
               </Link>
