@@ -68,7 +68,7 @@ const getRestOfText = (text: string) => {
                 {slider.description}
               </h2>
               <div
-                className="mt-3 text-base leading-7 text-justify text-slate-700"
+                className="mt-3 text-base leading-7 text-justify text-slate-800"
                 id="description"
               >
                 {content.content && <PortableText value={content?.content} />}
@@ -107,7 +107,7 @@ const getRestOfText = (text: string) => {
             ))}
           </div>
 
-          <div className="flex flex-col gap-6 mt-10 text-base text-slate-700 lg:flex-row">
+          <div className="flex flex-col gap-6 mt-10 text-base text-slate-800 lg:flex-row">
             <div className="max-w-md">
               <Image
                 src="/images/target.webp"
@@ -116,7 +116,7 @@ const getRestOfText = (text: string) => {
                 height={760}
                 className="object-cover w-32"
               />
-              <h3 className="mt-4 text-xl font-bold text-slate-950">
+              <h3 className="mt-4 text-xl font-bold text-slate-800">
                 <span className="text-4xl font-extrabold">
                   {list.list_title.split(" ")[0]}
                 </span>
@@ -129,14 +129,14 @@ const getRestOfText = (text: string) => {
                 {list.list_items.map((item) => (
                   <li key={item} className="flex justify-end gap-2 my-2">
                     <ArrowBigRight className="w-6 h-6 text-masifunde fill-masifunde" />
-                    <span className="max-w-xl">{item}</span>
+                    <span className="max-w-xl text-slate-800">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
           <div className="w-[150px] h-4 bg-masifunde mb-3" />
-          <p>{list.list_subtitle}</p>
+          <p className="text-slate-800">{list.list_subtitle}</p>
         </div>
       </section>
     );

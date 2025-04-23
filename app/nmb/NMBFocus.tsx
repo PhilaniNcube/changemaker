@@ -27,8 +27,7 @@ const NMBFocus = ({ text, focus ,content}: PageProps) => {
               Through activation workshops for all Grade 9 learners and
               intensive changemaker trainings for selected learners they can
               spark positive change in their schools and communities.
-            </p> */}
-            <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch] grid gap-x-5  ">
+            </p> */}            <p className="text-slate-800 text-justify text-base lg:text-lg leading-7 max-w-[60ch] grid gap-x-5">
               <PortableText value={content} />
             </p>
           </div>

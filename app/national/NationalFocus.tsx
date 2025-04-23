@@ -36,9 +36,8 @@ const Focus = ({ province, pageFocus }: PageProps) => {
 	return (
 		<section className="py-10 bg-white text-slate-800">
 			<div className="px-8 py-10 mx-auto max-w-7xl">
-				<div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-					<div>
-						<p className="text-slate-700 text-justify text-base mb-5 leading-7 max-w-[60ch]">
+				<div className="grid grid-cols-1 gap-6 lg:grid-cols-2">					<div>
+						<p className="text-slate-800 text-justify text-base lg:text-lg mb-5 leading-7 max-w-[60ch]">
 							{province}
 						</p>
 						{/* <p className="text-slate-700 text-justify text-base leading-7 max-w-[60ch]">
@@ -459,10 +458,9 @@ const Focus = ({ province, pageFocus }: PageProps) => {
                 {" "}
                 Eastern Cape, Gauteng, KwaZulu-Natal, North West and Limpopo.
               </span>
-            </p>{" "} */}
-						<div
+            </p>{" "} */}						<div
 							id="content"
-							className="mt-5 text-base leading-7 text-slate-700 lg:pr-16"
+							className="mt-5 text-base lg:text-lg leading-7 text-slate-800 lg:pr-16"
 						>
 							<PortableText value={pageFocus.nationFocusDescription} />
 						</div>

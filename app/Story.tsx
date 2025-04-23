@@ -53,7 +53,7 @@ const Story = ({ content , children}: { content: HomepageContent, children:React
               </h2>
               <div
                 id="content"
-                className="w-full pr-6 mt-6 text-base font-medium leading-7 text-gray-600 xl:w-9/12"
+                className="w-full pr-6 mt-6 text-base leading-7 text-gray-800 xl:w-9/12"
               >
                 {content?.storyContent && (
                   <PortableText value={content?.storyContent} />

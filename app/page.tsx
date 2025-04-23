@@ -15,9 +15,8 @@ const Home = async () => {
 
 
   return (
-    <Fragment>
-      <div className="flex items-center justify-center py-4 space-x-6 text-black bg-masifunde">
-        <p className="text-sm font-medium lg:text-lg">
+    <Fragment>      <div className="flex items-center justify-center py-4 space-x-6 text-black bg-masifunde">
+        <p className="text-base font-medium text-slate-800 lg:text-lg">
           See Changemakers In Action
         </p>
         <Link
