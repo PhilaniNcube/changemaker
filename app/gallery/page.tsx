@@ -17,7 +17,7 @@ const page = async ({searchParams}:{searchParams: {next: string | undefined}}) =
         return result;
       });
 
-      console.log(data, "data from cloudinary");
+    
 
 
 
