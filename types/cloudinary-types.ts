@@ -47,6 +47,7 @@ export type CloudinarySearchResponse = {
 export type ResourceType = {
   asset_id: string;
   public_id: string;
+  format: string;
   version: number;
   resource_type: string;
   type: string;

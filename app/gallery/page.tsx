@@ -12,10 +12,12 @@ const page = async ({searchParams}:{searchParams: {next: string | undefined}}) =
 
 
     const data = await cloudinary.v2.api
-      .resources({next_cursor: searchParams.next, max_results: 9})
+      .resources({next_cursor: searchParams.next, max_results: 9, content_type: 'image'})
       .then((result: ResourcesType) => {
         return result;
       });
+
+      console.log(data, "data from cloudinary");
 
 
 

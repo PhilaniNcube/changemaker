@@ -1,8 +1,9 @@
-import supabaseServer from "@/lib/supabase-server";
+
+import { createClient } from "@/utils/supabase/server";
 
 
 async function getDocuments(){
-  const supabase = supabaseServer();
+  const supabase = createClient();
 
 const {data: documents, error} = await supabase.from('documents').select('*, organisation_id(*)')
 
@@ -17,7 +18,7 @@ if(error) {
 }
 
 async function getOrgDocuments(id:string){
-  const supabase = supabaseServer();
+  const supabase = createClient();
 
 const {data: documents, error} = await supabase.from('documents').select('*, organisation_id(*)').eq('organisation_id', id)
 

@@ -20,7 +20,7 @@ if(error) {
 
 async function getMyProfile(id:string) {
 
-  const supabase = supabaseServer();
+  const supabase = createClient();
 
   const {data: profile, error} = await supabase.from('profiles').select('*, organisation_id(*)').eq('id', id).single()
 
