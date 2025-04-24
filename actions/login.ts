@@ -30,11 +30,11 @@ export const loginAction = async (prev: unknown, formData: FormData) => {
 	}
 
 	const { data, error } = await supabase.auth.signInWithPassword({
-    email: validatedFields.data.email,
-    password: validatedFields.data.password
-  })
+		email: validatedFields.data.email,
+		password: validatedFields.data.password
+	})
 
-  console.log({data, error})
+	console.log({ data, error })
 
 	if (error) {
 		return {
@@ -46,7 +46,7 @@ export const loginAction = async (prev: unknown, formData: FormData) => {
 		};
 	}
 
-  revalidatePath('/', "layout")
+	revalidatePath('/', "layout")
 
 	redirect("/dashboard");
 };
@@ -70,7 +70,7 @@ export async function forgotPasswordAction(
 
 	const { data, error } = await supabase.auth.resetPasswordForEmail(email);
 
-  console.log({data, error})
+	console.log({ data, error })
 
 	if (error) {
 		return {
@@ -82,7 +82,7 @@ export async function forgotPasswordAction(
 		};
 	}
 
-  revalidatePath('/', "layout")
+	revalidatePath('/', "layout")
 
 	return {
 		status: 200,
@@ -90,7 +90,7 @@ export async function forgotPasswordAction(
 	};
 }
 
-export async function updateUserAction(prevState:unknown, formData: FormData) {
+export async function updateUserAction(prevState: unknown, formData: FormData) {
 	const supabase = createClient();
 
 	const email = formData.get("email") as string;
@@ -125,8 +125,8 @@ export async function updateUserAction(prevState:unknown, formData: FormData) {
 		};
 	}
 
-  revalidatePath('/', "layout")
-  redirect("/dashboard")
+	revalidatePath('/', "layout")
+	redirect("/dashboard")
 
 	return {
 		status: 200,
