@@ -4,6 +4,8 @@ import { Folder } from "lucide-react";
 import Link from "next/link";
 import FolderTable from "./_components/folder-table";
 import CreateFolder from "./profile/CreateFolder";
+import { createClient } from "@/utils/supabase/server";
+import { redirect } from "next/navigation";
 
 
 export type Folder ={
@@ -12,6 +14,21 @@ export type Folder ={
 }
 
 const page = async () => {
+
+    const supabase = createClient();
+  
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+  
+      const {data: {user}} = await supabase.auth.getUser()
+  
+      const { data:admin, error } = await supabase.rpc("is_admin");
+
+      // if the user is not an admin, redirect them to the the account page
+      if (!admin) {
+        redirect(`/account/${user?.id}`);
+      }
 
 
 

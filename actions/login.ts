@@ -46,9 +46,30 @@ export const loginAction = async (prev: unknown, formData: FormData) => {
 		};
 	}
 
+	const { data: admin, error: adminError } = await supabase.rpc("is_admin");
+
+
+
 	revalidatePath('/', "layout")
 
-	redirect("/dashboard");
+
+	if (admin === true) {
+		redirect("/dashboard");
+	} 
+
+	else if (admin === false) {
+		redirect(`/account/${data.user?.id}`);
+	} else {
+		return {
+			status: 500,
+			error: {
+				message: "Error checking admin status",
+				data: adminError?.message,
+			},
+		};
+	}
+
+
 };
 
 export async function forgotPasswordAction(
