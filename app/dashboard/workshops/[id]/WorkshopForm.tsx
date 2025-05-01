@@ -53,7 +53,7 @@ const WorkshopForm = ({workshop, organisations}:Props) => {
          slug: workshop.slug || '',
          date: workshop.date || '',
          time: workshop.time || '',
-         organisation_id: workshop.organisation_id.id || '',
+         organisation_id: workshop.organisation_id || '',
        },
      });
 

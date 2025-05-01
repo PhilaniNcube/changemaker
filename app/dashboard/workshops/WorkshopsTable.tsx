@@ -37,7 +37,7 @@ const WorkshopsTable = ({ workshops }: Props) => {
               {workshop.name}
             </td>
             <td className="pr-2 py-5 text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
-              {workshop.organisation_id.name}
+              {workshop.organisation_id}
             </td>
             <td className="pr-2 py-5 text-gray-800 dark:text-gray-100 text-xs sm:text-sm">
               {workshop.date}
