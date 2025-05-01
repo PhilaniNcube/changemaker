@@ -60,23 +60,11 @@ const AccountPage = ({profile, organisations}:Props) => {
          id: profile.id,
          first_name: profile.first_name,
          last_name: profile.last_name,
-         organisation_id: profile.organisation_id.id,
+         organisation_id: profile.organisation_id || "",
        },
      });
 
-     const {
-       register,
-       handleSubmit,
-       formState: { errors },
-     } = useForm<Profile>({
-       resolver: zodResolver(profileSchema),
-       defaultValues: {
-         id: profile.id,
-         first_name: profile.first_name,
-         last_name: profile.last_name,
-         organisation_id: profile.organisation_id.id,
-       },
-     });
+
 
      const onSubmit: SubmitHandler<Profile> = async (data) => {
        toast("Please wait...", {
