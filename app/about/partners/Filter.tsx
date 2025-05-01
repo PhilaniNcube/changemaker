@@ -29,9 +29,19 @@ export default function Filter({ partners }: PartnersProps) {
     return partner.district;
   });
 
-  const provinceFilter = partners.map((partner) => {
-    return partner.province;
-  });
+
+  // convert the set to an array and remove duplicates
+  // by using the Array.from() method and the Set constructor
+  // and sort them alphabetically 
+
+  const provinceFilter = Array.from(new Set(partners.map((partner) => {
+    //  trim the province name to remove any leading or trailing spaces
+    return partner.province?.trim() || null;
+  })));
+
+  console.log({ provinceFilter });
+
+
 
   const towns = Array.from(new Set(townFilter));
   // sort towns array alpahebtically

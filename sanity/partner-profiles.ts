@@ -40,9 +40,9 @@ export const partnerProfiles = {
       },
     },
     {
-     name: 'town',
-     title: 'Town',
-     type: 'string',
+      name: 'town',
+      title: 'Town',
+      type: 'string',
     },
     {
       name: 'district',
@@ -52,14 +52,28 @@ export const partnerProfiles = {
     {
       name: 'province',
       title: 'Province',
+      //  use a list of provinces from a list of strings an select only one item from the list as the value for the field
       type: 'string',
+      options: {
+        list: [
+          'Eastern Cape',
+          'Free State',
+          'Gauteng',
+          'KwaZulu-Natal',
+          'Limpopo',
+          'Mpumalanga',
+          'North West',
+          'Northern Cape',
+          'Western Cape',
 
+        ],
+      }
     },
     {
       name: 'description',
       title: 'Description',
       type: 'array',
-      of: [{type: 'block'}]
+      of: [{ type: 'block' }]
     },
     {
       name: 'website',
@@ -110,7 +124,7 @@ export const partnerProfiles = {
       name: 'images',
       title: 'Images',
       type: 'array',
-      of: [{type: 'image'}]
+      of: [{ type: 'image' }]
     },
 
   ]

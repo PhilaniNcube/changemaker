@@ -47,6 +47,7 @@ export const loginAction = async (prev: unknown, formData: FormData) => {
 	}
 
 	const { data: admin, error: adminError } = await supabase.rpc("is_admin");
+	console.log({ admin, error: adminError })
 
 
 
