@@ -11,7 +11,8 @@ import {
 import { Button } from "@/components/ui/button";
 
 import { getFolderByExternalId } from "@/fetchers/folder-details";
-import FolderResources from "./FolderResources";
+import FolderUpload from "./FolderUpload";
+import DeleteResourceButton from "./DeleteResourceButton";
 
 // Helper function to format file size
 function formatFileSize(bytes: number): string {
@@ -41,16 +42,13 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
       </Button>
       <div className="flex items-center justify-between">
         <div className="flex items-center justify-between space-x-4">
-          <h1 className="text-2xl font-semibold md:text-3xl">
+          <h1 className="text-2xl font-semibold capitalize md:text-3xl">
             {folderContents?.name}
           </h1>
+          <FolderUpload folderName={folderContents?.name || ""} />
         </div>
       </div>
       <div>
-        <div className="flex items-center space-x-2">
-          <FolderIcon className="w-6 h-6 text-gray-500" />
-          <span className="text-lg font-medium">{folderContents?.name}</span>
-        </div>
         {/* Folder Resources */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {folderContents?.resources.map((resource) => {
@@ -87,24 +85,35 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                       </p>
                     )}
                   </div>
-                  {/* Download button for images */}
+                  {/* Action buttons for images */}
                   <div className="absolute transition-opacity opacity-0 top-2 right-2 group-hover:opacity-100">
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="w-8 h-8 p-0"
-                      asChild
-                    >
-                      <a
-                        href={resource.secure_url}
-                        download={
+                    <div className="flex space-x-1">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        className="w-8 h-8 p-0"
+                        asChild
+                      >
+                        <a
+                          href={resource.secure_url}
+                          download={
+                            resource.original_filename || resource.public_id
+                          }
+                          title="Download"
+                        >
+                          <Download className="w-4 h-4" />
+                        </a>
+                      </Button>
+                      <DeleteResourceButton
+                        publicId={resource.public_id}
+                        resourceType="image"
+                        fileName={
                           resource.original_filename || resource.public_id
                         }
-                        title="Download"
-                      >
-                        <Download className="w-4 h-4" />
-                      </a>
-                    </Button>
+                        folderId={id}
+                        variant="icon"
+                      />
+                    </div>
                   </div>
                 </div>
               );
@@ -136,15 +145,15 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                     </p>
                   </div>
                 </div>
-                {/* Download button for documents */}
-                <div className="mt-3">
+                {/* Action buttons for documents */}
+                <div className="mt-3 space-y-2">
                   <Button
                     size="sm"
                     variant="outline"
                     className="w-full"
                     asChild
                   >
-                    <a
+                    <Link
                       href={resource.secure_url}
                       download={
                         resource.original_filename || resource.public_id
@@ -153,8 +162,21 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                       rel="noopener noreferrer"
                     >
                       Download {resource.format?.toUpperCase()}
-                    </a>
+                    </Link>
                   </Button>
+                  <DeleteResourceButton
+                    publicId={resource.public_id}
+                    resourceType={
+                      resource.resource_type === "image"
+                        ? "image"
+                        : resource.resource_type === "video"
+                        ? "video"
+                        : "raw"
+                    }
+                    fileName={resource.original_filename || resource.public_id}
+                    folderId={id}
+                    variant="button"
+                  />
                 </div>
               </div>
             );

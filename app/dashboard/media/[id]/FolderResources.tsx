@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Trash2Icon, File, Download } from "lucide-react";
 import { deleteAsset } from "@/actions/delete-asset";
+import FolderUpload from "./FolderUpload";
 
 interface FolderResourcesProps {
   resources: FolderResource[];
@@ -15,39 +16,51 @@ export default function FolderResources({
 }: FolderResourcesProps) {
   if (resources.length === 0) {
     return (
-      <div className="text-center py-12">
-        <File className="mx-auto h-12 w-12 text-gray-400" />
+      <div className="py-12 text-center">
+        <File className="w-12 h-12 mx-auto text-gray-400" />
         <h3 className="mt-2 text-sm font-medium text-gray-900">
           No resources found
         </h3>
         <p className="mt-1 text-sm text-gray-500">
           This folder doesn&apos;t contain any images or files yet.
         </p>
+        <div className="mt-6">
+          <FolderUpload folderName={folderName} />
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
+    <div className="relative space-y-6">
+      {/* Upload Button Header */}
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-gray-600">
+          {resources.length} {resources.length === 1 ? "file" : "files"} in this
+          folder
+        </p>
+        <FolderUpload folderName={folderName} />
+      </div>
+
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {resources.map((resource) => (
           <div
             key={resource.public_id}
-            className="group relative rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
+            className="relative p-4 transition-shadow bg-white border border-gray-200 rounded-lg shadow-sm group hover:shadow-md"
           >
             {/* Resource Preview */}
-            <div className="aspect-square mb-3 overflow-hidden rounded-md bg-gray-100">
+            <div className="mb-3 overflow-hidden bg-gray-100 rounded-md aspect-square">
               {resource.resource_type === "image" ? (
                 <Image
                   src={resource.secure_url}
                   alt={resource.original_filename}
                   width={resource.width || 300}
                   height={resource.height || 300}
-                  className="h-full w-full object-cover"
+                  className="object-cover w-full h-full"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center">
-                  <File className="h-16 w-16 text-gray-400" />
+                <div className="flex items-center justify-center w-full h-full">
+                  <File className="w-16 h-16 text-gray-400" />
                 </div>
               )}
             </div>
@@ -61,7 +74,7 @@ export default function FolderResources({
                 {resource.original_filename}
               </h3>
 
-              <div className="text-xs text-gray-500 space-y-1">
+              <div className="space-y-1 text-xs text-gray-500">
                 <p>Format: {resource.format?.toUpperCase()}</p>
                 <p>Size: {formatFileSize(resource.bytes)}</p>
                 {resource.width && resource.height && (
@@ -78,7 +91,7 @@ export default function FolderResources({
                   {resource.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                      className="inline-flex items-center px-2 py-1 text-xs font-medium text-blue-800 bg-blue-100 rounded-full"
                     >
                       {tag}
                     </span>
@@ -93,12 +106,12 @@ export default function FolderResources({
             </div>
 
             {/* Action Buttons */}
-            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute transition-opacity opacity-0 top-2 right-2 group-hover:opacity-100">
               <div className="flex space-x-1">
                 <Button
                   size="sm"
                   variant="secondary"
-                  className="h-8 w-8 p-0"
+                  className="w-8 h-8 p-0"
                   asChild
                 >
                   <a
@@ -106,7 +119,7 @@ export default function FolderResources({
                     download={resource.original_filename}
                     title="Download"
                   >
-                    <Download className="h-4 w-4" />
+                    <Download className="w-4 h-4" />
                   </a>
                 </Button>
 
@@ -119,11 +132,11 @@ export default function FolderResources({
                   <Button
                     size="sm"
                     variant="destructive"
-                    className="h-8 w-8 p-0"
+                    className="w-8 h-8 p-0"
                     type="submit"
                     title="Delete"
                   >
-                    <Trash2Icon className="h-4 w-4" />
+                    <Trash2Icon className="w-4 h-4" />
                   </Button>
                 </form>
               </div>
