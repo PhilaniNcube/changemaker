@@ -93,8 +93,8 @@ export default function DeleteResourceButton({
           <AlertDialogHeader>
             <AlertDialogTitle>Delete File</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to delete "{fileName}"? This action cannot
-              be undone.
+              Are you sure you want to delete &ldquo;{fileName}&rdquo;? This
+              action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -133,8 +133,8 @@ export default function DeleteResourceButton({
         <AlertDialogHeader>
           <AlertDialogTitle>Delete File</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete "{fileName}"? This action cannot be
-            undone.
+            Are you sure you want to delete &ldquo;{fileName}&rdquo;? This
+            action cannot be undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
