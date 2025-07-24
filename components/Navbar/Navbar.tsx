@@ -2,7 +2,6 @@
 "use client";
 
 import { Fragment, useState } from "react";
-import { Dialog, Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -19,6 +18,18 @@ import { createClient } from "@/utils/supabase/client";
 import { signOutAction } from "@/actions/sign-out";
 import { Button } from "../ui/button";
 import { User } from "@supabase/supabase-js";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const about = [
   // {
@@ -57,6 +68,8 @@ type Props = {
 
 const Navbar = ({ user, admin }: Props) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [partnerAreaOpen, setPartnerAreaOpen] = useState(false);
 
   const router = useRouter();
 
@@ -129,31 +142,36 @@ const Navbar = ({ user, admin }: Props) => {
           )}
         </div>
       </nav>
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">CHangeMaker Network</span>
-              <img className="w-auto h-8" src="/images/logo_3.svg" alt="Logo" />
-            </Link>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon
-                className="w-8 h-8 text-masifunde"
-                aria-hidden="true"
-              />
-            </button>
-          </div>
+      <Dialog open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <DialogContent className="fixed inset-y-0 right-0 z-50 w-full p-6 overflow-y-auto translate-x-0 translate-y-0 bg-white lg:hidden sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform-none">
+          <DialogHeader>
+            <div className="flex items-center justify-between">
+              <Link
+                href="/"
+                className="-m-1.5 p-1.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span className="sr-only">ChangeMaker Network</span>
+                <img
+                  className="w-auto h-8"
+                  src="/images/logo_3.svg"
+                  alt="Logo"
+                />
+              </Link>
+              <DialogClose asChild>
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon
+                    className="w-8 h-8 text-masifunde"
+                    aria-hidden="true"
+                  />
+                </button>
+              </DialogClose>
+            </div>
+          </DialogHeader>
           <div className="flow-root mt-6">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="py-6 space-y-2">
@@ -164,34 +182,34 @@ const Navbar = ({ user, admin }: Props) => {
                 >
                   Home
                 </Link>
-                <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50">
-                        About
-                        <ChevronDownIcon
-                          className={classNames(
-                            open ? "rotate-180" : "",
-                            "h-5 w-5 flex-none"
-                          )}
-                          aria-hidden="true"
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...about, ...callsToAction].map((item) => (
-                          <Disclosure.Button
-                            key={item.name}
-                            as="a"
-                            href={item.href}
-                            className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
-                          >
-                            {item.name}
-                          </Disclosure.Button>
-                        ))}
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+                <Collapsible
+                  open={aboutOpen}
+                  onOpenChange={setAboutOpen}
+                  className="-mx-3"
+                >
+                  <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50">
+                    About
+                    <ChevronDownIcon
+                      className={classNames(
+                        aboutOpen ? "rotate-180" : "",
+                        "h-5 w-5 flex-none"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 space-y-2">
+                    {[...about, ...callsToAction].map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
                 <Link
                   href="/in-action"
                   onClick={() => setMobileMenuOpen(false)}
@@ -206,45 +224,45 @@ const Navbar = ({ user, admin }: Props) => {
                 >
                   Learner Area
                 </Link>
-                <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50">
-                        Partner Area
-                        <ChevronDownIcon
-                          className={classNames(
-                            open ? "rotate-180" : "",
-                            "h-5 w-5 flex-none"
-                          )}
-                          aria-hidden="true"
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="mt-2 space-y-2">
-                        <Disclosure.Button
-                          as="a"
-                          href="/partner-area/implementation-partner"
-                          className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
-                        >
-                          Become an Implementation Partner
-                        </Disclosure.Button>
-                        <Disclosure.Button
-                          as="a"
-                          href="/partner-area/spark-luncheon"
-                          className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
-                        >
-                          Spark Change Luncheon
-                        </Disclosure.Button>
-                        <Disclosure.Button
-                          as="a"
-                          href="/about/partners"
-                          className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
-                        >
-                          CSO Partners
-                        </Disclosure.Button>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+                <Collapsible
+                  open={partnerAreaOpen}
+                  onOpenChange={setPartnerAreaOpen}
+                  className="-mx-3"
+                >
+                  <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-masifunde hover:bg-gray-50">
+                    Partner Area
+                    <ChevronDownIcon
+                      className={classNames(
+                        partnerAreaOpen ? "rotate-180" : "",
+                        "h-5 w-5 flex-none"
+                      )}
+                      aria-hidden="true"
+                    />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 space-y-2">
+                    <Link
+                      href="/partner-area/implementation-partner"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
+                    >
+                      Become an Implementation Partner
+                    </Link>
+                    <Link
+                      href="/partner-area/spark-luncheon"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
+                    >
+                      Spark Change Luncheon
+                    </Link>
+                    <Link
+                      href="/about/partners"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
+                    >
+                      CSO Partners
+                    </Link>
+                  </CollapsibleContent>
+                </Collapsible>
                 <Link
                   href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
@@ -293,7 +311,7 @@ const Navbar = ({ user, admin }: Props) => {
               </div>
             </div>
           </div>
-        </Dialog.Panel>
+        </DialogContent>
       </Dialog>
     </header>
   );
