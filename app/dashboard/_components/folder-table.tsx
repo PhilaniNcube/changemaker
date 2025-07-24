@@ -26,14 +26,16 @@ import { Folder } from "../page";
 import Link from "next/link";
 import { SubmitButton } from "@/components/Forms/submit-button";
 import deleteFolderAction from "@/actions/delete-folder";
+import RenameFolder from "./rename-folder";
+import { CloudinaryFolder } from "@/fetchers/folders";
 
 type TableProps = {
-  folders: { name: string; path: string }[];
+  folders: CloudinaryFolder[];
 };
 
 export default function FolderTable({ folders }: TableProps) {
   return (
-    <div className="border shadow-sm rounded-lg">
+    <div className="border rounded-lg shadow-sm">
       <Table>
         <TableHeader>
           <TableRow>
@@ -48,17 +50,18 @@ export default function FolderTable({ folders }: TableProps) {
                 {folder.name}
               </TableCell>
               <TableCell className="flex space-x-2">
-                  <Button size="sm" variant="outline">
-                <Link href={`/dashboard/media/${folder.path}`}>
+                <Button size="sm" variant="outline">
+                  <Link href={`/dashboard/media/${folder.external_id}`}>
                     Open
-                </Link>
-                  </Button>
+                  </Link>
+                </Button>
+                <RenameFolder folderName={folder.name} />
                 <AlertDialog>
                   <AlertDialogTrigger>
                     <Button size="sm" type="button" variant="destructive">
                       Delete Folder
-                      </Button>
-                      </AlertDialogTrigger>
+                    </Button>
+                  </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
                       <AlertDialogTitle>
@@ -73,7 +76,11 @@ export default function FolderTable({ folders }: TableProps) {
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
                       <AlertDialogAction>
                         <form action={deleteFolderAction}>
-                          <input type="hidden" name="folderName" value={folder.name} />
+                          <input
+                            type="hidden"
+                            name="folderName"
+                            value={folder.name}
+                          />
                           <SubmitButton>Delete Folder</SubmitButton>
                         </form>
                       </AlertDialogAction>

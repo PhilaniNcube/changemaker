@@ -9,13 +9,12 @@ import slugify from "slugify";
 const AddWorkshop = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const supabase = createClient()
+  const supabase = createClient();
 
   async function createWorkshop() {
     setLoading(true);
 
-    const slug = slugify(`${Math.floor(Math.random() * 10)}_draft`)
-
+    const slug = slugify(`${Math.floor(Math.random() * 10)}_draft`);
 
     const { data: workshop, error } = await supabase
       .from("workshops")
@@ -26,7 +25,7 @@ const AddWorkshop = () => {
     if (error) {
       setLoading(false);
       throw new Error(error.message);
-    // biome-ignore lint/style/noUselessElse: <explanation>
+      // biome-ignore lint/style/noUselessElse: <explanation>
     } else {
       alert("Organisation created successfully");
 

@@ -5,29 +5,32 @@ import AccountPage from "./AccountPage";
 import Documents from "../documents/Documents";
 
 type Props = {
-  params: {
-    id: string
-  }
-}
+  params: Promise<{
+    id: string;
+  }>;
+};
 
+const page = async ({ params }: Props) => {
+  const { id } = await params;
 
+  const profileData = getMyProfile();
+  const organisationsData = getOrganisations();
+  const documentsData = getDocuments();
 
-const page = async ({params: {id}}:Props) => {
+  const [profile, organisations, documents] = await Promise.all([
+    profileData,
+    organisationsData,
+    documentsData,
+  ]);
 
-  const profileData = getMyProfile()
-    const organisationsData = getOrganisations();
-    const documentsData = getDocuments();
-
-    const [profile, organisations, documents] = await Promise.all([
-      profileData,
-      organisationsData,
-      documentsData,
-    ]);
-
-  return <main className="h-screen bg-white py-6">
-
-    <AccountPage profile={profile} organisations={organisations} documents={documents} />
- 
-  </main>;
+  return (
+    <main className="h-screen bg-white py-6">
+      <AccountPage
+        profile={profile}
+        organisations={organisations}
+        documents={documents}
+      />
+    </main>
+  );
 };
 export default page;

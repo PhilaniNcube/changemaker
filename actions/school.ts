@@ -13,7 +13,7 @@ const SchoolSchema = z.object({
 type SchoolInput = z.infer<typeof SchoolSchema>;
 
 export async function addSchool(formData: FormData) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   try {
     // Validate input data
@@ -68,7 +68,7 @@ export async function addSchool(formData: FormData) {
 }
 
 export async function deleteSchool(id: number) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   try {
     // Validate that id exists

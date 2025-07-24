@@ -1,19 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
+"use client";
 
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure } from "@headlessui/react";
-import {
-  Bars3Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
-import  { type User, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import AccountMenu from "./AccountMenu";
 import { DesktopNavigation } from "./DesktopNavigation";
@@ -22,26 +18,24 @@ import MainMenu from "./MainMenu";
 import { createClient } from "@/utils/supabase/client";
 import { signOutAction } from "@/actions/sign-out";
 import { Button } from "../ui/button";
-
-
+import { User } from "@supabase/supabase-js";
 
 const about = [
-	// {
-	// 	name: "NISSP",
-	// 	description: "National Inclusive and Safer Schools Partnership",
-	// 	href: "/about/nissp",
-	// },
-	{
-		name: "Team",
-		description: "Get to know our team",
-		href: "/about/team",
-	},
-	{
-		name: "TUI Junior Academy SA",
-		description: "Changemakers for Environmental Awareness",
-		href: "/about/junior-academy",
-	},
-
+  // {
+  // 	name: "NISSP",
+  // 	description: "National Inclusive and Safer Schools Partnership",
+  // 	href: "/about/nissp",
+  // },
+  {
+    name: "Team",
+    description: "Get to know our team",
+    href: "/about/team",
+  },
+  {
+    name: "TUI Junior Academy SA",
+    description: "Changemakers for Environmental Awareness",
+    href: "/about/junior-academy",
+  },
 ];
 const callsToAction = [
   {
@@ -52,29 +46,26 @@ const callsToAction = [
   { name: "Contact us", href: "/contact", icon: PhoneIcon },
 ];
 
-function classNames(...classes:string[]) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 type Props = {
-  user: User | null
-  admin: boolean | undefined
-}
+  user: User | null;
+  admin: boolean | undefined;
+};
 
-const Navbar = ({user, admin}:Props) => {
+const Navbar = ({ user, admin }: Props) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const router = useRouter()
+  const router = useRouter();
 
   const supabase = createClient();
 
-
-
-    const handleLogout = async () => {
-      await supabase.auth.signOut();
-      router.push('/')
-    };
-
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    router.push("/");
+  };
 
   return (
     <header className="z-[999] bg-black ">
@@ -306,7 +297,6 @@ const Navbar = ({user, admin}:Props) => {
       </Dialog>
     </header>
   );
-}
-
+};
 
 export default Navbar;

@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import { createClient } from "@/utils/supabase/client";
 import { TrashIcon } from "@heroicons/react/24/outline";
@@ -7,29 +6,30 @@ import { useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const DeleteButton = ({id}:{id:string}) => {
+const DeleteButton = ({ id }: { id: string }) => {
+  const supabase = createClient();
 
-   const  supabase  = createClient();
+  const router = useRouter();
+  const handleDelete = async () => {
+    const { data, error } = await supabase
+      .from("documents")
+      .delete()
+      .eq("id", id)
+      .select("*")
+      .single();
 
-   const router = useRouter()
-const handleDelete = async () => {
-
-  const {data, error} = await supabase.from('documents').delete().eq("id", id).select('*').single()
-
-
-  if(error) {
+    if (error) {
       toast("Delete operation failed", {
         type: "error",
       });
+    } else {
+      toast("Document was deleted", {
+        type: "success",
+      });
+    }
 
-  } else {
-        toast("Document was deleted", {
-          type: "success",
-        });
-  }
-
-  router.refresh()
-}
+    router.refresh();
+  };
 
   return (
     <button

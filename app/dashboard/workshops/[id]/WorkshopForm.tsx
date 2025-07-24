@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import type { Database } from "@/schema";
 import slugify from "slugify";
@@ -6,7 +6,11 @@ import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { CalendarDaysIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import {
+  CalendarDaysIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createClient } from "@/utils/supabase/client";
@@ -18,7 +22,9 @@ const workshopSchema = z.object({
   name: z
     .string()
     .min(3, { message: "Name must be at least 3 characters long" }),
-  slug: z.string().min(3, {message: "Slug must be at least 3 characters long"}),
+  slug: z
+    .string()
+    .min(3, { message: "Slug must be at least 3 characters long" }),
   description: z
     .string()
     .max(200, { message: "Description must be less than 200 characters long" })
@@ -26,7 +32,6 @@ const workshopSchema = z.object({
   organisation_id: z.string().uuid(),
   date: z.string(),
   time: z.string(),
-
 });
 
 type Workshop = z.infer<typeof workshopSchema>;
@@ -36,92 +41,82 @@ type Props = {
   organisations: Database["public"]["Tables"]["organisations"]["Row"][];
 };
 
-const WorkshopForm = ({workshop, organisations}:Props) => {
+const WorkshopForm = ({ workshop, organisations }: Props) => {
+  const router = useRouter();
 
-  const router = useRouter()
-
-     const {
-       register,
-       handleSubmit,
-       formState: { errors },
-     } = useForm<Workshop>({
-       resolver: zodResolver(workshopSchema),
-       defaultValues: {
-         id: workshop.id,
-         name: workshop.name || '',
-         description: workshop.description || '',
-         slug: workshop.slug || '',
-         date: workshop.date || '',
-         time: workshop.time || '',
-         organisation_id: workshop.organisation_id || '',
-       },
-     });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Workshop>({
+    resolver: zodResolver(workshopSchema),
+    defaultValues: {
+      id: workshop.id,
+      name: workshop.name || "",
+      description: workshop.description || "",
+      slug: workshop.slug || "",
+      date: workshop.date || "",
+      time: workshop.time || "",
+      organisation_id: workshop.organisation_id || "",
+    },
+  });
 
   const supabase = createClient();
 
-  const [imageUrl, setImageUrl] = useState('')
+  const [imageUrl, setImageUrl] = useState("");
 
+  const onSubmit: SubmitHandler<Workshop> = async (data) => {
+    toast("Please wait...", {
+      type: "warning",
+    });
 
+    const slug = slugify(data.name, {
+      lower: true,
+      replacement: "_",
+      trim: true,
+    });
 
-   const onSubmit: SubmitHandler<Workshop> = async (data) => {
+    const { data: workshop, error } = await supabase
+      .from("workshops")
+      .update({
+        name: data.name,
+        slug: slug,
+        image: imageUrl,
+        date: data.date,
+        time: data.time,
+        description: data.description,
+        organisation_id: data.organisation_id,
+      })
+      .eq("id", data.id)
+      .select("*");
 
+    if (error) {
+      toast.error(error.message);
+      return;
+      // biome-ignore lint/style/noUselessElse: <explanation>
+    } else if (workshop) {
+      toast.success("Workshop details updated successfully");
+      router.refresh();
+    }
+  };
 
-
-        toast("Please wait...", {
-          type: "warning",
-        });
-
-        const slug = slugify(data.name, {
-          lower: true,
-          replacement: "_",
-          trim: true,
-        });
-
-
-const { data: workshop, error } = await supabase
-  .from("workshops")
-  .update({
-    name: data.name,
-    slug: slug,
-    image: imageUrl,
-    date: data.date,
-    time: data.time,
-    description: data.description,
-    organisation_id: data.organisation_id,
-  })
-  .eq("id", data.id).select('*');
-
-
-  if(error) {
-    toast.error(error.message);
-    return
-  // biome-ignore lint/style/noUselessElse: <explanation>
-  } else if(workshop) {
-    toast.success('Workshop details updated successfully')
-    router.refresh();
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  async function handleOnUpload(result: any, widget: any) {
+    if (result.event === "success") {
+      setImageUrl(result.info.url);
+      toast("Image uploaded successfully", {
+        type: "success",
+      });
+      widget.close();
+      return;
+      // biome-ignore lint/style/noUselessElse: <explanation>
+    } else if (result.event !== "success") {
+      toast("Image upload failed", {
+        type: "error",
+      });
+      widget.close();
+    }
   }
-
-   };
-
-
-     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-     async function handleOnUpload(result: any, widget: any) {
-
-       if (result.event === "success") {
-         setImageUrl(result.info.url);
-         toast("Image uploaded successfully", {
-           type: "success",
-         });
-         widget.close();
-         return;
-       // biome-ignore lint/style/noUselessElse: <explanation>
-       } else if (result.event !== "success") {
-         toast("Image upload failed", {
-           type: "error",
-         });
-         widget.close();
-       }
-     }
 
   return (
     <div className="max-w-2xl px-6 pt-10 mt-6 rounded-md shadow-md bg-slate-100">
@@ -244,9 +239,7 @@ const { data: workshop, error } = await supabase
               Upload Image
             </p>
             <div className="flex mt-2 rounded-md shadow-sm">
-              <div
-                className="px-6 py-2 text-lg font-medium text-white rounded-md bg-masifunde w-fit"
-              >
+              <div className="px-6 py-2 text-lg font-medium text-white rounded-md bg-masifunde w-fit">
                 <CldUploadButton
                   onUpload={handleOnUpload}
                   uploadPreset="kfo3j4ot"

@@ -15,18 +15,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import { PhoneIcon, PlayCircleIcon, PlayIcon } from "lucide-react";
 
-
 export function DesktopNavigation() {
   return (
     <NavigationMenu className="hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link
-            href="/"
-            legacyBehavior
-            passHref
-            className="bg-black text-masifunde"
-          >
+          <Link href="/" passHref className="bg-black text-masifunde">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Home
             </NavigationMenuLink>
@@ -75,12 +69,7 @@ export function DesktopNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link
-            href="/in-action"
-            legacyBehavior
-            passHref
-            className="bg-black text-masifunde"
-          >
+          <Link href="/in-action" passHref className="bg-black text-masifunde">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               MCN In Action
             </NavigationMenuLink>
@@ -89,7 +78,6 @@ export function DesktopNavigation() {
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
           <Link
             href="/learner-area"
-            legacyBehavior
             passHref
             className="bg-black text-masifunde"
           >
@@ -124,12 +112,7 @@ export function DesktopNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link
-            href="/contact"
-            legacyBehavior
-            passHref
-            className="bg-black text-masifunde"
-          >
+          <Link href="/contact" passHref className="bg-black text-masifunde">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Contact Us
             </NavigationMenuLink>
@@ -156,7 +139,9 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <h3 className="text-sm font-bold leading-none tracking-wide">{title}</h3>
+          <h3 className="text-sm font-bold leading-none tracking-wide">
+            {title}
+          </h3>
           <p className="text-sm font-medium leading-6 line-clamp-2 text-muted-foreground">
             {children}
           </p>

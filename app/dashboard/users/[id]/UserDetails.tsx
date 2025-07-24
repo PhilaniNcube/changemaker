@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { deleteUser } from "@/actions/delete-user";
 import { createClient } from "@/utils/supabase/client";
@@ -7,32 +7,24 @@ import { Dialog, Transition } from "@headlessui/react";
 import { useRouter } from "next/navigation";
 import { Fragment, useState } from "react";
 
-
 type Props = {
-  profile: Database['public']['Tables']['profiles']['Row']
-}
+  profile: Database["public"]["Tables"]["profiles"]["Row"];
+};
 
-const UserDetails = ({profile}:Props) => {
+const UserDetails = ({ profile }: Props) => {
+  const supabase = createClient();
 
-    const supabase = createClient()
+  const [confirm, setConfirm] = useState(false);
 
+  function closeModal() {
+    setConfirm(false);
+  }
 
+  function openModal() {
+    setConfirm(true);
+  }
 
-  const [confirm, setConfirm] = useState(false)
-
-    function closeModal() {
-      setConfirm(false);
-    }
-
-    function openModal() {
-      setConfirm(true);
-    }
-
-
-  const router = useRouter()
-
-
-
+  const router = useRouter();
 
   return (
     <div className="w-full mt-4">
@@ -49,7 +41,6 @@ const UserDetails = ({profile}:Props) => {
           </button>
         </form>
       </div>
-
     </div>
   );
 };

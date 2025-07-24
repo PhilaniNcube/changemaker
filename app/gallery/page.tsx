@@ -7,19 +7,18 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Back from "@/components/back";
 
-const page = async ({searchParams}:{searchParams: {next: string | undefined}}) => {
+const page = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ next: string | undefined }>;
+}) => {
+  const { next } = await searchParams;
 
-
-
-    const data = await cloudinary.v2.api
-      .resources({next_cursor: searchParams.next, max_results: 9, content_type: 'image'})
-      .then((result: ResourcesType) => {
-        return result;
-      });
-
-    
-
-
+  const data = await cloudinary.v2.api
+    .resources({ next_cursor: next, max_results: 9, content_type: "image" })
+    .then((result: ResourcesType) => {
+      return result;
+    });
 
   return (
     <main className="bg-white">

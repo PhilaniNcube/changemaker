@@ -7,151 +7,144 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 const loginSchema = z.object({
-	email: z.string().email(),
-	password: z.string(),
+  email: z.string().email(),
+  password: z.string(),
 });
 
 export const loginAction = async (prev: unknown, formData: FormData) => {
-	const supabase = createClient();
+  const supabase = await createClient();
 
-	const validatedFields = loginSchema.safeParse({
-		email: formData.get("email"),
-		password: formData.get("password"),
-	});
+  const validatedFields = loginSchema.safeParse({
+    email: formData.get("email"),
+    password: formData.get("password"),
+  });
 
-	if (!validatedFields.success) {
-		return {
-			status: 400,
-			error: {
-				message: "Invalid fields",
-				data: validatedFields.error.flatten().fieldErrors,
-			},
-		};
-	}
+  if (!validatedFields.success) {
+    return {
+      status: 400,
+      error: {
+        message: "Invalid fields",
+        data: validatedFields.error.flatten().fieldErrors,
+      },
+    };
+  }
 
-	const { data, error } = await supabase.auth.signInWithPassword({
-		email: validatedFields.data.email,
-		password: validatedFields.data.password
-	})
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: validatedFields.data.email,
+    password: validatedFields.data.password,
+  });
 
-	console.log({ data, error })
+  console.log({ data, error });
 
-	if (error) {
-		return {
-			status: 500,
-			error: {
-				message: error.message,
-				data: error.cause,
-			},
-		};
-	}
+  if (error) {
+    return {
+      status: 500,
+      error: {
+        message: error.message,
+        data: error.cause,
+      },
+    };
+  }
 
-	const { data: admin, error: adminError } = await supabase.rpc("is_admin");
-	console.log({ admin, error: adminError })
+  const { data: admin, error: adminError } = await supabase.rpc("is_admin");
+  console.log({ admin, error: adminError });
 
+  revalidatePath("/", "layout");
 
-
-	revalidatePath('/', "layout")
-
-
-	if (admin === true) {
-		redirect("/dashboard");
-	} 
-
-	else if (admin === false) {
-		redirect(`/account/${data.user?.id}`);
-	} else {
-		return {
-			status: 500,
-			error: {
-				message: "Error checking admin status",
-				data: adminError?.message,
-			},
-		};
-	}
-
-
+  if (admin === true) {
+    redirect("/dashboard");
+  } else if (admin === false) {
+    redirect(`/account/${data.user?.id}`);
+  } else {
+    return {
+      status: 500,
+      error: {
+        message: "Error checking admin status",
+        data: adminError?.message,
+      },
+    };
+  }
 };
 
 export async function forgotPasswordAction(
-	prevState: unknown,
-	formData: FormData,
+  prevState: unknown,
+  formData: FormData
 ) {
-	const supabase = createClient();
+  const supabase = await createClient();
 
-	const email = formData.get("email") as string;
+  const email = formData.get("email") as string;
 
-	if (typeof email !== "string" || !email) {
-		return {
-			status: 400,
-			error: {
-				message: "Invalid email",
-			},
-		};
-	}
+  if (typeof email !== "string" || !email) {
+    return {
+      status: 400,
+      error: {
+        message: "Invalid email",
+      },
+    };
+  }
 
-	const { data, error } = await supabase.auth.resetPasswordForEmail(email);
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email);
 
-	console.log({ data, error })
+  console.log({ data, error });
 
-	if (error) {
-		return {
-			status: 500,
-			error: {
-				message: error.message,
-				data: error.cause,
-			},
-		};
-	}
+  if (error) {
+    return {
+      status: 500,
+      error: {
+        message: error.message,
+        data: error.cause,
+      },
+    };
+  }
 
-	revalidatePath('/', "layout")
+  revalidatePath("/", "layout");
 
-	return {
-		status: 200,
-		message: "We sent a password reset link to your email address.",
-	};
+  return {
+    status: 200,
+    message: "We sent a password reset link to your email address.",
+  };
 }
 
 export async function updateUserAction(prevState: unknown, formData: FormData) {
-	const supabase = createClient();
+  const supabase = await createClient();
 
-	const email = formData.get("email") as string;
-	const password = formData.get("password") as string;
+  const email = formData.get("email") as string;
+  const password = formData.get("password") as string;
 
-	if (
-		typeof email !== "string" ||
-		!email ||
-		typeof password !== "string" ||
-		!password
-	) {
-		return {
-			status: 400,
-			error: {
-				message: "Invalid fields",
-			},
-		};
-	}
+  if (
+    typeof email !== "string" ||
+    !email ||
+    typeof password !== "string" ||
+    !password
+  ) {
+    return {
+      status: 400,
+      error: {
+        message: "Invalid fields",
+      },
+    };
+  }
 
-	const { data, error } = await supabase.auth.updateUser({
-		email,
-		password,
-	});
+  const { data, error } = await supabase.auth.updateUser({
+    email,
+    password,
+  });
 
-	if (error) {
-		return {
-			status: 500,
-			error: {
-				message: error.message,
-				data: error.cause,
-			},
-		};
-	}
+  if (error) {
+    return {
+      status: 500,
+      error: {
+        message: error.message,
+        data: error.cause,
+      },
+    };
+  }
 
-	revalidatePath('/', "layout")
-	redirect("/dashboard")
+  revalidatePath("/", "layout");
+  redirect("/dashboard");
 
-	return {
-		status: 200,
-		message: "Your password has been reset successfully",
-	};
+  return {
+    status: 200,
+    message: "Your password has been reset successfully",
+  };
 }

@@ -1,17 +1,12 @@
-
-
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import createFolderAction from "@/actions/create-folder";
 import { SubmitButton } from "@/components/Forms/submit-button";
 
 const CreateFolder = () => {
-
-
-
   return (
-    <div className="w-full py-8 px-6 bg-slate-100 rounded-md">
-      <h1 className="font-semibold text-2xl">Create Folder</h1>
+    <div className="w-full max-w-lg px-6 py-8 mb-4 rounded-md bg-slate-100">
+      <h1 className="text-2xl font-semibold">Create Folder</h1>
       <div className="mt-2">
         <form action={createFolderAction} className="w-full">
           <div className="flex flex-col my-5">
@@ -25,14 +20,12 @@ const CreateFolder = () => {
               required
               id="name"
               name="folderName"
-              className="h-10 px-2 w-full rounded mt-2 text-gray-600 focus:outline-none focus:border focus:border-masifunde dark:focus:border-masifunde dark:border-gray-700 border-gray-300 border shadow"
+              className="w-full h-10 px-2 mt-2 text-gray-600 border border-gray-300 rounded shadow focus:outline-none focus:border focus:border-masifunde dark:focus:border-masifunde dark:border-gray-700"
               type="text"
             />
           </div>
 
-          <SubmitButton>
-            Add new folder
-          </SubmitButton>
+          <SubmitButton>Add new folder</SubmitButton>
         </form>
       </div>
     </div>

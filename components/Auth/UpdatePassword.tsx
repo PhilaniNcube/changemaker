@@ -8,13 +8,11 @@ import { createClient } from "@/utils/supabase/client";
 const UpdatePasword = () => {
   const [email, setEmail] = useState("");
 
-  const supabase = createClient()
+  const supabase = createClient();
 
   const form = useRef(null);
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    ;
 
     if (typeof email !== "string") {
       throw new Error("Please provide valid details");
@@ -24,10 +22,7 @@ const UpdatePasword = () => {
 
     if (error) {
       alert(error.message);
-
     }
-
-
 
     if (data) {
       alert("We sent a password reset link to your email address.");
@@ -75,7 +70,7 @@ const UpdatePasword = () => {
                 />
               </div>
             </div>
-            <div className="flex justify-between w-full px-2 pt-6 sm:px-6"/>
+            <div className="flex justify-between w-full px-2 pt-6 sm:px-6" />
             <div className="px-2 sm:mb-16 sm:px-6">
               <button
                 type="submit"

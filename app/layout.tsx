@@ -1,13 +1,15 @@
-import Navbar from '@/components/Navbar/Navbar'
-import './globals.css'
-import {  Roboto} from "next/font/google";
-import Footer from '@/components/Footer/Footer';
+import Navbar from "@/components/Navbar/Navbar";
+import "./globals.css";
+import { Roboto } from "next/font/google";
+import Footer from "@/components/Footer/Footer";
 import type { Metadata } from "next";
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from "@/utils/supabase/server";
 
-
-
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700", "900"], display: "swap" });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "900"],
+  display: "swap",
+});
 
 export const revalidate = 0;
 
@@ -32,25 +34,22 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  const supabase = await createClient();
 
-  const supabase = createClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-    const {data: {user}} = await supabase.auth.getUser()
-
-    const { data:admin, error } = await supabase.rpc("is_admin");
-
-
-
+  const { data: admin, error } = await supabase.rpc("is_admin");
 
   return (
     <html lang="en" className={`${roboto.className} bg-black`}>
@@ -60,11 +59,9 @@ export default async function RootLayout({
       */}
       <head />
       <body>
-
-          <Navbar user={user} admin={admin || undefined} />
-          <main>{children}</main>
-          <Footer />{" "}
-
+        <Navbar user={user} admin={admin || undefined} />
+        <main>{children}</main>
+        <Footer />{" "}
       </body>
     </html>
   );

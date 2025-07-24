@@ -11,54 +11,55 @@ const signUpSchema = z.object({
   last_name: z.string(),
 });
 
-export async function signUpAction(prevState:unknown, formData:FormData) {
-  const supabase = createClient()
+export async function signUpAction(prevState: unknown, formData: FormData) {
+  const supabase = await createClient();
 
-  const origin = headers().get('origin');
+  const headersList = await headers();
+  const origin = headersList.get("origin");
 
   const validatedFields = signUpSchema.safeParse({
-    email: formData.get('email'),
-    password: formData.get('password'),
-    first_name: formData.get('first_name'),
-    last_name: formData.get('last_name'),
+    email: formData.get("email"),
+    password: formData.get("password"),
+    first_name: formData.get("first_name"),
+    last_name: formData.get("last_name"),
   });
 
   if (!validatedFields.success) {
     return {
       status: 400,
       error: {
-        message: 'Invalid fields',
+        message: "Invalid fields",
         data: validatedFields.error.flatten().fieldErrors,
-    }
+      },
+    };
   }
-}
 
   const { email, password, first_name, last_name } = validatedFields.data;
 
   const { data, error } = await supabase.auth.signUp({
-			email,
-			password,
-			options: {
-				data: {
-					organisation_id: "01baf535-0d33-4d0e-beae-27adcd699c53",
-          first_name,
-          last_name,
-				},
-			},
-		});
+    email,
+    password,
+    options: {
+      data: {
+        organisation_id: "01baf535-0d33-4d0e-beae-27adcd699c53",
+        first_name,
+        last_name,
+      },
+    },
+  });
 
   if (error) {
-   return {
-    status: 500,
-    error: {
-      message: error.message,
-      data: error.cause,
-    }
-   }
+    return {
+      status: 500,
+      error: {
+        message: error.message,
+        data: error.cause,
+      },
+    };
   }
 
   return {
     status: 200,
-    message: 'Please check your email to verify your account',
+    message: "Please check your email to verify your account",
   };
 }

@@ -1,10 +1,31 @@
-import { Database } from '@/schema';
-import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs';
-import { cookies, headers } from 'next/headers';
+import { Database } from "@/schema";
+import { createServerClient } from "@supabase/ssr";
+import { cookies } from "next/headers";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () =>
-  createServerComponentSupabaseClient<Database>({
-    headers,
-    cookies,
-  });
+// Updated to use @supabase/ssr instead of deprecated auth-helpers
+export default async function createClient() {
+  const cookieStore = await cookies();
+
+  return createServerClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            );
+          } catch {
+            // The `setAll` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
+          }
+        },
+      },
+    }
+  );
+}

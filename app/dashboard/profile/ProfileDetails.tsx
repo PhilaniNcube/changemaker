@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createClient } from "@/utils/supabase/client";
 import type { Database } from "@/schema";
@@ -11,9 +11,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
-  profile: Database['public']['Tables']['profiles']['Row']
-  organisations: Database['public']['Tables']['organisations']['Row'][]
-}
+  profile: Database["public"]["Tables"]["profiles"]["Row"];
+  organisations: Database["public"]["Tables"]["organisations"]["Row"][];
+};
 
 const profileSchema = z.object({
   id: z.string().uuid(),
@@ -24,56 +24,55 @@ const profileSchema = z.object({
     .string()
     .min(2, { message: "Slug must be at least 3 characters long" }),
   email: z.string().email(),
-  organisation_id: z.string().uuid()
+  organisation_id: z.string().uuid(),
 });
 
 type Profile = z.infer<typeof profileSchema>;
 
-const ProfileDetails = ({profile, organisations}: Props) => {
+const ProfileDetails = ({ profile, organisations }: Props) => {
+  const router = useRouter();
+  const supabase = createClient();
 
-    const router = useRouter();
-    const supabase = createClient()
-
-     const {
-       register,
-       handleSubmit,
-       formState: { errors },
-     } = useForm<Profile>({
-       resolver: zodResolver(profileSchema),
-       defaultValues: {
-         id: profile.id,
-         first_name: profile.first_name,
-         last_name: profile.last_name,
-         email: profile.email || "",
-         organisation_id: profile.organisation_id || "",
-       },
-     });
-
-const onSubmit: SubmitHandler<Profile> = async (data) => {
-  toast("Please wait...", {
-    type: "warning",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Profile>({
+    resolver: zodResolver(profileSchema),
+    defaultValues: {
+      id: profile.id,
+      first_name: profile.first_name,
+      last_name: profile.last_name,
+      email: profile.email || "",
+      organisation_id: profile.organisation_id || "",
+    },
   });
 
-  const { data: profileData, error } = await supabase
-    .from("profiles")
-    .update({
-      first_name: data.first_name,
-      last_name: data.last_name,
-      email: data.email,
-      organisation_id: data.organisation_id,
-    })
-    .eq("id", profile.id)
-    .select("*");
+  const onSubmit: SubmitHandler<Profile> = async (data) => {
+    toast("Please wait...", {
+      type: "warning",
+    });
 
-  if (error) {
-    alert(error.message);
-    return;
-  // biome-ignore lint/style/noUselessElse: <explanation>
-  } else {
-    toast("Profile updated", { type: "info" });
-    router.refresh();
-  }
-};
+    const { data: profileData, error } = await supabase
+      .from("profiles")
+      .update({
+        first_name: data.first_name,
+        last_name: data.last_name,
+        email: data.email,
+        organisation_id: data.organisation_id,
+      })
+      .eq("id", profile.id)
+      .select("*");
+
+    if (error) {
+      alert(error.message);
+      return;
+      // biome-ignore lint/style/noUselessElse: <explanation>
+    } else {
+      toast("Profile updated", { type: "info" });
+      router.refresh();
+    }
+  };
 
   return (
     <div className="w-full">
@@ -89,7 +88,7 @@ const onSubmit: SubmitHandler<Profile> = async (data) => {
               htmlFor="id"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
-             Profile ID
+              Profile ID
             </label>
             <div className="flex mt-2 rounded-md shadow-sm">
               <input

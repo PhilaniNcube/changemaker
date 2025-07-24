@@ -1,7 +1,13 @@
-
 import { deleteUser } from "@/actions/delete-user";
 import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { getProfiles } from "@/fetchers/profiles";
 import { Database } from "@/schema";
 import { TrashIcon } from "@heroicons/react/24/outline";
@@ -13,10 +19,8 @@ type Props = {
 };
 
 const UsersTable = async () => {
-
   const usersData = await getProfiles();
   console.log(usersData);
-
 
   return (
     <div className="w-full mt-8">
@@ -29,7 +33,7 @@ const UsersTable = async () => {
           <TableHead className="px-4 text-left">View User</TableHead>
         </TableHeader>
         <TableBody className="text-slate-700">
-          {usersData.map((profile) => (
+          {usersData.map((profile: any) => (
             <TableRow
               key={profile.id}
               className="py-3 odd:bg-slate-100 even:bg-slate-200 hover:bg-zinc-300"

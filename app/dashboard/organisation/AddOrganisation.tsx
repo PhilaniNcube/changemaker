@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { createClient } from "@/utils/supabase/client";
 import { PlusIcon } from "@heroicons/react/24/outline";
@@ -8,26 +8,27 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddOrganisation = () => {
-  const [loading, setLoading] = useState(false)
-  const router = useRouter()
-  const supabase = createClient()
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const supabase = createClient();
 
-  async function createOrg(){
-setLoading(true)
-const { data:organisation, error } = await supabase.from("organisations")
-  .insert([{ name: "Draft", }]).select('*').single();
+  async function createOrg() {
+    setLoading(true);
+    const { data: organisation, error } = await supabase
+      .from("organisations")
+      .insert([{ name: "Draft" }])
+      .select("*")
+      .single();
 
-  if(error) {
-    setLoading(false);
-    throw new Error(error.message);
-  // biome-ignore lint/style/noUselessElse: <explanation>
-  } else {
-    toast("Please wait while you are being redirected", { type: "info" });
-    setLoading(false)
-    router.push(`/dashboard/organisation/${organisation.id}`)
-  }
-
-
+    if (error) {
+      setLoading(false);
+      throw new Error(error.message);
+      // biome-ignore lint/style/noUselessElse: <explanation>
+    } else {
+      toast("Please wait while you are being redirected", { type: "info" });
+      setLoading(false);
+      router.push(`/dashboard/organisation/${organisation.id}`);
+    }
   }
 
   return (

@@ -9,7 +9,7 @@ import { addSchool } from "@/actions/school";
 import { AddSchoolForm } from "./_components/add-school-form";
 
 const SchoolsPage = async () => {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase.from("schools").select("*");
 

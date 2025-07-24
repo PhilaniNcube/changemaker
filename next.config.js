@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  experimental: {
+    // Enable React Compiler support for Next.js 15
+    reactCompiler: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -23,4 +27,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

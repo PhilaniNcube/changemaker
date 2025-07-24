@@ -1,11 +1,15 @@
-"use client"
+"use client";
 
 import type { Database } from "@/schema";
-import slugify from 'slugify'
+import slugify from "slugify";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import {z} from 'zod'
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { EnvelopeIcon, GlobeAltIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import {
+  EnvelopeIcon,
+  GlobeAltIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
@@ -36,17 +40,16 @@ type Props = {
   districts: Database["public"]["Tables"]["districts"]["Row"][];
 };
 
-const OrganisationForm = ({organisation, districts}:Props) => {
-
+const OrganisationForm = ({ organisation, districts }: Props) => {
   const supabase = createClient();
 
-   const {
-     register,
-     handleSubmit,
-     formState: { errors },
-   } = useForm<Organisation>({
-     resolver: zodResolver(organisationSchema),
-     defaultValues: {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Organisation>({
+    resolver: zodResolver(organisationSchema),
+    defaultValues: {
       id: organisation.id,
       name: organisation.name,
       description: organisation.description || "",
@@ -57,58 +60,54 @@ const OrganisationForm = ({organisation, districts}:Props) => {
       district_id: organisation.district_id || "",
       twitter: organisation.twitter || "",
       other: organisation.other || "",
-     }
-   });
+    },
+  });
 
-
-  const onSubmit:SubmitHandler<Organisation> = async (data) => {
-
+  const onSubmit: SubmitHandler<Organisation> = async (data) => {
     toast("Please wait...", {
-      type: 'warning'
+      type: "warning",
     });
 
     const slug = slugify(data.name, {
       lower: true,
-      replacement: '_',
-      trim: true
-    })
-
-
-const { data: org, error } = await supabase
-  .from("organisations")
-  .update({
-    name: data.name,
-    slug: slug,
-    email: data.email,
-    website: data.website,
-    facebook: data.facebook,
-    twitter: data.twitter,
-    tel: data.tel,
-    other: data.other,
-    description: data.description,
-    district_id: data.district_id,
-  })
-  .eq("id", data.id).select('*')
-
-
-  if(error) {
-    toast(`There was an error: ${error.message}`, {
-      type: 'error'
+      replacement: "_",
+      trim: true,
     });
 
-    return
-  // biome-ignore lint/style/noUselessElse: <explanation>
-  } else if (org) {
-    toast("Organisation succesfully updated", {
-      type: "success",
-    });
+    const { data: org, error } = await supabase
+      .from("organisations")
+      .update({
+        name: data.name,
+        slug: slug,
+        email: data.email,
+        website: data.website,
+        facebook: data.facebook,
+        twitter: data.twitter,
+        tel: data.tel,
+        other: data.other,
+        description: data.description,
+        district_id: data.district_id,
+      })
+      .eq("id", data.id)
+      .select("*");
+
+    if (error) {
+      toast(`There was an error: ${error.message}`, {
+        type: "error",
+      });
+
+      return;
+      // biome-ignore lint/style/noUselessElse: <explanation>
+    } else if (org) {
+      toast("Organisation succesfully updated", {
+        type: "success",
+      });
+
+      return;
+    }
 
     return;
-  }
-
-   return
-
-  }
+  };
 
   return (
     <form className="w-full px-6 mt-6" onSubmit={handleSubmit(onSubmit)}>
