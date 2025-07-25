@@ -69,22 +69,24 @@ export function DesktopNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link href="/in-action" passHref className="bg-black text-masifunde">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <div className="bg-black text-masifunde">
+            <NavigationMenuLink
+              href="/in-action"
+              className={navigationMenuTriggerStyle()}
+            >
               MCN In Action
             </NavigationMenuLink>
-          </Link>
+          </div>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link
-            href="/learner-area"
-            passHref
-            className="bg-black text-masifunde"
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <div className="bg-black text-masifunde">
+            <NavigationMenuLink
+              href="/learner-area"
+              className={navigationMenuTriggerStyle()}
+            >
               Learner Area
             </NavigationMenuLink>
-          </Link>
+          </div>
         </NavigationMenuItem>{" "}
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
           <NavigationMenuTrigger>Partner Area</NavigationMenuTrigger>
