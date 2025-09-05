@@ -76,7 +76,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
@@ -90,6 +90,16 @@
 
 #content p > a {
   @apply font-bold underline;
+}
+
+#content h2 {
+  @apply font-semibold;
+  @apply text-masifunde;
+  font-size: 1.8rem;
+}
+
+#content ul {
+  @apply list-disc list-inside pl-5 my-4 text-sm;
 }
 
 #content h5 {
