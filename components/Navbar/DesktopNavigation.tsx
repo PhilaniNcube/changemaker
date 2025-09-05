@@ -48,6 +48,12 @@ export function DesktopNavigation() {
               >
                 Changemakers for Environmental Awareness
               </ListItem>
+              <ListItem
+                href="/about/eco-champion"
+                title="MCN Eco-Champion Changemaker Network"
+              >
+                Showcase of MCN initiatives
+              </ListItem>
               <div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 bg-slate-200">
                 <Link
                   href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"

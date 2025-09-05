@@ -47,6 +47,11 @@ const about = [
     description: "Changemakers for Environmental Awareness",
     href: "/about/junior-academy",
   },
+  {
+    name: "MCN Eco-Champion Changemaker Network",
+    description: "Showcase of MCN initiatives",
+    href: "/about/eco-champion",
+  },
 ];
 const callsToAction = [
   {

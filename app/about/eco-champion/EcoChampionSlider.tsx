@@ -9,6 +9,8 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 interface EcoChampionSliderProps {
   images: Array<{ asset: any; alt?: string }>;
@@ -22,16 +24,24 @@ const EcoChampionSlider: React.FC<EcoChampionSliderProps> = ({ images }) => {
       {/* Carousel - full viewport width/height */}
       <Carousel
         className="w-full h-full"
+        plugins={[
+          Autoplay({
+            delay: 1800,
+          }),
+        ]}
         opts={{ loop: true, skipSnaps: false }}
+        onPlay={() => {
+          console.log("Playing...");
+        }}
       >
         <CarouselContent>
           {images.map((img, idx) => (
-            <CarouselItem key={idx} className="overflow-hidden rounded-lg">
+            <CarouselItem key={idx} className="py-2 overflow-hidden ">
               <img
                 src={urlFor(img.asset).url()}
                 alt={img.alt || `Slide ${idx + 1}`}
-                className="object-cover object-center w-full h-full pointer-events-none select-none"
-                draggable={false}
+                className="object-cover object-top w-full h-full pointer-events-none select-none"
+                draggable={true}
               />
             </CarouselItem>
           ))}
@@ -39,15 +49,6 @@ const EcoChampionSlider: React.FC<EcoChampionSliderProps> = ({ images }) => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      {/* Overlayed Title & Subtitle */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white bg-black/40">
-        <h2 className="mb-4 text-5xl font-bold text-masifunde md:text-6xl drop-shadow-lg">
-          Eco Champion
-        </h2>
-        <p className="text-xl md:text-2xl drop-shadow text-masifunde">
-          Celebrating environmental leaders and innovators.
-        </p>
-      </div>
     </div>
   );
 };
