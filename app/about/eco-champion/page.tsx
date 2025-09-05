@@ -27,7 +27,7 @@ const EcoChampionPage = async () => {
               {pageContent.title || "Eco Champion"}
             </h1>
             {pageContent.subtitle && (
-              <p className="mb-6 text-lg text-masifunde">
+              <p className="mb-6 text-lg md:text-2xl text-masifunde">
                 {pageContent.subtitle}
               </p>
             )}
