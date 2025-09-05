@@ -20,7 +20,10 @@ const EcoChampionSlider: React.FC<EcoChampionSliderProps> = ({ images }) => {
   return (
     <div className="relative w-screen h-[80vh] overflow-hidden max-w-full">
       {/* Carousel - full viewport width/height */}
-      <Carousel className="w-full h-full" opts={{ loop: true }}>
+      <Carousel
+        className="w-full h-full"
+        opts={{ loop: true, skipSnaps: false }}
+      >
         <CarouselContent>
           {images.map((img, idx) => (
             <CarouselItem key={idx} className="overflow-hidden rounded-lg">
@@ -33,8 +36,8 @@ const EcoChampionSlider: React.FC<EcoChampionSliderProps> = ({ images }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <CarouselPrevious />
-        <CarouselNext /> */}
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
       {/* Overlayed Title & Subtitle */}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white bg-black/40">
