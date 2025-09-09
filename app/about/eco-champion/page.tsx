@@ -1,12 +1,20 @@
-import { getPageContent } from "@/sanity/lib/client";
+import { getPageContent, getPageListGroupBySlug } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import EcoChampionSlider from "./EcoChampionSlider";
+import page from "../page";
+import EcoChampionPhases from "./EcoChampionPhases";
 
 const EcoChampionPage = async () => {
   const pageContent = await getPageContent(
     "mcn-eco-champion-changemaker-network"
   );
+
+  const pageListGroup = await getPageListGroupBySlug(
+    "mcn-eco-champion-changemaker-network"
+  );
+
+  console.log("Eco Champion Page Content:", pageContent);
 
   // pageSlider may be a reference or populated object, handle both cases
   const sliderImages =
@@ -17,36 +25,22 @@ const EcoChampionPage = async () => {
       : [];
 
   return (
-    <main className="pb-10 bg-white">
+    <main className="bg-white ">
       {/* Hero Section with 2-column layout */}
-      <section className="relative w-full px-4 mx-auto mt-10 max-w-7xl">
-        <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
-          {/* Left: Title & Subtitle */}
-          <div className="flex flex-col justify-center h-full">
-            <h1 className="mb-4 text-4xl font-bold text-masifunde md:text-5xl">
-              {pageContent.title || "Eco Champion"}
-            </h1>
-            {pageContent.subtitle && (
-              <p className="mb-6 text-lg md:text-2xl text-masifunde">
-                {pageContent.subtitle}
-              </p>
-            )}
-          </div>
-          {/* Right: Slider/Carousel */}
-          <div className="w-full">
-            {sliderImages.length > 0 && (
-              <EcoChampionSlider images={sliderImages} />
-            )}
-          </div>
+      <section className="py-12 text-white bg-masifunde md:py-16">
+        <div className="container flex flex-col items-start justify-center px-4 mx-auto md:px-8 max-w-7xl">
+          <h2 className="text-white text-3xl lg:text-5xl max-w-[25ch] font-extrabold">
+            {pageContent.title || "Eco Champion"}
+          </h2>
+          <p className="max-w-[65ch] mt-3 leading-6 text-white text-lg md:text-2xl font-medium ">
+            {pageContent.subtitle || "Changemaker Network"}
+          </p>
         </div>
       </section>
-      <section className="px-4 mx-auto mt-10 max-w-7xl">
-        {pageContent.content && (
-          <div className="prose max-w-none" id="content">
-            <PortableText value={pageContent.content} />
-          </div>
-        )}
-      </section>
+      <div className="container px-4 py-6 mx-auto max-w-7xl md:px-8">
+        <EcoChampionPhases pageListGroup={pageListGroup} />
+        <EcoChampionSlider images={sliderImages} />
+      </div>
     </main>
   );
 };
