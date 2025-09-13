@@ -17,7 +17,7 @@ import { PhoneIcon, PlayCircleIcon, PlayIcon } from "lucide-react";
 
 export function DesktopNavigation() {
   return (
-    <NavigationMenu className="hidden lg:block">
+    <NavigationMenu className="relative z-50 hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
           <Link href="/" passHref className="bg-black text-masifunde">
@@ -28,7 +28,7 @@ export function DesktopNavigation() {
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuContent className="z-[9999]">
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
               <ListItem href="/nmb" title="Mandela Bay Changemakers">
                 Home of the Changemaker Network
@@ -48,12 +48,12 @@ export function DesktopNavigation() {
               >
                 Changemakers for Environmental Awareness
               </ListItem>
-              <ListItem
+              {/* <ListItem
                 href="/about/eco-champion"
                 title="MCN Eco-Champion Changemaker Network"
               >
                 Showcase of MCN initiatives
-              </ListItem>
+              </ListItem> */}
               <div className="grid grid-cols-2 gap-2 px-4 py-6 font-bold transition duration-100 rounded-md hover:bg-masifunde text-slate-800 bg-slate-200">
                 <Link
                   href="https://www.youtube.com/watch?v=wMGmWxNctek&t=3s"
@@ -96,7 +96,7 @@ export function DesktopNavigation() {
         </NavigationMenuItem>{" "}
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
           <NavigationMenuTrigger>Partner Area</NavigationMenuTrigger>
-          <NavigationMenuContent>
+          <NavigationMenuContent className="z-[9999]">
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-1">
               <ListItem
                 href="/partner-area/implementation-partner"
@@ -115,6 +115,12 @@ export function DesktopNavigation() {
                 title='"SPARK Change" Luncheon'
               >
                 Knowledge transfer and networking
+              </ListItem>
+              <ListItem
+                href="/partner-area/eco-champion"
+                title='"SPARK Change" Youth-Summit'
+              >
+                Nationwide Eco-Champions unite
               </ListItem>
             </ul>
           </NavigationMenuContent>
