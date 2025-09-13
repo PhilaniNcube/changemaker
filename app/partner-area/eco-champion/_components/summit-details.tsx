@@ -55,7 +55,7 @@ export default function SparkDetails() {
 
                 <div className="pt-6 border-t">
                   <p className="mb-4 text-sm text-gray-600">
-                    Sign Up here if you're interested to be involved
+                    Sign Up here if you&apos;re interested to be involved
                   </p>
                   <Link
                     href="https://forms.gle/6q8isxjZzGUG3uPj7"
@@ -78,15 +78,15 @@ export default function SparkDetails() {
                 SPARK CHANGE Eco Youth Summit:
               </h1>
               <p className="mb-6 text-lg text-gray-700">
-                Where young voices shape tomorrow's climate solutions.
+                Where young voices shape tomorrow&apos;s climate solutions.
               </p>
 
               <div className="mb-8">
                 <p className="text-sm leading-relaxed text-gray-600">
                   <span className="font-semibold">
-                    mailfunda's SPARK Eco Youth Summit
+                    masifunde&apos;s SPARK Eco Youth Summit
                   </span>{" "}
-                  brings together the next generation of South Africa's
+                  brings together the next generation of South Africa&apos;s
                   environmental leaders. Over 100 high school learners and
                   changemakers (Grades 10-11) from across the country – trained
                   eco-champions through the Changemaker Network – will join
