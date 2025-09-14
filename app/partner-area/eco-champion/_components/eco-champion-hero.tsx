@@ -22,7 +22,7 @@ const EcoChampionHero = () => {
             alt="Eco Champion Program Hero"
             width={3000}
             height={1500}
-            className="hidden md:block object-contain w-[83%] xl:w-[105%]  -translate-y-[15vh] -translate-x-[1vw] mx-auto"
+            className="hidden md:block object-contain w-[83%]   -translate-y-[15vh] -translate-x-[1vw] mx-auto"
             priority
           />
         </div>
