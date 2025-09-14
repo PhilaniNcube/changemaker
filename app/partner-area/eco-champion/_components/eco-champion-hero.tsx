@@ -16,13 +16,13 @@ const EcoChampionHero = () => {
 
       {/* Hero content */}
       <div className="relative px-4 mx-auto w-full max-w-7xl sm:px-6 min-h-[55vh] xl:min-h-[40vh] flex items-center lg:px-8 max-h-[56vh] xl:max-h-[42vh]">
-        <div className="hidden md:absolute inset-0 w-full -bottom-[25vh] z-10">
+        <div className="absolute inset-0 w-full -bottom-[25vh] z-10">
           <Image
             src="/images/eco-overlay.png"
             alt="Eco Champion Program Hero"
             width={3000}
             height={1500}
-            className="object-contain w-[97%] -translate-y-[15vh] -translate-x-[1vw] mx-auto"
+            className="hidden md:block object-contain w-[83%] xl:w-[105%]  -translate-y-[15vh] -translate-x-[1vw] mx-auto"
             priority
           />
         </div>
