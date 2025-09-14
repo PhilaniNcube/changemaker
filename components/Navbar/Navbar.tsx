@@ -47,11 +47,7 @@ const about = [
     description: "Changemakers for Environmental Awareness",
     href: "/about/junior-academy",
   },
-  {
-    name: "MCN Eco-Champion Changemaker Network",
-    description: "Showcase of MCN initiatives",
-    href: "/about/eco-champion",
-  },
+
 ];
 const callsToAction = [
   {
@@ -260,6 +256,13 @@ const Navbar = ({ user, admin }: Props) => {
                       Spark Change Luncheon
                     </Link>
                     <Link
+                      href="/partner-area/eco-champion"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
+                    >
+                     Spark Change Youth Summit
+                    </Link>
+                     <Link
                       href="/about/partners"
                       onClick={() => setMobileMenuOpen(false)}
                       className="block py-2 pl-6 pr-3 font-semibold leading-7 rounded-lg text-md text-masifunde hover:bg-gray-50"
