@@ -22,7 +22,7 @@ const EcoChampionHero = () => {
             alt="Eco Champion Program Hero"
             width={3000}
             height={1500}
-            className="hidden md:block object-contain w-[83%]   -translate-y-[15vh] -translate-x-[1vw] mx-auto"
+            className="hidden md:block object-contain w-[75%]   -translate-y-[15vh] -translate-x-[1vw] mx-auto"
             priority
           />
         </div>
@@ -33,9 +33,9 @@ const EcoChampionHero = () => {
               alt="Masifundes Spark Challenge Eco Youth Summit"
               width={200}
               height={100}
-              className="object-cover lg:w-[320px]"
+              className="object-cover lg:w-[320px] translate-y-2"
             />
-            <p className="pl-6 text-lg font-bold leading-5 text-white lg:-translate-y-8 md:text-xl">
+            <p className="pl-6 text-lg font-bold leading-5 text-white lg:-translate-y-6 md:text-xl">
               7 - 9 October 2025 <br />
               <Link
                 href="https://pinelodge.co.za/"
