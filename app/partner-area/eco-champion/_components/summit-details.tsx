@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function SparkDetails() {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen py-12">
       <div className="p-6 mx-auto max-w-7xl">
         <div className="grid gap-8 lg:grid-cols-4">
           {/* Left Sidebar */}
