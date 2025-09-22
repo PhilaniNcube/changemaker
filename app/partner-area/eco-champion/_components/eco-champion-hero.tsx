@@ -46,13 +46,29 @@ const EcoChampionHero = () => {
               <span className="font-light text-white"> Gqeberha</span>
             </p>
           </div>
-          <Image
-            src="/images/tui-logo.svg"
-            alt="Eco Champion Program Logo"
-            width={150}
-            height={150}
-            className="object-cover w-24 h-24 lg:w-32 lg:h-32"
-          />
+          <div className="">
+            <Image
+              src="/images/tui-logo.svg"
+              alt="Eco Champion Program Logo"
+              width={150}
+              height={150}
+              className="object-cover w-24 h-24 lg:w-32 lg:h-32"
+            />
+            <Image
+              src="/images/dbe.png"
+              alt="Dept of Basic Education"
+              width={150}
+              height={150}
+              className="object-cover w-24 mt-2 lg:w-40"
+            />
+            <Image
+              src="/images/ecdoe.png"
+              alt="Eastern Cape Dept of Education"
+              width={150}
+              height={150}
+              className="object-cover w-24 mt-2 lg:w-40"
+            />
+          </div>
         </div>
       </div>
     </div>
