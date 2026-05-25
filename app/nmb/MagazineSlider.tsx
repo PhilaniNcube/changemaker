@@ -11,11 +11,11 @@ import Image from "next/image"
 import Link from "next/link"
 
 import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const sparkMags = [
@@ -59,6 +59,11 @@ const sparkMags = [
     thumbnail: "/images/nmb/nmb_spark_8.png",
     doc: "/images/nmb/nmb_spark_8.pdf",
   },
+  {
+    title: "Spark 9th Edition",
+    thumbnail: "/images/national/ecotourism.jpg",
+    doc: "/images/national/ecotourism.pdf",
+  },
 ];
 
 const MagazineSlider = () => {
@@ -66,36 +71,36 @@ const MagazineSlider = () => {
   const swiper = useSwiper();
 
   return (
-			<section className="max-w-5xl px-12 mx-auto lg:px-20 overflow-clip">
-				<Carousel
-					opts={{
-						align: "start",
-					}}
-					className="w-full"
-				>
-					<CarouselContent>
-						{sparkMags.map((mag) => (
-							<CarouselItem
-								key={mag.title}
-								className="md:basis-1/2 lg:basis-1/3"
-							>
-								<Link href={mag.doc} target="_blank" className="w-full">
-									<Image
-										src={mag.thumbnail}
-										alt={mag.title}
-										className="object-cover w-full aspect-[5/7]"
-										width={492}
-										height={702}
-									/>
-								</Link>
-							</CarouselItem>
-						))}
-					</CarouselContent>
-					<CarouselPrevious className="text-black" />
-					<CarouselNext className="text-black" />
-				</Carousel>
-			</section>
-		);
+    <section className="max-w-5xl px-12 mx-auto lg:px-20 overflow-clip">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        className="w-full"
+      >
+        <CarouselContent>
+          {sparkMags.map((mag) => (
+            <CarouselItem
+              key={mag.title}
+              className="md:basis-1/2 lg:basis-1/3"
+            >
+              <Link href={mag.doc} target="_blank" className="w-full">
+                <Image
+                  src={mag.thumbnail}
+                  alt={mag.title}
+                  className="object-cover w-full aspect-[5/7]"
+                  width={492}
+                  height={702}
+                />
+              </Link>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="text-black" />
+        <CarouselNext className="text-black" />
+      </Carousel>
+    </section>
+  );
 };
 export default MagazineSlider;
 

@@ -25,6 +25,11 @@ const sparkMags = [
     thumbnail: "/images/national/climate_change.png",
     doc: "/images/national/national_climate_change.pdf",
   },
+  {
+    title: "Spark 9th Edition",
+    thumbnail: "/images/national/ecotourism.jpg",
+    doc: "/images/national/ecotourism.pdf",
+  },
 ];
 
 type PageProps = {
