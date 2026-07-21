@@ -106,5 +106,12 @@
     "encoding": "^0.1.13",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "react-vertical-timeline-component",
+      "sharp"
+    ]
   }
 }
