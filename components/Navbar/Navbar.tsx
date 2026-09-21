@@ -47,7 +47,11 @@ const about = [
     description: "Changemakers for Environmental Awareness",
     href: "/about/junior-academy",
   },
-
+  {
+    name: "Additional Resources",
+    description: "Booklets and teacher information",
+    href: "/about/additional-resources",
+  },
 ];
 const callsToAction = [
   {

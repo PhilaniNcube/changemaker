@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NationalGrid from "./NationalGrid";
 import Image from "next/image";
+import AdditionalResources from "@/components/AdditionalResources";
 import type { NationalPageFocus } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 
@@ -345,6 +346,7 @@ const Focus = ({ province, pageFocus }: PageProps) => {
           ))}
         </div>
       </div>
+      <AdditionalResources />
       <NationalGrid />
     </section>
   );

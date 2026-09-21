@@ -20,11 +20,11 @@ export function DesktopNavigation() {
     <NavigationMenu className="relative z-50 hidden lg:block">
       <NavigationMenuList>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link href="/" passHref className="bg-black text-masifunde">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/" className="bg-black text-masifunde">
               Home
-            </NavigationMenuLink>
-          </Link>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
@@ -47,6 +47,12 @@ export function DesktopNavigation() {
                 title="TUI Junior Academy SA"
               >
                 Changemakers for Environmental Awareness
+              </ListItem>
+              <ListItem
+                href="/about/additional-resources"
+                title="Additional Resources"
+              >
+                Booklets and teacher information
               </ListItem>
               {/* <ListItem
                 href="/about/eco-champion"
@@ -126,11 +132,11 @@ export function DesktopNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="bg-black text-masifunde hover:text-neutral-800">
-          <Link href="/contact" passHref className="bg-black text-masifunde">
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/contact" className="bg-black text-masifunde">
               Contact Us
-            </NavigationMenuLink>
-          </Link>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

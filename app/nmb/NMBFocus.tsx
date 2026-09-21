@@ -1,5 +1,6 @@
 import IconGrid from "@/app/IconGrid";
 import MagazineSlider from "./MagazineSlider";
+import AdditionalResources from "@/components/AdditionalResources";
 import type { NmbPageFocus } from "@/sanity/lib/client";
 import { PortableTextBlock } from "sanity";
 import { PortableText } from "@portabletext/react";
@@ -80,6 +81,7 @@ const NMBFocus = ({ text, focus ,content}: PageProps) => {
             <MagazineSlider />
           </div>
         </div>
+        <AdditionalResources />
         <IconGrid />
       </div>
     </section>
