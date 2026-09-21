@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import SummitVideo from "./summit-video";
 
 export default function SparkDetails() {
   return (
@@ -97,6 +98,8 @@ export default function SparkDetails() {
                   sustainable future.
                 </p>
               </div>
+
+              <SummitVideo />
 
               <div className="mb-8">
                 <h2 className="mb-3 text-lg font-bold text-masifunde">
