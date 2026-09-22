@@ -70,9 +70,9 @@ function Contact() {
                 <p className="pl-4 text-base text-white">chuma@masifunde.org</p>
               </div>
               <h2 className="mt-8 text-lg font-medium text-white">
-                masifunde Changemaker Network National coordinator
+                Head of masifunde Changemaker Network Department 
               </h2>
-              <p className="pt-4 text-white">Debaneigh Jordaan</p>
+              <p className="pt-4 text-white">Andisiwe Mbelekane</p>
               <div className="flex items-center">
                 <div>
                   <svg
@@ -95,7 +95,7 @@ function Contact() {
                     <path d="M15 3a6 6 0 0 1 6 6" />
                   </svg>
                 </div>
-                <p className="pl-4 text-base text-white">066 590 8200</p>
+                <p className="pl-4 text-base text-white">041 450 9293</p>
               </div>
               <div className="flex items-center">
                 <div>
@@ -119,7 +119,7 @@ function Contact() {
                   </svg>
                 </div>
                 <p className="pl-4 text-base text-white">
-                  Debaneigh@masifunde.org
+                  andisiwe@masifunde.org
                 </p>
               </div>
               <p className="pt-10 text-lg tracking-wide text-white">

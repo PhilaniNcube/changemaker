@@ -14,8 +14,8 @@ import {
 const resources = [
   {
     title: "Changemaker Club Booklet",
-    thumbnail: "/images/books.jpg",
-    doc: null,
+    thumbnail: "/docs/changemaker_club.png",
+    doc: "/docs/changemaker_club_booklet.pdf",
   },
   {
     title: "Teacher Info Sheet",
@@ -68,7 +68,7 @@ const AdditionalResources = () => {
                         width={492}
                         height={702}
                       />
-                      <span className="absolute inset-x-0 bottom-0 py-2 text-sm font-semibold text-center text-white bg-black/60 rounded-b-lg">
+                      <span className="absolute inset-x-0 bottom-0 py-2 text-sm font-semibold text-center text-white rounded-b-lg bg-black/60">
                         Still to be shared
                       </span>
                     </div>
